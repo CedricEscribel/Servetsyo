@@ -1,0 +1,35 @@
+/* *{
+  border: 1px solid #e60b0b;
+} */
+
+.my-button {
+    /* Background and text color */
+    background-color: #7AB730;
+    color: #fff;
+  
+    /* Padding and border */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    min-width: 17%;
+    height: auto;
+
+
+    /* Text styling */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+  
+    /* Hover effect */
+    transition: background-color 0.3s ease;
+  }
+  
+  .my-button:hover {
+    background-color: #7AB740;
+  }
+  
+  .my-button:active {
+    background-color: #7AB760;
+  }
+  

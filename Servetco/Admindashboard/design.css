@@ -1,0 +1,406 @@
+/* *{
+  border: 1px solid #e60b0b;
+} */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Side Navigation Bar */
+.sidenav {
+  height: 93%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #7AB730;
+  color: #fff;
+  overflow-x: hidden;
+  padding-top: 15px;
+  border-radius: 40px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.sidenav a {
+  text-align: center;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000000;
+  display: block;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  
+}
+
+.sidenav a:hover {
+  color: #fff;
+  background-color: #7AB730;
+}
+
+.sidenav a.active {
+  background-color: #7AB730;
+  color: #fff;
+}
+/* end Side nav */
+
+/* Main Content */
+.main {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+.main h1 {
+  font-size: 36px;
+  margin-top: 0;
+}
+
+.main p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.main ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main ul li {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.main table {
+  font-size: 18px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.main table th, .main table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.main table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.main table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* User record design */
+.request-record .request-record-status select {
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #000000;
+  font-size: 15px;
+}
+
+
+.request-record {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.request-record-header {
+  background-color: #4CAF50;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  padding: 20px;
+}
+
+.request-record-title {
+  flex-grow: 1;
+}
+
+.request-record-status {
+  background-color: #fff;
+  border-radius: 20px;
+  color: #4CAF50;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.request-record-body {
+  padding: 20px;
+}
+
+.request-record-field {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.request-record-field-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.request-record-field-value {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/*User list  */
+
+.User{
+  margin-top: 0px;
+  text-transform: capitalize;
+}
+.User-list{
+  width: 80%;
+  padding: 10px;
+  margin-left: 60mm;
+  margin-top: 5px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.table{
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 15px;
+  min-width: 100%;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+}
+table thead tr{
+  color: #fff;
+  background: #34AF6D;
+  text-align: left;
+  font-weight: bold;
+}
+.table th,
+.table td{
+  padding: 12px 15px;
+}
+.table tbody tr{
+  border-bottom: 1px solid #ddd;
+}
+.table tbody tr:nth-of-type(odd){
+  background: #f3f3f3;
+}
+
+.table tbody tr:last-of-type{
+  border-bottom: 2px solid #4AD489;
+}
+.table button{
+  padding: 6px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #4AD489;
+}
+.table button:hover{
+  background: #4AD489;
+  color: #fff;
+  transition: 0.5rem;
+}
+/* User list Design end */
+
+/* user Profile */
+.user-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-avatar {
+  width: fit-content;
+  height: fit-content;
+  max-width: 40mm;
+  max-height: 40mm;
+  margin-left: 40%;
+  overflow: hidden;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 10mm;
+}
+
+.user-email {
+  font-size: 20px;
+  color: #666;
+  margin-left: 10mm;
+}
+
+/* user profile */
+
+/* Upload photo for adoption */
+.Upload{
+  max-width: fit-content ;
+  display: block;
+  margin: 0 auto;
+}
+
+input[type="text"] {
+  display: block;
+  margin: 0 auto;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.image-preview {
+  border: dotted greenyellow 1px;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  max-width: 200px;
+  max-height: 250px;
+  
+}
+
+#image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#choose-file-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#choose-file-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+/* upload */
+
+/* Dogs Upload */
+  .grid{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, auto);
+    /* the rest of your styles */
+  }
+
+  .Dog-details{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    padding: 20px;
+    text-align: center;
+    max-width: fit-content;
+  }
+  
+  .details h2{
+    margin-bottom: 0px;
+    color: #020202;
+  }
+/* Dogs Upload end */
+
+
+/* Dashboard Design */
+.box {
+  background-color: #7AB730;
+  height: 60mm;
+  width: 65mm;
+  margin: 10px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.box h2{
+  position: absolute;
+  font-size: 40px;
+  margin-left: 40px;
+  margin-top: 60px;
+}
+
+.box p {
+  position: absolute;
+  font-size: 25px;
+  margin-top: 143px;
+  inline-size: 250px;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.grid-dash {
+  width: fit-content;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, auto);
+}
+
+.box img{
+  height: 30mm;
+  width: 35mm;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 100px;
+  position: absolute;
+}
+/* Dashboard end */
+
+.table select{
+  padding: 6px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #4AD489;
+}
+.table select:hover{
+  background: #4AD489;
+  color: #fff;
+  transition: 0.5rem;
+}

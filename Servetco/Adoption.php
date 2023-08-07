@@ -29,8 +29,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.php" class="nav-item nav-link">Home</a>
-                <a href="about.php" class="nav-item nav-link active">About</a>
+                <a href="index.php" class="nav-item nav-link active">Home</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
                 <a href="Pet_needs.php" class="nav-item nav-link">Pet needs</a>
@@ -170,46 +170,132 @@
         </dialog>
     <!-- login end -->
 
- <!-- About Start -->
- <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded" src="img/baliuag.jpg" style="object-fit: cover;">
+<!-- Adoption form start -->
+    <div class="container">
+            <div class="title">Application form</div>
+                <div class="content">
+                <form action="#">
+                    <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input type="text" placeholder="Enter your name" required>
                     </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="border-start border-5 border-primary ps-5 mb-5">
-                        <h6 class="text-primary text-uppercase">About Us</h6>
-                        <h1 class="display-5 text-uppercase mb-0">We Keep Your Pets Happy All Time</h1>
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <input type="text" placeholder="Enter your Address" required>
                     </div>
-                    <h4 class="text-body mb-4">To provide Baliwagenyos with free veterinary services especially to those who love animals.</h4>
-                    <div class="bg-light p-4">
-                        <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
-                            <li class="nav-item w-50" role="presentation">
-                                <button class="nav-link text-uppercase w-100 active" id="pills-1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1"
-                                    aria-selected="true">Our Mission</button>
-                            </li>
-                            <li class="nav-item w-50" role="presentation">
-                                <button class="nav-link text-uppercase w-100" id="pills-2-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2"
-                                    aria-selected="false">Our Vision</button>
-                            </li>
-                        </ul>
-                        <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
-                            <p>The local Government of Baliwag shall implement policies and programs that will promote a fully functional e-government, business friendly environment, competitive quality of education, and active people participation through a professional bureaucracy with government personnel willing to do the extra mile in public service.</p>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input type="text" placeholder="Enter your number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                        <option value="">-- Select Gender --</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">-- Civil Status --</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="widowed">widowed</option>
+                    </select>
+                    </div>
+
+                        <div class="Radio">
+                            <p>Have you adopted from BALIWAG VET before ? </p>
+                            <input type="radio" id="Yes"name="value" required>
+                            <label for="Yes">Yes</label><br>
+                            <input type="radio" id="No" name="value">
+                            <label for="No">No</label><br>
                         </div>
-                        <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
-                            <p>The city of Baliwag is the center for trade and commerce, education, and technological advancement within the region with God-centered, empowered and healthy people living in a sustainable environment under pro-active governance.</p>
+                        <div class="Radio">
+                            <p>What are you looking to adopt ? </p>
+                            <input type="radio" id="Dog"name="value" required>
+                            <label for="Dog">Dog</label><br>
+                            <input type="radio" id="Cat" name="value" >
+                            <label for="Cat">Cat</label><br>
+                            <input type="radio" id="Both" name="value" >
+                            <label for="Both">Both</label><br>
+                            <input type="radio" id="Undecided" name="value" >
+                            <label for="Undecided">Undecided</label><br>
+                        </div>  
+                        <div class="Radio">
+                            <p>What type of building do you live in ?</p>
+                            <input type="radio" id="House"name="value" required>
+                            <label for="House">House</label><br>
+                            <input type="radio" id="Apartment" name="value" >
+                            <label for="Apartment">Apartment</label><br>
+                            <input type="radio" id="Condo" name="value" >
+                            <label for="Condo">Condo</label><br>
+                        </div>  
+                        <div class="Radio">
+                            <p>Who do you live with ? </p>
+                            <input type="radio" id=" living alone"name="value" required>
+                            <label for=" living alone"> living alone</label><br>
+                            <input type="radio" id="parents" name="value" >
+                            <label for="parents">parents</label><br>
+                            <input type="radio" id="spouse" name="value" >
+                            <label for="spouse">spouse</label><br>
+                        </div>  
+                        <div class="input-box">
+                            <span class="details">Who will be responsible for feeding , grooming , and generally caring for your pet ?</span>
+                            <input type="text" placeholder="Specify" required>
                         </div>
+                        <div class="input-box">
+                            <span class="details">Who will be financially responsible for your pets needs </span>
+                            <input type="text" placeholder="Specify" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Who will look after on your pets if you go vacation or in case of emergency ? </span>
+                            <input type="text" placeholder="Specify" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Do you have other pets ?</span>
+                            <input type="text" placeholder="Specify" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">What is your job ? </span>
+                            <input type="text" placeholder="Specify" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">How much your monthly salary ? </span>
+                            <input type="text" placeholder="Specify" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Interview and Visitation (Minors must be accompanied by parents) </span>
+                            <input type="text" placeholder="Preffered date and time for virtual meet" required>
+                        </div>
+                        </div>
+                 <form action="#">  
+                    <div class="button">
+                        <input type="submit" value="Submit Form">
                     </div>
-                </div>
-            </div>
+                 </form>
+            </div> 
         </div>
-    </div>
-    <!-- About End -->
+      
+    <!-- Adoption form end -->
+
+
+
+
+
 
 
     <!-- Footer Start -->

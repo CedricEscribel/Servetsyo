@@ -10,7 +10,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="css/Customstyle.css" rel="stylesheet">
@@ -34,11 +34,92 @@
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
                 <a href="Pet_needs.php" class="nav-item nav-link">Pet needs</a>
-                <button data-open-modal class="my-Button">Login</button>
+                <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
           </div>
         </div>
     </nav>
     <!-- Navbar End -->
+
+    <!-- Login -->
+    <div class="modal fade" id="SignIn" aria-hidden="true" aria-labelledby="SignInLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SignInLabel">Sign In</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form class="row g-3">
+              <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <button class="btn btn-primary" id="Login">Log In</button>
+            </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#Signup" data-bs-toggle="modal">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Signup" aria-hidden="true" aria-labelledby="SignupLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SignupLabel">Sign Up</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form class="row g-3">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+            <button class="btn btn-primary" id="Login">Log In</button>
+            
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#SignIn" data-bs-toggle="modal">Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- login -->
     <dialog data-modal>
@@ -108,11 +189,12 @@
 
     <!-- Blog Start -->
     <div class="container-fluid py-5">
-        <div class="container">
-            <div class="border-start border-5 border-success  ps-5 mb-5" style="max-width: 600px;">
-                <h6 class="text-primary text-uppercase">Latest Event</h6>
+        <div class="blog container">
+            <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+                <h6 class=" text-uppercase">Latest Event</h6>
                 <h1 class="display-5 text-uppercase mb-0">Updates and Upcomming Event</h1>
             </div>
+
             <div class="row g-5">
                 <div class="col-lg-6">
                     <div class="blog-item">
@@ -124,9 +206,9 @@
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
                                         <small><i class="bi bi-calendar-date me-2"></i>15 May, 2023</small>
-                                    </div>
+                                    </div>                 
                                     <h5 class="text-uppercase mb-3">13th Low Cost Kapon</h5>
-                                    <p>13th Low Cost Kapon in 𝐁𝐚𝐥𝐢𝐮𝐚𝐠, 𝐁𝐮𝐥𝐚𝐜𝐚n Location: Washko Laundromat, 63 F. Vergel De Dios St, Brgy. Concepcion</p>
+                                    <p class="fw-lighter lh-lg">13th Low Cost Kapon in Baliuag, Bulacan Location: Washko Laundromat, 63 F. Vergel De Dios St, Brgy. Concepcion</p>
                                     <a class="text-primary text-uppercase" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fforms.gle%2F4m6FvVChFTxtPoHm9%3Ffbclid%3DIwAR3xj5e0hR-kuXnxKnS2giQjzsbcyV6q1fA0Er1zqqujdvLCiWS8Fitu7Q4&h=AT0OU1gD8HZPdgAM-NZDqG94GpwNg29EQIHwH2NLy2TSbc0T54MWvYEHvpwbgVlm14by8fgQS4EMMqF6g768U5TBUPmkULwVhmnfbGVJcRIBcLacTb-JYc38WmqMAX2Av0nv8VcYgq_AmlSQzokh&__tn__=-UK-y-R&c[0]=AT36xcGpUFt4j6GH0i1o4nb9hMprsVkZTJr7aALXl_3Vrr7zKwbDLKj01AQeA4j31oD6Me6AtkRKxV7p8Hj9IDl6IsnLYrAig8-RrSCXqHEeX4hX4HmAOrprx_2HsJue41phrr_w87LFAnh_tOlFrpxQ7fgoCq4KXQ3Troao0n_cpPXElAG4T8aqZZWRgoNfUEIJgEtqkIGdmVUdfp-JiB4L29h9ZGYd4k3V">Register here<i class="bi bi-chevron-right"></i></a>
                                 </div>
                             </div>
@@ -145,8 +227,8 @@
                                         <small><i class="bi bi-calendar-date me-2"></i>01 June, 2023</small>
                                     </div>
                                     <h5 class="text-uppercase mb-3">Pet Vaccination</h5>
-                                    <p>Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag.</p>
-                                    <a class="text-primary text-uppercase" id="vaccination">More<i class="bi bi-chevron-right"></i></a>
+                                    <p class="fw-lighter lh-lg">Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag.</p>
+                                    <a class="text-primary text-uppercase" role="button" data-bs-toggle="modal"  data-bs-target="#myModal" aria-expanded="false"  id="vaccination">More<i class="bi bi-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -158,20 +240,69 @@
     <!-- Blog End -->
 
     <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
+                <div class="modal fade" id="myModal" aria-hidden="true" aria-labelledby="myModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="myModal">Modal 1</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
             <p>April 20, 2023 - PET VACCINATION 🐶🐱🐾 <br>
                 Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag. <br> <br>
-                Para sa mga nais mabakunahan ng Anti-Rabies vaccine ang kanilang mga alagang aso at pusa, magsadya lamang po sa PawPark Gl. ng SM Baliwag, 10:00am hanggang 5:00pm.</p>
+                Para sa mga nais mabakunahan ng Anti-Rabies vaccine ang kanilang mga alagang aso at pusa, magsadya lamang po sa PawPark Gl. ng SM Baliwag, 10:00am hanggang 5:00pm.</p>         
+               </div>
+            </div>
         </div>
-
         </div>
         <!-- Modal end -->
+        
+     <!-- Services Start -->
+   <div class="container-fluid py-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-0">Our Services</h1>
+        </div>
+        <div class="row g-5">
+            
+            <div class="col-md-6">
+                <div class="service-item bg-light d-flex p-4">
+                    <div>
+                        <h5 class="text-uppercase mb-3">Adoption Form</h5>
+                        <p>Fill out the form to adopt</p>
+                        <a class="text-primary text-uppercase" href="Adoption.php">Adoption form<i class="bi bi-chevron-right
+                        "></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-item bg-light d-flex p-4">
+                    <div>
+                        <h5 class="text-uppercase mb-3">Schedule form</h5>
+                        <p>Application form for Vaccination and Kapon</p>
+                        <a class="text-primary text-uppercase" href="schedule.php">Read More<i class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-item bg-light d-flex p-4">
+                    <div>
+                        <h5 class="text-uppercase mb-3">Pet Rescue</h5>
+                        <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+                        <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+
+
+
     <!-- Footer Start -->
-    <div class="container-fluid bg-light mt-5 py-5">
+    <div class="footer container-fluid bg-light mt-5 py-5">
         <div class="container pt-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
@@ -200,7 +331,7 @@
 
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
   <!-- Template Javascript --> 
     <script src="js/main.js"></script>
 </body>

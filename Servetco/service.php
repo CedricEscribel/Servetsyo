@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -8,22 +6,21 @@
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
     <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link rel="stylesheet" href="css/Design.css">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/Customstyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0 mb-5">
-    <a href="index.php" class="navbar-brand ms-lg-5" style="color: #378ACA; font-weight: bold; ">
+    <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <a href="index.php" class="navbar-brand ms-lg-5" style="color: #378ACA; font-weight: bold; ">
            <img src="img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
            SERVETSYO
         </a>
@@ -37,14 +34,95 @@
                 <a href="service.php" class="nav-item nav-link active">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
                 <a href="Pet_needs.php" class="nav-item nav-link">Pet needs</a>
-                <button data-open-modal class="my-Button">Login</button>
+                <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
           </div>
         </div>
     </nav>
     <!-- Navbar End -->
 
-        <!-- login -->
-        <dialog data-modal>
+    <!-- Login -->
+    <div class="modal fade" id="SignIn" aria-hidden="true" aria-labelledby="SignInLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SignInLabel">Sign In</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form class="row g-3">
+              <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <button class="btn btn-primary" id="Login">Log In</button>
+            </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#Signup" data-bs-toggle="modal">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Signup" aria-hidden="true" aria-labelledby="SignupLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SignupLabel">Sign Up</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form class="row g-3">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+            <button class="btn btn-primary" id="Login">Log In</button>
+            
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#SignIn" data-bs-toggle="modal">Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- login -->
+    <dialog data-modal>
         <form class="row g-3">
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Email</label>
@@ -92,6 +170,8 @@
         </dialog>
     <!-- login end -->
 
+
+
    <!-- Services Start -->
    <div class="container-fluid py-5">
     <div class="container">
@@ -136,50 +216,51 @@
 
     <!-- Petneeds Start -->
     <!-- Need to be editable in admin side -->
-    <div class="container-fluid bg-testimonial py-5" style="margin: 45px 0;">
-        <div class="container py-5">
-            <div class="row justify-content-end">
-                <div class="col-lg-7">
-                    <div class="owl-carousel Pet-needs-carousel bg-white p-5">
-                        <div class="Pet-needs text-center">
-                            <h2>CATS & DOGS WISH LIST</h2>
-                            <ul>  
-                                <li>Dog food (kibble and canned)</li>
-                                <li>Cat food (kibble and canned)</li>
-                                <li>Crates, carriers or cages</li>
-                                <li>Pet diapers and pee pads</li>
-                                <li>Scratching posts for the cats</li>
-                                <li>Chew toys for the dogs</li>
-                                <li>Vaccines, medicine and vitamins</li>
-                                <li>Dog and cat treats</li>
-                                <li>Leashes, harnesses and collars</li>
-                             </ul>
-                        </div>
-                        <div class="Pet-needs text-center">
-                            <h2>SHELTER WISH LIST</h2>
-                            <ul>
-                                <li>Detergent powder and bleach</li>
-                                <li>Dishwashing paste or liquid</li>
-                                <li>Bath towels</li>
-                                <li>Garbage bags (XXL)</li>
-                                <li>Foot rugs or door mats</li>
-                                <li>Clinic supplies (alcohol, cotton, etc.)</li>
-                                <li>Old newspapers</li><li>Toilet paper</li>
-                                <li>Mops and brooms</li>
-                            </ul>	
-                        </div>
-                    </div>
-                </div>
+<div id="Petneeds" class="carousel slide"  data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active ">
+            <div class="Pet-needs text-center">
+                <h2>CATS & DOGS WISH LIST</h2>
+                        <li>Dog food (kibble and canned)</li>
+                        <li>Cat food (kibble and canned)</li>
+                        <li>Crates, carriers or cages</li>
+                        <li>Pet diapers and pee pads</li>
+                        <li>Scratching posts for the cats</li>
+                        <li>Chew toys for the dogs</li>
+                        <li>Vaccines, medicine and vitamins</li>
+                        <li>Dog and cat treats</li>
+                        <li>Leashes, harnesses and collars</li>
             </div>
         </div>
+            <div class="carousel-item">
+                <div class="Pet-needs text-center">
+                    <h2>SHELTER WISH LIST</h2>       
+                        <li>Detergent powder and bleach</li>
+                        <li>Dishwashing paste or liquid</li>
+                        <li>Bath towels</li>
+                        <li>Garbage bags (XXL)</li>
+                        <li>Foot rugs or door mats</li>
+                        <li>Clinic supplies (alcohol, cotton, etc.)</li>
+                        <li>Old newspapers</li>
+                        <li>Toilet paper</li>
+                        <li>Mops and brooms</li>
+                </div>
+            </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#Petneeds" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon btn-primary" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#Petneeds" data-bs-slide="next">
+        <span class="carousel-control-next-icon btn-primary" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
     </div>
+</div>
     <!-- Pet needs End -->
 
 
-
-
     <!-- Footer Start -->
-    <div class="container-fluid bg-light mt-5 py-5">
+    <div class="footer container-fluid bg-light mt-5 py-5">
         <div class="container pt-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
@@ -188,6 +269,7 @@
                     <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>baliwag.gov.ph</p>
                     <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0923 304 7360</p>
                 </div>
+
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
                     <div class="d-flex flex-column justify-content-start">
@@ -195,41 +277,19 @@
                         <a class="text-body mb-2" href="about.php"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
                         <a class="text-body mb-2" href="service.php"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
                         <a class="text-body mb-2" href="Petforadoption.php"><i class="bi bi-arrow-right text-primary me-2"></i>Pet for adoption</a>
-                        <a class="text-body mb-2" href="blog.php"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                        <a class="text-body" href="contact.php"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>                    </div>
+                        <a class="text-body" href="contact.php"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>                   
+                        <a class="text-body mb-2" href="Admindashboard/Dashboard.php"><i class="bi bi-arrow-right text-primary me-2"></i>Admin Dashboard link sample</a>
                     </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h6 class="text-uppercase mt-4 mb-3">Follow Us</h6>
-                    <div class="d-flex">
-                        <a class="btn btn-outline-primary btn-square me-2" href="https://www.facebook.com/baliwagvetservice"><i class="bi bi-facebook"></i></a>
                     </div>
-                </div>
+               
+            </div>
+        </div>
+    </div>  
     <!-- Footer End -->
 
-
-
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-
-    <script>
-        const openButton = document.querySelector("[data-open-modal]")
-        const modal = document.querySelector("[data-modal]")
-        
-        openButton.addEventListener("click", () =>{
-        modal.showModal()
-        })
-        
-    </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
+  <!-- Template Javascript --> 
     <script src="js/main.js"></script>
 </body>
-
-</html>

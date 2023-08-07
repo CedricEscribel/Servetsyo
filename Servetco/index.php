@@ -13,8 +13,8 @@
 
 
     <!-- Template Stylesheet -->
-    <link rel="stylesheet" href="css/Design.css">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/Customstyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -24,7 +24,6 @@
            <img src="img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
            SERVETSYO
         </a>
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -90,10 +89,27 @@
         </dialog>
     <!-- login end -->
 
+    <!-- Header -->
+    <section class="bg-img ">
+
+      <div class="container Landing bg-image">
+        <div class="p-3 mb-2 bg-transparent text-body">
+          <div>
+            <h1>Baliwag Veterinary Services</h1>
+            <p class="lead my-4">
+             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, expedita impedit? Nam quod voluptates quae dolores, consectetur, doloribus sequi delectus perferendis magni ipsa quisquam aliquid voluptatem, et rem sapiente cum.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+
     <!-- Blog Start -->
     <div class="container-fluid py-5">
         <div class="container">
-            <div class="border-start border-5 border-success-subtle  ps-5 mb-5" style="max-width: 600px;">
+            <div class="border-start border-5 border-success  ps-5 mb-5" style="max-width: 600px;">
                 <h6 class="text-primary text-uppercase">Latest Event</h6>
                 <h1 class="display-5 text-uppercase mb-0">Updates and Upcomming Event</h1>
             </div>

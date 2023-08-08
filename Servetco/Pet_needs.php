@@ -16,7 +16,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
+    <!-- Template Stylesheet --> 
     <link rel="stylesheet" href="css/Design.css">
     <link href="css/style.css" rel="stylesheet">
 </head>

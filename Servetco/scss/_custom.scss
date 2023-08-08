@@ -1,0 +1,13 @@
+
+
+// scss-docs-start color-variables
+$lime: #7AB730 ;
+
+// scss-docs-end color-variables
+
+// scss-docs-start theme-color-variables
+$primary: $lime ;
+
+// scss-docs-end theme-color-variables
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

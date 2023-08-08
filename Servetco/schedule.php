@@ -13,7 +13,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/Customstyle.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/Schedule.css">
     <link rel="stylesheet" href="css/main.css">
 </head>

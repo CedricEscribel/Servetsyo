@@ -214,11 +214,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
+                    
                     <div class="blog-item">
                         <div class="row g-0 bg-light overflow-hidden">
                             <div class="col-12 col-sm-5 h-100">
                                 <img class="img-fluid h-100" src="img/vaccination.jpg" style="object-fit: cover;">
                             </div>
+
                             <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
@@ -268,8 +270,7 @@
                     <div>
                         <h5 class="text-uppercase mb-3">Adoption Form</h5>
                         <p>Fill out the form to adopt</p>
-                        <a class="text-primary text-uppercase" href="Adoption.php">Adoption form<i class="bi bi-chevron-right
-                        "></i></a>
+                        <a class="text-primary text-uppercase" href="Adoption.php">Adoption form<i class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -282,6 +283,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="service-item bg-light d-flex p-4">
                     <div>

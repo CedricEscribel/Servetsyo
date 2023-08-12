@@ -11973,9 +11973,6 @@ textarea.form-control-lg {
 }
 :root {
   --primary: #7AB730;
-  --secondary: #FFD33C;
-  --light: #F3F3F3;
-  --dark: #212121;
 }
 
 /* Navigation bar */
@@ -12114,6 +12111,37 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
   font-style: italic;
+}
+
+@media (min-width: 576px) {
+  .service-item .row {
+    height: 300px;
+  }
+}
+.service-item a i {
+  position: relative;
+  padding-left: 20px;
+  transition: 0.3s;
+}
+
+.service-item a:hover i {
+  padding-left: 50px;
+}
+
+.service-item a i::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  top: 50%;
+  left: 10px;
+  margin-top: -1px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+.service-item a:hover i::after {
+  width: 50px;
 }
 
 /* Form Design */

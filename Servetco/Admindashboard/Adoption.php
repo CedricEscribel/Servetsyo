@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="sidenav">
-      <a href="Dashboard.php" ><i class="Dashboard"></i>Dashboard</a>
+      <h1 >Dashboard</h1>
       <a href="Appointment.php"><i class="Appointment"></i>Appointment</a>
       <a href="Adoption.php" class="active" ><i class="Animals"></i>Adoption</a>
       <a href="Medicalreports.php"><i class="Reports"></i>Medical Reports</a>

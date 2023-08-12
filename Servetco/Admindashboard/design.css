@@ -10,47 +10,45 @@ body {
 }
 
 /* Side Navigation Bar */
-.sidenav {
-  height: 93%;
-  width: 200px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #7AB730;
-  color: #fff;
-  overflow-x: hidden;
-  padding-top: 15px;
-  border-radius: 40px;
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+
+  .sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #7AB730;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
 
 
-.sidenav a {
-  text-align: center;
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #000000;
-  display: block;
-  background-color: rgb(255, 255, 255);
-  border-radius: 25px;
-  margin-top: 15px;
-  margin-left: 5px;
-  margin-right: 5px;
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #000000;
+    display: block;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   
-}
 
 .sidenav a:hover {
-  color: #fff;
-  background-color: #7AB730;
+  background-color: #427405;
 }
 
 .sidenav a.active {
-  background-color: #7AB730;
-  color: #fff;
-}
+  background-color: #427405;
+  color: white;
+} 
 /* end Side nav */
 
 /* Main Content */

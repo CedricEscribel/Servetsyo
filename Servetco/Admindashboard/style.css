@@ -1,10 +1,70 @@
-.swiper-container {
-  width: 100%;
-  height: 100%;
+body {
+  font-family: "Lato", sans-serif;
 }
 
-.preview-image {
+.sidenav {
+  height: 95%;
+  width: 210px;
+  position: fixed;
+  z-index: 1;
+  top: 10px ;
+  left: 5px;
+  background-color: #7AB730;
+  border-radius: 25px;
+  overflow-x: hidden;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+  background-color: white;
+  border-radius: 25px;
+  margin: 10px 10px;
+}
+
+.sidenav a:hover {
+  background-color: #427405;
+}
+
+.sidenav a.active {
+  background-color: #427405;
+  color: white;
+} 
+
+.main {
+  margin-left: 210px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.main table {
+  font-size: 18px;
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.main table th, .main table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.main table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.main table tr:nth-child(even) {
+  background-color: #f2f2f2;
 }

@@ -1,3 +1,34 @@
+<?php
+
+@include 'config.php';
+
+if(isset($_POST['submit'])){
+
+    $Fullname = mysqli_real_escape_string($conn, $_POST['Fullname']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $pass = md5($_POST['password']);
+    $Phone = mysqli_real_escape_string($conn, $_POST['PNumber']);
+    $Address = mysqli_real_escape_string($conn, $_POST['Address']);
+ 
+    $select = " SELECT * FROM user WHERE email = '$email' && password = '$pass' ";
+ 
+    $result = mysqli_query($conn, $select);
+ 
+    if(mysqli_num_rows($result) > 0){
+ 
+       $error[] = 'user already exist!';
+ 
+    }else{
+ 
+
+          $insert = "INSERT INTO user(Fullname, email, password, PhoneNum, Address) VALUES('$name','$email','$pass', '$Phone', '$Address')";
+          mysqli_query($conn, $insert);
+          
+    }
+ 
+ };
+
+?>
 
 <head>
     <meta charset="utf-8">
@@ -31,7 +62,7 @@
                 <a href="about.php" class="nav-item nav-link">About</a>
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
-                <a href="Pet_needs.php" class="nav-item nav-link">Pet needs</a>
+                <a href="Events.php" class="nav-item nav-link">Events</a>
                 <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
           </div>
         </div>
@@ -39,6 +70,7 @@
     <!-- Navbar End -->
 
     <!-- Login -->
+<div class="login">
     <div class="modal fade" id="SignIn" aria-hidden="true" aria-labelledby="SignInLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -51,13 +83,13 @@
         <form class="row g-3">
               <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
+                    <input type="email" class="form-control" id="">
                 </div>
                 <div class="col-md-6">
                     <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4">
+                    <input type="password" class="form-control" id="">
                 </div>
-                <button class="btn btn-primary" id="Login">Log In</button>
+                <button class="btn btn-primary" id="Login" onclick="login()">Log In</button>
             </form>
       </div>
 
@@ -67,106 +99,54 @@
     </div>
   </div>
 </div>
-<div class="modal fade" id="Signup" aria-hidden="true" aria-labelledby="SignupLabel" tabindex="-1">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="SignupLabel">Sign Up</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <form class="row g-3">
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
-            </div>
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="col-12">
-                <label for="inputAddress2" class="form-label">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-md-6">
-                <label for="inputCity" class="form-label">City</label>
-                <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>
-            <button class="btn btn-primary" id="Login">Log In</button>
-            
-            </form>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#SignIn" data-bs-toggle="modal">Sign In</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    <!-- login -->
-    <dialog data-modal>
+<!-- sign up -->
+    <div class="modal fade" id="Signup" aria-hidden="true" aria-labelledby="SignupLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="SignupLabel">Sign Up</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
         <form class="row g-3">
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
-            </div>
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="col-12">
-                <label for="inputAddress2" class="form-label">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-md-6">
-                <label for="inputCity" class="form-label">City</label>
-                <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>
-            <div class="col-12">
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
+
+                <div class="col-md-12">
+                    <label for="Fullname" class="form-label">Fullname</label>
+                    <input type="text" class="form-control" name="Fullname" placeholder="Fullname">
                 </div>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
-            </form>
-        </dialog>
-    <!-- login end -->
+
+                <div class="col-md-6">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="PhoneN" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" name="PNumber">
+                </div>
+
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" name="Address" placeholder="1234 Main St">
+                </div>
+
+                <button class="btn btn-primary" id="Register" onclick="register()">Register</button>
+                
+                </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#SignIn" data-bs-toggle="modal">Sign In</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+    <!-- Login end -->
+
 
     <!-- Header -->
     <section class="bg-img ">
@@ -185,7 +165,7 @@
     </section>
 
 
-    <!-- Blog Start -->
+    <!-- Events Start -->
     <div class="container-fluid py-5">
         <div class="blog container">
             <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
@@ -237,26 +217,26 @@
             </div>
         </div>
     </div>
-    <!-- Blog End -->
+  
 
-    <!-- The Modal -->
-                <div class="modal fade" id="myModal" aria-hidden="true" aria-labelledby="myModal" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="myModal">Modal 1</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal" aria-hidden="true" aria-labelledby="myModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="myModal">Modal 1</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <p>April 20, 2023 - PET VACCINATION 🐶🐱🐾 <br>
+                    Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag. <br> <br>
+                    Para sa mga nais mabakunahan ng Anti-Rabies vaccine ang kanilang mga alagang aso at pusa, magsadya lamang po sa PawPark Gl. ng SM Baliwag, 10:00am hanggang 5:00pm.</p>         
+                </div>
+                </div>
             </div>
-            <div class="modal-body">
-            <p>April 20, 2023 - PET VACCINATION 🐶🐱🐾 <br>
-                Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag. <br> <br>
-                Para sa mga nais mabakunahan ng Anti-Rabies vaccine ang kanilang mga alagang aso at pusa, magsadya lamang po sa PawPark Gl. ng SM Baliwag, 10:00am hanggang 5:00pm.</p>         
-               </div>
-            </div>
-        </div>
         </div>
         <!-- Modal end -->
-        
+    <!-- Events End -->
      <!-- Services Start -->
    <div class="container-fluid py-5">
     <div class="container">
@@ -328,7 +308,6 @@
         </div>
     </div>  
     <!-- Footer End -->
-
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  

@@ -25,6 +25,7 @@
           <h1>Upload Dogs for adoption</h1>
         </div>
       <!-- Body design -->
+      
       <!-- Upload dog for adoption -->
 
 	  		<span class="border">
@@ -35,7 +36,7 @@
               <img src="../Dogs sample/sample dog.jpg" alt="Upload Dog Picture" id="image-preview">
               <a href="#" id="choose-file-btn">Choose File</a>
             </div>
-          		</form>
+        </form>
 					<div class="card-body">
 					<div class="Details">
               <textarea rows="4" cols="23" id="message" name="message" placeholder="Additional details"></textarea>
@@ -54,9 +55,9 @@
 					</div>
 				</div>
 			</span>
+      <!-- Upload dog for adoption -->
 
-
-          <!-- Upload dog for adoption -->
+      <!-- body -->
             <div class="header">
               <h2>Dogs For adoption</h2>
             </div>
@@ -96,7 +97,7 @@
               <h2>Dog name</h2>
               <p>Sample dogs</p>
             </div>
-          </div>
+          </div>   
         </div>
       </div>
       <!-- Body design -->

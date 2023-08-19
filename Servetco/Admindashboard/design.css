@@ -50,7 +50,6 @@ body {
 
 .main {
   margin-left: 210px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
 }
 
@@ -405,4 +404,38 @@ input[type="submit"] {
   background: #4AD489;
   color: #fff;
   transition: 0.5rem;
+}
+
+/* announcement */
+
+.AddAnnounce{
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.Addpic{
+  padding: 10px;
+}
+
+.Imgprev{
+  display: grid;
+  padding: 10px;
+}
+
+.Imgprev textarea{
+  margin-bottom: 10px;
+}
+
+.Announcements{
+  margin-left: 210px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 40px;
+  padding-right: 15px;
+  justify-content: space-evenly;
 }

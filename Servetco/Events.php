@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -9,24 +7,20 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
     <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link rel="stylesheet" href="css/Design.css">
-    <link href="css/style.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0 mb-5">
-    <a href="index.php" class="navbar-brand ms-lg-5" style="color: #378ACA; font-weight: bold; ">
+    <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <a href="index.php" class="navbar-brand ms-lg-5" style="color: #378ACA; font-weight: bold; ">
            <img src="img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
            SERVETSYO
         </a>
@@ -36,18 +30,54 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="index.php" class="nav-item nav-link">Home</a>
-                <a href="about.php" class="nav-item nav-link ">About</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
-                <a href="Pet_needs.php" class="nav-item nav-link">Pet needs</a>
-                <button data-open-modal class="my-Button">Login</button>
+                <a href="Events.php" class="nav-item nav-link active">Events</a>
+                <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
           </div>
         </div>
     </nav>
     <!-- Navbar End -->
-        <!-- login -->
-        <dialog data-modal>
+
+    <!-- Login -->
+    <div class="modal fade" id="SignIn" aria-hidden="true" aria-labelledby="SignInLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SignInLabel">Sign In</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
         <form class="row g-3">
+              <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <button class="btn btn-primary" id="Login">Log In</button>
+            </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#Signup" data-bs-toggle="modal">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Signup" aria-hidden="true" aria-labelledby="SignupLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SignupLabel">Sign Up</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form class="row g-3">
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Email</label>
                 <input type="email" class="form-control" id="inputEmail4">
@@ -79,25 +109,99 @@
                 <label for="inputZip" class="form-label">Zip</label>
                 <input type="text" class="form-control" id="inputZip">
             </div>
-            <div class="col-12">
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
-                </div>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
+            <button class="btn btn-primary" id="Login">Log In</button>
+            
             </form>
-        </dialog>
-    <!-- login end -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#SignIn" data-bs-toggle="modal">Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- Blog Start -->
+       <!-- Login -->
+       <div class="login">
+    <div class="modal fade" id="SignIn" aria-hidden="true" aria-labelledby="SignInLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SignInLabel">Sign In</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form class="row g-3">
+              <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="">
+                </div>
+                <button class="btn btn-primary" id="Login" onclick="login()">Log In</button>
+            </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#Signup" data-bs-toggle="modal">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- sign up -->
+    <div class="modal fade" id="Signup" aria-hidden="true" aria-labelledby="SignupLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="SignupLabel">Sign Up</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form class="row g-3">
+
+                <div class="col-md-12">
+                    <label for="Fullname" class="form-label">Fullname</label>
+                    <input type="text" class="form-control" name="Fullname" placeholder="Fullname">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="PhoneN" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" name="PNumber">
+                </div>
+
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" name="Address" placeholder="1234 Main St">
+                </div>
+
+                <button class="btn btn-primary" id="Register" onclick="register()">Register</button>
+                
+                </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#SignIn" data-bs-toggle="modal">Sign In</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+    <!-- Login end -->
+
+    <!-- Events Start -->
     <div class="container py-5">
         <div class="row g-5">
-            <!-- Blog list Start -->
+            <!-- Events list Start -->
             <div class="col-lg-8">
 
                 <div class="blog-item mb-5">
@@ -123,14 +227,15 @@
                         <div class="col-12 col-sm-5 h-100">
                             <img class="img-fluid h-100" src="img/vaccination.jpg" style="object-fit: cover;">
                         </div>
+
                         <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                             <div class="p-4">
                                 <div class="d-flex mb-3">
                                     <small><i class="bi bi-calendar-date me-2"></i>01 June, 2023</small>
                                 </div>
                                 <h5 class="text-uppercase mb-3">Pet Vaccination</h5>
-                                <p>Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag.</p>
-                                <a class="text-primary text-uppercase" id="vaccination">Read More<i class="bi bi-chevron-right"></i></a>
+                                <p class="fw-lighter lh-lg">Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag.</p>
+                                <a class="text-primary text-uppercase" role="button" data-bs-toggle="modal"  data-bs-target="#myModal" aria-expanded="false"  id="vaccination">More<i class="bi bi-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -138,7 +243,7 @@
 
               
             </div>
-            <!-- Blog list End -->
+            <!-- Events list End -->
 
             <!-- Sidebar Start -->
             <div class="col-lg-4">
@@ -159,17 +264,21 @@
                 <!-- Recent Post End -->
 
                 <!-- The Modal -->
-                <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
+                <div class="modal fade" id="myModal" aria-hidden="true" aria-labelledby="myModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="myModal">Modal 1</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
                     <p>April 20, 2023 - PET VACCINATION 🐶🐱🐾 <br>
                         Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag. <br> <br>
-                        Para sa mga nais mabakunahan ng Anti-Rabies vaccine ang kanilang mga alagang aso at pusa, magsadya lamang po sa PawPark Gl. ng SM Baliwag, 10:00am hanggang 5:00pm.</p>
-                </div>
-
-                </div>
+                        Para sa mga nais mabakunahan ng Anti-Rabies vaccine ang kanilang mga alagang aso at pusa, magsadya lamang po sa PawPark Gl. ng SM Baliwag, 10:00am hanggang 5:00pm.</p>         
+                    </div>
+                    </div>
+                      </div>
+                 </div>
                 <!-- Modal end -->
                 
                 <!-- Image Start -->
@@ -182,11 +291,11 @@
             <!-- Sidebar End -->
         </div>
     </div>
-    <!-- Blog End -->
+    <!-- Events End -->
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-light mt-5 py-5">
+    <div class="footer container-fluid bg-light mt-5 py-5">
         <div class="container pt-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
@@ -194,7 +303,8 @@
                     <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>AgriCoop Building, Baliwag Government Complex, DRT Highway, Baliuag, Philippines</p>
                     <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>baliwag.gov.ph</p>
                     <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0923 304 7360</p>
-              </div>
+                </div>
+
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
                     <div class="d-flex flex-column justify-content-start">
@@ -202,38 +312,19 @@
                         <a class="text-body mb-2" href="about.php"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
                         <a class="text-body mb-2" href="service.php"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
                         <a class="text-body mb-2" href="Petforadoption.php"><i class="bi bi-arrow-right text-primary me-2"></i>Pet for adoption</a>
-                        <a class="text-body mb-2" href="blog.php"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                        <a class="text-body" href="contact.php"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>                    </div>
+                        <a class="text-body" href="contact.php"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>                   
+                        <a class="text-body mb-2" href="Admindashboard/Dashboard.php"><i class="bi bi-arrow-right text-primary me-2"></i>Admin Dashboard link sample</a>
                     </div>
-                </div>
-
-                    <h6 class="text-uppercase mt-4 mb-3">Follow Us</h6>
-                    <div class="d-flex">
-                        <a class="btn btn-outline-primary btn-square me-2" href="https://www.facebook.com/baliwagvetservice"><i class="bi bi-facebook"></i></a>
                     </div>
-                </div>
+               
+            </div>
+        </div>
+    </div>  
     <!-- Footer End -->
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    
-    <script>
-        const openButton = document.querySelector("[data-open-modal]")
-        const modal = document.querySelector("[data-modal]")
-        
-        openButton.addEventListener("click", () =>{
-        modal.showModal()
-        })
-        
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
+  <!-- Template Javascript --> 
     <script src="js/main.js"></script>
 </body>
-
-</html>

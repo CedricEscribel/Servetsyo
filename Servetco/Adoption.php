@@ -33,7 +33,7 @@
                 <a href="about.php" class="nav-item nav-link">About</a>
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
-                <a href="Pet_needs.php" class="nav-item nav-link">Pet needs</a>
+                <a href="Events.php" class="nav-item nav-link">Events</a>
                 <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
           </div>
         </div>
@@ -41,6 +41,7 @@
     <!-- Navbar End -->
 
     <!-- Login -->
+<div class="login">
     <div class="modal fade" id="SignIn" aria-hidden="true" aria-labelledby="SignInLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -168,6 +169,7 @@
             </div>
             </form>
         </dialog>
+</div>
     <!-- login end -->
 
 <!-- Adoption form start -->
@@ -178,7 +180,7 @@
                     <div class="user-details">
                     <div class="input-box">
                         <span class="details">Full Name</span>
-                        <input type="text" placeholder="Enter your name" required>
+                        <input type="text" id="Fullname" placeholder="Enter your name" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Address</span>
@@ -282,7 +284,8 @@
                             <input type="text" placeholder="Preffered date and time for virtual meet" required>
                         </div>
                         </div>
-                 <form action="#">  
+                        
+                 <form action="#" onclick="submit()">  
                     <div class="button">
                         <input type="submit" value="Submit Form">
                     </div>
@@ -325,6 +328,16 @@
         </div>
     </div>  
     <!-- Footer End -->
+
+       <!-- The core Firebase JS SDK is always required and must be listed first -->
+       <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+
 
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

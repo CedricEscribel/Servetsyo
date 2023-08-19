@@ -34,7 +34,7 @@
                 <a href="about.php" class="nav-item nav-link">About</a>
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
-                <a href="Pet_needs.php" class="nav-item nav-link">Pet needs</a>
+                <a href="Events.php" class="nav-item nav-link">Events</a>
                 <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
           </div>
         </div>

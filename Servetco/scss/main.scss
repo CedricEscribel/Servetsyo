@@ -305,3 +305,17 @@ p{
         max-width: 50%;
         margin-left: 25%;
     }
+
+    // Pet for adoption
+    .Dog-details{
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: repeat(4, auto);
+    }
+
+    .Dogpic{
+      margin: 5px;
+    }

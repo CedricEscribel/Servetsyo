@@ -204,7 +204,7 @@
                     <div>
                         <h5 class="text-uppercase mb-3">Pet Rescue</h5>
                         <p>Send a rescue form</p>
-                        <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                        <a class="text-primary text-uppercase" href="services/Rescue.php">Read More<i class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>

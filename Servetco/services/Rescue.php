@@ -1,12 +1,4 @@
-<?php 
 
-require_once 'phpconfig/Schedule.php';
-
-$sql = "SELECT * FROM schedule";
-$all_schedule = $con->query($sql);
-
-
-?>
 
 <head>
     <meta charset="utf-8">
@@ -17,21 +9,21 @@ $all_schedule = $con->query($sql);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
 
-    <link rel="stylesheet" href="css/Schedule.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/Schedule.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
     <!-- Navbar Start -->
     <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
         <a href="index.php" class="navbar-brand ms-lg-5" style="color: #378ACA; font-weight: bold; ">
-           <img src="img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
+           <img src="../img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
            SERVETSYO
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -39,11 +31,11 @@ $all_schedule = $con->query($sql);
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.php" class="nav-item nav-link active">Home</a>
-                <a href="about.php" class="nav-item nav-link">About</a>
-                <a href="service.php" class="nav-item nav-link">Service</a>
-                <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
-                <a href="Events.php" class="nav-item nav-link">Events</a>
+                <a href="../index.php" class="nav-item nav-link active">Home</a>
+                <a href="../about.php" class="nav-item nav-link">About</a>
+                <a href="../service.php" class="nav-item nav-link">Service</a>
+                <a href="../Petforadoption.php" class="nav-item nav-link">adoption</a>
+                <a href="../Events.php" class="nav-item nav-link">Events</a>
                 <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
           </div>
         </div>
@@ -184,7 +176,7 @@ $all_schedule = $con->query($sql);
 
 <!-- Schedule form start -->
     <div class="Schedule-form">
-          <h1>Schedule Request</h1>
+          <h1>Rescure Request Details</h1>
 
         <form method="post" action="phpconfig/Schedule.php">
           <div class="form">
@@ -194,27 +186,14 @@ $all_schedule = $con->query($sql);
           <label for="Number">Number:</label>
           <input type="text" id="number" name="PhoneNum" placeholder="Your Number:">
 
+          <h2>Click to Display location in map</h2>
+            <button type="button" onclick="getlocation();">
+              Current Position
+            </button><br><br>
+            <div id="demo2" style="width: 500px; height: 500px"></div>
 
-            
-          <label for="Number">Sched:</label>
-          <input type="text" id="number" name="Sched" placeholder="Your Number:">
-          <!-- <div class="form-group">
-            <label for="Sched">Schedule For:</label>
-            <select id="Schedule" name="Sched" required>
-              <option value="">-- Schedule For --</option>
-              <option value="Vaccination">Vaccination</option>
-              <option value="Neuter">Neuter</option>
-            </select>
-          </div> -->
-  
-          <label for="date">Date:</label>
-          <input type="text" id="date" name="Date" placeholder="Preferred date">
-  
-          <label for="time">Time:</label>
-          <input type="text" id="time" name="Time" placeholder="Preferred time">
-  
-          <label for="message">Message:</label>
-          <textarea id="message" name="Message" placeholder="Additional details"></textarea>
+          <label for="Details">Details:</label>
+          <textarea id="Details" name="Details" placeholder="Additional details"></textarea>
 
           <input type="submit"   name="Save" value="Submit">
           </div>
@@ -255,5 +234,57 @@ $all_schedule = $con->query($sql);
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
   <!-- Template Javascript --> 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
+
+    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+ function getlocation() {
+ if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(showLoc, errHand);
+ }
+ }
+ function showLoc(pos) {
+ latt = pos.coords.latitude;
+ long = pos.coords.longitude;
+ var lattlong = new google.maps.LatLng(latt, long);
+ var OPTions = {
+  center: lattlong,
+  zoom: 15,
+  mapTypeControl: true,
+  navigationControlOptions: {
+  style: google.maps.NavigationControlStyle.SMALL,
+  },
+ };
+ var mapg = new google.maps.Map(
+  document.getElementById("demo2"),
+  OPTions
+ );
+ var markerg = new google.maps.Marker({
+  position: lattlong,
+  map: mapg,
+  title: "You are here!",
+ });
+ }
+ function errHand(err) {
+ switch (err.code) {
+  case err.PERMISSION_DENIED:
+  result.innerHTML =
+   "The application doesn't have the permission" +
+   "to make use of location services";
+  break;
+  case err.POSITION_UNAVAILABLE:
+  result.innerHTML = "The location of the device is uncertain";
+  break;
+  case err.TIMEOUT:
+  result.innerHTML = "The request to get user location timed out";
+  break;
+  case err.UNKNOWN_ERROR:
+  result.innerHTML =
+   "Time to fetch location information exceeded" +
+   "the maximum timeout interval";
+  break;
+ }
+ }
+</script>
 </body>

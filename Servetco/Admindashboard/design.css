@@ -101,11 +101,22 @@ a.head-dash{
   align-items: center;
 }
 
-.Detail .text{
-  text-align: center;
-
+.card-body{
+  display: flex;
+  flex-direction: column;
+}
+ 
+.card-body .Details{
+  margin-bottom: 5px;
 }
 
+.card-body text{
+ text-align: center ;
+}
+
+.img_prv{
+  margin-left: 10px;
+}
 /* Medical reports */
 
 

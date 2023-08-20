@@ -12279,4 +12279,11 @@ form .button input:hover {
 
 .Dogpic {
   margin: 5px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */

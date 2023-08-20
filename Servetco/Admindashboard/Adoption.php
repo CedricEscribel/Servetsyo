@@ -1,3 +1,13 @@
+<?php 
+
+require_once '../phpconfig/Dogs.php';
+
+$sql = "SELECT * FROM dogs_details";
+$all_dogs_details = $con->query($sql);
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,30 +40,35 @@
 
 	  		<span class="border">
 				<div class="card" >
-				<form enctype="multipart/form-data">
+				<form class="img_prv" enctype="multipart/form-data">
             <input type="file" id="image-file" name="image" accept="image/*" style="display: none">
             <div class="image-preview">
               <img src="../Dogs sample/sample dog.jpg" alt="Upload Dog Picture" id="image-preview">
               <a href="#" id="choose-file-btn">Choose File</a>
             </div>
         </form>
-					<div class="card-body">
-					<div class="Details">
-              <textarea rows="4" cols="23" id="message" name="message" placeholder="Additional details"></textarea>
-				</div>
 
+      <form method="post" action="../phpconfig/Dogs.php">
+				<div class="card-body">
+        <div class="Details">
+            <textarea rows="4" cols="23" id="message" name="message" placeholder="Additional details"></textarea>
+			  </div>
 				<div class="Details">
-				<input type="text" placeholder="Breed"  required>
+				  <input type="text" name="Name" placeholder="Name"  required>
 				</div>
 				<div class="Details">
-				<input type="text" placeholder="Age"  required>
+			  	<input type="text" name="Age" placeholder="Age"  required>
 				</div>
 				<div class="Details">
-				<input type="text" placeholder="Days in poud"  required>
+				  <input type="text" name="Days" placeholder="Days in poud"  required>
+				</div>	
+        
+			  	<input type="submit" name="save" value="Upload">
 				</div>
-				<input type="submit" value="Upload">
-					</div>
+      </form>
+
 				</div>
+        
 			</span>
       <!-- Upload dog for adoption -->
 
@@ -62,42 +77,27 @@
               <h2>Dogs For adoption</h2>
             </div>
               <div class="grid">
+
+              <!-- while($row = mysqli_fetch_assoc($all_dogs_details)){ -->
+            <?php
+            while ($row = $all_dogs_details->fetch_assoc()) {
+            ?>
+
               <div class="Dog-details">
                   <div class="image-preview">
-                    <img src="/Dogs sample/sample dog.jpg" alt="Image Preview" id="image-preview">
+                    <img src="" alt="Image Preview" id="image-preview">
                   </div>
                   <div class="Details">
-                    <h2>Dog name</h2>
-                    <p>Sample dogs</p>
+                    <h2><?php echo $row["Name"] ?></h2>
+                    <p><?php echo $row["Age"] ?></p>                    
+                    <p><?php echo $row["Days"] ?></p>                    
+                    <p><?php echo $row["message"] ?></p>                    
                   </div>
               </div>
-              <div class="Dog-details">
-                <div class="image-preview">
-                  <img src="/Dogs sample/sample dog.jpg" alt="Image Preview" id="image-preview">
-                </div>
-                <div class="Details">
-                  <h2>Dog name</h2>
-                  <p>Sample dogs</p>
-                </div>
-            </div>
-            <div class="Dog-details">
-              <div class="image-preview">
-                <img src="/Dogs sample/sample dog.jpg" alt="Image Preview" id="image-preview">
-              </div>
-              <div class="Details">
-                <h2>Dog name</h2>
-                <p>Sample dogs</p>
-              </div>
-          </div>
-          <div class="Dog-details">
-            <div class="image-preview">
-              <img src="/Dogs sample/sample dog.jpg" alt="Image Preview" id="image-preview">
-            </div>
-            <div class="Details">
-              <h2>Dog name</h2>
-              <p>Sample dogs</p>
-            </div>
-          </div>   
+
+              <?php
+            }
+               ?>
         </div>
       </div>
       <!-- Body design -->

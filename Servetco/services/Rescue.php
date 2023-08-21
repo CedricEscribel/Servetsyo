@@ -1,4 +1,12 @@
+<?php 
 
+require_once '../phpconfig/Schedule.php';
+
+$sql = "SELECT * FROM schedule";
+$all_schedule = $con->query($sql);
+
+
+?>
 
 <head>
     <meta charset="utf-8">
@@ -22,7 +30,7 @@
 <body>
     <!-- Navbar Start -->
     <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="index.php" class="navbar-brand ms-lg-5" style="color: #378ACA; font-weight: bold; ">
+        <a href="../index.php" class="navbar-brand ms-lg-5" style="color: #378ACA; font-weight: bold; ">
            <img src="../img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
            SERVETSYO
         </a>
@@ -31,7 +39,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="../index.php" class="nav-item nav-link active">Home</a>
+                <a href="../index.php" class="nav-item nav-link">Home</a>
                 <a href="../about.php" class="nav-item nav-link">About</a>
                 <a href="../service.php" class="nav-item nav-link">Service</a>
                 <a href="../Petforadoption.php" class="nav-item nav-link">adoption</a>
@@ -176,7 +184,7 @@
 
 <!-- Schedule form start -->
     <div class="Schedule-form">
-          <h1>Rescure Request Details</h1>
+          <h1>Rescue Request Details</h1>
 
         <form method="post" action="phpconfig/Schedule.php">
           <div class="form">
@@ -187,6 +195,7 @@
           <input type="text" id="number" name="PhoneNum" placeholder="Your Number:">
 
           <h2>Click to Display location in map</h2>
+          <div id="location"></div>
             <button type="button" onclick="getlocation();">
               Current Position
             </button><br><br>
@@ -195,7 +204,7 @@
           <label for="Details">Details:</label>
           <textarea id="Details" name="Details" placeholder="Additional details"></textarea>
 
-          <input type="submit"   name="Save" value="Submit">
+			  	<input type="submit" name="save" value="Upload">
           </div>
         </form>
       </div>
@@ -244,6 +253,7 @@
   navigator.geolocation.getCurrentPosition(showLoc, errHand);
  }
  }
+ 
  function showLoc(pos) {
  latt = pos.coords.latitude;
  long = pos.coords.longitude;

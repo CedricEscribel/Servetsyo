@@ -250,7 +250,7 @@ if(isset($_POST['submit'])){
                     <div>
                         <h5 class="text-uppercase mb-3">Adoption Form</h5>
                         <p>Fill out the form to adopt</p>
-                        <a class="text-primary text-uppercase" href="Adoption.php">Adoption form<i class="bi bi-chevron-right"></i></a>
+                        <a class="text-primary text-uppercase" href="services/Adoption.php">Adoption form<i class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -259,7 +259,7 @@ if(isset($_POST['submit'])){
                     <div>
                         <h5 class="text-uppercase mb-3">Schedule form</h5>
                         <p>Application form for Vaccination and Kapon</p>
-                        <a class="text-primary text-uppercase" href="schedule.php">Read More<i class="bi bi-chevron-right"></i></a>
+                        <a class="text-primary text-uppercase" href="services/schedule.php">Read More<i class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -268,8 +268,8 @@ if(isset($_POST['submit'])){
                 <div class="service-item bg-light d-flex p-4">
                     <div>
                         <h5 class="text-uppercase mb-3">Pet Rescue</h5>
-                        <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                        <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                        <p>Send a rescue form</p>
+                        <a class="text-primary text-uppercase" href="services/Rescue.php">Read More<i class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -295,12 +295,12 @@ if(isset($_POST['submit'])){
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-body mb-2" href="index.php"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                        <a class="text-body mb-2" href="about.php"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                        <a class="text-body mb-2" href="service.php"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                        <a class="text-body mb-2" href="Petforadoption.php"><i class="bi bi-arrow-right text-primary me-2"></i>Pet for adoption</a>
-                        <a class="text-body" href="contact.php"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>                   
-                        <a class="text-body mb-2" href="Admindashboard/Dashboard.php"><i class="bi bi-arrow-right text-primary me-2"></i>Admin Dashboard link sample</a>
+                        <a class="text-body mb-2" href="../index.php"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                        <a class="text-body mb-2" href="../about.php"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                        <a class="text-body mb-2" href="../service.php"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                        <a class="text-body mb-2" href="../Petforadoption.php"><i class="bi bi-arrow-right text-primary me-2"></i>Pet for adoption</a>
+                        <a class="text-body" href="../contact.php"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>                   
+                        <a class="text-body mb-2" href="../Admindashboard/Dashboard.php"><i class="bi bi-arrow-right text-primary me-2"></i>Admin Dashboard link sample</a>
                     </div>
                     </div>
                

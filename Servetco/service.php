@@ -186,7 +186,7 @@
                     <div>
                         <h5 class="text-uppercase mb-3">Adoption Form</h5>
                         <p>Fill out the form to adopt</p>
-                        <a class="text-primary text-uppercase" href="Adoption.php">Adoption form<i class="bi bi-chevron-right"></i></a>
+                        <a class="text-primary text-uppercase" href="services/Adoption.php">Adoption form<i class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -195,7 +195,7 @@
                     <div>
                         <h5 class="text-uppercase mb-3">Schedule form</h5>
                         <p>Application form for Vaccination and Kapon</p>
-                        <a class="text-primary text-uppercase" href="schedule.php">Read More<i class="bi bi-chevron-right"></i></a>
+                        <a class="text-primary text-uppercase" href="services/schedule.php">Read More<i class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>

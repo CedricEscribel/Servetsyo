@@ -178,6 +178,7 @@ $all_schedule = $con->query($sql);
             </form>
         </dialog>
     </div>
+  
     <!-- login end -->
 
 <!-- Schedule form start -->

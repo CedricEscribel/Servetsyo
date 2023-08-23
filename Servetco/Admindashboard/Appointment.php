@@ -1,3 +1,13 @@
+<?php 
+
+require_once '../phpconfig/schedule.php';
+
+$sql = "SELECT * FROM schedule";
+$all_schedule = $con->query($sql);
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +46,24 @@
 				  </tr>
 				</thead>
 				<tbody>
+
+				<tr>
+				<!-- while($row = mysqli_fetch_assoc($all_dogs_details)){ -->
+					<?php
+						while ($row = $all_schedule->fetch_assoc()) {
+						?>
+
+								<td><?php echo $row["id"] ?><td>
+								<td><?php echo $row["FullN"] ?></td>
+								<td><?php echo $row["PhoneNum"] ?></td>                    
+								<td><?php echo $row["Sched"] ?></td>                    
+								<td><?php echo $row["Message"] ?></td>                    
+				
+
+						<?php
+						}
+						?>
+						</tr>
 				  <tr>
 					<td>01</td>
 					<td>Same David</td>
@@ -48,45 +76,7 @@
 						  <option value="Done">Done</option>
 						</select>
 						</td>
-				  </tr>
-					<td>02</td>
-					<td>Balbina Kherr</td>
-					<td>Neuter For cats</td>
-					<td>03-24-22</td>
-					<td><label for="approval"></label>
-						<select id="approval">
-						  <option value="pending">Pending</option>
-						  <option value="approved">Approved</option>
-						  <option value="Done">Done</option>
-						</select>
-						</td>
-				  </tr>
-				  <tr>
-					<td>03</td>
-					<td>Badan John</td>
-					<td>Spay (dogs)</td>
-					<td>03-24-22</td>
-					<td><label for="approval"></label>
-						<select id="approval">
-						  <option value="pending">Pending</option>
-						  <option value="approved">Approved</option>
-						  <option value="Done">Done</option>
-						</select>
-						</td>
-				  </tr>
-				  <tr>
-					<td>04</td>
-					<td>Sara David</td>
-					<td>Spay (cats)</td>
-					<td>03-24-22</td>
-					<td><label for="approval"></label>
-						<select id="approval">
-						  <option value="pending">Pending</option>
-						  <option value="approved">Approved</option>
-						  <option value="Done">Done</option>
-						</select>
-						</td>
-				  </tr>
+				  </tr>		
 				 
 				</tbody>
 			  </table>

@@ -1,3 +1,13 @@
+<?php 
+
+require_once '../phpconfig/events.php';
+
+$sql = "SELECT * FROM events";
+$all_events = $con->query($sql);
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,25 +41,35 @@
               <a href="#" id="choose-file-btn">Choose File</a>
             </div>
           </form>
-
+          <form method="post" action="../phpconfig/events.php">
             <div class="card-body Imgprev">
-              <textarea rows="1" cols="25" id="message" name="message" placeholder="Events"></textarea>
-              <textarea rows="4" cols="25" id="message" name="message" placeholder="Events details"></textarea>
-              <a href="#" class="btn btn-primary">Upload Events</a>
+              <textarea rows="1" cols="25" id="message" name="EventName" placeholder="Events"></textarea>
+              <textarea rows="4" cols="25" id="message" name="Details" placeholder="Events Details"></textarea>
+              <input type="submit" name="save" value="Upload">          
           </div>
+          </form>
         </div>
       </div>
 
       <div class="Announcements">
 
-    <div class="card" style="width: 18rem;">
-     <img src="../img/Neuter.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-     </div>
-    </div>
+
+      <?php
+            while ($row = $all_events->fetch_assoc()) {
+            ?>
+
+            <div class="card" style="width: 18rem;">
+            <img src="../img/Neuter.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $row["EventName"] ?></h5>
+                <p class="card-text"> <p><?php echo $row["Details"] ?></p></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+
+              <?php
+            }
+               ?>
 
     <div class="card" style="width: 18rem;">
      <img src="../img/Neuter.jpg" class="card-img-top" alt="...">

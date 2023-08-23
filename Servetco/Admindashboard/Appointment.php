@@ -40,44 +40,38 @@ $all_schedule = $con->query($sql);
 				  <tr>
 					<th>ID</th>
 					<th>Name</th>
-					<th>Schedule Type</th>
+					<th>Contact Number</th>
+					<th>Appointment</th>
 					<th>Date</th>
+					<th>Note</th>
 					<th>Status</th>
 				  </tr>
 				</thead>
 				<tbody>
 
-				<tr>
-				<!-- while($row = mysqli_fetch_assoc($all_dogs_details)){ -->
+
 					<?php
 						while ($row = $all_schedule->fetch_assoc()) {
 						?>
-
-								<td><?php echo $row["id"] ?><td>
+							<tr>
+								<td><?php echo $row["id"] ?></td>
 								<td><?php echo $row["FullN"] ?></td>
 								<td><?php echo $row["PhoneNum"] ?></td>                    
-								<td><?php echo $row["Sched"] ?></td>                    
-								<td><?php echo $row["Message"] ?></td>                    
-				
+								<td><?php echo $row["Sched"] ?></td>  
+								<td><?php echo $row["Date"] ?></td>                      
+								<td><?php echo $row["Message"] ?></td>     
+								<td><label for="approval"></label>
+								<select id="approval">
+								<option value="pending">Pending</option>
+								<option value="approved">Approved</option>
+								<option value="Done">Done</option>
+								</select>               
+						</tr>				
 
 						<?php
 						}
 						?>
-						</tr>
-				  <tr>
-					<td>01</td>
-					<td>Same David</td>
-					<td>Neuter For dogs</td>
-					<td>03-24-22</td>
-					<td><label for="approval"></label>
-						<select id="approval">
-						  <option value="pending">Pending</option>
-						  <option value="approved">Approved</option>
-						  <option value="Done">Done</option>
-						</select>
-						</td>
-				  </tr>		
-				 
+				
 				</tbody>
 			  </table>
 			</div>

@@ -1,34 +1,13 @@
-<?php
+<?php 
 
-@include 'config.php';
+require_once 'phpconfig/events.php';
 
-if(isset($_POST['submit'])){
+$sql = "SELECT * FROM events";
+$all_events = $con->query($sql);
 
-    $Fullname = mysqli_real_escape_string($conn, $_POST['Fullname']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $pass = md5($_POST['password']);
-    $Phone = mysqli_real_escape_string($conn, $_POST['PNumber']);
-    $Address = mysqli_real_escape_string($conn, $_POST['Address']);
- 
-    $select = " SELECT * FROM user WHERE email = '$email' && password = '$pass' ";
- 
-    $result = mysqli_query($conn, $select);
- 
-    if(mysqli_num_rows($result) > 0){
- 
-       $error[] = 'user already exist!';
- 
-    }else{
- 
-
-          $insert = "INSERT INTO user(Fullname, email, password, PhoneNum, Address) VALUES('$name','$email','$pass', '$Phone', '$Address')";
-          mysqli_query($conn, $insert);
-          
-    }
- 
- };
 
 ?>
+
 
 <head>
     <meta charset="utf-8">
@@ -173,6 +152,10 @@ if(isset($_POST['submit'])){
                 <h1 class="display-5 text-uppercase mb-0">Updates and Upcomming Event</h1>
             </div>
 
+            <?php
+            while ($row = $all_events->fetch_assoc()) {
+            ?>
+
             <div class="row g-5">
                 <div class="col-lg-6">
                     <div class="blog-item">
@@ -185,14 +168,19 @@ if(isset($_POST['submit'])){
                                     <div class="d-flex mb-3">
                                         <small><i class="bi bi-calendar-date me-2"></i>15 May, 2023</small>
                                     </div>                 
-                                    <h5 class="text-uppercase mb-3">13th Low Cost Kapon</h5>
-                                    <p class="fw-lighter lh-lg">13th Low Cost Kapon in Baliuag, Bulacan Location: Washko Laundromat, 63 F. Vergel De Dios St, Brgy. Concepcion</p>
+                                    <h5 class="text-uppercase mb-3"><?php echo $row["EventName"] ?></h5>
+                                    <p class="fw-lighter lh-lg"><?php echo $row["Details"] ?></p>
                                     <a class="text-primary text-uppercase" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fforms.gle%2F4m6FvVChFTxtPoHm9%3Ffbclid%3DIwAR3xj5e0hR-kuXnxKnS2giQjzsbcyV6q1fA0Er1zqqujdvLCiWS8Fitu7Q4&h=AT0OU1gD8HZPdgAM-NZDqG94GpwNg29EQIHwH2NLy2TSbc0T54MWvYEHvpwbgVlm14by8fgQS4EMMqF6g768U5TBUPmkULwVhmnfbGVJcRIBcLacTb-JYc38WmqMAX2Av0nv8VcYgq_AmlSQzokh&__tn__=-UK-y-R&c[0]=AT36xcGpUFt4j6GH0i1o4nb9hMprsVkZTJr7aALXl_3Vrr7zKwbDLKj01AQeA4j31oD6Me6AtkRKxV7p8Hj9IDl6IsnLYrAig8-RrSCXqHEeX4hX4HmAOrprx_2HsJue41phrr_w87LFAnh_tOlFrpxQ7fgoCq4KXQ3Troao0n_cpPXElAG4T8aqZZWRgoNfUEIJgEtqkIGdmVUdfp-JiB4L29h9ZGYd4k3V">Register here<i class="bi bi-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <?php
+            }
+               ?>
+
                 <div class="col-lg-6">
                     
                     <div class="blog-item">

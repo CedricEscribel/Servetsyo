@@ -1,3 +1,13 @@
+<?php 
+
+require_once '../phpconfig/Dogs.php';
+
+$sql = "SELECT * FROM dogs_details";
+$all_dogs_details = $con->query($sql);
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,53 +39,27 @@
               <th>ID</th> 
               <th>Name</th>
               <th>Date in</th>
-              <th>Breed</th>
+              <th>Age</th>
               <th>Location</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>01</td>
-              <td>Dog1</td>
-              <td>03-24-22</td>
-              <td>Askal</td>
-              <td>Baliuag</td>
-            </tr>
-            <tr>
-              <td>01</td>
-              <td>Dog1</td>
-              <td>03-24-22</td>
-              <td>Askal</td>
-              <td>Baliuag</td>
-            </tr>
-            <tr>
-              <td>01</td>
-              <td>Dog1</td>
-              <td>03-24-22</td>
-              <td>Askal</td>
-              <td>Baliuag</td>
-            </tr>
-            <tr>
-              <td>01</td>
-              <td>Dog1</td>
-              <td>03-24-22</td>
-              <td>Askal</td>
-              <td>Baliuag</td>
-            </tr>
-            <tr>
-              <td>01</td>
-              <td>Dog1</td>
-              <td>03-24-22</td>
-              <td>Askal</td>
-              <td>Baliuag</td>
-            </tr>
-            <tr>
-              <td>01</td>
-              <td>Dog1</td>
-              <td>03-24-22</td>
-              <td>Askal</td>
-              <td>Baliuag</td>
-            </tr>
+
+          <?php
+						while ($row = $all_dogs_details->fetch_assoc()) {
+						?>
+							<tr>
+								<td><?php echo $row["id"] ?></td>
+								<td><?php echo $row["Name"] ?></td>
+								<td><?php echo $row["Days"] ?></td>                    
+								<td><?php echo $row["Age"] ?></td>                   
+								<td><?php echo $row["message"] ?></td>                 
+						</tr>				
+
+						<?php
+						}
+						?>
+
           </tbody>
         </table>
       </div>

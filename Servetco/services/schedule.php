@@ -209,7 +209,7 @@ $all_schedule = $con->query($sql);
           <label for="time">Time:</label>
           <input type="text" id="time" name="Time" placeholder="Preferred time">
   
-          <label for="message">Message:</label>
+          <label for="message">Note:</label>
           <textarea id="message" name="Message" placeholder="Additional details"></textarea>
             </div>
           <input type="submit"   name="save" value="Submit">

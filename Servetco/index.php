@@ -255,7 +255,7 @@ $all_events = $con->query($sql);
             <div class="col-md-6">
                 <div class="service-item bg-light d-flex p-4">
                     <div>
-                        <h5 class="text-uppercase mb-3">Pet Rescue</h5>
+                        <h5 class="text-uppercase mb-3">Animal Rescue</h5>
                         <p>Send a rescue form</p>
                         <a class="text-primary text-uppercase" href="services/Rescue.php">Read More<i class="bi bi-chevron-right"></i></a>
                     </div>

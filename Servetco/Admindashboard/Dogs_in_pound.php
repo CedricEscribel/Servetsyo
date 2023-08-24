@@ -35,12 +35,13 @@ $all_dogs_details = $con->query($sql);
         <h1>Dogs in pound</h1>
         <table class="table">
           <thead>
-            <tr>
+            <tr class="head" >
               <th>ID</th> 
               <th>Name</th>
               <th>Date in</th>
               <th>Age</th>
               <th>Location</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -53,7 +54,13 @@ $all_dogs_details = $con->query($sql);
 								<td><?php echo $row["Name"] ?></td>
 								<td><?php echo $row["Days"] ?></td>                    
 								<td><?php echo $row["Age"] ?></td>                   
-								<td><?php echo $row["message"] ?></td>                 
+								<td><?php echo $row["message"] ?></td>       
+                <td><label for="Status"></label>
+								<select id="Status">
+								<option value="Adopted">Adopted</option>
+								<option value="Euthanized">Euthanized</option>
+								<option value="Claimed">Claimed</option>
+								</select>              
 						</tr>				
 
 						<?php

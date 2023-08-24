@@ -213,7 +213,7 @@
     </div>
     </div>
     <!-- Services End -->
-
+ 
 
     <!-- Petneeds Start -->
     <!-- Need to be editable in admin side -->
@@ -221,15 +221,13 @@
         <div class="carousel-inner">
             <div class="carousel-item active ">
                 <div class="Pet-needs text-center">
-                    <h2>CATS & DOGS WISH LIST</h2>
+                    <h2>DONATIONS FOR RESCUED DOGS</h2>
                             <li>Dog food (kibble and canned)</li>
-                            <li>Cat food (kibble and canned)</li>
                             <li>Crates, carriers or cages</li>
                             <li>Pet diapers and pee pads</li>
-                            <li>Scratching posts for the cats</li>
                             <li>Chew toys for the dogs</li>
                             <li>Vaccines, medicine and vitamins</li>
-                            <li>Dog and cat treats</li>
+                            <li>Dog treats</li>
                             <li>Leashes, harnesses and collars</li>
                 </div>
             </div>

@@ -32,6 +32,8 @@ $all_schedule = $con->query($sql);
       <a href="Events.php"><i class="Updates"></i>Events</a>
     </div>
 
+
+	<!-- History report malilipat sa taas na button (Medical reports) -->
 		<section class="main">
 			<div class="Appointment">
 			  <h1>User List</h1>

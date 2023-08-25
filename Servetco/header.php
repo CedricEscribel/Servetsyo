@@ -1,10 +1,6 @@
 <?php
 
 echo '
-<meta charset="utf-8">
-<title>Agriculture </title>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-
 <!-- Icon Font Stylesheet -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">

@@ -10,6 +10,10 @@ $all_events = $con->query($sql);
 
 
 <head>
+<meta charset="utf-8">
+<title>Agriculture </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
     <?php include 'header.php';?>
 </head>
 
@@ -17,10 +21,9 @@ $all_events = $con->query($sql);
     
     <!-- Navbar Start -->
     <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="index.php" class="navbar-brand ms-lg-5" style="color: #378ACA; font-weight: bold; ">
-        <img src="img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
-        SERVETSYO
-        </a>
+    
+    <?php include 'navlogo.php';?>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -179,8 +182,8 @@ $all_events = $con->query($sql);
             
         </div>
     </div>
-</div>
-<!-- Services End -->
+    </div>
+    <!-- Services End -->
 
 
 

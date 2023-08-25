@@ -10,7 +10,7 @@ $all_schedule = $con->query($sql);
 
 <head>
     <meta charset="utf-8">
-    <title>Agriculture </title>
+    <title>Schedule </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Icon Font Stylesheet -->
@@ -182,12 +182,12 @@ $all_schedule = $con->query($sql);
     <!-- login end -->
 
 <!-- Schedule form start -->
-    <div class="Schedule-form">
+    <div class="Schedule_form">
           <h1>Schedule Request</h1>
 
         <form method="post" action="../phpconfig/Schedule.php">
           <div class="form">
-            <div>
+          
           <label for="name">Name:</label>
           <input type="text" id="name" name="FullN" placeholder="Your name">
   
@@ -211,7 +211,7 @@ $all_schedule = $con->query($sql);
   
           <label for="message">Note:</label>
           <textarea id="message" name="Message" placeholder="Additional details"></textarea>
-            </div>
+
           <input type="submit"   name="save" value="Submit">
           </div>
         </form>

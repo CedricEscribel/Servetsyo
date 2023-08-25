@@ -10,7 +10,7 @@ $all_schedule = $con->query($sql);
 
 <head>
     <meta charset="utf-8">
-    <title>Agriculture </title>
+    <title>Rescue </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Icon Font Stylesheet -->
@@ -30,10 +30,11 @@ $all_schedule = $con->query($sql);
 <body>
     <!-- Navbar Start -->
     <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="../index.php" class="navbar-brand ms-lg-5" style="color: #378ACA; font-weight: bold; ">
-           <img src="../img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
-           SERVETSYO
-        </a>
+    <a href="../index.php" class="navbar-brand ms-lg-5">
+        <img src="../img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
+        </a>    
+        <h2 style="margin-top: 18px; color: #378ACA; font-weight: bold;">SERVETSYO</h2>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -183,7 +184,7 @@ $all_schedule = $con->query($sql);
     <!-- login end -->
 
 <!-- Schedule form start -->
-    <div class="Schedule-form">
+    <div class="Schedule_form">
           <h1>Rescue Request Details</h1>
 
         <form method="post" action="phpconfig/Schedule.php">

@@ -20,10 +20,8 @@ $all_events = $con->query($sql);
 <body>
     
     <!-- Navbar Start -->
-    <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-    
+    <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">  
     <?php include 'navlogo.php';?>
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,16 +32,11 @@ $all_events = $con->query($sql);
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
                 <a href="Events.php" class="nav-item nav-link">Events</a>
-                <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
+                <a href="Login.php" class="nav-item nav-link">Login</a>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
-
-    <!-- Login -->
-    <?php include 'login.php';?>
-    <!-- Login end -->
-
 
     <!-- Header -->
     <section class="bg-img ">

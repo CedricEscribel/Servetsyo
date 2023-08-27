@@ -31,17 +31,11 @@ $all_dogs_details = $con->query($sql);
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link active">adoption</a>
                 <a href="Events.php" class="nav-item nav-link">Events</a>
-                <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
+                <a href="Login.php" class="nav-item nav-link">Login</a>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
-
-    <!-- Login -->
-    <?php include 'login.php';?>
-    <!-- Login end -->
-
-
           <!--Dog for adoption Start -->
 <div class="container-fluid py-5">
   <div class="container">

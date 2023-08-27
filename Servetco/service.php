@@ -22,18 +22,10 @@
                 <a href="service.php" class="nav-item nav-link active">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
                 <a href="Events.php" class="nav-item nav-link">Events</a>
-                <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
+                <a href="Login.php" class="nav-item nav-link">Login</a>
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
-
-    <!-- Login -->
-    <?php include 'login.php';?>
-    <!-- Login end -->
-
-
-
     <!-- Services Start -->
    <div class="container-fluid py-5">
     <div class="container">

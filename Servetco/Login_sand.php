@@ -1,3 +1,9 @@
+<?php
+
+require_once 'phpconfig/Login.php';
+
+?>
+
 
 <head>
 
@@ -23,11 +29,93 @@
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
                 <a href="Events.php" class="nav-item nav-link">Events</a>
-                <a href="Login.php" class="nav-item nav-link">Login</a>
+                <button class="my-Button" data-bs-target="#SignIn" data-bs-toggle="modal">Login</button>
         </div>
         </div>
     </nav>
     <!-- Navbar End -->
+
+    <!-- Login -->
+    <div class="login">
+<!-- Login -->
+<div class="modal fade" id="SignIn" aria-hidden="true" aria-labelledby="SignInLabel" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="SignInLabel">Sign In</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+
+    <form class="row g-3">
+          <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <button class="btn btn-primary" id="Login">Log In</button>
+        </form>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-bs-target="#Signup" data-bs-toggle="modal">Sign up</button>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Sign up -->
+    <div class="modal fade" id="Signup" aria-hidden="true" aria-labelledby="SignupLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="SignupLabel">Sign Up</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                    <form method="post" action="phpconfig/Login.php" class="row g-3">
+                            <div>
+                            <div class="col-12">
+                                <label for="Email" class="form-label">Email:</label>
+                                <input type="email" class="form-control" id="Email">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="Password" class="form-label">Password:</label>
+                                <input type="password" class="form-control" id="Password" name="Password">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="Fullname" class="form-label">Fullname:</label>
+                                <input type="text" class="form-control" id="Fullname" name="Fullname">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="PhoneNum" class="form-label">Phone Number:</label>
+                                <input type="text" class="form-control" id="Phone Number" name="PhoneNum" placeholder="09-------">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="Address" class="form-label">Address:</label>
+                                <input type="text" class="form-control" id="Address" name="Address" placeholder="Apartment, studio, or floor">
+                            </div>
+
+                            <input type="submit" name="save" value="Upload">
+                            </div>
+                            </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#SignIn" data-bs-toggle="modal">Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- Login end -->
    
 
  <!-- About Start -->
@@ -45,7 +133,7 @@
                         <h6 class="text-primary text-uppercase">About Us</h6>
                         <h1 class="display-5 text-uppercase mb-0">We Keep Your Pets Happy All Time</h1>
                     </div>
-                    <h4 class="text-body mb-4">To provide Baliwagenyos with free veterinary services especially to those who love animals.</h4>
+                    <h4 class="text-body mb-4">To psdrovide Baliwagenyos with free veterinary services especially to those who love animals.</h4>
                     <div class="bg-light p-4">
                         <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item w-50" role="presentation">

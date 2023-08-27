@@ -9,6 +9,6 @@ echo '
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Template Stylesheet -->
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="scss/main.css">
 ';
 ?>

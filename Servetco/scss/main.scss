@@ -6,6 +6,9 @@
 }
 
 
+  .navbar{
+    margin-right: 25px;
+  }
 
  /* Navigation bar */
  .navbar-light .navbar-nav .nav-link {
@@ -59,38 +62,6 @@
     }
 }
   
-
-.my-button {
-    /* Background and text color */
-    background-color: var(--primary);
-    color: #fff;
-  
-    /* Padding and border */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 15px;
-    min-width: 15%;
-    height: auto;
-    margin-left: 15px;
-
-
-    /* Text styling */
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-  
-    /* Hover effect */
-    transition: background-color 0.3s ease;
-  }
-  
-  .my-button:hover {
-    background-color: #00ff00;
-  }
-  
-  .my-button:active {
-    background-color: var(--primary);
-  }
 
 /* Body */
 

@@ -1,7 +1,7 @@
 <?php 
 
   include_once 'config.php';
-
+  session_start();
 
   if(isset($_POST['Upload']))
   {	 
@@ -13,6 +13,14 @@
      $sql = "INSERT INTO user (Email,Password,Fullname,Address,PhoneNum) 
      VALUES ('$Email','$Password','$Fullname','$Address','$PhoneNum')";
 
+    $EmailErr = $PasswordErr = $FullnameErr = $AddressErr = $PhoneNumErr="";
+    $Email = $Password = $Fullname = $Address = $PhoneNum ="";
+
+
+      // hashing the password
+      $Password = password_hash($Password, PASSWORD_DEFAULT);
+
+
     // insert in database 
       $Save = mysqli_query($con, $sql);
       if($Save)
@@ -23,4 +31,54 @@
 
   }
 
+// Sign up form
+  if(isset($_POST['Sign_up'])){
+
+    $Email = mysqli_real_escape_string($con, $_POST['Email']);
+    $Password = md5($_POST['Password']);
+    $Fullname = mysqli_real_escape_string($con, $_POST['Fullname']);
+    $Address = mysqli_real_escape_string($con, $_POST['Address']);
+    $PhoneNum = mysqli_real_escape_string($con, $_POST['PhoneNum']);
+
+    $select = " SELECT * FROM user WHERE Email = '$Email' && Password = '$Password' ";
+ 
+    $result = mysqli_query($con, $select);
+ 
+    if(mysqli_num_rows($result) > 0){
+ 
+       $error[] = 'user already exist!';
+ 
+    }else{
+
+          $insert = "INSERT INTO user(`Email`, `Password`, `Fullname`, `Address`, `PhoneNum`) VALUES('$Email','$Password','$Fullname','$Address', '$PhoneNum')";
+          mysqli_query($con, $insert);
+          header('location:../login.php');
+
+    }
+ 
+ };
+
+
+
+
+
+if(isset($_POST['Login'])){
+
+  $Email = mysqli_real_escape_string($con, $_POST['Email']);
+  $Password = md5($_POST['Password']);
+
+  $select = " SELECT * FROM user WHERE Email = '$Email' && Password = '$Password' ";
+
+   $result = mysqli_query($con, $select);
+
+   if(mysqli_num_rows($result) > 0){
+
+      $row = mysqli_fetch_array($result);
+      
+      die(header("Location: ../login.php"));
+    }else{
+      $error[] = 'incorrect email or password!';
+   }
+
+};
   ?>

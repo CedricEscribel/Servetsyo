@@ -100,7 +100,7 @@ require_once 'phpconfig/Login.php';
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" name="Email" placeholder="Enter your email" required>
+                <input type="email" name="Email" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>

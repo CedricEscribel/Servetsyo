@@ -40,15 +40,17 @@ $all_dogs_details = $con->query($sql);
 
 	  		<span class="border">
 				<div class="card" >
-				<form class="img_prv" enctype="multipart/form-data">
-            <input type="file" id="image-file" name="image" accept="image/*" style="display: none">
+        
+				<form class="img_prv" enctype="multipart/form-data" method="post" action="../phpconfig/Dogs.php">
+         
+        <div>
+        <input type="file" id="image-file" name="image" accept="image/*" style="display: none">
             <div class="image-preview">
-              <img src="../Dogs sample/sample dog.jpg" alt="Upload Dog Picture" id="image-preview">
+              <img src="../img/adoption.jpg" alt="Upload Dog Picture" id="image-preview">
               <a href="#" id="choose-file-btn">Choose File</a>
             </div>
-        </form>
+          </div>
 
-      <form method="post" action="../phpconfig/Dogs.php">
 				<div class="card-body">
         <div class="Details">
             <textarea rows="4" cols="23" id="message" name="message" placeholder="Additional details"></textarea>

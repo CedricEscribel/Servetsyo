@@ -116,6 +116,7 @@ a.head-dash{
 
 .img_prv{
   margin-left: 10px;
+  display: flex;
 }
 /* Medical reports */
 

@@ -13,9 +13,6 @@
      $sql = "INSERT INTO user (Email,Password,Fullname,Address,PhoneNum) 
      VALUES ('$Email','$Password','$Fullname','$Address','$PhoneNum')";
 
-    $EmailErr = $PasswordErr = $FullnameErr = $AddressErr = $PhoneNumErr="";
-    $Email = $Password = $Fullname = $Address = $PhoneNum ="";
-
 
       // hashing the password
       $Password = password_hash($Password, PASSWORD_DEFAULT);
@@ -43,11 +40,19 @@
     $select = " SELECT * FROM user WHERE Email = '$Email' && Password = '$Password' ";
  
     $result = mysqli_query($con, $select);
- 
+   
+     
+
+
     if(mysqli_num_rows($result) > 0){
- 
-       $error[] = 'user already exist!';
- 
+
+      $row = mysqli_fetch_assoc($result);
+      
+      if($Email==isset($row['Email']))
+      {
+            echo "email already exists";
+      }
+
     }else{
 
           $insert = "INSERT INTO user(`Email`, `Password`, `Fullname`, `Address`, `PhoneNum`) VALUES('$Email','$Password','$Fullname','$Address', '$PhoneNum')";

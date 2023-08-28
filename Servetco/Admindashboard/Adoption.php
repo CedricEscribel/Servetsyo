@@ -45,11 +45,15 @@ $all_dogs = $con->query($sql);
 				<form class="img_prv" enctype="multipart/form-data" method="POST" action="../phpconfig/Dogs.php">
          
          <div>
+         <div class="form-group">
+				<input class="form-control" type="file" name="image" value="" />
+			  </div>
+<!-- 
         <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
             <div class="image-preview">
               <img src="../img/adoption.jpg" alt="Upload Dog Picture" id="image-preview">
               <a href="#" id="choose-file-btn">Choose File</a>
-            </div>
+            </div> -->
           </div>
 
 				<div class="card-body">

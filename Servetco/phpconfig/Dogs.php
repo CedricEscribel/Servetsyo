@@ -16,7 +16,7 @@
 
       $DogImg = $_FILES["image"]["name"];
       $tempname = $_FILES["image"]["tmp_name"];
-      $folder = "./dogs/" . $DogImg;
+      $folder = "dogs/" . $DogImg;
 
      $sql = "INSERT INTO dogs(Name, DogInfo, Age, Gender, CatchLocation, DogImg) 
      VALUES ('$Name','$DogInfo','$Age','$Gender','$CatchLocation', '$DogImg')";
@@ -26,7 +26,6 @@
       if($Save)
       {
         die(header("Location: ../Admindashboard/Adoption.php"));
-        echo "Dogs Inserted";
       }
       
       // Now let's move the uploaded image into the folder: image

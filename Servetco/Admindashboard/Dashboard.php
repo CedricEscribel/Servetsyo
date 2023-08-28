@@ -7,16 +7,17 @@
 		<link rel="stylesheet"  href="design.css">
 </head>
 <body>
-	
+	<!-- Appointment, Dog catching, dogs in pound, adoption, animal rescue, user , announcement, event -->
 	<div class="sidenav">
 	<a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>
       <a href="Appointment.php"><i class="Appointment"></i>Appointment</a>
-      <a href="Adoption.php"><i class="Animals"></i>Adoption</a>
-      <a href="Medicalreports.php"><i class="Reports"></i>History</a>
+	  <a href="DogCatching.php"><i class="DogCatching"></i>Dog Catching</a>
+      <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in Pound</a>      
+	  <a href="Adoption.php"><i class="Animals"></i>Adoption</a>
+      <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
       <a href="Users.php"><i class="users"></i>Users</a>
-      <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in pound</a>
       <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-      <a href="Events.php"><i class="Updates"></i>Events</a>
+      <a href="Events.php"><i class="Updates"></i>Event</a>
     </div>
 
 
@@ -28,7 +29,18 @@
 
 		<div class="dashboard row ">
 
-			<span class="border border-3 border-dark-subtle">
+
+			<span class="border border-3 border-success-subtle">
+				<div class="card" style="width: 18rem;">
+					<img src="../img/spay.png" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h1 class="card-text">90</h1>
+					</div>
+				</div>
+					<h2>Appointment</h2>
+			</span>		
+			
+			<span class="border border-3 border-success-subtle">
 				<div class="card " style="width: 18rem;">
 					<img src="../img/catching.png" class="card-img-top" alt="...">
 					<div class="card-body">
@@ -38,37 +50,7 @@
 					<h2>Dog catching</h2>
 			</span>
 
-			<span class="border border-3 border-dark-subtle">
-				<div class="card" style="width: 18rem;">
-					<img src="../img/spay.png" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h1 class="card-text">90</h1>
-					</div>
-				</div>
-					<h2>Appointment</h2>
-			</span>
-
-			<span class="border border-3 border-dark-subtle">
-				<div class="card" style="width: 18rem;">
-					<img src="../img/adoption.jpg" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h1 class="card-text">90</h1>
-					</div>
-				</div>
-					<h2>Adoption</h2>
-			</span>
-
-			<span class="border border-3 border-dark-subtle">
-				<div class="card" style="width: 18rem;">
-					<img src="../img/medical.png" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h1 class="card-text">90</h1>
-					</div>
-				</div>
-					<h2>Medical Reports</h2>
-			</span>
-
-			<span class="border border-3 border-dark-subtle">
+			<span class="border border-3 border-success-subtle">
 				<div class="card" style="width: 18rem;">
 					<img src="../img/pound.png" class="card-img-top" alt="...">
 					<div class="card-body">
@@ -78,14 +60,36 @@
 					<h2>Dogs in Pound</h2>
 			</span>
 
-			<span class="border border-3 border-dark-subtle">
+			<span class="border border-3 border-success-subtle">
+				<div class="card" style="width: 18rem;">
+					<img src="../img/adoption.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h1 class="card-text">90</h1>
+					</div>
+				</div>
+					<h2>Adoption</h2>
+			</span>
+
+			<span class="border border-3 border-success-subtle">
+				<div class="card" style="width: 18rem;">
+					<img src="../img/medical.png" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h1 class="card-text">90</h1>
+					</div>
+				</div>
+					<h2>Animal Rescue</h2>
+			</span>
+
+
+
+			<span class="border border-3 border-success-subtle">
 				<div class="card" style="width: 18rem;">
 					<img src="../img/events.png" class="card-img-top" alt="...">
 					<div class="card-body">
 						<h1 class="card-text">90</h1>
 					</div>
 				</div>
-					<h2>Events</h2>
+					<h3>Announcement & Events</h3>
 			</span>
 		</div>
 	</div>

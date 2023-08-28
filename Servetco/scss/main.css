@@ -11975,10 +11975,6 @@ textarea.form-control-lg {
   --primary: #7AB730;
 }
 
-.navbar {
-  margin-right: 25px;
-}
-
 /* Navigation bar */
 .navbar-light .navbar-nav .nav-link {
   font-family: "Roboto", sans-serif;
@@ -11991,6 +11987,10 @@ textarea.form-control-lg {
   color: var(--dark);
   outline: none;
   transition: 0.5s;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  margin-right: 2%;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,

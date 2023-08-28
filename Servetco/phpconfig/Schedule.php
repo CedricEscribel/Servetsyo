@@ -10,6 +10,7 @@
      $Date = $_POST['Date'];
      $Time = $_POST['Time'];
      $Message = $_POST['Message'];
+     
      $sql = "INSERT INTO schedule (FullN,PhoneNum,Sched,Date,Time,Message) 
      VALUES ('$FullN','$PhoneNum','$Sched','$Date','$Time','$Message')";
 

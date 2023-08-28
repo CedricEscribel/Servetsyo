@@ -2,8 +2,8 @@
 
 require_once '../phpconfig/Dogs.php';
 
-$sql = "SELECT * FROM dogs_details";
-$all_dogs_details = $con->query($sql);
+$sql = "SELECT * FROM dogs";
+$all_dogs = $con->query($sql);
 
 
 ?>
@@ -20,14 +20,15 @@ $all_dogs_details = $con->query($sql);
 <body>
 
     <div class="sidenav">
-    <a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>
+      <a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>
       <a href="Appointment.php"><i class="Appointment"></i>Appointment</a>
-      <a href="Adoption.php"  class="active" ><i class="Animals"></i>Adoption</a>
-      <a href="Medicalreports.php"><i class="Reports"></i>Medical Reports</a>
+	    <a href="DogCatching.php"><i class="DogCatching"></i>Dog Catching</a>
+      <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in Pound</a>      
+	    <a href="Adoption.php" class="active"><i class="Animals Active"></i>Adoption</a>
+      <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
       <a href="Users.php"><i class="users"></i>Users</a>
-      <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in pound</a>
       <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-      <a href="Events.php"><i class="Updates"></i>Events</a>
+      <a href="Events.php"><i class="Updates"></i>Event</a>
     </div>
 
     <div class="main">
@@ -41,10 +42,10 @@ $all_dogs_details = $con->query($sql);
 	  		<span class="border">
 				<div class="card" >
         
-				<form class="img_prv" enctype="multipart/form-data" method="post" action="../phpconfig/Dogs.php">
+				<form class="img_prv" enctype="multipart/form-data" method="POST" action="../phpconfig/Dogs.php">
          
-        <div>
-        <input type="file" id="image-file" name="image" accept="image/*" style="display: none">
+         <div>
+        <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
             <div class="image-preview">
               <img src="../img/adoption.jpg" alt="Upload Dog Picture" id="image-preview">
               <a href="#" id="choose-file-btn">Choose File</a>
@@ -53,7 +54,7 @@ $all_dogs_details = $con->query($sql);
 
 				<div class="card-body">
         <div class="Details">
-            <textarea rows="4" cols="23" id="message" name="message" placeholder="Additional details"></textarea>
+            <textarea rows="4" cols="23" id="message" name="DogInfo" placeholder="Additional details"></textarea>
 			  </div>
 				<div class="Details">
 				  <input type="text" name="Name" placeholder="Name"  required>
@@ -62,9 +63,11 @@ $all_dogs_details = $con->query($sql);
 			  	<input type="text" name="Age" placeholder="Age"  required>
 				</div>
 				<div class="Details">
-				  <input type="text" name="Days" placeholder="Days in poud"  required>
-				</div>	
-        
+			  	<input type="text" name="Gender" placeholder="Gender"  required>
+				</div>
+				<div class="Details">
+			  	<input type="text" name="CatchLocation" placeholder="Catch location"  required>
+				</div>
 			  	<input type="submit" name="save" value="Upload">
 				</div>
       </form>
@@ -82,7 +85,7 @@ $all_dogs_details = $con->query($sql);
 
               <!-- while($row = mysqli_fetch_assoc($all_dogs_details)){ -->
             <?php
-            while ($row = $all_dogs_details->fetch_assoc()) {
+            while ($row = $all_dogs->fetch_assoc()) {
             ?>
 
               <div class="Dog-details">
@@ -91,9 +94,9 @@ $all_dogs_details = $con->query($sql);
                   </div>
                   <div class="Details">
                     <h2><?php echo $row["Name"] ?></h2>
-                    <p><?php echo $row["Age"] ?></p>                    
-                    <p><?php echo $row["Days"] ?></p>                    
-                    <p><?php echo $row["message"] ?></p>                    
+                    <p>AGE: Approx. <?php echo $row["Age"]?> years old </p>                    
+                    <p><?php echo $row["Gender"] ?></p>    
+                    <p><?php echo $row["DogInfo"] ?></p>                    
                   </div>
               </div>
 
@@ -108,6 +111,6 @@ $all_dogs_details = $con->query($sql);
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
 
-	<script src="scriptt.js"></script>
+	<script src="Image.js"></script>
 </body>
 </html>

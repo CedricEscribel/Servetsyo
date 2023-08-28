@@ -2,11 +2,6 @@
 
 include_once '../phpconfig/config.php';
 
-session_start();
-
-if(!isset($_SESSION['id'])){
-   header('location:../login.php');
-}
 
 ?>
 
@@ -20,13 +15,12 @@ if(!isset($_SESSION['id'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
 
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../scss/main.css">
 </head>
 
 <body>
@@ -47,143 +41,11 @@ if(!isset($_SESSION['id'])){
                 <a href="../service.php" class="nav-item nav-link">Service</a>
                 <a href="../Petforadoption.php" class="nav-item nav-link">adoption</a>
                 <a href="../Events.php" class="nav-item nav-link">Events</a>
-                <a href="Login.php" class="nav-item nav-link">Login</a>
+                <a href="../Login.php" class="nav-item nav-link">Login</a>
           </div>
         </div>
     </nav>
     <!-- Navbar End -->
-
-    <!-- Login -->
-    <div class="login">
-        <div class="modal fade" id="SignIn" aria-hidden="true" aria-labelledby="SignInLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="SignInLabel">Sign In</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-            <form class="row g-3">
-                <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputPassword4" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4">
-                    </div>
-                    <button class="btn btn-primary" id="Login">Log In</button>
-                </form>
-        </div>
-
-        <div class="modal-footer">
-            <button class="btn btn-primary" data-bs-target="#Signup" data-bs-toggle="modal">Sign up</button>
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="modal fade" id="Signup" aria-hidden="true" aria-labelledby="SignupLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="SignupLabel">Sign Up</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-        <form class="row g-3">
-                <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4">
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="col-md-4">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="inputZip" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-                <button class="btn btn-primary" id="Login">Log In</button>
-                
-                </form>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" data-bs-target="#SignIn" data-bs-toggle="modal">Sign In</button>
-        </div>
-        </div>
-    </div>
-    </div>
-
-
-        <!-- login -->
-        <dialog data-modal>
-            <form class="row g-3">
-                <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4">
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="col-md-4">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="inputZip" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-                <div class="col-12">
-                    <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
-                </div>
-                </form>
-            </dialog>
-    </div>
-    <!-- login end -->
 
 <!-- Adoption form start -->
     <div class="container">
@@ -207,10 +69,6 @@ if(!isset($_SESSION['id'])){
                         <span class="details">Phone Number</span>
                         <input type="text" placeholder="Enter your number" required>
                     </div>
-                    <div class="form-group">
-                        <label for="dob">Date of Birth:</label>
-                        <input type="date" id="dob" name="dob" required>
-                    </div>
 
                     <div class="form-group">
                         <label for="gender">Gender:</label>
@@ -221,77 +79,15 @@ if(!isset($_SESSION['id'])){
                         <option value="other">Other</option>
                         </select>
                     </div>
-                    
-                    <div class="form-group">
-                    <label for="gender">Gender:</label>
-                    <select id="gender" name="gender" required>
-                        <option value="">-- Civil Status --</option>
-                        <option value="Single">Single</option>
-                        <option value="Married">Married</option>
-                        <option value="widowed">widowed</option>
-                    </select>
-                    </div>
-
+                
                         <div class="Radio">
-                            <p>Have you adopted from BALIWAG VET before ? </p>
-                            <input type="radio" id="Yes"name="value" required>
-                            <label for="Yes">Yes</label><br>
-                            <input type="radio" id="No" name="value">
+                            <p>Will you be able to visit the office for the interview?</p>
+                            <input type="radio" name="Yes" >
+                            <label for="Yes">Yes</label><br>            
+                            <input type="radio" name="No" required>
                             <label for="No">No</label><br>
-                        </div>
-                        <div class="Radio">
-                            <p>What are you looking to adopt ? </p>
-                            <input type="radio" id="Dog"name="value" required>
-                            <label for="Dog">Dog</label><br>
-                            <input type="radio" id="Cat" name="value" >
-                            <label for="Cat">Cat</label><br>
-                            <input type="radio" id="Both" name="value" >
-                            <label for="Both">Both</label><br>
-                            <input type="radio" id="Undecided" name="value" >
-                            <label for="Undecided">Undecided</label><br>
+
                         </div>  
-                        <div class="Radio">
-                            <p>What type of building do you live in ?</p>
-                            <input type="radio" id="House"name="value" required>
-                            <label for="House">House</label><br>
-                            <input type="radio" id="Apartment" name="value" >
-                            <label for="Apartment">Apartment</label><br>
-                            <input type="radio" id="Condo" name="value" >
-                            <label for="Condo">Condo</label><br>
-                        </div>  
-                        <div class="Radio">
-                            <p>Who do you live with ? </p>
-                            <input type="radio" id=" living alone"name="value" required>
-                            <label for=" living alone"> living alone</label><br>
-                            <input type="radio" id="parents" name="value" >
-                            <label for="parents">parents</label><br>
-                            <input type="radio" id="spouse" name="value" >
-                            <label for="spouse">spouse</label><br>
-                        </div>  
-                        <div class="input-box">
-                            <span class="details">Who will be responsible for feeding , grooming , and generally caring for your pet ?</span>
-                            <input type="text" placeholder="Specify" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Who will be financially responsible for your pets needs </span>
-                            <input type="text" placeholder="Specify" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Who will look after on your pets if you go vacation or in case of emergency ? </span>
-                            <input type="text" placeholder="Specify" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Do you have other pets ?</span>
-                            <input type="text" placeholder="Specify" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">What is your job ? </span>
-                            <input type="text" placeholder="Specify" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">How much your monthly salary ? </span>
-                            <input type="text" placeholder="Specify" required>
-                        </div>
                         <div class="input-box">
                             <span class="details">Interview and Visitation (Minors must be accompanied by parents) </span>
                             <input type="text" placeholder="Preffered date and time for virtual meet" required>

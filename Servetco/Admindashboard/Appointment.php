@@ -21,16 +21,17 @@ $all_schedule = $con->query($sql);
 <body>
 
 
-	<div class="sidenav">
-	<a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>
-      <a href="Appointment.php"  class="active" ><i class="Appointment"></i>Appointment</a>
-      <a href="Adoption.php"><i class="Animals"></i>Adoption</a>
-      <a href="Medicalreports.php"><i class="Reports"></i>Medical Reports</a>
-      <a href="Users.php"><i class="users"></i>Users</a>
-      <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in pound</a>
-      <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-      <a href="Events.php"><i class="Updates"></i>Events</a>
-    </div>
+<div class="sidenav">
+    <a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>
+    <a href="Appointment.php" class="active"><i class="Appointment"></i>Appointment</a>
+	<a href="DogCatching.php"><i class="DogCatching"></i>Dog Catching</a>
+    <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in Pound</a>      
+	<a href="Adoption.php"><i class="Animals"></i>Adoption</a>
+    <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
+    <a href="Users.php"><i class="users"></i>Users</a>
+    <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
+    <a href="Events.php"><i class="Updates"></i>Event</a>
+</div>
 
 
 	<!-- History report malilipat sa taas na button (Medical reports) -->

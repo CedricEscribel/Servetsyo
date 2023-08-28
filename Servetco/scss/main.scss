@@ -5,11 +5,6 @@
 
 }
 
-
-  .navbar{
-    margin-right: 25px;
-  }
-
  /* Navigation bar */
  .navbar-light .navbar-nav .nav-link {
     font-family: 'Roboto', sans-serif;
@@ -22,6 +17,10 @@
     color: var(--dark);
     outline: none;
     transition: .5s;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  margin-right: 2%;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,

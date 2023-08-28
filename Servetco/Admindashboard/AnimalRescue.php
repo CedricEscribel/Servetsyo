@@ -32,7 +32,7 @@
 
       <div class="dashboard row ">
 
-        <span class="border border-3 border-dark-subtle">
+        <span class="border border-3 border-success-subtle">
           <div class="card " style="width: 18rem;">
             <img src="../img/syringe.png" class="card-img-top" alt="...">
             <div class="card-body">
@@ -42,7 +42,7 @@
             <h2>Vaccination</h2>
         </span>
 
-        <span class="border border-3 border-dark-subtle">
+        <span class="border border-3 border-success-subtle">
           <div class="card" style="width: 18rem;">
             <img src="../img/Spay.png" class="card-img-top" alt="...">
             <div class="card-body">

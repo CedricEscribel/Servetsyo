@@ -93,7 +93,7 @@ $all_dogs = $con->query($sql);
                     <img src="" alt="Image Preview" id="image-preview">
                   </div>
                   <div class="Details">
-                    <h2><?php echo $row["Name"] ?></h2>
+                    <h3><?php echo $row["Name"] ?></h3>
                     <p>AGE: Approx. <?php echo $row["Age"]?> years old </p>                    
                     <p><?php echo $row["Gender"] ?></p>    
                     <p><?php echo $row["DogInfo"] ?></p>                    

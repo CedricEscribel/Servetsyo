@@ -387,7 +387,7 @@ input[type="submit"] {
   .grid{
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     /* the rest of your styles */
   }
 
@@ -400,6 +400,9 @@ input[type="submit"] {
     padding: 20px;
     text-align: center;
     max-width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
   
   .details h2{

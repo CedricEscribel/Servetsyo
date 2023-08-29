@@ -234,7 +234,7 @@ p{
      letter-spacing: 1px;
      cursor: pointer;
      transition: all 0.3s ease;
-     background: linear-gradient(135deg, #e4d126, #2df859);
+     background: #93EA29;
    }
   
    .form-group {
@@ -243,7 +243,7 @@ p{
     }
    form .button input:hover{
     /* transform: scale(0.99); */
-    background: linear-gradient(-135deg, #baeb83, #28fc4b);
+     background: #9dec3b;
     }
    @media(max-width: 584px){
    .container{

@@ -21,11 +21,13 @@
                 <a href="about.php" class="nav-item nav-link">About</a>
                 <a href="service.php" class="nav-item nav-link active">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
-                <a href="Events.php" class="nav-item nav-link">Events</a>
+                <a href="Events.php" class="nav-item nav-link">Events</a>1
                 <a href="Login.php" class="nav-item nav-link">Login</a>
             </div>
         </div>
     </nav>
+
+    <!-- create new phpfile for service-->
     <!-- Services Start -->
    <div class="container-fluid py-5">
     <div class="container">

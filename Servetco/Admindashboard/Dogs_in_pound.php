@@ -2,8 +2,8 @@
 
 require_once '../phpconfig/Dogs.php';
 
-$sql = "SELECT * FROM dogs_details";
-$all_dogs_details = $con->query($sql);
+$sql = "SELECT * FROM dogs";
+$all_dogs = $con->query($sql);
 
 
 ?>
@@ -48,7 +48,7 @@ $all_dogs_details = $con->query($sql);
           <tbody>
 
           <?php
-						while ($row = $all_dogs_details->fetch_assoc()) {
+						while ($row = $all_dogs->fetch_assoc()) {
 						?>
 							<tr>
 								<td><?php echo $row["id"] ?></td>

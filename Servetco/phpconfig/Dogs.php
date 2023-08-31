@@ -6,6 +6,8 @@
 
   include_once 'config.php';
 
+
+
   if(isset($_POST['save']))
   {	      
      $Name = $_POST['Name'];
@@ -65,13 +67,13 @@
       
   }
 
+  
   function display_data(){
     global $con;
     $query = "select * from dogs";
     $result = mysqli_query($con,$query);
     return $result;
   }
-
 
  
 ?>

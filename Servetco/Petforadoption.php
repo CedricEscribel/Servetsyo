@@ -2,8 +2,8 @@
 
 require_once 'phpconfig/Dogs.php';
 
-$sql = "SELECT * FROM dogs_details";
-$all_dogs_details = $con->query($sql);
+$sql = "SELECT * FROM dogs";
+$all_dogs = $con->query($sql);
 
 
 ?>
@@ -47,7 +47,7 @@ $all_dogs_details = $con->query($sql);
        <div class="grid">
               <div class="Dog-details">
               <?php
-              while ($row = $all_dogs_details->fetch_assoc()) {
+              while ($row = $all_dogs->fetch_assoc()) {
               ?>
                 <div class="card Dogpic" style="width: 18rem;">
                   <div id="<?php echo $row["id"] ?>" class="carousel slide">
@@ -58,10 +58,10 @@ $all_dogs_details = $con->query($sql);
                     </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img src="Dogs_sample/sample dog.jpg" class="d-block w-100" alt="...">
+                        <img src="Dogs_sample/sample1.jpg" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item">
-                        <img src="Dogs_sample/sample2.jpg" class="d-block w-100" alt="...">
+                        <img src="Dogs_sample/sample2.webp" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item">
                         <img src="Dogs_sample/sample3.jpg" class="d-block w-100" alt="...">

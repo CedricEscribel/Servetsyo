@@ -1,7 +1,36 @@
-<?php 
+<?php session_start(); ?>
 
-require_once 'phpconfig/Login.php';
+<?php
 
+if (isset($_POST['Login'])) {
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  $query = "SELECT * from users WHERE email = '$email' AND password = '$password'";
+  $user = mysqli_query($conn, $query);
+
+  if (!$user) {
+    die('query Failed' . mysqli_error($conn));
+  }
+
+  while ($row = mysqli_fetch_array($user)) {
+
+    $user_id = $row['ID'];
+    $user_name = $row['username'];
+    $user_email = $row['email'];
+    $user_password = $row['password'];
+  }
+  if ($user_email == $email  &&  $user_password == $password) {
+
+    $_SESSION['id'] = $user_id;       // Storing the value in session
+    $_SESSION['name'] = $user_name;   // Storing the value in session
+    $_SESSION['email'] = $user_email; // Storing the value in session
+    //! Session data can be hijacked. Never store personal data such as password, security pin, credit card numbers other important data in $_SESSION
+    header('location: dashboard.php?user_id=' . $user_id);
+  } else {
+    header('location: login.php');
+  }
+}
 ?>
 
 
@@ -35,14 +64,12 @@ require_once 'phpconfig/Login.php';
         </div>
     </nav>
     <!-- Navbar End -->
-    
-<!-- Login -->
-
 
 <form class="shadow w-450 p-3" 
     	      action="phpconfig/Login.php" 
     	      method="post">
 
+<!-- Login -->
 <div class="LoginContainer">
     <input type="checkbox" id="flip">
     <div class="cover">
@@ -56,17 +83,10 @@ require_once 'phpconfig/Login.php';
 
     <div class="forms">
         <div class="form-content">
-          <div class="login-form">
+
+        <div class="login-form">
             <div class="title">Login</div>
           <form action="#" method="post">
-              <?php
-              
-          if(isset($error)){
-            foreach($error as $error){
-                echo '<span class="error-msg">'.$error.'</span>';
-            };
-          };
-          ?>
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
@@ -76,16 +96,15 @@ require_once 'phpconfig/Login.php';
                 <i class="fas fa-lock"></i>
                 <input type="password" name="Password" placeholder="Enter your password" required>
               </div>
-              <div class="text"><a href="phpconfig/logout.php">Forgot password?</a></div>
+              <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
                 <input type="submit" name="Login">
               </div>
               <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
             </div>
-        </form>
-      </div>
+        </div>
 
-
+<!-- Sign up -->
         <div class="signup-form">
           <div class="title">Signup</div>
         <form method="post" action="phpconfig/Login.php">
@@ -129,6 +148,7 @@ require_once 'phpconfig/Login.php';
       </form>
 
     </div>
+    
     </div>
     </div>
   </div>

@@ -1,9 +1,6 @@
 <?php 
 
-require_once 'phpconfig/Dogs.php';
-
-$sql = "SELECT * FROM dogs";
-$all_dogs = $con->query($sql);
+require_once 'phpconfig/config.php';
 
 
 ?>
@@ -46,25 +43,19 @@ $all_dogs = $con->query($sql);
 
        <div class="grid">
               <div class="Dog-details">
-              <?php
-              while ($row = $all_dogs->fetch_assoc()) {
-              ?>
+            <?php
+                $i = 1;
+                $rows = mysqli_query($con, "SELECT * FROM dogs ORDER BY id DESC")
+                ?>            
+            <?php foreach ($rows as $row) : ?>
                 <div class="card Dogpic" style="width: 18rem;">
                   <div id="<?php echo $row["id"] ?>" class="carousel slide">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#<?php echo $row["id"] ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#<?php echo $row["id"] ?>" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#<?php echo $row["id"] ?>" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img src="Dogs_sample/sample1.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="Dogs_sample/sample2.webp" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="Dogs_sample/sample3.jpg" class="d-block w-100" alt="...">
+                       <img src="Admindashboard/img/<?php echo $row["image"]; ?>" width = 200 title="<?php echo $row['image']; ?>">
                       </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#<?php echo $row["id"] ?>" data-bs-slide="prev">
@@ -79,14 +70,14 @@ $all_dogs = $con->query($sql);
 
                   <div class="card-body">
                     <h3 class="card-title"><?php echo $row["Name"] ?></h3>
+                    <h5 class="card-title"><?php echo $row["Gender"] ?></h5>
                     <h5 class="card-title"><?php echo $row["Age"] ?></h5>
-                    <h5 class="card-title"><?php echo $row["Days"] ?></h5>
-                    <p class="card-text"><?php echo $row["message"] ?></p>
+                    <h5 class="card-title"><?php echo $row["DogInfo"] ?></h5>
 
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                   </div>
                 </div>
-              <?php }?>
+                <?php endforeach; ?>
             </div>   
         </div>
   </div>

@@ -225,7 +225,7 @@ p{
   
    form .button input{
      height: 30px;
-     width: 100%;
+     width: 90%;
      border-radius: 5px;
      border: none;
      color: #fff;
@@ -279,9 +279,7 @@ p{
 
     // Pet for adoption
     .Dog-details{
-      display: flex;
       justify-content: space-evenly;
-      flex-direction: row;
       display: grid;
       grid-template-rows: 1fr 1fr;
       grid-template-columns: repeat(4, auto);
@@ -289,6 +287,8 @@ p{
 
     .Dogpic{
       margin: 5px;
+      align-items: center;
+      padding-top: 10px;
     }
 
     .card-body{
@@ -297,3 +297,25 @@ p{
       justify-content: center;
       align-items: center;
     }
+
+    .card-body-user{
+      flex: 1 1 auto;
+      min-height: 1px;
+      padding: 1rem;
+    }
+
+    .card-body {
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+  }
+  
+  .card-body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #fff;
+      background-clip: border-box;
+      border: 0 solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+  }

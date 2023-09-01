@@ -24,7 +24,7 @@ $all_schedule = $con->query($sql);
     <!-- Template Stylesheet -->
 
     <link rel="stylesheet" href="../css/Schedule.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../scss/main.css">
 </head>
 
 <body>

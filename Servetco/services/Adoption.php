@@ -48,7 +48,7 @@ include_once '../phpconfig/config.php';
     <!-- Navbar End -->
 
 <!-- Adoption form start -->
-<!-- Personal data must be automaticaly put on adoption field -->
+<!-- Personal data must be automatically put on adoption field -->
     <div class="container">
             <div class="title">Application form</div>
                 <div class="content">
@@ -70,6 +70,7 @@ include_once '../phpconfig/config.php';
                         <span class="details">Phone Number</span>
                         <input type="text" placeholder="Enter your number" required>
                     </div>
+                    
 <!-- TODO: Gender to be delete and change to( do you find a dog to adopt on the page?)  -->
                   <div class="form-group">
                         <label for="gender">Gender:</label>
@@ -91,7 +92,7 @@ include_once '../phpconfig/config.php';
                         </div>  
                         <div class="input-box">
                             <span class="details">Interview and Visitation (Minors must be accompanied by parents) </span>
-                            <input type="text" placeholder="Preffered date and time for virtual meet" required>
+                            <input type="text" placeholder="Preferred date and time for virtual meet" required>
                         </div>
                         </div>
                         

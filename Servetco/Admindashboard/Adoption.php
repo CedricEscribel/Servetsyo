@@ -1,10 +1,59 @@
-<?php 
+<?php
+require '../phpconfig/config.php';
 
-require_once '../phpconfig/Dogs.php';
+if(isset($_POST["submit"])){
+  $DogInfo = $_POST["DogInfo"];
+  $Name = $_POST["Name"];
+  $Age = $_POST["Age"];
+  $Gender = $_POST["Gender"];
+  $CatchLocation = $_POST["CatchLocation"];
 
-$sql = "SELECT * FROM dogs";
-$all_dogs = $con->query($sql);
+  if($_FILES["image"]["error"] == 4){
+    echo
+    "<script> alert('Image Does Not Exist'); </script>"
+    ;
+  }
+  else{
+    $fileName = $_FILES["image"]["name"];
+    $fileSize = $_FILES["image"]["size"];
+    $tmpName = $_FILES["image"]["tmp_name"];
 
+    $validImageExtension = ['jpg', 'jpeg', 'png'];
+    $imageExtension = explode('.', $fileName);
+    $imageExtension = strtolower(end($imageExtension));
+    if ( !in_array($imageExtension, $validImageExtension) ){
+      echo
+      "
+      <script>
+        alert('Invalid Image Extension');
+      </script>
+      ";
+    }
+    else if($fileSize > 1000000){
+      echo
+      "
+      <script>
+        alert('Image Size Is Too Large');
+      </script>
+      ";
+    }
+    else{
+
+      $newImageName = uniqid();
+      $newImageName .= '.' . $imageExtension;
+      move_uploaded_file($tmpName, 'img/' . $newImageName);
+      $query = "INSERT INTO dogs VALUES('', '$DogInfo', '$Name', '$Age', '$Gender', '$CatchLocation', '$newImageName')";
+      mysqli_query($con, $query);
+      echo
+      "
+      <script>
+        alert('Successfully Added');
+        document.location.href = 'Adoption.php';
+      </script>
+      ";
+    }
+  }
+}
 
 ?>
 
@@ -42,18 +91,14 @@ $all_dogs = $con->query($sql);
 	  		<span class="border">
 				<div class="card" >
         
-				<form class="img_prv" enctype="multipart/form-data" method="POST" action="../phpconfig/Dogs.php">
-         
+				<form class="img_prv" enctype="multipart/form-data" method="POST">
          <div>
-         <div class="form-group">
-				<input class="form-control" type="file" name="image" value="" />
-			  </div>
-<!-- 
+
         <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
             <div class="image-preview">
               <img src="../img/adoption.jpg" alt="Upload Dog Picture" id="image-preview">
               <a href="#" id="choose-file-btn">Choose File</a>
-            </div> -->
+            </div>
           </div>
 
 				<div class="card-body">
@@ -72,7 +117,7 @@ $all_dogs = $con->query($sql);
 				<div class="Details">
 			  	<input type="text" name="CatchLocation" placeholder="Catch location"  required>
 				</div>
-			  	<input type="submit" name="save" value="Upload">
+			  	<input type="submit" name="submit" value="Upload">
 				</div>
       </form>
 
@@ -80,36 +125,29 @@ $all_dogs = $con->query($sql);
         
 			</span>
       <!-- Upload dog for adoption -->
+      <div class="Dog-details">
 
-      <!-- body -->
-            <div class="header">
-              <h2>Dogs For adoption</h2>
-            </div>
-              <div class="grid">
-
-              <!-- while($row = mysqli_fetch_assoc($all_dogs_details)){ -->
-            <?php
-            while ($row = $all_dogs->fetch_assoc()) {
-            ?>
-
-              <div class="Dog-details">
+      <?php
+      $i = 1;
+      $rows = mysqli_query($con, "SELECT * FROM dogs ORDER BY id DESC")
+      ?>
+      <?php foreach ($rows as $row) : ?>
+        
+        <div class="Dog-details">
                   <div class="image-preview">
-                    <img src="" alt="Image Preview" id="image-preview">
+                    <img src="img/<?php echo $row["image"]; ?>" width = 200 title="<?php echo $row['image']; ?>">
                   </div>
                   <div class="Details">
-                    <h3><?php echo $row["Name"] ?></h3>
-                    <p>AGE: Approx. <?php echo $row["Age"]?> years old </p>                    
-                    <p><?php echo $row["Gender"] ?></p>    
+                    <h2><?php echo $row["Name"] ?></h2>
+                    <p><?php echo $row["Gender"] ?></p>                   
+                    <p><?php echo $row["Age"] ?></p>                                    
                     <p><?php echo $row["DogInfo"] ?></p>                    
                   </div>
               </div>
 
-              <?php
-            }
-               ?>
-        </div>
-      </div>
-      <!-- Body design -->
+      <?php endforeach; ?>
+            </div>   
+
 
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

@@ -15,55 +15,54 @@
      $Age = $_POST['Age'];
      $Gender = $_POST['Gender'];
      $CatchLocation = $_POST['CatchLocation'];
-
-// Image to folder
-    $validImageExtension = ['jpg', 'jpeg', 'png'];
-    $imageExtension = explode('.', $fileName);
-    $imageExtension = strtolower(end($imageExtension));
-    if ( !in_array($imageExtension, $validImageExtension) ){
+     if($_FILES["DogImg"]["error"] == 4){
       echo
-      "
-      <script>
-        alert('Invalid Image Extension');
-      </script>
-      ";
-    }
-    else if($fileSize > 1000000){
-      echo
-      "
-      <script>
-        alert('Image Size Is Too Large');
-      </script>
-      ";
+      "<script> alert('Image Does Not Exist'); </script>"
+      ;
     }
     else{
-      $newImageName = uniqid();
-      $newImageName .= '.' . $imageExtension;
-      move_uploaded_file($tmpName, 'img/' . $newImageName);
-      $sql = "INSERT INTO dogs(Name, DogInfo, Age, Gender, CatchLocation, DogImg, image) 
-      VALUES ('$Name','$DogInfo','$Age','$Gender','$CatchLocation', '$DogImg', $newImageName)";
- 
-     // insert in database 
-       $Save = mysqli_query($con, $sql);
-      echo
-      "
-      <script>
-        alert('Successfully Added');
-        document.location.href = 'data.php';
-      </script>
-      ";
-      die(header("Location: ../Admindashboard/Adoption.php"));
+      $fileName = $_FILES["DogImg"]["name"];
+      $fileSize = $_FILES["DogImg"]["size"];
+      $tmpName = $_FILES["DogImg"]["tmp_name"];
+  
+      $validImageExtension = ['jpg', 'jpeg', 'png'];
+      $imageExtension = explode('.', $fileName);
+      $imageExtension = strtolower(end($imageExtension));
+      if ( !in_array($imageExtension, $validImageExtension) ){
+        echo
+        "
+        <script>
+          alert('Invalid Image Extension');
+        </script>
+        ";
+      }
+      else if($fileSize > 1000000){
+        echo
+        "
+        <script>
+          alert('Image Size Is Too Large');
+        </script>
+        ";
+      }
+      else{
+  
+        $newImageName = uniqid();
+        $newImageName .= '.' . $imageExtension;
+        move_uploaded_file($tmpName, 'img/' . $newImageName);
+        $query = "INSERT INTO tb_upload VALUES('', `$DogInfo`, `$Name`, `$Age`, `$Gender`, `$CatchLocation`, '$newImageName')";
+        mysqli_query($conn, $query);
+        echo
+        "
+        <script>
+          alert('Successfully Added');
+          document.location.href = '../Admindashboard/Adoption.php';
+        </script>
+        ";
+      }
     }
-    // image send end
-    //  $sql = "INSERT INTO dogs(Name, DogInfo, Age, Gender, CatchLocation, DogImg) 
-    //  VALUES ('$Name','$DogInfo','$Age','$Gender','$CatchLocation', '$DogImg')";
 
-    // // insert in database 
-    //   $Save = mysqli_query($con, $sql);
-      // if($Save)
-      // {
-      //   die(header("Location: ../Admindashboard/Adoption.php"));
-      // }
+  
+
       
   }
 
@@ -77,4 +76,6 @@
 
  
 ?>
+
+
 

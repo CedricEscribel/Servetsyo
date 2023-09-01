@@ -55,7 +55,7 @@ $all_dogs = $con->query($sql);
 								<td><?php echo $row["Name"] ?></td>
 								<td><?php echo $row["Days"] ?></td>                    
 								<td><?php echo $row["Age"] ?></td>                   
-								<td><?php echo $row["message"] ?></td>       
+								<td><?php echo $row["CatchLocation"] ?></td>       
                 <td><label for="Status"></label>
 								<select id="Status">
 								<option value="Adopted">Adopted</option>

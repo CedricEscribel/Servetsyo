@@ -120,6 +120,8 @@ a.head-dash{
   display: flex;
   align-items: center;
 }
+
+
 /* Medical reports */
 
 
@@ -349,11 +351,8 @@ input[type="submit"] {
 .image-preview {
   border: dotted greenyellow 1px;
   position: relative;
-  width: 400px;
-  height: 300px;
   max-width: 200px;
-  max-height: 250px;
-  
+  max-height: 200px;
 }
 
 #image-preview {
@@ -384,12 +383,6 @@ input[type="submit"] {
 /* upload */
 
 /* Dogs Upload */
-  .grid{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(3, auto);
-    /* the rest of your styles */
-  }
 
   .Dog-details{
     background-color: #fff;
@@ -400,12 +393,13 @@ input[type="submit"] {
     padding: 20px;
     text-align: center;
     max-width: fit-content;
-    display: flex;
+    display: grid;
     align-items: center;
-    flex-direction: column;
+    grid-template-columns: repeat(3, auto);
   }
   
   .details h2{
+    margin-left: 20px;
     margin-bottom: 0px;
     color: #020202;
   }

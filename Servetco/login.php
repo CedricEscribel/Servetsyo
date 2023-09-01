@@ -1,46 +1,10 @@
-<?php session_start(); ?>
-
-<?php
-
-if (isset($_POST['Login'])) {
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-
-  $query = "SELECT * from users WHERE email = '$email' AND password = '$password'";
-  $user = mysqli_query($conn, $query);
-
-  if (!$user) {
-    die('query Failed' . mysqli_error($conn));
-  }
-
-  while ($row = mysqli_fetch_array($user)) {
-
-    $user_id = $row['ID'];
-    $user_name = $row['username'];
-    $user_email = $row['email'];
-    $user_password = $row['password'];
-  }
-  if ($user_email == $email  &&  $user_password == $password) {
-
-    $_SESSION['id'] = $user_id;       // Storing the value in session
-    $_SESSION['name'] = $user_name;   // Storing the value in session
-    $_SESSION['email'] = $user_email; // Storing the value in session
-    //! Session data can be hijacked. Never store personal data such as password, security pin, credit card numbers other important data in $_SESSION
-    header('location: dashboard.php?user_id=' . $user_id);
-  } else {
-    header('location: login.php');
-  }
-}
-?>
-
 
 <head>
         <meta charset="utf-8">
         <title>About </title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  	    <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/Login.css">
-    <?php include 'header.php';?>
+         <?php include 'header.php';?>
 
 </head>
 
@@ -65,11 +29,7 @@ if (isset($_POST['Login'])) {
     </nav>
     <!-- Navbar End -->
 
-<form class="shadow w-450 p-3" 
-    	      action="phpconfig/Login.php" 
-    	      method="post">
 
-<!-- Login -->
 <div class="LoginContainer">
     <input type="checkbox" id="flip">
     <div class="cover">
@@ -81,80 +41,104 @@ if (isset($_POST['Login'])) {
       </div>
     </div>
 
+<!-- Login -->    
+<?php
+    require('phpconfig/config.php');
+    session_start();
+    // When form submitted, check and create user session.
+    if (isset($_POST['Email'])) {
+        $Email = stripslashes($_REQUEST['Email']);    // removes backslashes
+        $Email = mysqli_real_escape_string($con, $Email);
+        $Password = stripslashes($_REQUEST['Password']);
+        $Password = mysqli_real_escape_string($con, $Password);
+        // Check user is exist in the database
+        $query    = "SELECT * FROM `user` WHERE Email='$Email'
+                     AND Password='" . md5($Password) . "'";
+        $result = mysqli_query($con, $query) or die(mysql_error());
+        $rows = mysqli_num_rows($result);
+        if ($rows == 1) {
+            $_SESSION['Email'] = $Email;
+            // Redirect to user dashboard page
+            header("Location: profile.php");
+        } else {
+            echo "<div class='form'>
+                  <h3>Incorrect Email/Password.</h3><br/>
+                  <p class='link'>Click here to <a href='log.php'>Login</a> again.</p>
+                  </div>";
+        }
+    } else {
+?>
     <div class="forms">
         <div class="form-content">
+          <div class="login-form">
+              <div class="title">Login</div>
+            <form action="#" method="post">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" name="Email" placeholder="Enter your Email" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" name="Password" placeholder="Enter your password" required>
+                </div>
+                <div class="text"><a href="phpconfig/logout.php">Forgot password?</a></div>
+                <div class="button input-box">
+                  <input value="Login" type="submit"  name="Login">
+                </div>
+                <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+              </div>
+            </form>
+          </div>
+<?php
+  }
+?>
+<!-- Login end -->
 
-        <div class="login-form">
-            <div class="title">Login</div>
-          <form action="#" method="post">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" name="Email" placeholder="Enter your email" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="Password" placeholder="Enter your password" required>
-              </div>
-              <div class="text"><a href="#">Forgot password?</a></div>
-              <div class="button input-box">
-                <input type="submit" name="Login">
-              </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
-            </div>
-        </div>
 
-<!-- Sign up -->
-        <div class="signup-form">
-          <div class="title">Signup</div>
-        <form method="post" action="phpconfig/Login.php">
+  <!-- Sign up -->
+          <div class="signup-form">
+            <div class="title">Signup</div>
+            <form method="post" action="phpconfig/Login.php">
 
-      <?php
-      if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
-         };
-      };
-      ?>
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="Email" placeholder="Enter your email" required>
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" name="Email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" name="Password" id="Pass" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                </div>
+                <div class="show_pass" style="margin-left: 5%;">
+                  <input type="checkbox" onclick="Showpass()">&#32;Show Password
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <input type="text" name="Fullname" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <input type="text" name="Address" placeholder="Enter your address" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input type="text" name="PhoneNum" placeholder="Enter your Phone Number" required>
+                </div>
+                <div class="button input-box">
+                  <input type="submit" value="Sign Up"  name="Sign_up">
+                </div>
+                <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
               </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="Password" id="Pass" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-              </div>
-              <div class="show_pass" style="margin-left: 5%;">
-                <input type="checkbox" onclick="Showpass()">Show Password
-              </div>
-              <div class="input-box">
-                <i class="fas fa-user"></i>
-                <input type="text" name="Fullname" placeholder="Enter your name" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-user"></i>
-                <input type="text" name="Address" placeholder="Enter your address" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="text" name="PhoneNum" placeholder="Enter your Phone Number" required>
-              </div>
-              <div class="button input-box">
-                <input type="submit" name="Sign_up">
-              </div>
-              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
-            </div>
-      </form>
+            </form>
+         </div>
+  <!-- Signup end -->
 
-    </div>
-    
-    </div>
+      </div> 
     </div>
   </div>
 
-</form> 
-<!-- login  end -->
+
 
     <!-- Footer Start -->
     <?php include 'footer.php';?>

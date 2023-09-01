@@ -1,3 +1,8 @@
+<?php
+//include auth_session.php file on all user panel pages
+include("phpconfig/auth_session.php");
+?>
+
 <head>
         <meta charset="utf-8">
         <title>About </title>
@@ -39,7 +44,7 @@
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
                           <!-- name -->
-                          <h4>John Doe</h4>
+                          <p>Hey, <?php echo $_SESSION['Email']; ?>!</p>
                         </div>
                       </div>
                     </div>
@@ -54,7 +59,7 @@
                           <h6 class="mb-0">Full Name</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          Username
+                          <?= isset($Fullname) ? $Fullname : '' ?>
                         </div>
                       </div>
                       <hr>

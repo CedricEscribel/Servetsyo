@@ -181,6 +181,7 @@
 .LoginContainer #flip{
   display: none;
 }
+
 @media (max-width: 730px) {
   .LoginContainer .cover{
     display: none;

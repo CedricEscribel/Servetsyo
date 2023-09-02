@@ -5,8 +5,11 @@
   width: 100%;
   background: #fff;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    margin-left: 20%;
+  margin-left: 25%;
+  display: flex;
 }
+
+
 
 .LoginContainer .cover{
   position: absolute;
@@ -81,6 +84,7 @@
   height: 100%;
   width: 100%;
   background: #fff;
+  padding: 30px;
 }
 .LoginContainer .form-content{
   display: flex;
@@ -183,6 +187,9 @@
 }
 
 @media (max-width: 730px) {
+  .LoginContainer{
+    margin-left: 0;
+  }
   .LoginContainer .cover{
     display: none;
   }

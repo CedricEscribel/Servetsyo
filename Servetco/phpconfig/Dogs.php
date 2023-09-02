@@ -8,24 +8,24 @@
 
 
 
-  if(isset($_POST['save']))
-  {	      
-     $Name = $_POST['Name'];
-     $DogInfo = $_POST['DogInfo'];
-     $Age = $_POST['Age'];
-     $Gender = $_POST['Gender'];
-     $CatchLocation = $_POST['CatchLocation'];
-     if($_FILES["DogImg"]["error"] == 4){
+  if(isset($_POST["submit"])){
+    $DogInfo = $_POST["DogInfo"];
+    $Name = $_POST["Name"];
+    $Age = $_POST["Age"];
+    $Gender = $_POST["Gender"];
+    $CatchLocation = $_POST["CatchLocation"];
+  
+    if($_FILES["image"]["error"] == 4){
       echo
       "<script> alert('Image Does Not Exist'); </script>"
       ;
     }
     else{
-      $fileName = $_FILES["DogImg"]["name"];
-      $fileSize = $_FILES["DogImg"]["size"];
-      $tmpName = $_FILES["DogImg"]["tmp_name"];
+      $fileName = $_FILES["image"]["name"];
+      $fileSize = $_FILES["image"]["size"];
+      $tmpName = $_FILES["image"]["tmp_name"];
   
-      $validImageExtension = ['jpg', 'jpeg', 'png'];
+      $validImageExtension = ['jpg', 'jpeg', 'png', 'gif'];
       $imageExtension = explode('.', $fileName);
       $imageExtension = strtolower(end($imageExtension));
       if ( !in_array($imageExtension, $validImageExtension) ){
@@ -36,35 +36,25 @@
         </script>
         ";
       }
-      else if($fileSize > 1000000){
-        echo
-        "
-        <script>
-          alert('Image Size Is Too Large');
-        </script>
-        ";
-      }
       else{
   
         $newImageName = uniqid();
         $newImageName .= '.' . $imageExtension;
         move_uploaded_file($tmpName, 'img/' . $newImageName);
-        $query = "INSERT INTO tb_upload VALUES('', `$DogInfo`, `$Name`, `$Age`, `$Gender`, `$CatchLocation`, '$newImageName')";
-        mysqli_query($conn, $query);
+        $query = "INSERT INTO dogs VALUES('', '$DogInfo', '$Name', '$Age', '$Gender', '$CatchLocation', '$newImageName')";
+        mysqli_query($con, $query);
         echo
         "
         <script>
           alert('Successfully Added');
-          document.location.href = '../Admindashboard/Adoption.php';
+          document.location.href = 'Adoption.php';
         </script>
         ";
       }
     }
-
+  }
   
 
-      
-  }
 
   
   function display_data(){

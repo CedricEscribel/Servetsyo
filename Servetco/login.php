@@ -72,7 +72,7 @@
         <div class="form-content">
           <div class="login-form">
               <div class="title">Login</div>
-            <form action="#" method="post">
+            <form action="#" method="post"  autocomplete="off">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
@@ -99,7 +99,7 @@
   <!-- Sign up -->
           <div class="signup-form">
             <div class="title">Signup</div>
-            <form method="post" action="phpconfig/Login.php">
+            <form method="post" action="phpconfig/Login.php"  autocomplete="off">
 
               <div class="input-boxes">
                 <div class="input-box">

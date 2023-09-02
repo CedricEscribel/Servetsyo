@@ -395,7 +395,7 @@ input[type="submit"] {
     max-width: fit-content;
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
   }
   
   .details h2{

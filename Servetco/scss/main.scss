@@ -66,17 +66,37 @@
 
 .bg-image{
     background-image: url("../img/head.jpg");
-    opacity: .75;
-    min-height: 30%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: 100% 100%;
+    background-position: center;
     background-repeat: no-repeat;
-  }
+    background-size: contain;
+    height: 100%;
+  filter: blur(8px);
+  -webkit-filter: blur(2px);
+}
 
+.bg-txt {
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: auto;
+  text-align: center;
+}
+
+.bg-txt p{
+  color: white;
+}
   
+.bg-img{
+ height: 50%; 
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
 .landing h1, p {
     position: relative;
     color: #ffffff;  

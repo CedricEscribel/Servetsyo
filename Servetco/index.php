@@ -40,18 +40,13 @@ $all_events = $con->query($sql);
 
     <!-- Header -->
     <section class="bg-img ">
-
-      <div class="container Landing bg-image">
-        <div class="p-3 mb-2 bg-transparent text-body">
-          <div>
+      <div class="container Landing bg-image"> </div>
+        <div class="bg-txt">
             <h1>Baliwag Veterinary Services</h1>
-            <p class="lead my-4">
+            <p class="p-img">
              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, expedita impedit? Nam quod voluptates quae dolores, consectetur, doloribus sequi delectus perferendis magni ipsa quisquam aliquid voluptatem, et rem sapiente cum.
             </p>
-          </div>
         </div>
-      </div>
-      
     </section>
 
 

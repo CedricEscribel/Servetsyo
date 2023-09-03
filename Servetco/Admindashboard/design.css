@@ -388,14 +388,13 @@ input[type="submit"] {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     margin: 5px;
     padding: 20px;
     text-align: center;
     max-width: fit-content;
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
   }
   
   .details h2{
@@ -429,10 +428,6 @@ input[type="submit"] {
   flex-direction: column;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.Addpic{
-  padding: 10px;
 }
 
 .Imgprev{

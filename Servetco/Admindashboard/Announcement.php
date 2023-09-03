@@ -1,12 +1,22 @@
+<?php
+require '../phpconfig/events.php';
+
+$sql = "SELECT * FROM events";
+$all_events = $con->query($sql);
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Announcement</title>
-	  <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
    
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../scss/main.css">
   	<link rel="stylesheet"  href="design.css">
+
 </head>
 <body>
 
@@ -20,65 +30,66 @@
     <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
     <a href="Users.php"><i class="users"></i>Users</a>
     <a href="Announcement.php" class="active"><i class="Announcement"></i>Announcement</a>
-    <a href="Events.php"><i class="Updates"></i>Event</a>
 </div>
 
 
 
       <div class="AddAnnounce">
 
-        <div class="card" style="width: 30rem;">
-          <form class="Addpic" enctype="multipart/form-data">
-            <input type="file" id="image-file" name="image" accept="image/*" style="display: none">
+      <form class="img_prv" enctype="multipart/form-data" method="POST"  autocomplete="off">
+         <div>
+
+        <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
             <div class="image-preview">
-              <img src="../img/upload.jpg" alt="Upload Dog Picture" id="image-preview">
+              <img src="../img/adoption.jpg" alt="Upload Dog Picture" id="image-preview">
               <a href="#" id="choose-file-btn">Choose File</a>
             </div>
-          </form>
-
-            <div class="card-body Imgprev">
-              <textarea rows="1" cols="25" id="message" name="message" placeholder="Announcement"></textarea>
-              <textarea rows="4" cols="25" id="message" name="message" placeholder="Announcement details"></textarea>
-              <a href="#" class="btn btn-primary">Upload Announcement</a>
           </div>
-        </div>
+
+				<div class="card-body">
+				<div class="Details">
+				  <input type="text" name="EventName" placeholder="Event Name"  required>
+				</div>
+        <div class="Details">
+            <textarea rows="4" cols="23" id="message" name="Details" placeholder="Event details"></textarea>
+			  </div>
+
+			  	<input type="submit" name="submit" value="Upload">
+				</div>
+      </form>
       </div>
 
-      <div class="Announcements">
+      <span class="border border-primary">
+      <?php
+      $i = 1;
+      $rows = mysqli_query($con, "SELECT * FROM events ORDER BY id DESC")
+      ?>
+      <?php foreach ($rows as $row) : ?>
+        
+                <div class="col-lg-6 border border-primary">
+                    <div class="blog-item">
+                        <div class="row g-0 bg-light overflow-hidden">
+                            <div class="col-12 col-sm-5 h-100">
+                            <img src="EventsImg/<?php echo $row["image"]; ?>" width = 200 title="<?php echo $row['image']; ?>">
+                            </div>
+                            <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
+                                <div class="p-4">                
+                                    <h5 class="text-uppercase mb-3"><?php echo $row["EventName"] ?></h5>
+                                    <p class="fw-lighter lh-lg"><?php echo $row["Details"] ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="card" style="width: 18rem;">
-     <img src="../img/Neuter.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-     </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-     <img src="../img/Neuter.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-     </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-     <img src="../img/Neuter.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-     </div>
-    </div>
-    </div>
+      <?php endforeach; ?>  
+    </span>
 
 
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
 
-	<script src="scriptt.js"></script>
+	<script src="Image.js"></script>
 </body>
 </html>

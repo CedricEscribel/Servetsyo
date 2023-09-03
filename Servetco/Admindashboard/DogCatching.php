@@ -11,13 +11,12 @@
 	<div class="sidenav">
 	<a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>
       <a href="Appointment.php"><i class="Appointment"></i>Appointment</a>
-	  <a href="DogCatching.php" class="active"><i class="DogCatching"></i>Dog Catching</a>
+	    <a href="DogCatching.php" class="active"><i class="DogCatching"></i>Dog Catching</a>
       <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in Pound</a>      
-	  <a href="Adoption.php"><i class="Animals"></i>Adoption</a>
+	    <a href="Adoption.php"><i class="Animals"></i>Adoption</a>
       <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
       <a href="Users.php"><i class="users"></i>Users</a>
       <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-      <a href="Events.php"><i class="Updates"></i>Event</a>
     </div>
 
 

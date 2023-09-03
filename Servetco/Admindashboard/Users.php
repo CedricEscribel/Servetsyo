@@ -1,3 +1,9 @@
+<?php
+require '../phpconfig/login.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,119 +24,42 @@
     <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
     <a href="Users.php" class="active"><i class="users"></i>Users</a>
     <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-    <a href="Events.php"><i class="Updates"></i>Event</a>
 </div>
 
 
 
   <!-- Main body design -->
-  <div class="main">
-    <div class="header">
-      <h1>User List</h1>
-		</div>
-    <div class="request-record">
-      <div class="request-record-header">
-        <div class="request-record-title">User request</div>
-        <div class="request-record-status">
-          <span class="status-label">Status:</span>
-          <select class="status-dropdown" onchange="changeStatus(this)">
-            <option value="pending">Pending</option>
-            <option value="in-progress">In Progress</option>
-            <option value="completed">Completed</option>
-          </select>
-        </div>
-      </div>
-        <div class="user-details">
-          <div class="user-avatar">
-            <img src="/img/IDsample.jpg" alt="User Avatar">
-          </div>
-          <div class="user-info">
-            <div class="user-name">John Doe</div>
-            <div class="user-email">johndoe@example.com</div>
-          </div>
-     </div>
-    </div>
-    <div class="request-record">
-      <div class="request-record-header">
-        <div class="request-record-title">User request</div>
-        <div class="request-record-status">
-          <span class="status-label">Status:</span>
-          <select class="status-dropdown" onchange="changeStatus(this)">
-            <option value="pending">Approve</option>
-            <option value="in-progress">In Progress</option>
-            <option value="completed">Denied</option>
-          </select>
-        </div>
-      </div>
-        <div class="user-details">
-          <div class="user-avatar">
-            <img src="/img/IDsample.jpg" alt="User Avatar">
-          </div>
-          <div class="user-info">
-            <div class="user-name">John Doe</div>
-            <div class="user-email">johndoe@example.com</div>
-          </div>
-     </div>
-    </div>
-    
-    </div>
-
-
-    <section class="User">
+  <section class="User">
       <div class="User-list">
         <h1>User List</h1>
         <table class="table">
           <thead>
             <tr>
               <th>ID</th>
-              <th>Name</th>
+              <th>Full Name</th>
+              <th>Email</th>
               <th>Phone Number</th>
+              <th>Address</th>
               <th>Date</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
+      <?php
+      $i = 1;
+      $rows = mysqli_query($con, "SELECT * FROM user ORDER BY id DESC")
+      ?>
+      <?php foreach ($rows as $row) : ?>
             <tr>
-              <td>01</td>
-              <td>Sam David</td>
-              <td>091234568</td>
-              <td>03-24-22</td>
-              <td><button>View</button></td>
+              <td><?php echo $row["id"] ?></td>
+              <td><?php echo $row["Fullname"] ?></td>
+              <td><?php echo $row["Email"] ?></td>
+              <td><?php echo $row["PhoneNum"] ?></td>
+              <td><?php echo $row["Address"] ?></td>
+              <td><?php echo $row["CreateDate"] ?></td>
+              <td><?php echo $row["CreateDate"] ?></td>
             </tr>
-              <td>02</td>
-              <td>Balbina Kherr</td>
-              <td>091234568</td>
-              <td>03-24-22</td>
-              <td><button>View</button></td>
-            </tr>
-            <tr>
-              <td>03</td>
-              <td>Badan John</td>
-              <td>091234568</td>
-              <td>03-24-22</td>
-              <td><button>View</button></td>
-            </tr>
-            <tr>
-              <td>04</td>
-              <td>Sara David</td>
-              <td>091234568</td>
-              <td>03-24-22</td>
-              <td><button>View</button></td>
-            </tr>
-            <tr >
-              <td>05</td>
-              <td>Salina</td>
-              <td>091234568</td>
-              <td>03-24-22</td>
-              <td><button>View</button></td>
-            </tr>
-            <tr >
-              <td>06</td>
-              <td>Tara Smith</td>
-              <td>091234568</td>
-              <td>03-24-22</td>
-              <td><button>View</button></td>
-            </tr>
+      <?php endforeach; ?>
           </tbody>
         </table>
       </div>
@@ -142,6 +71,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
 
-    <script src="script.js"></script>
 </body>
 </html>

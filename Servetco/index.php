@@ -14,6 +14,7 @@ $all_events = $con->query($sql);
 <title>Agriculture </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+
     <?php include 'header.php';?>
 </head>
 
@@ -67,7 +68,7 @@ $all_events = $con->query($sql);
                     <div class="blog-item">
                         <div class="row g-0 bg-light overflow-hidden">
                             <div class="col-12 col-sm-5 h-100">
-                                <img class="img-fluid h-100" src="img/Neuter.jpg" style="object-fit: cover;">
+                            <img src="Admindashboard/EventsImg/<?php echo $row["image"]; ?>" width = 200 title="<?php echo $row['image']; ?>">
                             </div>
                             <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                                 <div class="p-4">
@@ -76,7 +77,6 @@ $all_events = $con->query($sql);
                                     </div>                 
                                     <h5 class="text-uppercase mb-3"><?php echo $row["EventName"] ?></h5>
                                     <p class="fw-lighter lh-lg"><?php echo $row["Details"] ?></p>
-                                    <a class="text-primary text-uppercase" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fforms.gle%2F4m6FvVChFTxtPoHm9%3Ffbclid%3DIwAR3xj5e0hR-kuXnxKnS2giQjzsbcyV6q1fA0Er1zqqujdvLCiWS8Fitu7Q4&h=AT0OU1gD8HZPdgAM-NZDqG94GpwNg29EQIHwH2NLy2TSbc0T54MWvYEHvpwbgVlm14by8fgQS4EMMqF6g768U5TBUPmkULwVhmnfbGVJcRIBcLacTb-JYc38WmqMAX2Av0nv8VcYgq_AmlSQzokh&__tn__=-UK-y-R&c[0]=AT36xcGpUFt4j6GH0i1o4nb9hMprsVkZTJr7aALXl_3Vrr7zKwbDLKj01AQeA4j31oD6Me6AtkRKxV7p8Hj9IDl6IsnLYrAig8-RrSCXqHEeX4hX4HmAOrprx_2HsJue41phrr_w87LFAnh_tOlFrpxQ7fgoCq4KXQ3Troao0n_cpPXElAG4T8aqZZWRgoNfUEIJgEtqkIGdmVUdfp-JiB4L29h9ZGYd4k3V">Register here<i class="bi bi-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>

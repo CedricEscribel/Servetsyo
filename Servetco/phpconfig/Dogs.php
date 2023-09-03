@@ -13,8 +13,7 @@
     $Name = $_POST["Name"];
     $Age = $_POST["Age"];
     $Gender = $_POST["Gender"];
-    $CatchLocation = $_POST["CatchLocation"];
-  
+      
     if($_FILES["image"]["error"] == 4){
       echo
       "<script> alert('Image Does Not Exist'); </script>"
@@ -41,7 +40,7 @@
         $newImageName = uniqid();
         $newImageName .= '.' . $imageExtension;
         move_uploaded_file($tmpName, 'img/' . $newImageName);
-        $query = "INSERT INTO dogs VALUES('', '$DogInfo', '$Name', '$Age', '$Gender', '$CatchLocation', '$newImageName')";
+        $query = "INSERT INTO dogs VALUES('', '$DogInfo', '$Name', '$Age', '$Gender', '$newImageName')";
         mysqli_query($con, $query);
         echo
         "

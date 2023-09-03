@@ -1,5 +1,7 @@
 <?php 
 
+
+
   include_once 'config.php';
   session_start();
 
@@ -36,6 +38,7 @@
     $Fullname = mysqli_real_escape_string($con, $_POST['Fullname']);
     $Address = mysqli_real_escape_string($con, $_POST['Address']);
     $PhoneNum = mysqli_real_escape_string($con, $_POST['PhoneNum']);
+    
 
     $select = " SELECT * FROM user WHERE Email = '$Email' && Password = '$Password' ";
  
@@ -60,4 +63,14 @@
  
  };
 
+
+
+ function display_data(){
+  global $con;
+  $query = "select * from user";
+  $result = mysqli_query($con,$query);
+  return $result;
+}
+
   ?>
+

@@ -1,3 +1,10 @@
+<?php
+require '../phpconfig/rescue.php';
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +27,6 @@
     <a href="AnimalRescue.php" class="active"><i class="AnimalRes active"></i>Animal Rescue</a>
     <a href="Users.php"><i class="users"></i>Users</a>
     <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-    <a href="Events.php"><i class="Updates"></i>Event</a>
 </div>
 
 
@@ -56,23 +62,30 @@
     
     <section class="main">
       <div class="Appointment">
-        <h1>User List</h1>
+        <h1>Animal Rescue</h1>
         <table class="Reports">
         <thead>
           <tr>
-          <th>ID</th>
+          <th>User Id</th>
           <th>Name</th>
-          <th>Schedule Type</th>
+          <th>Phone Number</th>
+          <th>Details</th>
           <th>Date</th>
           <th>Status</th>
           </tr>
         </thead>
         <tbody>
+      <?php
+      $i = 1;
+      $rows = mysqli_query($con, "SELECT * FROM rescue ORDER BY id DESC")
+      ?>
+      <?php foreach ($rows as $row) : ?>
           <tr>
-          <td>01</td>
-          <td>Same David</td>
-          <td>Neuter For dogs</td>
-          <td>03-24-22</td>
+          <td><?php echo $row["id"] ?></td>
+          <td><?php echo $row["Name"] ?></td>
+          <td><?php echo $row["ContactNum"] ?></td>
+          <td><?php echo $row["Details"] ?></td>
+          <td><?php echo $row["id"] ?></td>
           <td><label for="approval"></label>
             <select id="approval">
               <option value="pending">Pending</option>
@@ -81,45 +94,7 @@
             </select>
             </td>
           </tr>
-          <td>02</td>
-          <td>Balbina Kherr</td>
-          <td>Neuter For cats</td>
-          <td>03-24-22</td>
-          <td><label for="approval"></label>
-            <select id="approval">
-              <option value="pending">Pending</option>
-              <option value="approved">Approved</option>
-              <option value="Done">Done</option>
-            </select>
-            </td>
-          </tr>
-          <tr>
-          <td>03</td>
-          <td>Badan John</td>
-          <td>Spay (dogs)</td>
-          <td>03-24-22</td>
-          <td><label for="approval"></label>
-            <select id="approval">
-              <option value="pending">Pending</option>
-              <option value="approved">Approved</option>
-              <option value="Done">Done</option>
-            </select>
-            </td>
-          </tr>
-          <tr>
-          <td>04</td>
-          <td>Sara David</td>
-          <td>Spay (cats)</td>
-          <td>03-24-22</td>
-          <td><label for="approval"></label>
-            <select id="approval">
-              <option value="pending">Pending</option>
-              <option value="approved">Approved</option>
-              <option value="Done">Done</option>
-            </select>
-            </td>
-          </tr>
-        
+      <?php endforeach; ?>
         </tbody>
         </table>
       </div>
@@ -127,7 +102,6 @@
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
-	
-	<script src="script.js"></script>
+
 </body>
 </html>

@@ -1,3 +1,8 @@
+<?php
+require '../phpconfig/count.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +22,6 @@
       <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
       <a href="Users.php"><i class="users"></i>Users</a>
       <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-      <a href="Events.php"><i class="Updates"></i>Event</a>
     </div>
 
 
@@ -34,7 +38,7 @@
 				<div class="card" style="width: 18rem;">
 					<img src="../img/spay.png" class="card-img-top" alt="...">
 					<div class="card-body">
-						<h1 class="card-text">90</h1>
+						<h1 class="card-text"><?php echo $schedule ?></h1>
 					</div>
 				</div>
 					<h2>Appointment</h2>
@@ -44,7 +48,7 @@
 				<div class="card " style="width: 18rem;">
 					<img src="../img/catching.png" class="card-img-top" alt="...">
 					<div class="card-body">
-						<h1 class="card-text">90</h1>
+						<h1 class="card-text"><?php echo $Catch ?></h1>
 					</div>
 				</div>
 					<h2>Dog catching</h2>
@@ -54,7 +58,7 @@
 				<div class="card" style="width: 18rem;">
 					<img src="../img/pound.png" class="card-img-top" alt="...">
 					<div class="card-body">
-						<h1 class="card-text">90</h1>
+						<h1 class="card-text"><?php echo $dogs ?></h1>
 					</div>
 				</div>
 					<h2>Dogs in Pound</h2>
@@ -64,7 +68,7 @@
 				<div class="card" style="width: 18rem;">
 					<img src="../img/adoption.jpg" class="card-img-top" alt="...">
 					<div class="card-body">
-						<h1 class="card-text">90</h1>
+						<h1 class="card-text"><?php  echo $adoption?></h1>
 					</div>
 				</div>
 					<h2>Adoption</h2>
@@ -74,7 +78,7 @@
 				<div class="card" style="width: 18rem;">
 					<img src="../img/medical.png" class="card-img-top" alt="...">
 					<div class="card-body">
-						<h1 class="card-text">90</h1>
+						<h1 class="card-text"><?php echo $Rescue ?></h1>
 					</div>
 				</div>
 					<h2>Animal Rescue</h2>
@@ -86,7 +90,7 @@
 				<div class="card" style="width: 18rem;">
 					<img src="../img/events.png" class="card-img-top" alt="...">
 					<div class="card-body">
-						<h1 class="card-text">90</h1>
+						<h1 class="card-text"><?php echo $Events ?></h1>
 					</div>
 				</div>
 					<h3>Announcement & Events</h3>

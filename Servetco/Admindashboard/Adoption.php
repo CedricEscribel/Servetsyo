@@ -24,7 +24,6 @@ require '../phpconfig/dogs.php';
       <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
       <a href="Users.php"><i class="users"></i>Users</a>
       <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-      <a href="Events.php"><i class="Updates"></i>Event</a>
     </div>
 
     <div class="main">
@@ -38,7 +37,7 @@ require '../phpconfig/dogs.php';
 	  		<span class="border">
 				<div class="card" >
         
-				<form class="img_prv" enctype="multipart/form-data" method="POST">
+				<form class="img_prv" enctype="multipart/form-data" method="POST"  autocomplete="off">
          <div>
 
         <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
@@ -61,9 +60,6 @@ require '../phpconfig/dogs.php';
 				<div class="Details">
 			  	<input type="text" name="Gender" placeholder="Gender"  required>
 				</div>
-				<div class="Details">
-			  	<input type="text" name="CatchLocation" placeholder="Catch location"  required>
-				</div>
 			  	<input type="submit" name="submit" value="Upload">
 				</div>
       </form>
@@ -71,7 +67,9 @@ require '../phpconfig/dogs.php';
 				</div>
         
 			</span>
-      <!-- Upload dog for adoption -->
+      <!-- Upload dog for adoption end -->
+
+      
     <span class="border">
       <div class="Dog-details">
       <?php
@@ -88,7 +86,7 @@ require '../phpconfig/dogs.php';
                     <h2><?php echo $row["Name"] ?></h2>
                     <p><?php echo $row["Gender"] ?></p>                   
                     <p><?php echo $row["Age"] ?></p>                                    
-                    <p><?php echo $row["DogInfo"] ?></p>                    
+                    <p><?php echo $row["DogInfo"] ?></p>                   
                   </div>
               </div>
 

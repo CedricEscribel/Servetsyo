@@ -30,7 +30,6 @@ $all_schedule = $con->query($sql);
     <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
     <a href="Users.php"><i class="users"></i>Users</a>
     <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-    <a href="Events.php"><i class="Updates"></i>Event</a>
 </div>
 
 

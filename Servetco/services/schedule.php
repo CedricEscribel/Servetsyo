@@ -69,7 +69,7 @@ $all_schedule = $con->query($sql);
             <select id="Schedule" name="Sched" required>
               <option value="">-- Schedule For --</option>
               <option value="Vaccination">Vaccination</option>
-              <option value="Neuter">Neuter</option>
+              <option value="Castration">Castration</option>
             </select>
           </div>
   

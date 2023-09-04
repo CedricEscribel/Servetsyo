@@ -1,16 +1,13 @@
 <?php 
 
-require_once '../phpconfig/Schedule.php';
-
-$sql = "SELECT * FROM schedule";
-$all_schedule = $con->query($sql);
+require_once '../phpconfig/rescue.php';
 
 
 ?>
 
 <head>
     <meta charset="utf-8">
-    <title>Schedule </title>
+    <title>Rescue </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Icon Font Stylesheet -->
@@ -30,10 +27,11 @@ $all_schedule = $con->query($sql);
 <body>
     <!-- Navbar Start -->
     <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="../index.php" class="navbar-brand ms-lg-5" style="color: #378ACA; font-weight: bold; ">
-           <img src="../img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
-           SERVETSYO
-        </a>
+    <a href="../index.php" class="navbar-brand ms-lg-5">
+        <img src="../img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
+        </a>    
+        <h2 style="margin-top: 18px; color: #378ACA; font-weight: bold;">SERVETSYO</h2>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,65 +48,26 @@ $all_schedule = $con->query($sql);
     </nav>
     <!-- Navbar End -->
 
-
 <!-- Schedule form start -->
-    <div class="Schedule_form">
-          <h1>Schedule Request</h1>
+     <div class="Schedule_form">
+          <h1>Artificial Insemination</h1>
 
-        <form method="post" action="../phpconfig/Schedule.php">
+        <form method="post" action="../phpconfig/rescue.php">
           <div class="form">
-          
           <label for="name">Name:</label>
-          <input type="text" id="name" name="FullN" placeholder="Your name">
+          <input type="text" id="name" name="Name" placeholder="Your name">
   
-          <label for="Number">Contact Number:</label>
-          <input type="text" id="number" name="PhoneNum" placeholder="Your Contact Number:">
-           
-          <div class="form-group">
-            <label for="Sched">Schedule For:</label>
-            <select id="Schedule" name="Sched" required>
-              <option value="">-- Schedule For --</option>
-              <option value="Vaccination">Vaccination</option>
-              <option value="Castration">Castration</option>
-            </select>
-          </div>
-  
-          <label for="PName">Pet's name:</label>
-          <!-- to be created as a calendar -->
-          <input type="text" id="PName" name="PName" placeholder="Pet's name" require>
+          <label for="Number">Phone Number</label>
+          <input type="text" id="number" name="ContactNum" placeholder="Phone Number">
 
-          <label for="Breed">Breed:</label>
-          <!-- to be created as a calendar -->
-          <input type="text" id="Breed" name="Breed" placeholder="Breed" require>
-  
-          <label for="Color">Color:</label>
-          <!-- to be created as a calendar -->
-          <input type="text" id="Color" name="Color" placeholder="Color" require>
-  
-          <label for="Age">Breed:</label>
-          <!-- to be created as a calendar -->
-          <input type="text" id="Age" name="Age" placeholder="Age" require>
-  
-          <label for="Gender">Gender:</label>
-          <!-- to be created as a calendar -->
-          <input type="text" id="Gender" name="Gender" placeholder="Gender" require>
-  
-          <label for="date">Date:</label>
-          <!-- to be created as a calendar -->
-          <input type="text" id="date" name="Date" placeholder="Preferred date">
-  
-          <label for="time">Time:</label>
-          <!-- Time fix on castration -->
-          <input type="text" id="time" name="Time" placeholder="Preferred time">
-  
-          <label for="message">Note:</label>
-          <textarea id="message" name="Message" placeholder="Additional details"></textarea>
+          <label for="Details">Details:</label>
+          <textarea id="Details" name="Details" placeholder="Additional details"></textarea>
 
-          <input type="submit"   name="save" value="Submit">
+			  	<input type="submit" name="save" value="Submit">
           </div>
         </form>
       </div>
-      
+            </div>
     <!-- Schedule form end -->
 
     <!-- Footer Start -->
@@ -143,5 +102,5 @@ $all_schedule = $con->query($sql);
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
   <!-- Template Javascript --> 
-    <script src="../js/main.js"></script>
+
 </body>

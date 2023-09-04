@@ -50,22 +50,38 @@ require_once '../phpconfig/rescue.php';
 
 <!-- Schedule form start -->
      <div class="Schedule_form">
-          <h1>Dog Rescue</h1>
+          <h1>Animal Rescue</h1>
 
         <form method="post" action="../phpconfig/rescue.php">
           <div class="form">
           <label for="name">Name:</label>
           <input type="text" id="name" name="Name" placeholder="Your name">
   
-          <label for="Number">Phone Number</label>
-          <input type="text" id="number" name="ContactNum" placeholder="Phone Number">
+          <label for="Number">Contact Number</label>
+          <input type="text" id="number" name="ContactNum" placeholder="Contact Number">
+            
+          <label for="Animal">Select what kind of animals</label>
+            <div class="AnimalType form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Dog
+            </label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Cat" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+                Cat
+            </label>
+            </div>
 
-          <label for="Details">Details:</label>
-          <textarea id="Details" name="Details" placeholder="Additional details"></textarea>
+          <label for="Situation">Situation:</label>
+          <textarea id="Situation" name="Situation" placeholder="Explain the situation"></textarea>
 
 			  	<input type="submit" name="save" value="Submit">
           </div>
-        </form>
+<!-- TODO: google maps to be added -->
+
+        </form> 
       </div>
             </div>
     <!-- Schedule form end -->

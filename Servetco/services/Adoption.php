@@ -70,21 +70,10 @@ include_once '../phpconfig/config.php';
                         <span class="details">Phone Number</span>
                         <input type="text" placeholder="Enter your number" required>
                     </div>
-                    
-                      <div class="Adopt">
-                            <p>Do you find a dog to adopt on the page?</p>
-                            <div class="form-check form-check-inline">
-                            <input type="radio" class="btn-check" name="Adopt" id="AdoptYes" value="Yes">
-                            <label class="btn btn-outline-success" for="AdoptYes">Yes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                            <input type="radio" class="btn-check" name="Adopt" id="AdoptNo" value="No">
-                            <label class="btn btn-outline-danger" for="AdoptNo">No</label>
-                            </div>
-                        </div>  
 
-                        <div class="Visit">
+                        <div class="Visit input-box">
                             <p>Will you be able to visit the office for the interview?</p>
+                            <div class="radioV">
                             <div class="form-check form-check-inline">
                             <input type="radio" class="btn-check" name="Int" id="IntYes" value="Yes">
                             <label class="btn btn-outline-success" for="IntYes">Yes</label>
@@ -92,6 +81,7 @@ include_once '../phpconfig/config.php';
                             <div class="form-check form-check-inline">
                             <input type="radio" class="btn-check" name="Int" id="IntNo" value="No">
                             <label class="btn btn-outline-danger" for="IntNo">No</label>
+                            </div>
                             </div>
                         </div>  
 
@@ -103,7 +93,7 @@ include_once '../phpconfig/config.php';
                         </div>
                         
 
-                    <div class="button">
+                    <div class="button SubmitB">
                         <input type="submit" value="Submit Form">
                     </div>
                  </form>

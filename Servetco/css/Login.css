@@ -170,10 +170,21 @@
 .forms .form-content .button input:hover{
   background: #95ee29;
 }
-.forms .form-content label{
+.labels{
   color: #95ee29;
   cursor: pointer;
 }
+
+.show_pass{
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.label{
+  color: black;
+  margin-bottom: -15px;
+}
+
 .forms .form-content label:hover{
   text-decoration: underline;
 }

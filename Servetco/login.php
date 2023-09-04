@@ -46,7 +46,7 @@
     <div class="forms">
         <div class="form-content">
           <div class="login-form">
-              <div class="title">Login</div>
+              <div class="title">Log in</div>
             <form action="log/LogIn.php" method="post"  autocomplete="off">   
 
               <?php if(isset($_GET['error'])){ ?>
@@ -57,19 +57,21 @@
 
 
               <div class="input-boxes">
+              <label class="label">Email address:</label>
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
-                  <input type="text" name="Email" placeholder="Enter your Email" required>
+                  <input type="email" name="Email" placeholder="Enter your Email" required>
                 </div>
+                <label class="label">Password:</label>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
                   <input type="password" name="Password" placeholder="Enter your password" required>
                 </div>
                 <div class="text"><a href="phpconfig/logout.php">Forgot password?</a></div>
                 <div class="button input-box">
-                  <input value="Login" type="submit"  name="Login">
+                  <input value="Log in" type="submit"  name="Login">
                 </div>
-                <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+                <div class="text sign-up-text">Don't have an account? <label class="labels" for="flip">Sign up now</label></div>
               </div>
             </form>
           </div>
@@ -81,58 +83,54 @@
 
           <div class="signup-form">
           <form method="post" action="log/account.php"  autocomplete="off">
-            <div class="title">Signup</div>
-            
+            <div class="title">Sign up</div>
             <?php if(isset($_GET['error'])){ ?>
               <div class="alert alert-danger" role="alert">
             <?php echo $_GET['error']; ?>
              </div>
             <?php } ?>
-
             <?php if(isset($_GET['success'])){ ?>
             <div class="alert alert-success" role="alert">
              <?php echo $_GET['success']; ?>
             </div>
             <?php } ?>
-
-
               <div class="input-boxes">
+              <label class="label">Email address:</label>
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
-                  <input type="email" name="Email" placeholder="Enter your email" required>
+                  <input type="email" name="Email" placeholder="Enter your Email" required>
                 </div>
-
+                <label class="label">Password:</label>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input type="password" name="Password" id="Pass" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                  <input type="password" name="Password" id="Pass" placeholder="Enter your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                 </div>
-
-                <div class="show_pass" style="margin-left: 5%;">
+                <div class="show_pass" >
                   <input type="checkbox" onclick="Showpass()">&#32;Show Password
                 </div>
-
+                <label class="label">Full Name:</label>
                 <div class="input-box">
                   <i class="fas fa-user"></i>
-                  <input type="text" name="Fullname" placeholder="Enter your name" required  		       
+                  <input type="text" name="Fullname" placeholder="Full Name" required  		       
                   value="<?php echo (isset($_GET['Fullname']))?$_GET['Fullname']:"" ?>">
                 </div>
-
+                <label class="label">Address:</label>
                 <div class="input-box">
                   <i class="fas fa-user"></i>
-                  <input type="text" name="Address" placeholder="Enter your address" required
+                  <input type="text" name="Address" placeholder="Enter your Address" required
                   value="<?php echo (isset($_GET['Address']))?$_GET['Address']:"" ?>">
                 </div>
-
+                <label class="label">Contact Number:</label>
+                <!-- TODO:  delete add button -->
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input type="text" name="PhoneNum" placeholder="Enter your Phone Number" required
+                  <input type="number" name="PhoneNum" placeholder="Enter your Contact Number" required
                   value="<?php echo (isset($_GET['PhoneNum']))?$_GET['PhoneNum']:"" ?>">
                 </div>
-
                 <div class="button input-box">
                   <input type="submit" value="Sign Up"  name="Sign_up">
                 </div>
-                <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+                <div class="text sign-up-text">Already have an account? <label class="labels" for="flip">Log in now</label></div>
               </div>
             </form>
          </div>

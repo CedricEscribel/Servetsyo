@@ -39,12 +39,12 @@
         <div class="carousel-inner">
             <div class="carousel-item active ">
                 <div class="Pet-needs text-center">
-                    <h2>DONATIONS FOR RESCUED DOGS</h2>
-                            <li>Dog food (kibble and canned)</li>
-                            <li>Crates, carriers or cages</li>
-                            <li>Pet diapers and pee pads</li>
-                            <li>Chew toys for the dogs</li>
-                            <li>Vaccines, medicine and vitamins</li>
+                    <h2>DONATIONS FOR RESCUED ANIMAL</h2>
+                        <p>We only accept in-kind donations</p>
+
+                            <li>Dog food</li>
+                            <li>Cat food</li>
+                            <li>cages</li>
                             <li>Dog treats</li>
                             <li>Leashes, harnesses and collars</li>
                 </div>
@@ -53,14 +53,10 @@
                     <div class="Pet-needs text-center">
                         <h2>SHELTER WISH LIST</h2>       
                             <li>Detergent powder and bleach</li>
-                            <li>Dishwashing paste or liquid</li>
-                            <li>Bath towels</li>
                             <li>Garbage bags (XXL)</li>
-                            <li>Foot rugs or door mats</li>
                             <li>Clinic supplies (alcohol, cotton, etc.)</li>
                             <li>Old newspapers</li>
                             <li>Toilet paper</li>
-                            <li>Mops and brooms</li>
                     </div>
                 </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#Petneeds" data-bs-slide="prev">

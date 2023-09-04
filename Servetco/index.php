@@ -41,13 +41,35 @@ $all_events = $con->query($sql);
 
     <!-- Header -->
     <section class="bg-img ">
-      <div class="container Landing bg-image"> </div>
-        <div class="bg-txt">
-            <h1>Baliwag Veterinary Services</h1>
-            <p class="p-img">
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, expedita impedit? Nam quod voluptates quae dolores, consectetur, doloribus sequi delectus perferendis magni ipsa quisquam aliquid voluptatem, et rem sapiente cum.
-            </p>
-        </div>
+
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="image/april.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="image/dean.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="image/randel.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    
+    <iframe frameborder="0" width="350" height="550" src="https://www.facebook.com/v9.0/plugins/page.php?adapt_container_width=true&amp;app_id=113869198637480&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df310a21b6f5a654%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff3cf179cd85d47c%26relation%3Dparent.parent&amp;container_width=340&amp;height=600&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2F/baliwagvetservice&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true&amp;tabs=timeline&amp;width=500"></iframe>
+    <script type="text/javascript" src="https://www.embedista.com/j/fbwidget.js"></script>
+        <div id="fbroot"></div>
+        <div style="overflow: auto; position: absolute; height: 0pt; width: 0pt;">
+        <a href="https://www.embedista.com/embed-facebook-feed">Embed Facebook Feed</a></div>
+        <div class="fblike" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
     </section>
 
 
@@ -59,11 +81,12 @@ $all_events = $con->query($sql);
                 <h1 class="display-5 text-uppercase mb-0">Updates and Upcomming Event</h1>
             </div>
 
-            <?php
-            while ($row = $all_events->fetch_assoc()) {
-            ?>
+
 
             <div class="row g-5">
+                      <?php
+            while ($row = $all_events->fetch_assoc()) {
+            ?>      
                 <div class="col-lg-6">
                     <div class="blog-item">
                         <div class="row g-0 bg-light overflow-hidden">
@@ -86,38 +109,16 @@ $all_events = $con->query($sql);
                 <?php
             }
                ?>
-
-                <div class="col-lg-6">
-                    
-                    <div class="blog-item">
-                        <div class="row g-0 bg-light overflow-hidden">
-                            <div class="col-12 col-sm-5 h-100">
-                                <img class="img-fluid h-100" src="img/vaccination.jpg" style="object-fit: cover;">
-                            </div>
-
-                            <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
-                                <div class="p-4">
-                                    <div class="d-flex mb-3">
-                                        <small><i class="bi bi-calendar-date me-2"></i>01 June, 2023</small>
-                                    </div>
-                                    <h5 class="text-uppercase mb-3">Pet Vaccination</h5>
-                                    <p class="fw-lighter lh-lg">Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag.</p>
-                                    <a class="text-primary text-uppercase" role="button" data-bs-toggle="modal"  data-bs-target="#myModal" aria-expanded="false"  id="vaccination">More<i class="bi bi-chevron-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
   
-
         <!-- The Modal -->
         <div class="modal fade" id="myModal" aria-hidden="true" aria-labelledby="myModal" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                 <div class="modal-header">
+                    <!-- Id mymodal be change to id of events  -->
                     <h1 class="modal-title fs-5" id="myModal">Modal 1</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>

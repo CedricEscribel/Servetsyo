@@ -21,7 +21,6 @@ if(isset($_POST['Fullname']) &&
     	header("Location: ../login.php?error=$em&$data");
 	    exit;
 
-
     }else if(empty($Password)){
     	$em = "Password is required";
     	header("Location: ../login.php?error=$em&$data");
@@ -38,7 +37,7 @@ if(isset($_POST['Fullname']) &&
          exit;       
            
         }else  {
-            $sql = "INSERT INTO user(Fullname, Email, Password, Address, PhoneNum) 
+            $sql = "INSERT INTO user (Fullname, Email, Password, Address, PhoneNum) 
                     VALUES(?,?,?,?,?)";
             $stmt = $con->prepare($sql);
             $stmt->execute([$Fullname, $Email, $Password, $Address, $PhoneNum]);
@@ -51,7 +50,5 @@ if(isset($_POST['Fullname']) &&
 	header("Location: ../login.php?error=error");
 	exit;
 }
-
-// Log In
 
 

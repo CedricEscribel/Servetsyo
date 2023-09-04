@@ -57,23 +57,23 @@ $all_schedule = $con->query($sql);
 
         <form method="post" action="phpconfig/Schedule.php">
           <div class="form">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="FullN" placeholder="Your name">
+          <label for="name">Barangay:</label>
+          <input type="text" id="name" name="Barangay" placeholder="Barangay Name">
   
-          <label for="Number">Number:</label>
-          <input type="text" id="number" name="PhoneNum" placeholder="Your Number:">
+          <label for="Number">Contact Number:</label>
+          <input type="text" id="number" name="PhoneNum" placeholder="Contact Number">
 
-          <h2>Click to Display location in map</h2>
-          <div id="location"></div>
-            <button type="button" onclick="getlocation();">
-              Current Position
-            </button><br><br>
-            <div id="demo2" style="width: 500px; height: 500px"></div>
+          <label for="Number">Number of Dogs:</label>
+          <input type="text" id="number" name="DogsQuantity" placeholder="Number of Dogs">
 
-          <label for="Details">Details:</label>
-          <textarea id="Details" name="Details" placeholder="Additional details"></textarea>
 
-			  	<input type="submit" name="save" value="Upload">
+          <label for="Notes">Notes:</label>
+          <textarea id="Notes" name="Notes" placeholder=""></textarea>
+
+<!--TODO: copy button from adoption -->
+          <div class="button SubmitB">
+                        <input type="submit" value="Submit">
+                    </div>
           </div>
         </form>
       </div>
@@ -116,54 +116,5 @@ $all_schedule = $con->query($sql);
 
     <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
 
-<script type="text/javascript">
- function getlocation() {
- if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(showLoc, errHand);
- }
- }
- 
- function showLoc(pos) {
- latt = pos.coords.latitude;
- long = pos.coords.longitude;
- var lattlong = new google.maps.LatLng(latt, long);
- var OPTions = {
-  center: lattlong,
-  zoom: 15,
-  mapTypeControl: true,
-  navigationControlOptions: {
-  style: google.maps.NavigationControlStyle.SMALL,
-  },
- };
- var mapg = new google.maps.Map(
-  document.getElementById("demo2"),
-  OPTions
- );
- var markerg = new google.maps.Marker({
-  position: lattlong,
-  map: mapg,
-  title: "You are here!",
- });
- }
- function errHand(err) {
- switch (err.code) {
-  case err.PERMISSION_DENIED:
-  result.innerHTML =
-   "The application doesn't have the permission" +
-   "to make use of location services";
-  break;
-  case err.POSITION_UNAVAILABLE:
-  result.innerHTML = "The location of the device is uncertain";
-  break;
-  case err.TIMEOUT:
-  result.innerHTML = "The request to get user location timed out";
-  break;
-  case err.UNKNOWN_ERROR:
-  result.innerHTML =
-   "Time to fetch location information exceeded" +
-   "the maximum timeout interval";
-  break;
- }
- }
 </script>
 </body>

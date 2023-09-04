@@ -8,9 +8,9 @@
         <div class="col-md-6">
             <div class="service-item bg-light d-flex p-4">
                 <div>
-                    <h5 class="text-uppercase mb-3">Adoption Form</h5>
-                    <p>Application form for Adoption</p>
-                    <a class="text-primary text-uppercase" href="services/Adoption.php">Adoption form<i class="bi bi-chevron-right"></i></a>
+                    <h5 class="text-uppercase mb-3">Artificial Insemination</h5>
+                    <p>Application form for Artificial Insemination for Large Ruminants</p>
+                    <a class="text-primary text-uppercase" href="services/insemination.php">Artificial Insemination form<i class="bi bi-chevron-right"></i></a>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 <div>
                     <h5 class="text-uppercase mb-3">Dog catching</h5>
                     <p>Dog catching Request </p>
-                    <a class="text-primary text-uppercase" href="services/Rescue.php">Request Dog Catching<i class="bi bi-chevron-right"></i></a>
+                    <a class="text-primary text-uppercase" href="services/Dog_catching.php">Request Dog Catching<i class="bi bi-chevron-right"></i></a>
                 </div>
             </div>
         </div>

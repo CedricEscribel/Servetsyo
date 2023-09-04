@@ -48,7 +48,7 @@ require '../phpconfig/count.php';
 				<div class="card " style="width: 18rem;">
 					<img src="../img/catching.png" class="card-img-top" alt="...">
 					<div class="card-body">
-						<h1 class="card-text"></h1>
+						<h1 class="card-text"><?php echo $catch ?></h1>
 					</div>
 				</div>
 					<h2>Dog catching</h2>

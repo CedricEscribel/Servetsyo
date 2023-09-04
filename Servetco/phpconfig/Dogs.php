@@ -1,8 +1,6 @@
 <?php 
 
-    error_reporting(0);
 
-    $msg = "";
 
   include_once 'config.php';
 

@@ -30,12 +30,12 @@ $dogs = mysqli_num_rows( $result );
      
 }
 
-$sql = "SELECT * from dog_catch";
+$sql = "SELECT * from catch";
   
 if ($result = mysqli_query($con, $sql)) {
 
 // Return the number of rows in result set
-$Catch = mysqli_num_rows( $result );
+$catch = mysqli_num_rows( $result );
      
 }
 

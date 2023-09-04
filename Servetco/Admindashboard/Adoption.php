@@ -74,7 +74,7 @@ require '../phpconfig/dogs.php';
       <div class="Dog-details">
       <?php
       $i = 1;
-      $rows = mysqli_query($con, "SELECT * FROM dogs ORDER BY id DESC")
+      $rows = mysqli_query($con, "SELECT * FROM dogs ORDER BY Dog_id DESC")
       ?>
       <?php foreach ($rows as $row) : ?>
         

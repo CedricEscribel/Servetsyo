@@ -50,11 +50,11 @@ $all_dogs = $con->query($sql);
 						while ($row = $all_dogs->fetch_assoc()) {
 						?>
 							<tr>
-								<td><?php echo $row["id"] ?></td>
+								<td><?php echo $row["Dog_id"] ?></td>
 								<td><?php echo $row["Name"] ?></td>
-								<td><?php echo $row["Days"] ?></td>                    
+								<td>date</td>                    
 								<td><?php echo $row["Age"] ?></td>                   
-								<td><?php echo $row["CatchLocation"] ?></td>       
+								<td>location</td>       
                 <td><label for="Status"></label>
 								<select id="Status">
 								<option value="Adopted">Adopted</option>

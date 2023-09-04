@@ -93,14 +93,6 @@ $all_schedule = $con->query($sql);
           <!-- to be created as a calendar -->
           <input type="text" id="Gender" name="Gender" placeholder="Gender" require>
   
-          <label for="date">Date:</label>
-          <!-- to be created as a calendar -->
-          <input type="text" id="date" name="Date" placeholder="Preferred date">
-  
-          <label for="time">Time:</label>
-          <!-- Time fix on castration -->
-          <input type="text" id="time" name="Time" placeholder="Preferred time">
-  
           <label for="message">Note:</label>
           <textarea id="message" name="Message" placeholder="Additional details"></textarea>
 

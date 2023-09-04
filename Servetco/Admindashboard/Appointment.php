@@ -56,7 +56,7 @@ $all_schedule = $con->query($sql);
 						while ($row = $all_schedule->fetch_assoc()) {
 						?>
 							<tr>
-								<td><?php echo $row["id"] ?></td>
+								<td><?php echo $row["Schedule_id"] ?></td>
 								<td><?php echo $row["FullN"] ?></td>
 								<td><?php echo $row["PhoneNum"] ?></td>                    
 								<td><?php echo $row["Sched"] ?></td>  

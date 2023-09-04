@@ -1,3 +1,13 @@
+<?php 
+
+require_once '../phpconfig/Catching.php';
+
+$sql = "SELECT * FROM catch";
+$all_catch = $con->query($sql);
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +29,48 @@
       <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
     </div>
 
+    <section class="main">
+			<div class="Appointment">
+			  <h1>User List</h1>
+			  <table class="table">
+				<thead>
+				  <tr>
+					<th>ID</th>
+					<th>Barangay</th>
+					<th>Number of Dogs</th>
+					<th>Notes</th>
+					<th>Date</th>
+					<th>Status</th>
+				  </tr>
+				</thead>
+				<tbody>
 
+
+					<?php
+						while ($row = $all_catch->fetch_assoc()) {
+						?>
+							<tr>
+								<td><?php echo $row["Schedule_id"] ?></td>
+								<td><?php echo $row["BarangayID"] ?></td>
+								<td><?php echo $row["DogCount"] ?></td>                     
+								<td><?php echo $row["Date"] ?></td>                      
+								<td><?php echo $row["Notes"] ?></td>     
+								<td><label for="approval"></label>
+								<select id="approval">
+								<option value="Adopted">Adopted</option>
+								<option value="Euthanized">Euthanized</option>
+								<option value="Claimed">Claimed</option>
+								</select>               
+						</tr>				
+
+						<?php
+						}
+						?>
+				
+				</tbody>
+			  </table>
+			</div>
+		  </section>
 
 
     <!-- JavaScript Libraries -->

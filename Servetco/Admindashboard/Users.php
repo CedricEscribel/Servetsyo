@@ -47,11 +47,11 @@ require '../phpconfig/login.php';
           <tbody>
       <?php
       $i = 1;
-      $rows = mysqli_query($con, "SELECT * FROM user ORDER BY id DESC")
+      $rows = mysqli_query($con, "SELECT * FROM user ORDER BY user_id DESC")
       ?>
       <?php foreach ($rows as $row) : ?>
             <tr>
-              <td><?php echo $row["id"] ?></td>
+              <td><?php echo $row["user_id"] ?></td>
               <td><?php echo $row["Fullname"] ?></td>
               <td><?php echo $row["Email"] ?></td>
               <td><?php echo $row["PhoneNum"] ?></td>

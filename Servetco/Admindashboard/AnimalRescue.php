@@ -31,35 +31,6 @@ require '../phpconfig/rescue.php';
 
 
 
-    <div class="main container text-center">
-      <div class="header ">
-        <h1></h1>
-      </div>
-
-      <div class="dashboard row ">
-
-        <span class="border border-3 border-success-subtle">
-          <div class="card " style="width: 18rem;">
-            <img src="../img/syringe.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h1 class="card-text">90</h1>
-            </div>
-          </div>
-            <h2>Vaccination</h2>
-        </span>
-
-        <span class="border border-3 border-success-subtle">
-          <div class="card" style="width: 18rem;">
-            <img src="../img/Spay.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h1 class="card-text">90</h1>
-            </div>
-          </div>
-            <h2>Spay & Nuetered</h2>
-        </span>
-      </div>
-    </div>
-    
     <section class="main">
       <div class="Appointment">
         <h1>Animal Rescue</h1>
@@ -77,15 +48,15 @@ require '../phpconfig/rescue.php';
         <tbody>
       <?php
       $i = 1;
-      $rows = mysqli_query($con, "SELECT * FROM rescue ORDER BY id DESC")
+      $rows = mysqli_query($con, "SELECT * FROM rescue ORDER BY Rescue_id DESC")
       ?>
       <?php foreach ($rows as $row) : ?>
           <tr>
-          <td><?php echo $row["id"] ?></td>
+          <td><?php echo $row["Rescue_id"] ?></td>
           <td><?php echo $row["Name"] ?></td>
           <td><?php echo $row["ContactNum"] ?></td>
           <td><?php echo $row["Details"] ?></td>
-          <td><?php echo $row["id"] ?></td>
+          <td><?php echo $row["Rescue_id"] ?></td>
           <td><label for="approval"></label>
             <select id="approval">
               <option value="pending">Pending</option>

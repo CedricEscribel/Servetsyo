@@ -42,20 +42,38 @@
     </div>
 
 <!-- Login -->    
-
+<?php
+    require('phpconfig/config.php');
+    session_start();
+    // When form submitted, check and create user session.
+    if (isset($_POST['Email'])) {
+        $Email = stripslashes($_REQUEST['Email']);    // removes backslashes
+        $Email = mysqli_real_escape_string($con, $Email);
+        $Password = stripslashes($_REQUEST['Password']);
+        $Password = mysqli_real_escape_string($con, $Password);
+        // Check user is exist in the database
+        $query    = "SELECT * FROM `user` WHERE Email='$Email'
+                     AND Password='" . md5($Password) . "'";
+        $result = mysqli_query($con, $query) or die(mysql_error());
+        $rows = mysqli_num_rows($result);
+        if ($rows == 1) {
+            $id =  $user['id'];
+            $_SESSION['Email'] = $Email;
+            // Redirect to user dashboard page
+            header("Location: profile.php");
+        } else {
+            echo "<div class='form'>
+                  <h3>Incorrect Email/Password.</h3><br/>
+                  <p class='link'>Click here to <a href='login.php'>Login</a> again.</p>
+                  </div>";
+        }
+    } else {
+?>
     <div class="forms">
         <div class="form-content">
           <div class="login-form">
               <div class="title">Login</div>
-            <form action="log/LogIn.php" method="post"  autocomplete="off">   
-
-              <?php if(isset($_GET['error'])){ ?>
-              <div class="alert alert-danger" role="alert">
-                 <?php echo $_GET['error']; ?>
-              </div>
-              <?php } ?>
-
-
+            <form action="#" method="post"  autocomplete="off">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
@@ -73,62 +91,41 @@
               </div>
             </form>
           </div>
-
+<?php
+  }
+?>
 <!-- Login end -->
 
 
   <!-- Sign up -->
-
           <div class="signup-form">
-          <form method="post" action="log/account.php"  autocomplete="off">
             <div class="title">Signup</div>
-            
-            <?php if(isset($_GET['error'])){ ?>
-              <div class="alert alert-danger" role="alert">
-            <?php echo $_GET['error']; ?>
-             </div>
-            <?php } ?>
-
-            <?php if(isset($_GET['success'])){ ?>
-            <div class="alert alert-success" role="alert">
-             <?php echo $_GET['success']; ?>
-            </div>
-            <?php } ?>
-
+            <form method="post" action="phpconfig/Login.php"  autocomplete="off">
 
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
                   <input type="email" name="Email" placeholder="Enter your email" required>
                 </div>
-
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input type="password" name="Password" id="Pass" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                  <input type="password" name="Password" id="Pass" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                 </div>
-
                 <div class="show_pass" style="margin-left: 5%;">
                   <input type="checkbox" onclick="Showpass()">&#32;Show Password
                 </div>
-
                 <div class="input-box">
                   <i class="fas fa-user"></i>
-                  <input type="text" name="Fullname" placeholder="Enter your name" required  		       
-                  value="<?php echo (isset($_GET['Fullname']))?$_GET['Fullname']:"" ?>">
+                  <input type="text" name="Fullname" placeholder="Enter your name" required  title="Full name Required">
                 </div>
-
                 <div class="input-box">
                   <i class="fas fa-user"></i>
-                  <input type="text" name="Address" placeholder="Enter your address" required
-                  value="<?php echo (isset($_GET['Address']))?$_GET['Address']:"" ?>">
+                  <input type="text" name="Address" placeholder="Enter your address" required>
                 </div>
-
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input type="text" name="PhoneNum" placeholder="Enter your Phone Number" required
-                  value="<?php echo (isset($_GET['PhoneNum']))?$_GET['PhoneNum']:"" ?>">
+                  <input type="text" name="PhoneNum" placeholder="Enter your Phone Number" required>
                 </div>
-
                 <div class="button input-box">
                   <input type="submit" value="Sign Up"  name="Sign_up">
                 </div>
@@ -161,4 +158,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
   <!-- Template Javascript --> 
+    <script src="js/main.js"></script>
 </body>

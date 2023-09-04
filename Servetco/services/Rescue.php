@@ -50,7 +50,7 @@ require_once '../phpconfig/rescue.php';
 
 <!-- Schedule form start -->
      <div class="Schedule_form">
-          <h1>Dog Catching Request</h1>
+          <h1>Dog Rescue</h1>
 
         <form method="post" action="../phpconfig/rescue.php">
           <div class="form">
@@ -63,7 +63,7 @@ require_once '../phpconfig/rescue.php';
           <label for="Details">Details:</label>
           <textarea id="Details" name="Details" placeholder="Additional details"></textarea>
 
-			  	<input type="submit" name="save" value="Upload">
+			  	<input type="submit" name="save" value="Submit">
           </div>
         </form>
       </div>

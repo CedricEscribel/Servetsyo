@@ -73,10 +73,32 @@ $all_schedule = $con->query($sql);
             </select>
           </div>
   
+          <label for="PName">Pet's name:</label>
+          <!-- to be created as a calendar -->
+          <input type="text" id="PName" name="PName" placeholder="Pet's name" require>
+
+          <label for="Breed">Breed:</label>
+          <!-- to be created as a calendar -->
+          <input type="text" id="Breed" name="Breed" placeholder="Breed" require>
+  
+          <label for="Color">Color:</label>
+          <!-- to be created as a calendar -->
+          <input type="text" id="Color" name="Color" placeholder="Color" require>
+  
+          <label for="Age">Breed:</label>
+          <!-- to be created as a calendar -->
+          <input type="text" id="Age" name="Age" placeholder="Age" require>
+  
+          <label for="Gender">Gender:</label>
+          <!-- to be created as a calendar -->
+          <input type="text" id="Gender" name="Gender" placeholder="Gender" require>
+  
           <label for="date">Date:</label>
+          <!-- to be created as a calendar -->
           <input type="text" id="date" name="Date" placeholder="Preferred date">
   
           <label for="time">Time:</label>
+          <!-- Time fix on castration -->
           <input type="text" id="time" name="Time" placeholder="Preferred time">
   
           <label for="message">Note:</label>

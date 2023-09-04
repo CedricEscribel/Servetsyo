@@ -1,6 +1,4 @@
-<?php 
 
-echo'
 <div class="footer container-fluid bg-light mt-5 py-5">
 <div class="container pt-5">
     <div class="row g-5">
@@ -25,6 +23,3 @@ echo'
     </div>
 </div>
 </div>  
-';
-
-?>

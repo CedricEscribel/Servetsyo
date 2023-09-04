@@ -71,28 +71,34 @@ include_once '../phpconfig/config.php';
                         <input type="text" placeholder="Enter your number" required>
                     </div>
                     
-<!-- TODO: Gender to be delete and change to( do you find a dog to adopt on the page?)  -->
-                  <div class="form-group">
-                        <label for="gender">Gender:</label>
-                        <select id="gender" name="gender" required>
-                        <option value="">-- Select Gender --</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
-                        </select>
-                    </div>
-                
-                        <div class="Radio">
-                            <p>Will you be able to visit the office for the interview?</p>
-                            <input type="radio" name="Yes" >
-                            <label for="Yes">Yes</label><br>            
-                            <input type="radio" name="No" required>
-                            <label for="No">No</label><br>
-
+                      <div class="Adopt">
+                            <p>Do you find a dog to adopt on the page?</p>
+                            <div class="form-check form-check-inline">
+                            <input type="radio" class="btn-check" name="Adopt" id="AdoptYes" value="Yes">
+                            <label class="btn btn-outline-success" for="AdoptYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input type="radio" class="btn-check" name="Adopt" id="AdoptNo" value="No">
+                            <label class="btn btn-outline-danger" for="AdoptNo">No</label>
+                            </div>
                         </div>  
+
+                        <div class="Visit">
+                            <p>Will you be able to visit the office for the interview?</p>
+                            <div class="form-check form-check-inline">
+                            <input type="radio" class="btn-check" name="Int" id="IntYes" value="Yes">
+                            <label class="btn btn-outline-success" for="IntYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input type="radio" class="btn-check" name="Int" id="IntNo" value="No">
+                            <label class="btn btn-outline-danger" for="IntNo">No</label>
+                            </div>
+                        </div>  
+
                         <div class="input-box">
+                            <!-- To be created as a calendar -->
                             <span class="details">Interview and Visitation (Minors must be accompanied by parents) </span>
-                            <input type="text" placeholder="Preferred date and time for virtual meet" required>
+                            <input type="text" placeholder="Preferred date and time for onsite interview" required>
                         </div>
                         </div>
                         

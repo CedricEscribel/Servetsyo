@@ -1,6 +1,3 @@
-<?php
-
-echo'    
  <div class="container-fluid py-5">
 <div class="container">
     <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
@@ -12,7 +9,7 @@ echo'
             <div class="service-item bg-light d-flex p-4">
                 <div>
                     <h5 class="text-uppercase mb-3">Adoption Form</h5>
-                    <p>Fill out the form to adopt</p>
+                    <p>Application form for Adoption</p>
                     <a class="text-primary text-uppercase" href="services/Adoption.php">Adoption form<i class="bi bi-chevron-right"></i></a>
                 </div>
             </div>
@@ -50,6 +47,3 @@ echo'
     </div>
 </div>
 </div>
-';
-
-?>

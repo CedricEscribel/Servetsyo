@@ -1,6 +1,12 @@
 <?php
 //include auth_session.php file on all user panel pages
-include("phpconfig/auth_session.php");
+include("phpconfig/trylog.php");
+include("phpconfig/trylog.php");
+
+if (isset($_SESSION['id']) && isset($_SESSION['Email'])) {
+
+$user = getUserById($_SESSION['id'], $con);
+
 ?>
 
 <head>
@@ -35,6 +41,7 @@ include("phpconfig/auth_session.php");
     <!-- Navbar End -->
     <!-- body -->
     <div class="container">
+    <?php if ($user) { ?>
         <div class="main-body">    
               <div class="row gutters-sm">
                 <div class="col-md-4 mb-3">
@@ -44,7 +51,7 @@ include("phpconfig/auth_session.php");
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
                           <!-- name -->
-                          <p>Hey, <?php echo $_SESSION['Email']; ?>!</p>
+                          <p>Hey, <?=$user['Email']?>!</p>
                         </div>
                       </div>
                     </div>
@@ -59,7 +66,7 @@ include("phpconfig/auth_session.php");
                           <h6 class="mb-0">Full Name</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          <?= isset($Fullname) ? $Fullname : '' ?>
+                        <?=$user['Fullname']?>
                         </div>
                       </div>
                       <hr>
@@ -68,7 +75,7 @@ include("phpconfig/auth_session.php");
                           <h6 class="mb-0">Email</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          email
+                        <?php echo $_SESSION['Email']; ?>
                         </div>
                       </div>
                       <hr>
@@ -100,6 +107,10 @@ include("phpconfig/auth_session.php");
                 </div>
               </div>
         </div>
+        <?php }else { 
+        header("Location: login.php");
+        exit;
+       } ?>
     </div>
     <!-- body end -->
 
@@ -113,3 +124,8 @@ include("phpconfig/auth_session.php");
   <!-- Template Javascript --> 
     <script src="js/main.js"></script>
 </body>
+
+<?php }else {
+	header("Location: login.php");
+	exit;
+} ?>

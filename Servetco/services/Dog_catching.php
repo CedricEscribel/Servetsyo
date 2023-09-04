@@ -53,7 +53,7 @@ $all_schedule = $con->query($sql);
 
 <!-- Schedule form start -->
     <div class="Schedule_form">
-          <h1>Rescue Request Details</h1>
+          <h1>Dog Catching Request</h1>
 
         <form method="post" action="phpconfig/Schedule.php">
           <div class="form">

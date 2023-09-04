@@ -1,6 +1,4 @@
-<?php
 
-echo '
 <!-- Icon Font Stylesheet -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
@@ -10,5 +8,3 @@ echo '
 
 <!-- Template Stylesheet -->
 <link rel="stylesheet" href="scss/main.css">
-';
-?>

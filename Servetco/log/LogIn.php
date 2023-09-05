@@ -2,55 +2,57 @@
 
 session_start();
 
-if(isset($_POST['Email']) && 
-   isset($_POST['Password'])){
+if(isset($_POST['Emaillog']) && 
+   isset($_POST['Passwordlog'])){
 
     include "../phpconfig/config.php";
 
-    $Email = $_POST['Email'];
-    $Password = $_POST['Password'];
+    $Emaillog = $_POST['Emaillog'];
+    $Passwordlog = $_POST['Passwordlog'];
 
-    $data = "Email=".$Email;
+    $data = "Emaillog=".$Emaillog;
     
-    if(empty($Email)){
+    if(empty($Emaillog)){
     	$em = "Username is required";
     	header("Location: ../login.php?error=$em&$data");
 	    exit;
-    }else if(empty($Password)){
+    }else if(empty($Passwordlog)){
     	$em = "Password is required";
     	header("Location: ../login.php?error=$em&$data");
 	    exit;
     }else {
 
     	$sql = "SELECT * FROM user WHERE Email = ?";
-    	$stmt = $con->prepare($sql);
-    	$stmt->execute([$Email]);
+    	$stmt = $conn->prepare($sql);
+    	$stmt->execute([$Emaillog]);
 
       if($stmt->rowCount() == 1){
           $user = $stmt->fetch();
 
           $Email =  $user['Email'];
           $Password =  $user['Password'];
-          $fname =  $user['fname'];
-          $id =  $user['id'];
-          $pp =  $user['pp'];
+          $Fullname =  $user['Fullname'];
+          $user_id =  $user['user_id'];
+          $Address =  $user['Address'];
+          $PhoneNum =  $user['PhoneNum'];
 
-          if($Email === $Email){
-             if(password_verify($Password, $Password)){
-                 $_SESSION['id'] = $id;
-                 $_SESSION['fname'] = $fname;
-                 $_SESSION['pp'] = $pp;
+          if($Email === $Emaillog){
+             if(password_verify($Passwordlog, $Password)){
+                 $_SESSION['user_id'] = $user_id;
+                 $_SESSION['Fullname'] = $Fullname;
+                 $_SESSION['Address'] = $Address;
+                 $_SESSION['PhoneNum'] = $PhoneNum;
 
-                 header("Location: ../home.php");
+                 header("Location: ../profile.php ");
                  exit;
              }else {
-               $em = "Incorect User name or Password";
+               $em = "Incorrect Username or Password";
                header("Location: ../login.php?error=$em&$data");
                exit;
             }
 
           }else {
-            $em = "Incorect User name or Password";
+            $em = "Incorrect User name or Password";
             header("Location: ../login.php?error=$em&$data");
             exit;
          }

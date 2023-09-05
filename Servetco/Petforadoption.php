@@ -45,24 +45,24 @@ require_once 'phpconfig/config.php';
               <div class="Dog-details">
             <?php
                 $i = 1;
-                $rows = mysqli_query($con, "SELECT * FROM dogs ORDER BY id DESC")
+                $rows = mysqli_query($con, "SELECT * FROM dogs ORDER BY Dog_id DESC")
                 ?>            
             <?php foreach ($rows as $row) : ?>
                 <div class="card Dogpic" style="width: 18rem;">
-                  <div id="<?php echo $row["id"] ?>" class="carousel slide">
+                  <div id="<?php echo $row["Dog_id"] ?>" class="carousel slide">
                     <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#<?php echo $row["id"] ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#<?php echo $row["Dog_id"] ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                        <img src="Admindashboard/img/<?php echo $row["image"]; ?>" width = 200 title="<?php echo $row['image']; ?>">
                       </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#<?php echo $row["id"] ?>" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#<?php echo $row["Dog_id"] ?>" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#<?php echo $row["id"] ?>" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#<?php echo $row["Dog_id"] ?>" data-bs-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
                     </button>

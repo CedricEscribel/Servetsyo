@@ -1,5 +1,6 @@
 <?php 
 
+
 function getUserById($id, $db){
     $sql = "SELECT * FROM user WHERE id = ?";
 	$stmt = $db->prepare($sql);

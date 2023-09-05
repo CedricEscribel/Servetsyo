@@ -23,7 +23,8 @@ $all_schedule = $con->query($sql);
 
 <div class="sidenav">
     <a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>
-    <a href="Appointment.php" class="active"><i class="Appointment"></i>Appointment</a>
+    <a href="Appointment.php"><i class="Appointment"></i>Appointment</a>
+	<a href="Appointment.php" class="active"><i class="Appointment"></i>Adoption Request</a>
 	<a href="DogCatching.php"><i class="DogCatching"></i>Dog Catching</a>
     <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in Pound</a>      
 	<a href="Adoption.php"><i class="Animals"></i>Adoption</a>

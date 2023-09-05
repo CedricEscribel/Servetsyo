@@ -1,11 +1,12 @@
 <?php
-//include auth_session.php file on all user panel pages
-include("phpconfig/trylog.php");
-include("phpconfig/trylog.php");
+session_start();
 
-if (isset($_SESSION['id']) && isset($_SESSION['Email'])) {
+if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
-$user = getUserById($_SESSION['id'], $con);
+include "phpconfig/trylog.php";
+include "phpconfig/config.php";
+
+$user = getUserById($_SESSION['user_id'], $conn);
 
 ?>
 
@@ -34,13 +35,21 @@ $user = getUserById($_SESSION['id'], $con);
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
                 <a href="Events.php" class="nav-item nav-link">Events</a>
-                <a href="Login.php" class="nav-item nav-link active">Login</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Account</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="profile.php" class="dropdown-item active">Profile</a>
+                        <a href="#" class="dropdown-item ">Schedules</a>
+                        <a href="login.php" class="dropdown-item">Login</a>
+                    </div>
+                </div>
         </div>
         </div>
     </nav>
     <!-- Navbar End -->
     <!-- body -->
     <div class="container">
+
     <?php if ($user) { ?>
         <div class="main-body">    
               <div class="row gutters-sm">
@@ -75,7 +84,7 @@ $user = getUserById($_SESSION['id'], $con);
                           <h6 class="mb-0">Email</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                        <?php echo $_SESSION['Email']; ?>
+                             <?=$user['Email']?>
                         </div>
                       </div>
                       <hr>
@@ -84,7 +93,7 @@ $user = getUserById($_SESSION['id'], $con);
                           <h6 class="mb-0">Phone</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          Phone number
+                        <?=$user['PhoneNum']?>
                         </div>
                       </div>
                       <hr>
@@ -93,14 +102,16 @@ $user = getUserById($_SESSION['id'], $con);
                           <h6 class="mb-0">Address</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          Bay Area, San Francisco, CA
+                        <?=$user['Address']?>
                         </div>
                       </div>
                       <hr>
                       <div class="row">
                         <div class="col-sm-12">
                           <a class="btn btn-primary px-4" target="blank" href="EditProfile.php">Edit</a>
+                          <a class="btn btn-primary px-4" target="blank" href="phpconfig/logout.php">Log out</a>
                         </div>
+
                       </div>
                     </div>
                   </div>    
@@ -121,8 +132,6 @@ $user = getUserById($_SESSION['id'], $con);
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
-  <!-- Template Javascript --> 
-    <script src="js/main.js"></script>
 </body>
 
 <?php }else {

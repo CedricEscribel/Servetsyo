@@ -40,8 +40,7 @@ require '../phpconfig/login.php';
               <th>Email</th>
               <th>Phone Number</th>
               <th>Address</th>
-              <th>Date</th>
-              <th>Status</th>
+              <th>Create Date</th>
             </tr>
           </thead>
           <tbody>
@@ -56,7 +55,6 @@ require '../phpconfig/login.php';
               <td><?php echo $row["Email"] ?></td>
               <td><?php echo $row["PhoneNum"] ?></td>
               <td><?php echo $row["Address"] ?></td>
-              <td><?php echo $row["CreateDate"] ?></td>
               <td><?php echo $row["CreateDate"] ?></td>
             </tr>
       <?php endforeach; ?>

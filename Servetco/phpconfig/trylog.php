@@ -1,9 +1,9 @@
 <?php 
-
-function getUserById($id, $db){
-    $sql = "SELECT * FROM user WHERE id = ?";
+function getUserById($user_id, $db){
+    
+    $sql = "SELECT * FROM user WHERE user_id = ?";
 	$stmt = $db->prepare($sql);
-	$stmt->execute([$id]);
+	$stmt->execute([$user_id]);
     
     if($stmt->rowCount() == 1){
         $user = $stmt->fetch();

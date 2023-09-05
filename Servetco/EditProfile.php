@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
+
+include "phpconfig/trylog.php";
+include "phpconfig/config.php";
+
+$user = getUserById($_SESSION['user_id'], $conn);
+
+?>
+
+
 <head>
         <meta charset="utf-8">
         <title>About </title>
@@ -29,6 +42,7 @@
 
     <!-- body -->
     <div class="container">
+    <?php if ($user) { ?>
         <div class="main-body">
             <div class="container">
                 <div class="main-body">
@@ -54,7 +68,7 @@
                             <h6 class="mb-0">Full Name</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <input type="text" class="form-control" value="John Doe">
+                            <input type="text" class="form-control" value="<?=$user['Fullname']?>">
                         </div>
                     </div>
                 <div class="row mb-3">
@@ -62,7 +76,7 @@
                         <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <input type="text" class="form-control" value="john@example.com">
+                        <input type="text" class="form-control" value="<?=$user['Email']?>">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -70,7 +84,7 @@
                         <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <input type="text" class="form-control" value="(239) 816-9029">
+                        <input type="text" class="form-control" value="<?=$user['PhoneNum']?>">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -78,13 +92,14 @@
                         <h6 class="mb-0">Address</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <input type="text" class="form-control" value="Bay Area, San Francisco, CA">
+                        <input type="text" class="form-control" value="<?=$user['Address']?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-3"></div>
                         <div class="col-sm-9 text-secondary">
                             <input type="button" class="btn btn-primary px-4" value="Save Changes">
+                            <a class="btn btn-primary px-4" target="blank" href="Profile.php">Back to profile</a>
                         </div>
                 </div>
                                 </div>
@@ -94,6 +109,10 @@
                 </div>
             </div>
         </div>
+        <?php }else { 
+        header("Location: login.php");
+        exit;
+       } ?>
     </div>
     <!-- body end -->
 
@@ -107,3 +126,7 @@
   <!-- Template Javascript --> 
     <script src="js/main.js"></script>
 </body>
+<?php }else { 
+        header("Location: login.php");
+        exit;
+       } ?>

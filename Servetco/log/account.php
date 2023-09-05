@@ -37,9 +37,12 @@ if(isset($_POST['Fullname']) &&
          exit;       
            
         }else  {
+            $Password = password_hash($Password, PASSWORD_DEFAULT);
+
+
             $sql = "INSERT INTO user (Fullname, Email, Password, Address, PhoneNum) 
                     VALUES(?,?,?,?,?)";
-            $stmt = $con->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->execute([$Fullname, $Email, $Password, $Address, $PhoneNum]);
 
             header("Location: ../login.php?success=Your account has been created successfully");

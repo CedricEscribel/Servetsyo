@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <!-- Navbar Start -->
+<!-- Navbar Start -->
     <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
     <?php include 'navlogo.php';?>
     
@@ -27,7 +27,7 @@
         </div>
         </div>
     </nav>
-    <!-- Navbar End -->
+<!-- Navbar End -->
 
 
 <div class="LoginContainer">
@@ -42,12 +42,11 @@
     </div>
 
 <!-- Login -->    
-
     <div class="forms">
         <div class="form-content">
           <div class="login-form">
               <div class="title">Log in</div>
-            <form action="log/LogIn.php" method="post"  autocomplete="off">   
+            <form action="log/LogIn.php" method="POST"  autocomplete="off">   
 
               <?php if(isset($_GET['error'])){ ?>
               <div class="alert alert-danger" role="alert">
@@ -55,18 +54,19 @@
               </div>
               <?php } ?>
 
-
               <div class="input-boxes">
               <label class="label">Email address:</label>
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
-                  <input type="email" name="Email" placeholder="Enter your Email" required>
+                  <input type="email" name="Emaillog" placeholder="Enter your Email" value="<?php echo (isset($_GET['Emaillog']))?$_GET['Emaillog']:"" ?>" required>
                 </div>
+
                 <label class="label">Password:</label>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input type="password" name="Password" placeholder="Enter your password" required>
+                  <input type="password" name="Passwordlog" placeholder="Enter your password" required>
                 </div>
+
                 <div class="text"><a href="phpconfig/logout.php">Forgot password?</a></div>
                 <div class="button input-box">
                   <input value="Log in" type="submit"  name="Login">
@@ -79,7 +79,7 @@
 <!-- Login end -->
 
 
-  <!-- Sign up -->
+<!-- Sign up -->
 
           <div class="signup-form">
           <form method="post" action="log/account.php"  autocomplete="off">
@@ -134,7 +134,7 @@
               </div>
             </form>
          </div>
-  <!-- Signup end -->
+<!-- Signup end -->
 
       </div> 
     </div>
@@ -142,9 +142,9 @@
 
 
 
-    <!-- Footer Start -->
+<!-- Footer Start -->
     <?php include 'footer.php';?>
-    <!-- Footer End -->
+<!-- Footer End -->
     <script>
       function Showpass() {
         var x = document.getElementById("Pass");
@@ -155,8 +155,7 @@
         }
       }
     </script>
-    <!-- JavaScript Libraries -->
+<!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
-  <!-- Template Javascript --> 
 </body>

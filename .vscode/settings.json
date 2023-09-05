@@ -14,5 +14,9 @@
             "username": "root",
             "name": "localhost"
         }
+    ],
+    "cSpell.ignoreWords": [
+        "Barangay",
+        "Informations"
     ]
 }

@@ -1,8 +1,8 @@
 <?php 
 
-require_once '../phpconfig/Schedule.php';
+require_once '../phpconfig/Catching.php';
 
-$sql = "SELECT * FROM schedule";
+$sql = "SELECT * FROM catch";
 $all_schedule = $con->query($sql);
 
 
@@ -10,7 +10,7 @@ $all_schedule = $con->query($sql);
 
 <head>
     <meta charset="utf-8">
-    <title>Rescue </title>
+    <title>Dog Catching </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Icon Font Stylesheet -->
@@ -55,25 +55,32 @@ $all_schedule = $con->query($sql);
     <div class="Schedule_form">
           <h1>Dog Catching Request</h1>
 
-        <form method="post" action="phpconfig/Schedule.php">
+        <form method="post" action="../phpconfig/Catching.php">
           <div class="form">
-          <label for="name">Barangay:</label>
-          <input type="text" id="name" name="Barangay" placeholder="Barangay Name">
+
+          <label for="Barangay">Barangay: </label>
+            <label for="Barangay"></label>
+            <select name="BarangayID">
+                <option value="-">Choose Barangay</option>
+                <option value="Barangca">Barangca</option>
+                <option value="Paitan">Paitan</option>
+                <option value="Piel">Piel</option>
+            </select>    
   
           <label for="Number">Contact Number:</label>
-          <input type="text" id="number" name="PhoneNum" placeholder="Contact Number">
+          <input type="text" id="number" name="ContNum" placeholder="Contact Number">
 
           <label for="Number">Number of Dogs:</label>
-          <input type="text" id="number" name="DogsQuantity" placeholder="Number of Dogs">
+          <input type="text" id="number" name="DogCount" placeholder="Number of Dogs">
 
 
           <label for="Notes">Notes:</label>
-          <textarea id="Notes" name="Notes" placeholder=""></textarea>
+          <textarea id="Notes" name="Notes" placeholder="" ></textarea>
 
 <!--TODO: copy button from adoption -->
-          <div class="button SubmitB">
-                        <input type="submit" value="Submit">
-                    </div>
+
+            <input type="submit"   name="save" value="Submit">
+
           </div>
         </form>
       </div>

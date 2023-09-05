@@ -64,7 +64,7 @@
                                     <small><i class="bi bi-calendar-date me-2"></i>01 June, 2023</small>
                                 </div>
                                 <h5 class="text-uppercase mb-3">Pet Vaccination</h5>
-                                <p class="fw-lighter lh-lg">Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag.</p>
+                                <p class="fw-lighter lh-lg"> Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag.</p>
                                 <a class="text-primary text-uppercase" role="button" data-bs-toggle="modal"  data-bs-target="#myModal" aria-expanded="false"  id="vaccination">More<i class="bi bi-chevron-right"></i></a>
                             </div>
                         </div>

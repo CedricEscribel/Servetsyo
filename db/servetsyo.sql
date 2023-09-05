@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2023 at 05:51 PM
+-- Generation Time: Sep 05, 2023 at 04:56 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,7 +33,6 @@ CREATE TABLE `adoption` (
   `Email` varchar(128) NOT NULL,
   `PhoneNum` varchar(128) NOT NULL,
   `Address` varchar(255) NOT NULL,
-  `FindDog` varchar(25) NOT NULL,
   `interview` varchar(122) NOT NULL,
   `date` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -51,6 +50,15 @@ CREATE TABLE `catch` (
   `DogCount` int(25) NOT NULL,
   `Notes` varchar(258) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `catch`
+--
+
+INSERT INTO `catch` (`DogCatch_id`, `BarangayID`, `ContNum`, `DogCount`, `Notes`) VALUES
+(1, '', 0, 0, ''),
+(2, 'sta barbara', 123, 123, 'note'),
+(3, 'Paitan', 1234, 21, 'notes');
 
 -- --------------------------------------------------------
 
@@ -72,11 +80,10 @@ CREATE TABLE `dogs` (
 --
 
 INSERT INTO `dogs` (`Dog_id`, `DogInfo`, `Name`, `Age`, `Gender`, `image`) VALUES
-(31, 'details will be long details will be long details will be long details will be long details will be long ', 'details will be long ', 0, 'details will be long ', '64f45ccc6d3da.jpg'),
-(32, 'details will be long details will be long details will be long details will be long details will be long ', 'details will be long ', 0, 'details will be long ', '64f45d08f116a.jpg'),
-(33, 'details will be long ', 'details will be long ', 0, 'details will be long ', '64f45d1880d26.jpg'),
-(34, 'details will be long details will be long ', 'details will be long details will be long ', 0, 'details will be long details will be long ', '64f45d22c7081.png'),
-(35, 'details will be long details will be long ', 'details will be long details will be long ', 0, 'details will be long ', '64f45d31c0156.jpg');
+(36, 'dog details', 'name', 123, 'gender', '64f6e6194d8d0.png'),
+(37, 'details', 'details', 123, 'male', '64f7233bca17c.jpg'),
+(38, 'a', 'a', 0, 'a', '64f72346d220d.jpg'),
+(39, 'long namelong namelong namelong namelong name', 'long namelong namelong name', 0, 'long name', '64f7237a3be27.png');
 
 -- --------------------------------------------------------
 
@@ -85,7 +92,7 @@ INSERT INTO `dogs` (`Dog_id`, `DogInfo`, `Name`, `Age`, `Gender`, `image`) VALUE
 --
 
 CREATE TABLE `events` (
-  `id` int(11) NOT NULL,
+  `EventId` int(11) NOT NULL,
   `EventName` varchar(256) NOT NULL,
   `Details` varchar(512) NOT NULL,
   `image` varchar(258) NOT NULL
@@ -95,10 +102,32 @@ CREATE TABLE `events` (
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `EventName`, `Details`, `image`) VALUES
+INSERT INTO `events` (`EventId`, `EventName`, `Details`, `image`) VALUES
 (1, 'try event', 'events', '64f4638fc5666.jpg'),
 (2, 'event 2', 'details', '64f466e883560.jpg'),
 (3, 'long detailslong details', 'long detailslong detailslong detailslong detailslong detailslong detailslong detailslong detailslong detailslong detailslong detailslong details', '64f46989aadcf.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `insemination`
+--
+
+CREATE TABLE `insemination` (
+  `Insemination_ID` int(11) NOT NULL,
+  `Name` varchar(258) NOT NULL,
+  `ContNum` varchar(258) NOT NULL,
+  `Animal` varchar(258) NOT NULL,
+  `Location` varchar(258) NOT NULL,
+  `Status` varchar(258) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `insemination`
+--
+
+INSERT INTO `insemination` (`Insemination_ID`, `Name`, `ContNum`, `Animal`, `Location`, `Status`) VALUES
+(1, '[name]', '[0123]', '[cow]', '[value-5]', '[value-6]');
 
 -- --------------------------------------------------------
 
@@ -162,17 +191,15 @@ CREATE TABLE `user` (
   `Fullname` varchar(128) NOT NULL,
   `Address` varchar(255) NOT NULL,
   `PhoneNum` varchar(24) NOT NULL,
-  `CreateDate` date NOT NULL DEFAULT current_timestamp(),
-  `Status` varchar(128) NOT NULL
+  `CreateDate` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `Email`, `Password`, `Fullname`, `Address`, `PhoneNum`, `CreateDate`, `Status`) VALUES
-(37, 'cescribel21@gmail.com', 'Password@1', 'Cedric Escribel', '0718', '1', '2023-09-04', ''),
-(38, 'ced@gmail.com', 'PassWord@1', 'ced', 'riov', '2', '2023-09-04', '');
+INSERT INTO `user` (`user_id`, `Email`, `Password`, `Fullname`, `Address`, `PhoneNum`, `CreateDate`) VALUES
+(39, 'ced@gmail.com', '$2y$10$IFXIB/BaEjxN65QIjGAkd.iylDVAmDOHypQ2YfiR88aFyUEjaTfUi', 'Cedric Escribel', '0718', '09123', '2023-09-05');
 
 --
 -- Indexes for dumped tables
@@ -200,7 +227,13 @@ ALTER TABLE `dogs`
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`EventId`);
+
+--
+-- Indexes for table `insemination`
+--
+ALTER TABLE `insemination`
+  ADD PRIMARY KEY (`Insemination_ID`);
 
 --
 -- Indexes for table `rescue`
@@ -234,19 +267,25 @@ ALTER TABLE `adoption`
 -- AUTO_INCREMENT for table `catch`
 --
 ALTER TABLE `catch`
-  MODIFY `DogCatch_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `DogCatch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `dogs`
 --
 ALTER TABLE `dogs`
-  MODIFY `Dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `Dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `EventId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `insemination`
+--
+ALTER TABLE `insemination`
+  MODIFY `Insemination_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `rescue`
@@ -264,7 +303,7 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -85,7 +85,7 @@ $all_schedule = $con->query($sql);
           <!-- to be created as a calendar -->
           <input type="text" id="Color" name="Color" placeholder="Color" require>
   
-          <label for="Age">Breed:</label>
+          <label for="Age">Age:</label>
           <!-- to be created as a calendar -->
           <input type="text" id="Age" name="Age" placeholder="Age" require>
   

@@ -64,10 +64,12 @@
                 <label class="label">Password:</label>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input type="password" name="Passwordlog" placeholder="Enter your password" required>
+                  <input type="password" name="Passwordlog" id="Passlog" placeholder="Enter your password" required>
+                </div>
+                <div class="show_pass" >
+                  <input type="checkbox" onclick="Showpasslog()">&#32;Show Password
                 </div>
 
-                <div class="text"><a href="phpconfig/logout.php">Forgot password?</a></div>
                 <div class="button input-box">
                   <input value="Log in" type="submit"  name="Login">
                 </div>
@@ -154,6 +156,16 @@
           x.type = "password";
         }
       }
+
+      function Showpasslog() {
+        var x = document.getElementById("Passlog");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+
     </script>
 <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

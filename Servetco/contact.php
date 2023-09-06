@@ -25,7 +25,14 @@
                 <a href="service.php" class="nav-item nav-link">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
                 <a href="Events.php" class="nav-item nav-link">Events</a>
-                <a href="Login.php" class="nav-item nav-link">Login</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="profile.php" class="dropdown-item">Profile</a>
+                        <a href="#" class="dropdown-item ">Schedules</a>
+                        <a href="login.php" class="dropdown-item">Login</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>

@@ -1,11 +1,10 @@
 <?php
+include "phpconfig/config.php";
 session_start();
 
 if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
-include "phpconfig/trylog.php";
-include "phpconfig/config.php";
-
+include "log/session.php";
 $user = getUserById($_SESSION['user_id'], $conn);
 
 ?>
@@ -60,7 +59,7 @@ $user = getUserById($_SESSION['user_id'], $conn);
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
                           <!-- name -->
-                          <p>Hey, <?=$user['Email']?>!</p>
+                          <p>Hey, <?=$user['Fullname']?>!</p>
                         </div>
                       </div>
                     </div>
@@ -109,7 +108,7 @@ $user = getUserById($_SESSION['user_id'], $conn);
                       <div class="row">
                         <div class="col-sm-12">
                           <a class="btn btn-primary px-4" target="blank" href="EditProfile.php">Edit</a>
-                          <a class="btn btn-primary px-4" target="blank" href="phpconfig/logout.php">Log out</a>
+                          <a class="btn btn-primary px-4" target="blank" href="log/logout.php">Log out</a>
                         </div>
 
                       </div>

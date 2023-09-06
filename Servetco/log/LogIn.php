@@ -1,11 +1,9 @@
 <?php
-
+    include "../phpconfig/config.php";
 session_start();
 
 if(isset($_POST['Emaillog']) && 
    isset($_POST['Passwordlog'])){
-
-    include "../phpconfig/config.php";
 
     $Emaillog = $_POST['Emaillog'];
     $Passwordlog = $_POST['Passwordlog'];

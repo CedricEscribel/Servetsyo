@@ -18,5 +18,12 @@
     "cSpell.ignoreWords": [
         "Barangay",
         "Informations"
+    ],
+    "cSpell.words": [
+        "Emaillog",
+        "Fullname",
+        "Incorect",
+        "Passwordlog",
+        "phpconfig"
     ]
 }

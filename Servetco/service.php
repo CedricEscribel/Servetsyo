@@ -22,7 +22,14 @@
                 <a href="service.php" class="nav-item nav-link active">Service</a>
                 <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
                 <a href="Events.php" class="nav-item nav-link">Events</a>
-                <a href="Login.php" class="nav-item nav-link">Login</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="profile.php" class="dropdown-item">Profile</a>
+                        <a href="#" class="dropdown-item ">Schedules</a>
+                        <a href="login.php" class="dropdown-item">Login</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -75,18 +82,8 @@
     <!-- Footer Start -->
     <?php include 'footer.php';?>
     <!-- Footer End -->
-    
-           <!-- The core Firebase JS SDK is always required and must be listed first -->
-           <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script> 
-
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
-  <!-- Template Javascript --> 
-    <script src="js/main.js"></script>
+
 </body>

@@ -36,35 +36,29 @@ $user = getUserById($_SESSION['user_id'], $conn);
           <label for="Number">Contact Number:</label>
           <input type="text" id="number" name="PhoneNum" placeholder=" <?=$user['PhoneNum']?>">
            
-          <div class="form-group">
             <label for="Sched">Schedule For:</label>
-            <select id="Schedule" name="Sched" required>
-              <option value="">-- Schedule For --</option>
-              <option value="Vaccination">Vaccination</option>
-              <option value="Castration">Castration</option>
-            </select>
-          </div>
+            <select name="Sched">
+                <option value="">Choose Animal</option>
+                <option value="Cat">Cat</option>
+                <option value="Dog">Dog</option>
+            </select>  
   
           <label for="PName">Pet's name:</label>
-          <!-- to be created as a calendar -->
-          <input type="text" id="PName" name="PName" placeholder="Pet's name" require>
+          <input type="text" name="PetName" placeholder="Pet's name" require>
 
           <label for="Breed">Breed:</label>
-          <!-- to be created as a calendar -->
           <input type="text" id="Breed" name="Breed" placeholder="Breed" require>
   
           <label for="Color">Color:</label>
-          <!-- to be created as a calendar -->
           <input type="text" id="Color" name="Color" placeholder="Color" require>
   
           <label for="Age">Age:</label>
-          <!-- to be created as a calendar -->
           <input type="text" id="Age" name="Age" placeholder="Age" require>
   
           <label for="Gender">Gender:</label>
-          <!-- to be created as a calendar -->
           <input type="text" id="Gender" name="Gender" placeholder="Gender" require>
-  
+
+
           <label for="message">Note:</label>
           <textarea id="message" name="Message" placeholder="Additional details"></textarea>
 

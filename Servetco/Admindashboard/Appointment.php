@@ -26,55 +26,11 @@ $all_schedule = $con->query($sql);
 
 <body>
 
+<?php include 'design/header.php'; ?>
     <div class="wrapper">
         <!-- Sidebar Holder -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-          <a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>
-        </div>
 
-        <ul class="list-unstyled components">
-            <li class="active">
-                <a href="Appointment.php"><i class="Appointment"></i>Appointment</a>
-            </li>
-            <li>
-                <a href="DogCatching.php"><i class="DogCatching"></i>Dog Catching</a>
-            </li>
-            <li>
-                <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in Pound</a>      
-            </li>
-            <li>
-                <a href="Adoption.php"><i class="Animals"></i>Adoption</a>
-            </li>
-			<li>
-                <a href="Adoption_Request.php" ><i class="AdoptRequest"></i>Adoption Request</a>
-            </li>
-			<li>
-                <a href="ArtInsemination.php" ><i class="ArtInsemination"></i>Artificial Insemination</a>
-            </li>
-            <li>
-                <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
-            </li>
-            <li>
-                <a href="Users.php"><i class="users"></i>Users</a>
-            </li>
-            <li>
-                <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-            </li>
-        </ul>
-    </nav>
-
-        <!-- Page Content Holder -->
-<div id="content">
-			<button type="button" id="sidebarCollapse" class="navbar-btn">
-				<span></span>
-				<span></span>                        
-				<span></span>
-			</button>
-			
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-
+	<?php include 'design/sidebar.php'; ?>
 
 	<!-- History report malilipat sa taas na button (Medical reports) -->
 		<section class="container tables">
@@ -106,11 +62,11 @@ $all_schedule = $con->query($sql);
 								<td><?php echo $row["FullN"] ?></td>
 								<td><?php echo $row["PhoneNum"] ?></td>                    
 								<td><?php echo $row["Sched"] ?></td>  
-								<td><?php echo $row["FullN"] ?></td>
-								<td><?php echo $row["PhoneNum"] ?></td>                    
-								<td><?php echo $row["PhoneNum"] ?></td>  
-								<td><?php echo $row["PhoneNum"] ?></td> 
-								<td><?php echo $row["Message"] ?></td>
+								<td><?php echo $row["PetName"] ?></td>
+								<td><?php echo $row["Breed"] ?></td>                    
+								<td><?php echo $row["Color"] ?></td>  
+								<td><?php echo $row["Age"] ?></td> 
+								<td><?php echo $row["Gender"] ?></td>
 								<td><?php echo $row["Message"] ?></td>
 								<!-- TODO auto request date -->
   								<td><?php echo $row["Date"] ?></td>                         
@@ -131,8 +87,6 @@ $all_schedule = $con->query($sql);
 			</div>
 		  </section>
 
-		</div>
-	</nav>
 </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

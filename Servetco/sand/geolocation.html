@@ -35,18 +35,25 @@ function showPosition(position) {
 }
 
 function myMap() {
+
+  
 var mapProp= {
   center:new google.maps.LatLng(14.9464387,120.8843322),
   zoom:50,
   
 };
+
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
 }
+
+
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbGwqLpEtPmkllUF0nKGLf0sf9Jv_hTIA&callback=myMap"></script>
-
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbGwqLpEtPmkllUF0nKGLf0sf9Jv_hTIA&callback=initMap"
+async defer></script>
 </body>
 </html>
 

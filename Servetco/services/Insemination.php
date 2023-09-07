@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../phpconfig/rescue.php';
+require_once '../phpconfig/ArtInsem.php';
 
 session_start();
 
@@ -25,9 +25,9 @@ define("API_KEY","")
 	min-height: 400;
 }
 #btnAction {
-	background: #3878c7;
+	background: #93EA29;
     padding: 10px 40px;
-    border: #3672bb 1px solid;
+    border: #93EA29 1px solid;
     border-radius: 2px;
     color: #FFF;
     font-size: 0.9em;
@@ -35,20 +35,43 @@ define("API_KEY","")
     display:block;
 }
 
+#button-layer{
+  display: flex;
+  justify-content: center;
+}
 </style>
 
 <!-- Schedule form start -->
      <div class="Schedule_form">
           <h1>Artificial Insemination</h1>
 
-        <form method="post" action="../phpconfig/rescue.php">
+        <form method="post" action="../phpconfig/ArtInsem.php">
           <div class="form">
+          <select class="Hide" name="user_id" style="display: none;">
+                <option value="<?=$user['user_id']?>"></option>
+          </select>  
+          <select class="Hide" name="Name" style="display: none;">
+                <option value="<?=$user['Fullname']?>"></option>
+          </select>  
+          <select class="Hide" name="ContNum" style="display: none;">
+                <option value="<?=$user['PhoneNum']?>"></option>
+          </select>  
+
           <label for="name">Name:</label>
-          <input type="text" id="name" name="Name" placeholder="<?=$user['Fullname']?>">
+          <input type="text" id="name" name="Name" value="<?=$user['Fullname']?>" disabled>
   
           <label for="Number">Contact Number</label>
-          <input type="text" id="number" name="ContactNum" placeholder="<?=$user['PhoneNum']?>">
+          <input type="text" name="ContNum" placeholder="<?=$user['PhoneNum']?>" disabled>
 
+          <label for="AnimalKind">Kind of Animal</label>
+            <select name="Animal">
+                <option value="">Choose Animal</option>
+                <option value="Carabao">Carabao</option>
+                <option value="Cow">Cow</option>
+                <option value="Goat">Goat</option>
+            </select>    
+
+            <input type="text" name="Coordinates" id="latitude" >
 
           <h1>Get Location</h1>
           <div id="button-layer"><button id="btnAction" onClick="locate()">My Current Location</button></div>
@@ -75,7 +98,7 @@ define("API_KEY","")
       var map;
       function initMap() {
         var mapLayer = document.getElementById("map-layer");
-        var centerCoordinates = new google.maps.LatLng(37.6, -95.665);
+        var centerCoordinates = new google.maps.LatLng(14.9742, 120.8945);
         var defaultOptions = { center: centerCoordinates, zoom: 15 }
 
         map = new google.maps.Map(mapLayer, defaultOptions);
@@ -94,6 +117,8 @@ define("API_KEY","")
             var currentLocation = { lat: currentLatitude, lng: currentLongitude };
             infoWindow.setPosition(currentLocation);
             document.getElementById("btnAction").style.display = 'none';
+            document.getElementById('latitude').value = currentLatitude + "," + currentLongitude;
+            
           });
         }
       }

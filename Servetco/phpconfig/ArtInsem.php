@@ -5,20 +5,20 @@
   if(isset($_POST['save']))
   {	 
      $Name = $_POST['Name'];
-     $PhoneNum = $_POST['PhoneNum'];
-     $Sched = $_POST['Sched'];
+     $ContNum = $_POST['ContNum'];
      $Animal = $_POST['Animal'];
-     $Location = $_POST['Location'];
-     $Status = $_POST['Status'];
-     
-     $sql = "INSERT INTO insemination (Name,PhoneNum,Sched,Animal,Location,Status) 
-     VALUES ('$Name','$PhoneNum','$Sched','$Animal','$Location','$Status')";
+     $Coordinates = $_POST['Coordinates'];
+     $Details = $_POST['Details'];
+     $user_id = $_POST['user_id'];
+
+     $sql = "INSERT INTO insemination (Name,ContNum,Animal,Coordinates,Details,user_id) 
+     VALUES ('$Name','$ContNum','$Animal','$Coordinates','$Details','$user_id')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);
       if($Save)
       {
-        echo "Schedules Sent";
+        echo "Sent";
         die(header("Location: ../services/Insemination.php"));
       }
 

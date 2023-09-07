@@ -16,7 +16,7 @@ $all_insemination = $con->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Dashboard</title>
+    <title>Artificial Insemination</title>
 
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -27,58 +27,15 @@ $all_insemination = $con->query($sql);
 
 <body>
 
-    <div class="wrapper">
-        <!-- Sidebar Holder -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-          <a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>
-        </div>
+<?php include 'design/header.php'; ?>
+<div class="wrapper">
+      <!-- Sidebar Holder -->
+	<?php include 'design/sidebar.php'; ?>
 
-        <ul class="list-unstyled components">
-            <li>
-                <a href="Appointment.php"><i class="Appointment"></i>Appointment</a>
-            </li>
-            <li>
-                <a href="DogCatching.php"><i class="DogCatching"></i>Dog Catching</a>
-            </li>
-            <li>
-                <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in Pound</a>      
-            </li>
-            <li>
-                <a href="Adoption.php"><i class="Animals"></i>Adoption</a>
-            </li>
-			<li>
-                <a href="Adoption_Request.php" ><i class="AdoptRequest"></i>Adoption Request</a>
-            </li>
-			<li class="active">
-                <a href="ArtInsemination.php" ><i class="ArtInsemination"></i>Artificial Insemination</a>
-            </li>
-            <li>
-                <a href="AnimalRescue.php"><i class="AnimalRes"></i>Animal Rescue</a>
-            </li>
-            <li>
-                <a href="Users.php"><i class="users"></i>Users</a>
-            </li>
-            <li>
-                <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
-            </li>
-        </ul>
-    </nav>
-
-        <!-- Page Content Holder -->
-<div id="content">
-			<button type="button" id="sidebarCollapse" class="navbar-btn">
-				<span></span>
-				<span></span>                        
-				<span></span>
-			</button>
-			
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
 
         <section class="tables container">
       <div class="User-list">
-        <h1>Adoption Request</h1>
+        <h1>Artificial Insemination</h1>
         <table class="table">
           <thead>
             <tr class="head" >
@@ -98,7 +55,7 @@ $all_insemination = $con->query($sql);
 								<td><?php echo $row["Name"] ?></td>
 								<td><?php echo $row["ContNum"] ?></td>                    
 								<td><?php echo $row["Animal"] ?></td>  
-                                <td><?php echo $row["Location"] ?></td>                           
+                                <td><?php echo $row["Coordinates"] ?></td>                           
                                 <td><label for="Status"></label>
 								<select id="Status">
 								<option value="Pending">Pending</option>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2023 at 04:56 PM
+-- Generation Time: Sep 07, 2023 at 07:58 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -80,10 +80,9 @@ CREATE TABLE `dogs` (
 --
 
 INSERT INTO `dogs` (`Dog_id`, `DogInfo`, `Name`, `Age`, `Gender`, `image`) VALUES
-(36, 'dog details', 'name', 123, 'gender', '64f6e6194d8d0.png'),
-(37, 'details', 'details', 123, 'male', '64f7233bca17c.jpg'),
-(38, 'a', 'a', 0, 'a', '64f72346d220d.jpg'),
-(39, 'long namelong namelong namelong namelong name', 'long namelong namelong name', 0, 'long name', '64f7237a3be27.png');
+(41, 'details', 'name', 0, 'gender', '64fa05c2a2f43.png'),
+(42, 'sa', 'sa', 0, 'sa', '64fa05e38e4bb.jpg'),
+(43, 'details', 'dog3', 3, 'male', '64fa0a4e1a712.jpg');
 
 -- --------------------------------------------------------
 
@@ -98,15 +97,6 @@ CREATE TABLE `events` (
   `image` varchar(258) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `events`
---
-
-INSERT INTO `events` (`EventId`, `EventName`, `Details`, `image`) VALUES
-(1, 'try event', 'events', '64f4638fc5666.jpg'),
-(2, 'event 2', 'details', '64f466e883560.jpg'),
-(3, 'long detailslong details', 'long detailslong detailslong detailslong detailslong detailslong detailslong detailslong detailslong detailslong detailslong detailslong details', '64f46989aadcf.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -118,16 +108,18 @@ CREATE TABLE `insemination` (
   `Name` varchar(258) NOT NULL,
   `ContNum` varchar(258) NOT NULL,
   `Animal` varchar(258) NOT NULL,
-  `Location` varchar(258) NOT NULL,
-  `Status` varchar(258) NOT NULL
+  `Coordinates` varchar(258) NOT NULL,
+  `Details` varchar(265) NOT NULL,
+  `Status` varchar(258) NOT NULL,
+  `user_id` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `insemination`
 --
 
-INSERT INTO `insemination` (`Insemination_ID`, `Name`, `ContNum`, `Animal`, `Location`, `Status`) VALUES
-(1, '[name]', '[0123]', '[cow]', '[value-5]', '[value-6]');
+INSERT INTO `insemination` (`Insemination_ID`, `Name`, `ContNum`, `Animal`, `Coordinates`, `Details`, `Status`, `user_id`) VALUES
+(24, 'Cedric Escribel', '09123', 'Cow', '14.9430074,120.9044903', 'try with coordinates', '', '39');
 
 -- --------------------------------------------------------
 
@@ -164,19 +156,22 @@ CREATE TABLE `schedule` (
   `PhoneNum` int(18) NOT NULL,
   `Sched` varchar(128) NOT NULL,
   `Date` varchar(128) NOT NULL,
-  `Time` varchar(128) NOT NULL,
-  `Message` varchar(256) NOT NULL
+  `PetName` varchar(128) NOT NULL,
+  `Breed` varchar(128) NOT NULL,
+  `Color` varchar(128) NOT NULL,
+  `Age` int(25) NOT NULL,
+  `Gender` varchar(128) NOT NULL,
+  `Message` varchar(256) NOT NULL,
+  `user_id` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `schedule`
 --
 
-INSERT INTO `schedule` (`Schedule_id`, `FullN`, `PhoneNum`, `Sched`, `Date`, `Time`, `Message`) VALUES
-(1, 'cedric', 123, 'Vaccination', 'now', 'now', 'none'),
-(2, '', 0, '', '', '', ''),
-(3, '', 0, '', '', '', ''),
-(4, 'cedric', 0, 'Vaccination', 'now', 'now', 'details');
+INSERT INTO `schedule` (`Schedule_id`, `FullN`, `PhoneNum`, `Sched`, `Date`, `PetName`, `Breed`, `Color`, `Age`, `Gender`, `Message`, `user_id`) VALUES
+(5, 'sample', 123, '', '', '', '', '', 0, '', 'details', ''),
+(6, 'cedric', 0, 'Cat', '', 'dog', 'breed', 'blue', 12, 'male', 'detailsnote', '');
 
 -- --------------------------------------------------------
 
@@ -199,7 +194,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `Email`, `Password`, `Fullname`, `Address`, `PhoneNum`, `CreateDate`) VALUES
-(39, 'ced@gmail.com', '$2y$10$IFXIB/BaEjxN65QIjGAkd.iylDVAmDOHypQ2YfiR88aFyUEjaTfUi', 'Cedric Escribel', '0718', '09123', '2023-09-05');
+(39, 'ced@gmail.com', '$2y$10$IFXIB/BaEjxN65QIjGAkd.iylDVAmDOHypQ2YfiR88aFyUEjaTfUi', 'Cedric Escribel', '0718', '09123', '2023-09-05'),
+(40, 'Cedric@gmail.com', '$2y$10$EaR0DfB1h2/tPPpLS4OekOaIrGgbqwcQ3wfqe6e2iddoo3PHF2Hru', 'Cedric Escribel', '0718', '09123456', '2023-09-06');
 
 --
 -- Indexes for dumped tables
@@ -273,7 +269,7 @@ ALTER TABLE `catch`
 -- AUTO_INCREMENT for table `dogs`
 --
 ALTER TABLE `dogs`
-  MODIFY `Dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `Dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -285,7 +281,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `insemination`
 --
 ALTER TABLE `insemination`
-  MODIFY `Insemination_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Insemination_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `rescue`
@@ -297,13 +293,13 @@ ALTER TABLE `rescue`
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `Schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

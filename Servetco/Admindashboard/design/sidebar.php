@@ -13,7 +13,7 @@
                 <a href="DogCatching.php"><i class="DogCatching"></i>Dog Catching</a>
             </li>
             <li>
-                <a href="Dogs_in_pound.php"><i class="Dogs"></i>Dogs in Pound</a>      
+                <a href="Dogs_in_pound.php"><i class="DogsPound"></i>Dogs in Pound</a>      
             </li>
             <li>
                 <a href="Adoption.php"><i class="Animals"></i>Adoption</a>

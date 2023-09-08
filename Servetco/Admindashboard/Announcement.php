@@ -31,34 +31,45 @@ $all_events = $con->query($sql);
       <!-- Sidebar Holder -->
 	<?php include 'design/sidebar.php'; ?>
 
+      <div class="container">
+          <div class="header">
+            <h1>Announcement</h1>
+          </div>
+        <!-- Body design -->
+        
 
-    <div class="container">
-        <span class="border card mb-3">
+        <span >
           <div class="Upload" >
             <form class="img_prv" enctype="multipart/form-data" method="POST"  autocomplete="off">     
-              <div>
+              <div class="Informations">
+            
+              <div class="DogInput">
+              <div class="DInput">
+                <label for="Name">Name:</label>
+                <input type="text" name="EventName" placeholder="Name"  required>
+              </div>
+              <div class="DInput" style="margin-top: 22px; margin-left:25px ;">
+                <label for="Date">Date:</label>
+                <input type="date" name="Dates" placeholder="Date"  required>
+              </div>   
+              </div>
+              <label for="Name" style="margin: 10px;">Additional details:</label>
+              <div class="Doginput2">
+              <div class="DInput">
+                  <textarea rows="4" cols="40" name="Details" placeholder="Additional details"></textarea>
+              </div>
+
                 <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
-                  <div class="image-preview">
-                    <img src="../img/adoption.jpg" alt="Upload Dog Picture" id="image-preview">
+                  <div style="margin-left: 10%;" class="image-preview">
+                    <img src="../img/adoption.jpg" width="50px" alt="Upload Dog Picture" id="image-preview">
                     <a href="#" id="choose-file-btn">Choose Images</a>
                   </div>
               </div>
-
-              <div class="Informations">
-              <div class="Details">
-                <input type="text" name="Name" placeholder="Name"  required>
-              </div>
-              <div class="Details">
-                <input type="text" name="Age" placeholder="Age"  required>
-              </div>
-              <div class="Details">
-                <input type="text" name="Gender" placeholder="Gender"  required>
-              </div>
-              <div class="Details" style="margin-left: 3px;">
-                  <textarea rows="3" cols="24" id="message" name="DogInfo" placeholder="Additional details"></textarea>
-              </div>
+              <div class="button">
                 <input type="submit" name="submit" value="Upload">
+              </div> 
               </div>
+
             </form>
           </div>
         </span>
@@ -77,7 +88,7 @@ $all_events = $con->query($sql);
                             <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small><i class="bi bi-calendar-date me-2"></i>15 May, 2023</small>
+                                        <small><i class="bi bi-calendar-date me-2"></i><?php echo $row["Dates"] ?></small>
                                     </div>                 
                                     <h5 class="text-uppercase mb-3"><?php echo $row["EventName"] ?></h5>
                                     <p class="fw-lighter lh-lg"><?php echo $row["Details"] ?></p>
@@ -101,13 +112,6 @@ $all_events = $con->query($sql);
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-            });
-        });
-    </script>
+    <script src="Image.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@
      $DogCount = $_POST['DogCount'];
      $Notes = $_POST['Notes'];
      
+     
      $sql = "INSERT INTO catch (BarangayID,ContNum,DogCount,Notes) 
      VALUES ('$BarangayID','$ContNum','$DogCount','$Notes')";
 
@@ -15,8 +16,11 @@
       $Save = mysqli_query($con, $sql);
       if($Save)
       {
-        echo '<script>alert("Welcome to Geeks for Geeks")</script>';
-        die(header("Location: ../services/Dog_catching.php"));
+        echo '<script type="text/javascript">
+        alert("Successfully Submitted");
+        window.location.href = "../services/Dog_catching.php";
+        </script>';
+        die;
       }
 
   }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2023 at 06:56 AM
+-- Generation Time: Sep 08, 2023 at 10:06 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -108,7 +108,11 @@ CREATE TABLE `dogs` (
 INSERT INTO `dogs` (`Dog_id`, `DogInfo`, `Name`, `Age`, `Gender`, `image`) VALUES
 (41, 'details', 'name', 0, 'gender', '64fa05c2a2f43.png'),
 (42, 'sa', 'sa', 0, 'sa', '64fa05e38e4bb.jpg'),
-(43, 'details', 'dog3', 3, 'male', '64fa0a4e1a712.jpg');
+(43, 'details', 'dog3', 3, 'male', '64fa0a4e1a712.jpg'),
+(44, 'details', 'add', 123, 'male', '64fac4bc34101.jpg'),
+(45, 'details', 'another', 12, 'fem', '64fac4cd4a99e.jpg'),
+(46, '123', '3', 0, 'fem', '64fac4f59311c.jpg'),
+(47, 'details', 'add', 0, 'gender', '64fac9fd0fa43.png');
 
 -- --------------------------------------------------------
 
@@ -120,8 +124,19 @@ CREATE TABLE `events` (
   `EventId` int(11) NOT NULL,
   `EventName` varchar(256) NOT NULL,
   `Details` varchar(512) NOT NULL,
-  `image` varchar(258) NOT NULL
+  `image` varchar(258) NOT NULL,
+  `Dates` varchar(258) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`EventId`, `EventName`, `Details`, `image`, `Dates`) VALUES
+(4, '', '', '64fad3d29ed86.png', ''),
+(5, '', '', '64fad3f68807b.jpg', ''),
+(6, 'name', 'details', '64fad519e5c09.jpg', ''),
+(7, 'name', 'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum', '64fad5f24933c.jpg', '2023-09-28');
 
 -- --------------------------------------------------------
 
@@ -305,13 +320,13 @@ ALTER TABLE `catch`
 -- AUTO_INCREMENT for table `dogs`
 --
 ALTER TABLE `dogs`
-  MODIFY `Dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `Dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `EventId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `EventId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `insemination`

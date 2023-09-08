@@ -67,9 +67,10 @@ require '../phpconfig/dogs.php';
                     <img src="../img/adoption.jpg" width="50px" alt="Upload Dog Picture" id="image-preview">
                     <a href="#" id="choose-file-btn">Choose Images</a>
                   </div>
-
               </div>
+              <div class="button">
                 <input type="submit" name="submit" value="Upload">
+              </div> 
               </div>
 
             </form>
@@ -77,18 +78,18 @@ require '../phpconfig/dogs.php';
         </span>
         <!-- Upload dog for adoption end -->
 
-        <span class="border">
-          <div class="Dog-details">
+        <div class="Dogs">
             <?php
             $i = 1;
             $rows = mysqli_query($con, "SELECT * FROM dogs ORDER BY Dog_id DESC")
             ?>
+          <div class="DogDetails">
             <?php foreach ($rows as $row) : ?>
-              
-               <div class="Dog-details" id="dogdet" >
-                        <div class="image-preview" id="dog">
-                          <img src="img/<?php echo $row["image"]; ?>" width = 130 title="<?php echo $row['image']; ?>">
+               <div class="Dog-det" >
+                        <div class="ImageDog" id="dog">
+                          <img src="img/<?php echo $row["image"]; ?>" title="<?php echo $row['image']; ?>">
                         </div>
+
                         <div class="Details">
                           <h2><?php echo $row["Name"] ?></h2>
                           <p><?php echo $row["Gender"] ?></p>                   
@@ -98,9 +99,8 @@ require '../phpconfig/dogs.php';
                 </div>
 
               <?php endforeach; ?> 
-          </span>
       </div>
-
+              </div>
 </div>
 
 

@@ -6,7 +6,8 @@
   if(isset($_POST["submit"])){
     $EventName = $_POST["EventName"];
     $Details = $_POST["Details"];
-      
+    $Dates = $_POST["Dates"];  
+
     if($_FILES["image"]["error"] == 4){
       echo
       "<script> alert('Image Does Not Exist'); </script>"
@@ -33,7 +34,7 @@
         $newImageName = uniqid();
         $newImageName .= '.' . $imageExtension;
         move_uploaded_file($tmpName, 'EventsImg/' . $newImageName);
-        $query = "INSERT INTO events VALUES('', '$EventName', '$Details', '$newImageName')";
+        $query = "INSERT INTO events VALUES('', '$EventName', '$Details', '$newImageName', '$Dates')";
         mysqli_query($con, $query);
         echo
         "

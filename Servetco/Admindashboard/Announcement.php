@@ -45,8 +45,8 @@ $all_events = $con->query($sql);
             
               <div class="DogInput">
               <div class="DInput">
-                <label for="Name">Name:</label>
-                <input type="text" name="EventName" placeholder="Name"  required>
+                <label for="Name">Title:</label>
+                <input type="text" name="EventName" placeholder="Enter title:"  required>
               </div>
               <div class="DInput" style="margin-top: 22px; margin-left:25px ;">
                 <label for="Date">Date:</label>
@@ -65,9 +65,9 @@ $all_events = $con->query($sql);
                     <a href="#" id="choose-file-btn">Choose Images</a>
                   </div>
               </div>
-              <div class="button">
-                <input type="submit" name="submit" value="Upload">
-              </div> 
+              <div class="button" style="max-width: 33%;" >
+                <input style="color: white;" type="submit" name="submit" value="Post">
+               </div> 
               </div>
 
             </form>

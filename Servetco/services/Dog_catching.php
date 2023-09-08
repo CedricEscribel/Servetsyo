@@ -34,8 +34,8 @@ $user = getUserById($_SESSION['user_id'], $conn);
           <div class="form">
           <label for="Barangay">Barangay: </label>
             <label for="Barangay"></label>
-            <select class="dropbtn" name="BarangayID">
-                <option value="-">Choose Barangay</option>
+            <select class="dropbtn" name="BarangayID" required>
+                <option class="dropbtn"  value="">Choose Barangay</option>
                 <option value="Barangca">Barangca</option>
                 <option value="Paitan">Paitan</option>
                 <option value="Piel">Piel</option>
@@ -44,14 +44,14 @@ $user = getUserById($_SESSION['user_id'], $conn);
           <select class="Hide" name="ContNum" style="display: none;">
                 <option value="<?=$user['PhoneNum']?>"></option>
           </select>  
-          <label for="Number">Contact Number:</label>
+          <label style="margin-top: 10px;" for="Number">Contact Number:</label>
           <input type="text" id="number" name="ContNum" disabled placeholder=" <?=$user['PhoneNum']?>">
 
           <label for="Number">Number of Dogs:</label>
-          <input type="text" id="number" name="DogCount" placeholder="Number of Dogs">
+          <input type="text" id="number" name="DogCount" placeholder="Number of Dogs" required>
 
           <label for="Notes">Notes:</label>
-          <textarea id="Notes" name="Notes" placeholder="" ></textarea>
+          <textarea id="Notes" name="Notes" placeholder=""  required></textarea>
 
 <!--TODO: copy button from adoption -->
 

@@ -58,13 +58,18 @@ $all_adoptionrequest = $con->query($sql);
                 <td>dogName  </td>                 
                 <td><?php echo $row["Interview"] ?></td> 
                 <td><?php echo $row["Date"] ?></td>                   
-                <td><label for="Status"></label>
-								<select id="Status">
-								<option value="Pending">Pending</option>
-								<option value="Approve">Approve</option>
-                                <option value="Decline">Decline</option>
-								</select>              
+								<td><label for="approval"></label>
+									<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["AdoptReq_id"] ?>" id="btnStatus">
+										<?php echo $row["status"] ?>
+									</button>            
 						</tr>				
+
+						<form action="../phpconfig/adoptionRequest.php" method="post" hidden>
+
+							<input type="hidden" name="id" id="id" value="<?php echo $row['AdoptReq_id'] ?>">
+							<input type="hidden" name="hiddenStatus" id="<?php echo $row["AdoptReq_id"] ?>hiddenStatus" value="">
+							<button type="submit" id="<?php echo $row["AdoptReq_id"] ?>" name="btnHideSubmit" hidden></button>
+						</form>
 
 						<?php
 						}
@@ -86,19 +91,7 @@ $all_adoptionrequest = $con->query($sql);
         </div>
     </div>
 
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-            });
-        });
-    </script>
+    <?php include 'design/footer.php'; ?>
 </body>
 
 </html>

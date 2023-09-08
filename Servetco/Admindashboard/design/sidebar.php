@@ -33,6 +33,9 @@
             <li>
                 <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
             </li>
+            <li>
+                <a href="#"><i class="Logout"></i>Log out</a>
+            </li>
         </ul>
      </nav>
 </div>
@@ -40,10 +43,10 @@
 <div class="position-absolute  top-0 end-0" id="RightSide" >
     <div class="card text-center mb-3" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">My profile</h5>
+            <h5 class="card-title">My Profile</h5>
             <img src="images/Adoption.webp" width="50%" alt="">
-            <h5 class="card-title">Dean jerick</h5>
-            <a href="#" class="btn btn-primary"> <img src="img/sample.jpg" width="10%" alt=""> View full profile</a>
+            <h5 class="card-title">Admin</h5>
+            <a href="#" class="btn HoverButton">View full profile</a>
         </div>
     </div>
     <div class="card text-center mb-3" style="width: 18rem;">

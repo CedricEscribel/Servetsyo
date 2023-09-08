@@ -30,7 +30,7 @@ require '../phpconfig/dogs.php';
 
       <div class="container">
           <div class="header">
-            <h1>Adoption</h1>
+            <h1 style="text-transform:uppercase" >Adoption</h1>
           </div>
         <!-- Body design -->
         
@@ -68,8 +68,8 @@ require '../phpconfig/dogs.php';
                     <a href="#" id="choose-file-btn">Choose Images</a>
                   </div>
               </div>
-              <div class="button">
-                <input type="submit" name="submit" value="Upload">
+              <div class="button" style="max-width: 34%;" >
+                <input style="color: white;" type="submit" name="submit" value="Post">
                </div> 
               </div>
 

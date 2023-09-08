@@ -9,8 +9,8 @@
      $Notes = $_POST['Notes'];
      
      
-     $sql = "INSERT INTO catch (BarangayID,ContNum,DogCount,Notes) 
-     VALUES ('$BarangayID','$ContNum','$DogCount','$Notes')";
+     $sql = "INSERT INTO catch (BarangayID,ContNum,DogCount,Notes,status) 
+     VALUES ('$BarangayID','$ContNum','$DogCount','$Notes','Pending')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);
@@ -32,3 +32,24 @@
     return $result;
   }
 
+
+  if (isset($_POST['btnHideSubmit'])) {
+    $id = $_POST['id'];
+    $status = $_POST['hiddenStatus'];
+  
+    $sql = "UPDATE catch SET status =  '$status' WHERE DogCatch_id = $id ";
+  
+    $Save = mysqli_query($con, $sql);
+    if ($status === 'Approve') {
+      echo '<script type="text/javascript">
+          alert("Successfully Approved");
+          window.location.href = "../Admindashboard/DogCatching.php";
+          </script>';
+      die;
+    }else{
+      echo '<script type="text/javascript">
+          alert("Request Decline");
+          window.location.href = "../Admindashboard/DogCatching.php";
+          </script>';
+    }
+  }

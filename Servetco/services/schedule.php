@@ -70,13 +70,17 @@ $user = getUserById($_SESSION['user_id'], $conn);
           <input type="text" id="Age" name="Age" placeholder="Age" required>
   
           <label for="Gender">Gender:</label>
-          <input type="text" id="Gender" name="Gender" placeholder="Gender" required>
+          <select class="dropbtn" name="Gender" required>
+                <option value="">Please Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>  
 
 
           <label for="message">Note:</label>
           <textarea id="message" name="Message" placeholder="Additional details"></textarea>
 
-          <button class="btn btn-sm btn-success" type="submit" name="save">Submit</button>
+			  	<input type="submit" name="save" value="Submit">
           </div>
         </form>
       </div> 

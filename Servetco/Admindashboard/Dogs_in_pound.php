@@ -44,13 +44,17 @@ $all_dogs_pound = $con->query($sql);
                 <input type="text" name="DogName" placeholder="Name"  required>
               </div>
               <div class="DInput">
-                <label for="date">Date In:</label>
-                <input type="date" name="DateIn" required>
+                <label style="margin-left:-50px;" for="date">Date In:</label> <br>
+                <input class="DateIn"   type="date" name="DateIn" required>
               </div>
+              
               <div class="DInput">
                 <label for="Name">Age:</label>
                 <input type="text" width="10px" name="Age" placeholder="Age"  required>
               </div>
+              <div class="button" >
+                <input style="color: white;" type="submit" name="submit" value="Post">
+               </div> 
              </div>
              <div class="Inp">
               <div class="DInput">
@@ -60,12 +64,10 @@ $all_dogs_pound = $con->query($sql);
               <div class="DInput">
                 <label for="RescuedAt">Rescued at:</label>
                 <input type="text" name="RescuedAt" placeholder="Location"  required>
-              </div>  
-              <div class="button">
-                <input type="submit" name="submit" value="Upload">
-              </div>   
-
+              </div>    
+              
               </div>
+              
               </div>
 
           
@@ -75,8 +77,8 @@ $all_dogs_pound = $con->query($sql);
       </span>
 
    <section class="tables container">
-      <div class="User-list">
-        <h1>Dogs in pound</h1>
+      <div style="margin-top: 10px; " class="User-list">
+        <h1  >Dogs in pound</h1>
         <table class="table">
           <thead>
             <tr class="head" >

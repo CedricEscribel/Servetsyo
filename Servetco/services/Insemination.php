@@ -67,14 +67,14 @@ define("API_KEY","")
           <input type="text" name="ContNum" placeholder="<?=$user['PhoneNum']?>" disabled>
 
           <label for="AnimalKind">Kind of Animal</label>
-            <select class="dropbtn" name="Animal">
-                <option selected  value="">Choose Animal</option>
+            <select class="dropbtn" name="Animal" required>
+                <option  value="">Choose Animal</option>
                 <option value="Carabao">Carabao</option>
                 <option value="Cow">Cow</option>
                 <option value="Goat">Goat</option>
             </select>    
               <br>
-            <input type="text" name="Coordinates" id="latitude" hidden>
+            <input type="text" name="Coordinates" id="latitude" hidden required>
 
             <label for="Location">Get Location:</label>
           <div id="button-layer"><button id="btnAction" onClick="locate()">Pin current location</button></div>

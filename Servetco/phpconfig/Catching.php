@@ -15,7 +15,7 @@
       $Save = mysqli_query($con, $sql);
       if($Save)
       {
-        echo "Request Sent";
+        echo '<script>alert("Welcome to Geeks for Geeks")</script>';
         die(header("Location: ../services/Dog_catching.php"));
       }
 

@@ -13,17 +13,20 @@
      $Age = $_POST['Age'];
      $Gender = $_POST['Gender'];
      $Message = $_POST['Message'];
+     $user_id = $_POST['user_id'];
      
-     $sql = "INSERT INTO schedule (FullN,PhoneNum,Sched,PetName,Breed,Color,Age,Gender,Message) 
-     VALUES ('$FullN','$PhoneNum','$Sched','$PetName','$Breed','$Color','$Age','$Gender','$Message')";
+     $sql = "INSERT INTO schedule (FullN,PhoneNum,Sched,PetName,Breed,Color,Age,Gender,Message,user_id) 
+     VALUES ('$FullN','$PhoneNum','$Sched','$PetName','$Breed','$Color','$Age','$Gender','$Message','$user_id')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);
       if($Save)
-      {
-        
-        echo '<script type="text/javascript">alert("hello!");</script>';
-        die(header("Location: ../services/schedule.php"));
+      {  
+        echo '<script type="text/javascript">
+        alert("Successfully Submitted");
+        window.location.href = "../services/schedule.php";
+        </script>';
+        die;
       }
 
   }

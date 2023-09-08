@@ -4,101 +4,63 @@
   <meta charset="utf-8">
   <title>Radio Buttons in PHP</title>
   <style>
-    .container {
-      max-width: 300px;
-      margin: 50px auto;
-      text-align: left;
-      font-family: sans-serif;
-    }
-    select {
-      width: 100%;
-      min-height: 150px;
-      margin-bottom: 20px;
-    }
-    input[type="submit"] {
-      display: block;
-      margin: 20px auto;
-    }
-    label {
-      display: block;
-      position: relative;
-      cursor: pointer;
-      font-size: 18px;
-      padding-left: 46px;
-      margin-bottom: 15px;      
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-    label input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-    }
-    .select {
-      top: 0;
-      left: 0;
-      height: 25px;
-      width: 25px;
-      position: absolute;
-      border-radius: 50%;
-      background-color: #cccccc;
-    }
-    label:hover input~.select {
-      background-color: #ccc;
-    }
-    label input:checked~.select {
-      background-color: #1A33FF;
-    }
-    .select:after {
-      content: "";
-      position: absolute;
-      display: none;
-    }
-    label input:checked~.select:after {
-      display: block;
-    }
-    label .select:after {
-      top: 9px;
-      left: 9px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: white;
-    }
-  </style>
-</head>
-<body>
-  <div class="container mt-5">
-    <form action="" method="post" class="mb-3">
-      <label>
-        <input type="radio" name="radio" value="Lock & Key">Lock & Key
-        <span class="select"></span>
-      </label>
-      <label>
-        <input type="radio" name="radio" value="Umbrella Academy">Umbrella Academy
-        <span class="select"></span>
-      </label>
-      <label>
-        <input type="radio" name="radio" value="Stranger Things">Stranger Things
-        <span class="select"></span>
-      </label>
-      <label>
-        <input type="radio" name="radio" value="Ozark">Ozark
-        <span class="select"></span>
-      </label>
-      <input type="submit" name="submit" vlaue="Get Values">
-    </form>
-    <?php
-      if(isset($_POST['submit'])){
-        if(!empty($_POST['radio'])) {
-          echo '  ' . $_POST['radio'];
-        } else {
-          echo 'Please select the value.';
-        }
-      }
-    ?>
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
+
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
   </div>
 </body>
 </html>

@@ -7,11 +7,10 @@
      $Name = $_POST['Name'];
      $ContactNum = $_POST['ContactNum'];
      $Details = $_POST['Details'];
-     $Longitude = $_POST['Longitude'];
-     $Latitude = $_POST['Latitude'];
+     $Coordinates = $_POST['Coordinates'];
      
-     $sql = "INSERT INTO rescue (Name,ContactNum,Details,Longitude,Latitude) 
-     VALUES ('$Name','$ContactNum','$Details','$Longitude','$Latitude')";
+     $sql = "INSERT INTO rescue (Name,ContactNum,Details,Coordinates) 
+     VALUES ('$Name','$ContactNum','$Details','$Coordinates')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);

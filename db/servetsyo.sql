@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2023 at 07:58 PM
+-- Generation Time: Sep 08, 2023 at 06:56 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,6 +40,31 @@ CREATE TABLE `adoption` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `adoptionrequest`
+--
+
+CREATE TABLE `adoptionrequest` (
+  `AdoptReq_id` int(11) NOT NULL,
+  `Fullname` varchar(256) NOT NULL,
+  `Address` varchar(512) NOT NULL,
+  `Email` varchar(128) NOT NULL,
+  `PhoneNum` varchar(128) NOT NULL,
+  `Interview` varchar(128) NOT NULL,
+  `Date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `adoptionrequest`
+--
+
+INSERT INTO `adoptionrequest` (`AdoptReq_id`, `Fullname`, `Address`, `Email`, `PhoneNum`, `Interview`, `Date`) VALUES
+(1, 'Cedric Escribel', '0718', '', '09123', '', '2023-09-08'),
+(2, 'Cedric Escribel', '0718', '', '09123', '', '2023-09-02'),
+(3, 'Cedric Escribel', '0718', 'ced@gmail.com', '09123', 'Yes', '2023-09-20');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `catch`
 --
 
@@ -56,9 +81,10 @@ CREATE TABLE `catch` (
 --
 
 INSERT INTO `catch` (`DogCatch_id`, `BarangayID`, `ContNum`, `DogCount`, `Notes`) VALUES
-(1, '', 0, 0, ''),
-(2, 'sta barbara', 123, 123, 'note'),
-(3, 'Paitan', 1234, 21, 'notes');
+(4, 'Barangca', 9123, 21, 'notes'),
+(5, 'Piel', 9123, 22, 'notesupdated'),
+(6, 'Paitan', 9123, 22, 'note'),
+(7, 'Piel', 9123, 0, 'alert');
 
 -- --------------------------------------------------------
 
@@ -132,17 +158,16 @@ CREATE TABLE `rescue` (
   `Name` varchar(128) NOT NULL,
   `ContactNum` int(128) NOT NULL,
   `Details` varchar(256) NOT NULL,
-  `Longitude` varchar(128) NOT NULL,
-  `Latitude` varchar(128) NOT NULL
+  `Coordinates` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `rescue`
 --
 
-INSERT INTO `rescue` (`Rescue_id`, `Name`, `ContactNum`, `Details`, `Longitude`, `Latitude`) VALUES
-(1, 'dog', 0, 'details', '', ''),
-(2, '', 0, '', '', '');
+INSERT INTO `rescue` (`Rescue_id`, `Name`, `ContactNum`, `Details`, `Coordinates`) VALUES
+(1, 'dog', 0, 'details', ''),
+(2, '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -155,7 +180,7 @@ CREATE TABLE `schedule` (
   `FullN` varchar(256) NOT NULL,
   `PhoneNum` int(18) NOT NULL,
   `Sched` varchar(128) NOT NULL,
-  `Date` varchar(128) NOT NULL,
+  `Date` date NOT NULL,
   `PetName` varchar(128) NOT NULL,
   `Breed` varchar(128) NOT NULL,
   `Color` varchar(128) NOT NULL,
@@ -170,8 +195,7 @@ CREATE TABLE `schedule` (
 --
 
 INSERT INTO `schedule` (`Schedule_id`, `FullN`, `PhoneNum`, `Sched`, `Date`, `PetName`, `Breed`, `Color`, `Age`, `Gender`, `Message`, `user_id`) VALUES
-(5, 'sample', 123, '', '', '', '', '', 0, '', 'details', ''),
-(6, 'cedric', 0, 'Cat', '', 'dog', 'breed', 'blue', 12, 'male', 'detailsnote', '');
+(15, 'Cedric Escribel', 9123, 'Cat', '0000-00-00', 'perry', 'persian', 'black/white', 2, 'female', '', '39');
 
 -- --------------------------------------------------------
 
@@ -206,6 +230,12 @@ INSERT INTO `user` (`user_id`, `Email`, `Password`, `Fullname`, `Address`, `Phon
 --
 ALTER TABLE `adoption`
   ADD PRIMARY KEY (`Adoption_id`);
+
+--
+-- Indexes for table `adoptionrequest`
+--
+ALTER TABLE `adoptionrequest`
+  ADD PRIMARY KEY (`AdoptReq_id`);
 
 --
 -- Indexes for table `catch`
@@ -260,10 +290,16 @@ ALTER TABLE `adoption`
   MODIFY `Adoption_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `adoptionrequest`
+--
+ALTER TABLE `adoptionrequest`
+  MODIFY `AdoptReq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `catch`
 --
 ALTER TABLE `catch`
-  MODIFY `DogCatch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `DogCatch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `dogs`
@@ -281,7 +317,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `insemination`
 --
 ALTER TABLE `insemination`
-  MODIFY `Insemination_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `Insemination_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `rescue`
@@ -293,7 +329,7 @@ ALTER TABLE `rescue`
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `Schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user`

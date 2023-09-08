@@ -13,9 +13,10 @@ define("API_KEY","")
 
 <head>
     <meta charset="utf-8">
-    <title>Rescue </title>
+    <title>Artificial Insemination </title>
     <?php include "header.php"; ?>
     <link rel="stylesheet" href="../css/Schedule.css">
+    <link rel="stylesheet" href="../scss/dropdown.css">
     <!-- Navbar End -->
 
     <style>
@@ -25,7 +26,7 @@ define("API_KEY","")
 	min-height: 400;
 }
 #btnAction {
-	background: #93EA29;
+	background: #7AB730;
     padding: 10px 40px;
     border: #93EA29 1px solid;
     border-radius: 2px;
@@ -50,9 +51,11 @@ define("API_KEY","")
           <select class="Hide" name="user_id" style="display: none;">
                 <option value="<?=$user['user_id']?>"></option>
           </select>  
+
           <select class="Hide" name="Name" style="display: none;">
                 <option value="<?=$user['Fullname']?>"></option>
           </select>  
+
           <select class="Hide" name="ContNum" style="display: none;">
                 <option value="<?=$user['PhoneNum']?>"></option>
           </select>  
@@ -64,20 +67,20 @@ define("API_KEY","")
           <input type="text" name="ContNum" placeholder="<?=$user['PhoneNum']?>" disabled>
 
           <label for="AnimalKind">Kind of Animal</label>
-            <select name="Animal">
+            <select class="dropbtn" name="Animal">
                 <option value="">Choose Animal</option>
                 <option value="Carabao">Carabao</option>
                 <option value="Cow">Cow</option>
                 <option value="Goat">Goat</option>
             </select>    
+              <br>
+            <input type="text" name="Coordinates" id="latitude" hidden>
 
-            <input type="text" name="Coordinates" id="latitude" >
-
-          <h1>Get Location</h1>
-          <div id="button-layer"><button id="btnAction" onClick="locate()">My Current Location</button></div>
+            <label for="Location">Get Location:</label>
+          <div id="button-layer"><button id="btnAction" onClick="locate()">Pin current location</button></div>
           <div id="map-layer"></div>
           <label for="Details">Details:</label>
-          <textarea id="Details" name="Details" placeholder="Additional details"></textarea>
+          <textarea id="Details" name="Details" placeholder="Additional details" required></textarea>
 
 			  	<input type="submit" name="save" value="Submit">
           </div>
@@ -91,8 +94,8 @@ define("API_KEY","")
     <!-- Footer End -->
 
     <!-- Script maps -->
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=<?php echo API_KEY; ?>&callback=initMap"
+  
+      <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo API_KEY; ?>&callback=initMap"
         async defer></script>
       <script type="text/javascript">
       var map;

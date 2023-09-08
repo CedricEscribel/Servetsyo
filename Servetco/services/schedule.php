@@ -19,6 +19,7 @@ $user = getUserById($_SESSION['user_id'], $conn);
     <title>Schedule </title>
     <?php include "header.php"; ?>
     <link rel="stylesheet" href="../css/Schedule.css">
+    <link rel="stylesheet" href="../scss/dropdown.css">
     <!-- Navbar End -->
 
 
@@ -30,14 +31,27 @@ $user = getUserById($_SESSION['user_id'], $conn);
         <form method="post" action="../phpconfig/Schedule.php">
           <div class="form">
           
+
           <label for="name">Name:</label>
-          <input type="text" id="name" name="FullN" placeholder=" <?=$user['Fullname']?>">
+          <input type="text" id="name" disabled placeholder=" <?=$user['Fullname']?>">
   
+          <select class="Hide" name="user_id" style="display: none;">
+                <option value="<?=$user['user_id']?>"></option>
+          </select>  
+          
+          <select class="Hide" name="FullN" style="display: none;">
+                <option value="<?=$user['Fullname']?>"></option>
+          </select>  
+
+          <select class="Hide" name="PhoneNum" style="display: none;">
+                <option value="<?=$user['PhoneNum']?>"></option>
+          </select>  
+
           <label for="Number">Contact Number:</label>
-          <input type="text" id="number" name="PhoneNum" placeholder=" <?=$user['PhoneNum']?>">
+          <input type="text" id="number"  disabled placeholder=" <?=$user['PhoneNum']?>">
            
             <label for="Sched">Schedule For:</label>
-            <select name="Sched">
+            <select class="dropbtn" name="Sched">
                 <option value="">Choose Animal</option>
                 <option value="Cat">Cat</option>
                 <option value="Dog">Dog</option>

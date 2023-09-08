@@ -34,8 +34,8 @@ require '../phpconfig/count.php';
 				<div class="card dash" >
 					<img src="./design/images/Appointment.webp" class="card-img-top" alt="...">
 					<div class="card-body Count">			
-						<h3>Appointment</h3>
-						<h2 class="card-text"><?php echo $schedule ?></h2>
+						<h4>Appointment</h4>
+						<h3 class="card-text"><?php echo $schedule ?></h3>
 					</div>
 				</div>
 
@@ -45,7 +45,7 @@ require '../phpconfig/count.php';
 				<div class="card dash">
 					<img src="./design/images/DogCatching.webp" class="card-img-top" alt="...">
 					<div class="card-body Count">
-						<h3>Dog catching</h3>
+						<h4>Dog catching</h4>
 						<h3 class="card-text"><?php echo $catch ?></h3>
 					</div>
 				</div>
@@ -56,8 +56,8 @@ require '../phpconfig/count.php';
 				<div class="card dash">
 					<img src="./design/images/DogsInPound.webp" class="card-img-top" alt="...">
 					<div class="card-body Count">
-						<h3>Dogs in Pound</h3>
-						<h2 class="card-text"><?php echo $dogs ?></h2>
+						<h4>Dogs in Pound</h4>
+						<h3 class="card-text"><?php echo $dogs ?></h3>
 					</div>
 				</div>
 			</span>
@@ -66,8 +66,8 @@ require '../phpconfig/count.php';
 				<div class="card dash" >
 					<img src="./design/images/Adoption.webp" class="card-img-top" alt="...">
 					<div class="card-body Count">
-						<h3>Adoption</h3>
-						<h2 class="card-text"><?php  echo $adoption?></h2>
+						<h4>Adoption</h4>
+						<h3 class="card-text"><?php  echo $adoption?></h3>
 					</div>
 				</div>
 			</span>
@@ -75,7 +75,7 @@ require '../phpconfig/count.php';
 				<div class="card dash">
 					<img src="./design/images/AdoptRequest.webp" class="card-img-top" alt="...">
 					<div class="card-body Count">
-						<h3>Adoption Request</h3>
+						<h4>Adoption Request</h4>
 						<h3 class="card-text"><?php echo $catch ?></h3>
 					</div>
 				</div>
@@ -86,8 +86,8 @@ require '../phpconfig/count.php';
 				<div class="card dash">
 					<img src="./design/images/ArtInsem.webp" class="card-img-top" alt="...">
 					<div class="card-body Count">
-						<h3>Artificial Insemination</h3>
-						<h2 class="card-text"><?php echo $dogs ?></h2>
+						<h4>Artificial Insemination</h4>
+						<h3 class="card-text"><?php echo $dogs ?></h3>
 					</div>
 				</div>
 			</span>
@@ -96,8 +96,8 @@ require '../phpconfig/count.php';
 				<div class="card dash" >
 					<img src="./design/images/AnimalRescue.webp" class="card-img-top" alt="...">
 					<div class="card-body Count">
-						<h2>Animal Rescue</h2>
-						<h2 class="card-text"><?php echo $Rescue ?></h2>
+						<h4>Animal Rescue</h4>
+						<h3 class="card-text"><?php echo $Rescue ?></h3>
 					</div>
 				</div>
 			</span>
@@ -108,8 +108,8 @@ require '../phpconfig/count.php';
 				<div class="card dash" >
 					<img src="./design/images/Announcement.jpg" class="card-img-top" alt="...">
 					<div class="card-body Count">
-						<h4>Announcement & Events</h4>
-						<h2 class="card-text"><?php echo $Events ?></h2>
+						<h4>Announcement</h4>
+						<h3 class="card-text"><?php echo $Events ?></h3>
 					</div>
 				</div>
 			</span>

@@ -184,6 +184,7 @@ a[data-toggle="collapse"] {
 
   .card img {
     width: 20%;
+    margin-left: 20px;
   }
 
   .Count{

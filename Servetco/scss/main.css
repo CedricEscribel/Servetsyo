@@ -12126,6 +12126,13 @@ p {
   width: 50px;
 }
 
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  max-height: 95%;
+  overflow: hidden;
+}
+
 /* Form Design */
 .container .title {
   font-size: 25px;

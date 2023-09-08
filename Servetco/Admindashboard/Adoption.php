@@ -37,7 +37,7 @@ require '../phpconfig/dogs.php';
         <!-- Upload dog for adoption -->
 <!-- TODO: Add pictures -->
 
-        <span >
+        <span>
           <div class="Upload" >
             <form class="img_prv" enctype="multipart/form-data" method="POST"  autocomplete="off">     
               <div class="Informations">
@@ -70,7 +70,7 @@ require '../phpconfig/dogs.php';
               </div>
               <div class="button">
                 <input type="submit" name="submit" value="Upload">
-              </div> 
+               </div> 
               </div>
 
             </form>

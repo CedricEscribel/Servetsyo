@@ -41,32 +41,30 @@ define("API_KEY","")
         <form method="post" action="../phpconfig/rescue.php">
           <div class="form">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="Name" placeholder="Your name">
+          <input type="text" id="name" name="Name" required placeholder="Your name">
   
           <label for="Number">Contact Number</label>
-          <input type="text" id="number" name="ContactNum" placeholder="Contact Number">
+          <input type="text" id="number" name="ContactNum" required placeholder="Contact Number">
             
           <label for="Animal">Select what kind of animals</label>
-            <div class="AnimalType form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <div required class="AnimalType form-check">
+            <input class="form-check-input" type="checkbox" name="Animal[]" value="Dog" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
                 Dog
             </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="Cat" id="flexCheckChecked">
+            <input class="form-check-input" type="checkbox" name="Animal[]" value="Cat" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
                 Cat
             </label>
             </div>
 
-            <input type="text" name="Coordinates" id="latitude" hidden>
+            <input type="text" name="Coordinates" required id="latitude" hidden>
 
             <label for="Location">Get Location:</label>
               <div id="button-layer"><button id="btnAction" onClick="locate()">Pin current location</button></div>
               <div id="map-layer"></div>
           <label for="Situation">Situation:</label>
-          <textarea id="Situation" name="Situation" placeholder="Explain the situation"></textarea>
+          <textarea id="Situation" name="Details" required placeholder="Explain the situation"></textarea>
 
 			  	<input type="submit" name="save" value="Submit">
           </div>

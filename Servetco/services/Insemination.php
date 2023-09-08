@@ -68,7 +68,7 @@ define("API_KEY","")
 
           <label for="AnimalKind">Kind of Animal</label>
             <select class="dropbtn" name="Animal">
-                <option value="">Choose Animal</option>
+                <option selected  value="">Choose Animal</option>
                 <option value="Carabao">Carabao</option>
                 <option value="Cow">Cow</option>
                 <option value="Goat">Goat</option>

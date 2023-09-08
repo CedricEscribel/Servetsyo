@@ -1,9 +1,9 @@
 <?php 
 
-require_once '../phpconfig/Dogs.php';
+require_once '../phpconfig/DogsPound.php';
 
-$sql = "SELECT * FROM dogs";
-$all_dogs = $con->query($sql);
+$sql = "SELECT * FROM dogs_pound";
+$all_dogs_pound = $con->query($sql);
 
 
 ?>
@@ -30,8 +30,49 @@ $all_dogs = $con->query($sql);
 <?php include 'design/header.php'; ?>
     <div class="wrapper">
         <!-- Sidebar Holder -->
-
 	<?php include 'design/sidebar.php'; ?>
+  <div class="container">
+      <span>
+          <div class="Upload" >
+            <form class="img_prv" method="POST"   action="../phpconfig/DogsPound.php" autocomplete="off">     
+              <div class="DogsPoundInput">
+            
+              <div class="DogInput">
+                 <div class="Inp">
+              <div class="DInput">
+                <label for="Name">Name:</label>
+                <input type="text" name="DogName" placeholder="Name"  required>
+              </div>
+              <div class="DInput">
+                <label for="date">Date In:</label>
+                <input type="date" name="DateIn" required>
+              </div>
+              <div class="DInput">
+                <label for="Name">Age:</label>
+                <input type="text" width="10px" name="Age" placeholder="Age"  required>
+              </div>
+             </div>
+             <div class="Inp">
+              <div class="DInput">
+                <label for="Name">Gender:</label>
+                <input type="text" name="Gender" placeholder="Gender"  required>
+              </div>   
+              <div class="DInput">
+                <label for="RescuedAt">Rescued at:</label>
+                <input type="text" name="RescuedAt" placeholder="Location"  required>
+              </div>  
+              <div class="button">
+                <input type="submit" name="submit" value="Upload">
+              </div>   
+
+              </div>
+              </div>
+
+          
+              </div>
+            </form>
+            </div>
+      </span>
 
    <section class="tables container">
       <div class="User-list">
@@ -51,16 +92,16 @@ $all_dogs = $con->query($sql);
           <tbody>
 
           <?php
-						while ($row = $all_dogs->fetch_assoc()) {
+						while ($row = $all_dogs_pound->fetch_assoc()) {
 						?>
 							<tr>
-								<td><?php echo $row["Dog_id"] ?></td>
-								<td><?php echo $row["Name"] ?></td>
-								<td>date</td>                    
+								<td><?php echo $row["DPoundID"] ?></td>
+								<td><?php echo $row["DogName"] ?></td>
+								<td><?php echo $row["DateIn"] ?></td>                    
 								<td><?php echo $row["Age"] ?></td>  
-                                <td><?php echo $row["Age"] ?></td>                 
-								<td>location</td>       
-                                <td><label for="Status"></label>
+                <td><?php echo $row["Gender"] ?></td>                 
+								<td><?php echo $row["RescuedAt"] ?></td>       
+                <td><label for="Status"></label>
 								<select id="Status">
 								<option value="Adopted">Adopted</option>
 								<option value="Euthanized">Euthanized</option>

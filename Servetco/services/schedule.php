@@ -52,9 +52,10 @@ $user = getUserById($_SESSION['user_id'], $conn);
            
             <label for="Sched">Schedule For:</label>
             <select class="dropbtn" name="Sched">
-                <option value="">Choose Animal</option>
-                <option value="Cat">Cat</option>
-                <option value="Dog">Dog</option>
+                <option value=""></option>
+                <option value="Anti-rabies">Anti-rabies</option>
+                <option value="vaccination">vaccination</option>
+                <option value="Castration">Castration</option>
             </select>  
   
           <label for="PName">Pet's name:</label>

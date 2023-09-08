@@ -81,7 +81,7 @@ require_once 'phpconfig/config.php';
                     <h5 class="card-title"><?php echo $row["Age"] ?></h5>
                     <h5 class="card-title"><?php echo $row["DogInfo"] ?></h5>
 
-                    <a href="services/Adoption.php" class="btn btn-primary">Adopt</a>
+                    <a href="services/Adoption.php" style="color: white;" class="btn btn-primary">Adopt</a>
                   </div>
                 </div>
                 <?php endforeach; ?>

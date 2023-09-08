@@ -6,11 +6,19 @@
   {	 
      $Name = $_POST['Name'];
      $ContactNum = $_POST['ContactNum'];
+     $Animal = $_POST['Animal'];
      $Details = $_POST['Details'];
      $Coordinates = $_POST['Coordinates'];
      
-     $sql = "INSERT INTO rescue (Name,ContactNum,Details,Coordinates) 
-     VALUES ('$Name','$ContactNum','$Details','$Coordinates')";
+     $Animals="";  
+     foreach($Animal as $Animal1)  
+        {  
+           $Animal.= $Animal1.",";  
+        }  
+
+
+     $sql = "INSERT INTO rescue (Name,ContactNum,Animal,Details,Coordinates) 
+     VALUES ('$Name','$ContactNum','$Details','$Animals','$Coordinates')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);

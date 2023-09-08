@@ -55,7 +55,7 @@ $user = getUserById($_SESSION['user_id'], $conn);
 
                         <div class="Visit input-box">
                             <p>Will you be able to visit the office for the interview?</p>
-                            <div name="Interview" class="radioV" style="margin-left: 30%;" require>
+                            <div name="Interview" class="radioV" style="margin-left: 30%;" required>
 
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="btn-check" name="Interview" id="IntYes" value="Yes">

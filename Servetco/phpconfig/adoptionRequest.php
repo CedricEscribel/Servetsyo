@@ -26,12 +26,7 @@
   }
 
 
-  function display_data(){
-    global $con;
-    $query = "select * from adoptionrequest";
-    $result = mysqli_query($con,$query);
-    return $result;
-  }
+
 
 ?>
  

@@ -1,8 +1,8 @@
 <?php
-require '../phpconfig/Adoption.php';
+require '../phpconfig/adoptionRequest.php';
 
-$sql = "SELECT * FROM adoption";
-$all_adoption = $con->query($sql);
+$sql = "SELECT * FROM adoptionrequest";
+$all_adoptionrequest = $con->query($sql);
 
 
 ?>
@@ -42,23 +42,23 @@ $all_adoption = $con->query($sql);
               <th>Address</th>
               <th>Dog Name</th>
               <th>Interview</th>
-              <th>Date And Time</th>
+              <th>Date</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
 
           <?php
-						while ($row = $all_adoption->fetch_assoc()) {
+						while ($row = $all_adoptionrequest->fetch_assoc()) {
 						?>
 							<tr>
-								<td><?php echo $row["FullName"] ?></td>
+								<td><?php echo $row["Fullname"] ?></td>
 								<td><?php echo $row["PhoneNum"] ?></td>                    
 								<td><?php echo $row["Address"] ?></td>  
-                                <td><?php echo $row["FindDog"] ?></td>                 
-								<td>dogName</td>  
-                                <td><?php echo $row["interview"] ?></td>             
-                                <td><label for="Status"></label>
+                <td>dogName  </td>                 
+                <td><?php echo $row["Interview"] ?></td> 
+                <td><?php echo $row["Date"] ?></td>                   
+                <td><label for="Status"></label>
 								<select id="Status">
 								<option value="Pending">Pending</option>
 								<option value="Approve">Approve</option>

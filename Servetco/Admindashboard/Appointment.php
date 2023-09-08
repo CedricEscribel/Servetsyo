@@ -28,11 +28,13 @@ $all_schedule = $con->query($sql);
 
 	<?php include 'design/header.php'; ?>
 	<div class="wrapper">
+		<?php include 'design/sidebar.php'; ?>
 		<!-- Sidebar Holder -->
 
-		<?php include 'design/sidebar.php'; ?>
 
 		<!-- History report malilipat sa taas na button (Medical reports) -->
+
+
 		<section class="container tables">
 			<div class="Appointment">
 				<h1>User list of Appointments</h1>
@@ -71,12 +73,19 @@ $all_schedule = $con->query($sql);
 								<!-- TODO auto request date -->
 								<td><?php echo $row["Date"] ?></td>
 								<td><label for="approval"></label>
-									<button class="btn btn-sm btn-danger" value="<?php echo $row["Schedule_id"] ?>" id="btnStatus">
-										<?php echo $row["Status"] ?>
+									<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Schedule_id"] ?>" id="btnStatus">
+										<?php echo $row["status"] ?>
 
 									</button>
 							</tr>
 
+
+							<form action="../phpconfig/Schedule.php" method="post" hidden>
+
+								<input type="hidden" name="id" id="id" value="<?php echo $row['Schedule_id'] ?>">
+								<input type="hidden" name="hiddenStatus" id="<?php echo $row["Schedule_id"] ?>hiddenStatus" value="">
+								<button type="submit" id="<?php echo $row["Schedule_id"] ?>" name="btnHideSubmit" hidden></button>
+							</form>
 						<?php
 						}
 						?>
@@ -125,16 +134,17 @@ $all_schedule = $con->query($sql);
 				}).then((result) => {
 					/* Read more about isConfirmed, isDenied below */
 					if (result.isConfirmed) {
+						$('#'+id +'hiddenStatus').val('Approve');
+						setTimeout(() => {
+							$('#' + id).trigger('click');
+						}, 500)
 
-						axios({
-							method: "post",
-							url: "http://localhost/Servetsyo-main/Servetco/phpconfig/Schedule.php",
-							data: id,
-						}).catch((error) => console.log(error));
 
-					
 					} else if (result.isDenied) {
-						Swal.fire('Changes are not saved', '', 'info')
+						$('#'+id +'hiddenStatus').val('Decline');
+						setTimeout(() => {
+							$('#' + id).trigger('click');
+						}, 500)
 					}
 				})
 			});

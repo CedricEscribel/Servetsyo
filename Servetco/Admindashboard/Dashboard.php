@@ -28,6 +28,7 @@ require '../phpconfig/count.php';
 	<?php include 'design/sidebar.php'; ?>
 		<div class="container-fluid">
 		<!-- Content -->
+		
 			<div class="dashboard row container">
 				
 			<span class="borders">

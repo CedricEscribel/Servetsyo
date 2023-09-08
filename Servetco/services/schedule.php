@@ -51,33 +51,32 @@ $user = getUserById($_SESSION['user_id'], $conn);
           <input type="text" id="number"  disabled placeholder=" <?=$user['PhoneNum']?>">
            
             <label for="Sched">Schedule For:</label>
-            <select class="dropbtn" name="Sched">
-                <option value=""></option>
-                <option value="Anti-rabies">Anti-rabies</option>
-                <option value="vaccination">vaccination</option>
+            <select class="dropbtn" name="Sched" required>
+                <option value="">Please Select</option>
+                <option value="Anti-rabies Vaccination">Anti-rabies Vaccination</option>
                 <option value="Castration">Castration</option>
             </select>  
   
           <label for="PName">Pet's name:</label>
-          <input type="text" name="PetName" placeholder="Pet's name" require>
+          <input type="text" name="PetName" placeholder="Pet's name" required>
 
           <label for="Breed">Breed:</label>
-          <input type="text" id="Breed" name="Breed" placeholder="Breed" require>
+          <input type="text" id="Breed" name="Breed" placeholder="Breed" required>
   
           <label for="Color">Color:</label>
-          <input type="text" id="Color" name="Color" placeholder="Color" require>
+          <input type="text" id="Color" name="Color" placeholder="Color" required>
   
           <label for="Age">Age:</label>
-          <input type="text" id="Age" name="Age" placeholder="Age" require>
+          <input type="text" id="Age" name="Age" placeholder="Age" required>
   
           <label for="Gender">Gender:</label>
-          <input type="text" id="Gender" name="Gender" placeholder="Gender" require>
+          <input type="text" id="Gender" name="Gender" placeholder="Gender" required>
 
 
           <label for="message">Note:</label>
           <textarea id="message" name="Message" placeholder="Additional details"></textarea>
 
-          <input type="submit"   name="save" value="Submit">
+          <button class="btn btn-sm btn-success" type="submit" name="save">Submit</button>
           </div>
         </form>
       </div> 

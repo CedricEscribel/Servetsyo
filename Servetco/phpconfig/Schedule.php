@@ -14,6 +14,8 @@ if (isset($_POST['save'])) {
   $Message = $_POST['Message'];
   $user_id = $_POST['user_id'];
 
+
+
   $sql = "INSERT INTO schedule (FullN,PhoneNum,Sched,PetName,Breed,Color,Age,Gender,Message,user_id,status) 
      VALUES ('$FullN','$PhoneNum','$Sched','$PetName','$Breed','$Color','$Age','$Gender','$Message','$user_id','Pending')";
 
@@ -28,6 +30,23 @@ if (isset($_POST['save'])) {
   }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  print($_POST['id']);
+if (isset($_POST['btnHideSubmit'])) {
+  $id = $_POST['id'];
+  $status = $_POST['hiddenStatus'];
+
+  $sql = "UPDATE schedule SET status =  '$status' WHERE Schedule_id = $id ";
+
+  $Save = mysqli_query($con, $sql);
+  if ($status === 'Approve') {
+    echo '<script type="text/javascript">
+        alert("Successfully Approved");
+        window.location.href = "../services/schedule.php";
+        </script>';
+    die;
+  }else{
+    echo '<script type="text/javascript">
+        alert("Request Decline");
+        window.location.href = "../services/schedule.php";
+        </script>';
+  }
 }

@@ -1,5 +1,5 @@
         
-  <div class="container" id="sidebar" >
+  <div class="container" id="sidebar" style="background-color: green;" >
   <nav >
         <div class="sidebar-header ">
           <a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>

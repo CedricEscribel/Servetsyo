@@ -245,7 +245,7 @@ p{
 
    form .button input{
      height: 35px;
-     width: 20%;
+     width: 50%;
      border-radius: 5px;
      border: none;
      color: #fff;
@@ -254,7 +254,7 @@ p{
      letter-spacing: 1px;
      cursor: pointer;
      transition: all 0.3s ease;
-     background: #93EA29;
+     background: #7AB730;
    }
   
    .form-group {
@@ -262,7 +262,7 @@ p{
       margin-top: 20px;
     }
    form .button input:hover{
-    /* transform: scale(0.99); */
+    transform: scale(0.99); 
      background: #9dec3b;
     }
    @media(max-width: 584px){

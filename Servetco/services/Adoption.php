@@ -26,24 +26,24 @@ $user = getUserById($_SESSION['user_id'], $conn);
                     <div class="user-details">
                     <div class="input-box">
                         <span class="details">Full Name</span>
-                        <input type="text" id="Fullname" placeholder="<?=$user['Fullname']?>" required>
+                        <input type="text" id="Fullname" placeholder="<?=$user['Fullname']?>" disabled>
                     </div>
                     <div class="input-box">
                         <span class="details">Address</span>
-                        <input type="text" placeholder="<?=$user['Address']?>" required>
+                        <input type="text" placeholder="<?=$user['Address']?>" disabled>
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
-                        <input type="text" placeholder="<?=$user['Email']?>" required>
+                        <input type="text" placeholder="<?=$user['Email']?>" disabled>
                     </div>
                     <div class="input-box">
-                        <span class="details">Phone Number</span>
-                        <input type="text" placeholder=" <?=$user['PhoneNum']?>" required>
+                        <span class="details">Contact Number</span>
+                        <input type="text" placeholder=" <?=$user['PhoneNum']?>" required disabled>
                     </div>
 
                         <div class="Visit input-box">
                             <p>Will you be able to visit the office for the interview?</p>
-                            <div class="radioV">
+                            <div class="radioV" require>
                             <div class="form-check form-check-inline">
                             <input type="radio" class="btn-check" name="Int" id="IntYes" value="Yes">
                             <label class="btn btn-outline-success" for="IntYes">Yes</label>
@@ -58,7 +58,7 @@ $user = getUserById($_SESSION['user_id'], $conn);
                         <div class="input-box">
                             <!-- To be created as a calendar -->
                             <span class="details">Interview and Visitation (Minors must be accompanied by parents) </span>
-                            <input type="text" placeholder="Preferred date and time for onsite interview" required>
+                            <input type="date" placeholder="Preferred date and time for onsite interview" required>
                         </div>
                         </div>
                         

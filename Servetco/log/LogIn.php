@@ -41,7 +41,7 @@ if(isset($_POST['Emaillog']) &&
                  $_SESSION['Address'] = $Address;
                  $_SESSION['PhoneNum'] = $PhoneNum;
 
-                 header("Location: ../profile.php ");
+                 header("Location: ../index.php ");
                  exit;
              }else {
                $em = "Incorrect Username or Password";

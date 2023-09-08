@@ -75,13 +75,13 @@ require_once 'phpconfig/config.php';
                     </button>
                   </div>
 
-                  <div class="card-body">
+                  <div class="card-body" style="width: max-content;">
                     <h3 class="card-title"><?php echo $row["Name"] ?></h3>
                     <h5 class="card-title"><?php echo $row["Gender"] ?></h5>
                     <h5 class="card-title"><?php echo $row["Age"] ?></h5>
                     <h5 class="card-title"><?php echo $row["DogInfo"] ?></h5>
 
-                    <a href="services/Adoption.php" class="btn btn-primary">Go somewhere</a>
+                    <a href="services/Adoption.php" class="btn btn-primary">Adopt</a>
                   </div>
                 </div>
                 <?php endforeach; ?>

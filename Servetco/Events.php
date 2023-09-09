@@ -69,8 +69,7 @@ $all_events = $con->query($sql);
 
                 <?php
             while ($row = $all_events->fetch_assoc()) {
-            ?>      
-                <div class="col-lg-8">
+            ?>                          
                     <div class="blog-item">
                         <div class="row g-0 bg-light overflow-hidden">
                             <div class="col-12 col-sm-5 h-100">
@@ -79,19 +78,18 @@ $all_events = $con->query($sql);
                             <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small><i class="bi bi-calendar-date me-2"></i>15 May, 2023</small>
+                                        <small><i class="bi bi-calendar-date me-2"></i><?php echo $row["Dates"] ?></small>
                                     </div>                 
                                     <h5 class="text-uppercase mb-3"><?php echo $row["EventName"] ?></h5>
                                     <p class="fw-lighter lh-lg"><?php echo $row["Details"] ?></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
+                    </div>  
+                    <br>                        
                 <?php }?>
-
-              
+   
+           
             </div>
             <!-- Events list End -->
 

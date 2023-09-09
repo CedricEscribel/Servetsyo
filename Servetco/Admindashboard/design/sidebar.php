@@ -1,6 +1,6 @@
         
   <div class="container" id="sidebar" style="background-color: green;" >
-  <nav >
+  <nav class="stick">
         <div class="sidebar-header ">
           <a class="head-dash" href="Dashboard.php"> <h2>Dashboard</h2> </a>
         </div>

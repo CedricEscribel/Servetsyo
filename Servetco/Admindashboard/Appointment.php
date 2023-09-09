@@ -50,7 +50,6 @@ $all_schedule = $con->query($sql);
 							<th>Age</th>
 							<th>Gender</th>
 							<th>Note</th>
-							<th>Request Date</th>
 							<th>Status</th>
 						</tr>
 					</thead>
@@ -70,8 +69,6 @@ $all_schedule = $con->query($sql);
 								<td><?php echo $row["Age"] ?></td>
 								<td><?php echo $row["Gender"] ?></td>
 								<td><?php echo $row["Message"] ?></td>
-								<!-- TODO auto request date -->
-								<td><?php echo $row["Date"] ?></td>
 								<td><label for="approval"></label>
 									<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Schedule_id"] ?>" id="btnStatus">
 										<?php echo $row["status"] ?>

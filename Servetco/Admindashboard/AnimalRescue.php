@@ -53,9 +53,9 @@ require '../phpconfig/rescue.php';
           <tr>
           <td><?php echo $row["Name"] ?></td>
           <td><?php echo $row["ContactNum"] ?></td>
-          <td>Animal</td>
+          <td><?php echo $row["animal"] ?></td>
           <td><?php echo $row["Details"] ?></td>
-          <td>Location</td>
+          <td><?php echo $row["Coordinates"] ?></td>
           <td><label for="approval"></label>
                 <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Rescue_id"] ?>" id="btnStatus">
                 <?php echo $row["status"] ?>

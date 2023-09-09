@@ -53,15 +53,13 @@ $user = getUserById($_SESSION['user_id'], $conn);
                         <input type="text" placeholder=" <?=$user['PhoneNum']?>" required disabled>
                     </div>
 
-                        <div class="Visit input-box">
+                        <div class="Visit input-box" required>
                             <p>Will you be able to visit the office for the interview?</p>
                             <div name="Interview" class="radioV" style="margin-left: 30%;" required>
-
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="btn-check" name="Interview" id="IntYes" value="Yes">
                                 <label class="btn btn-outline-success" for="IntYes">Yes</label>
                             </div>
-
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="btn-check" name="Interview" id="IntNo" value="No">
                                 <label class="btn btn-outline-danger" for="IntNo">No</label>

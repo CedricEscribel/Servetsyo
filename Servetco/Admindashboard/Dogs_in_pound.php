@@ -76,7 +76,7 @@ $all_dogs_pound = $con->query($sql);
             </div>
       </span>
 
-   <section class="tables container">
+   <section class="tables container"  style="max-width: 80%;">
       <div style="margin-top: 10px; " class="User-list">
         <h1  >Dogs in pound</h1>
         <table class="table">

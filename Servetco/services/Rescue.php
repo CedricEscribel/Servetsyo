@@ -9,7 +9,7 @@ define("API_KEY","")
     <title>Rescue </title>
     <?php include "header.php"; ?>
     <link rel="stylesheet" href="../css/Schedule.css">
-    <link rel="stylesheet" href="../scss/dropdown.css">k
+    <link rel="stylesheet" href="../scss/dropdown.css">
     <!-- Navbar End -->
 
 
@@ -45,10 +45,10 @@ define("API_KEY","")
           <input type="text" id="name" name="Name" required placeholder="Your name">
   
           <label for="Number">Contact Number</label>
-          <input type="text" id="number" name="ContactNum" required placeholder="Contact Number">
+          <input type="text" name="ContactNum" required placeholder="Contact Number">
             
           <label for="Animal">Select what kind of animals</label>
-          <select class="dropbtn" name="Animal" required>
+          <select class="dropbtn" name="animal" required>
                 <option value="">Please Select</option>
                 <option value="Dog">Dog</option>
                 <option value="Cat">Cat</option>

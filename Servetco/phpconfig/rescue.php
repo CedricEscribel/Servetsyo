@@ -6,22 +6,15 @@
   {	 
      $Name = $_POST['Name'];
      $ContactNum = $_POST['ContactNum'];
-     $Animal = $_POST['Animal'];
+     $animal = $_POST['animal'];
      $Details = $_POST['Details'];
      $Coordinates = $_POST['Coordinates'];
      $status = $_POST['status'];
 
 
 
-     $Animals="";  
-     foreach($Animal as $Animal1)  
-        {  
-           $Animal.= $Animal1.",";  
-        }  
-
-
-     $sql = "INSERT INTO rescue (Name,ContactNum,Animal,Details,Coordinates,status) 
-     VALUES ('$Name','$ContactNum','$Details','$Animals','$Coordinates','Pending')";
+     $sql = "INSERT INTO rescue (Name,ContactNum,animal,Details,Coordinates,status) 
+     VALUES ('$Name','$ContactNum','$animal','$Details','$Coordinates','Pending')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);
@@ -53,13 +46,13 @@
     if ($status === 'Approve') {
       echo '<script type="text/javascript">
           alert("Successfully Approved");
-          window.location.href = "../Admindashboard/Animal_Rescue.php";
+          window.location.href = "../Admindashboard/AnimalRescue.php";
           </script>';
       die;
     }else{
       echo '<script type="text/javascript">
           alert("Request Decline");
-          window.location.href = "../Admindashboard/Animal_Rescue.php";
+          window.location.href = "../Admindashboard/AnimalRescue.php";
           </script>';
     }
   }

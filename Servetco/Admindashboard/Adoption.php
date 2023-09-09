@@ -63,8 +63,8 @@ require '../phpconfig/dogs.php';
               </div>
 
                 <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
-                  <div style="margin-left: 10%;" class="image-preview">
-                    <img src="../img/adoption.jpg" width="50px" alt="Upload Dog Picture" id="image-preview">
+                  <div style="margin-left: 5%;" class="image-preview">
+                    <img src="../img/adoption.jpg" style="border: black 1px dotted;" alt="Upload Dog Picture" id="image-preview">
                     <a href="#" id="choose-file-btn">Choose Images</a>
                   </div>
               </div>
@@ -93,7 +93,7 @@ require '../phpconfig/dogs.php';
                         <div class="Details">
                           <h2><?php echo $row["Name"] ?></h2>
                           <p><?php echo $row["Gender"] ?></p>                   
-                          <p><?php echo $row["Age"] ?></p>                                    
+                          <p><?php echo $row["Age"] ?> Months old</p>                                    
                           <p><?php echo $row["DogInfo"] ?></p>                   
                         </div>
                 </div>

@@ -10,6 +10,7 @@
      $PhoneNum = $_POST['PhoneNum'];
      $Email = $_POST['Email'];
      $Interview = $_POST['Interview'];
+     
      $Date = $_POST['Date'];
      
      $sql = "INSERT INTO adoptionrequest (Fullname,PhoneNum,Address,Email,Interview,Date,status) 
@@ -19,8 +20,11 @@
       $Save = mysqli_query($con, $sql);
       if($Save)
       {
-        echo "Schedules Sent";
-        die(header("Location: ../services/Adoption.php"));
+        echo '<script type="text/javascript">
+        alert("Successfully Submitted");
+        window.location.href = "../services/Adoption.php";
+        </script>';
+        die;
       }
 
   }

@@ -103,13 +103,18 @@ $all_dogs_pound = $con->query($sql);
 								<td><?php echo $row["Age"] ?></td>  
                 <td><?php echo $row["Gender"] ?></td>                 
 								<td><?php echo $row["RescuedAt"] ?></td>       
-                <td><label for="Status"></label>
-								<select id="Status">
-								<option value="Adopted">Adopted</option>
-								<option value="Euthanized">Euthanized</option>
-								<option value="Claimed">Claimed</option>
-								</select>              
-						</tr>				
+                <td><label for="approval"></label>
+                <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["DPoundID"] ?>" id="btnStatus">
+                <?php echo $row["status"] ?>
+						    </button>   
+          </tr>
+
+          <form action="../phpconfig/DogsPound.php" method="post" hidden>
+
+          <input type="hidden" name="id" id="id" value="<?php echo $row['DPoundID'] ?>">
+          <input type="hidden" name="hiddenStatus" id="<?php echo $row["DPoundID"] ?>hiddenStatus" value="">
+          <button type="submit" id="<?php echo $row["DPoundID"] ?>" name="btnHideSubmit" hidden></button>
+          </form>
 
 						<?php
 						}
@@ -120,12 +125,6 @@ $all_dogs_pound = $con->query($sql);
       </div>
     </section>
 </div>
-
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>  
-
+<?php include 'design/footer.php'; ?>
 </body>
 </html>

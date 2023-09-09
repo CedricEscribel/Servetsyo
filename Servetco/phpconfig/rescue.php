@@ -27,7 +27,11 @@
       $Save = mysqli_query($con, $sql);
       if($Save)
       {
-        die(header("Location: ../services/Rescue.php"));
+        echo '<script type="text/javascript">
+        alert("Successfully Submitted");
+        window.location.href = "../services/Rescue.php";
+        </script>';
+        die;
       }
 
   }

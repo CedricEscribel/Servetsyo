@@ -19,8 +19,11 @@
       $Save = mysqli_query($con, $sql);
       if($Save)
       {
-        echo "Sent";
-        die(header("Location: ../services/Insemination.php"));
+        echo '<script type="text/javascript">
+        alert("Successfully Submitted");
+        window.location.href = "../services/Insemination.php";
+        </script>';
+        die;
       }
 
   }

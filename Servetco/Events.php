@@ -1,4 +1,12 @@
+<?php 
 
+require_once 'phpconfig/events.php';
+
+$sql = "SELECT * FROM events";
+$all_events = $con->query($sql);
+
+
+?>
     <head>
     <meta charset="utf-8">
     <title>Events </title>
@@ -59,24 +67,29 @@
                     </div>
                 </div>
 
-                <div class="blog-item mb-5">
-                    <div class="row g-0 bg-light overflow-hidden">
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="img/vaccination.jpg" style="object-fit: cover;">
-                        </div>
-
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small><i class="bi bi-calendar-date me-2"></i>01 June, 2023</small>
+                <?php
+            while ($row = $all_events->fetch_assoc()) {
+            ?>      
+                <div class="col-lg-8">
+                    <div class="blog-item">
+                        <div class="row g-0 bg-light overflow-hidden">
+                            <div class="col-12 col-sm-5 h-100">
+                            <img src="Admindashboard/EventsImg/<?php echo $row["image"]; ?>" width = 200 title="<?php echo $row['image']; ?>">
+                            </div>
+                            <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
+                                <div class="p-4">
+                                    <div class="d-flex mb-3">
+                                        <small><i class="bi bi-calendar-date me-2"></i>15 May, 2023</small>
+                                    </div>                 
+                                    <h5 class="text-uppercase mb-3"><?php echo $row["EventName"] ?></h5>
+                                    <p class="fw-lighter lh-lg"><?php echo $row["Details"] ?></p>
                                 </div>
-                                <h5 class="text-uppercase mb-3">Pet Vaccination</h5>
-                                <p class="fw-lighter lh-lg"> Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag.</p>
-                                <a class="text-primary text-uppercase" role="button" data-bs-toggle="modal"  data-bs-target="#myModal" aria-expanded="false"  id="vaccination">More<i class="bi bi-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <?php }?>
 
               
             </div>

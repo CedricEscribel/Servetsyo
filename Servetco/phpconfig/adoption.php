@@ -18,8 +18,12 @@
       $Save = mysqli_query($con, $sql);
       if($Save)
       {
-        echo "Schedules Sent";
-        die(header("Location: ../services/Adoption.php"));
+
+        echo '<script type="text/javascript">
+        alert("Successfully Submitted");
+        window.location.href = "../services/Adoption.php";
+        </script>';
+        die;
       }
 
   }

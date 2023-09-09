@@ -9,9 +9,10 @@
      $Age = $_POST['Age'];
      $Gender = $_POST['Gender'];
      $RescuedAt = $_POST['RescuedAt'];
+     $status = $_POST['status'];
      
-     $sql = "INSERT INTO dogs_pound (DogName,DateIn,Age,Gender,RescuedAt) 
-     VALUES ('$DogName','$DateIn','$Age','$Gender','$RescuedAt')";
+     $sql = "INSERT INTO dogs_pound (DogName,DateIn,Age,Gender,RescuedAt,status) 
+     VALUES ('$DogName','$DateIn','$Age','$Gender','$RescuedAt','Pending')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);
@@ -31,5 +32,26 @@
     return $result;
   }
 
+
+  if (isset($_POST['btnHideSubmit'])) {
+    $id = $_POST['id'];
+    $status = $_POST['hiddenStatus'];
+  
+    $sql = "UPDATE dogs_pound SET status =  '$status' WHERE DPoundID   = $id ";
+  
+    $Save = mysqli_query($con, $sql);
+    if ($status === 'Approve') {
+      echo '<script type="text/javascript">
+          alert("Successfully Approved");
+          window.location.href = "../Admindashboard/Dogs_in_pound.php";
+          </script>';
+      die;
+    }else{
+      echo '<script type="text/javascript">
+          alert("Request Decline");
+          window.location.href = "../Admindashboard/Dogs_in_pound.php";
+          </script>';
+    }
+  }
 ?>
  

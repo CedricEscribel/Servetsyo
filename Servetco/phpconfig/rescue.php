@@ -53,13 +53,13 @@
     if ($status === 'Approve') {
       echo '<script type="text/javascript">
           alert("Successfully Approved");
-          window.location.href = "../Admindashboard/ArtInsem.php";
+          window.location.href = "../Admindashboard/Animal_Rescue.php";
           </script>';
       die;
     }else{
       echo '<script type="text/javascript">
           alert("Request Decline");
-          window.location.href = "../Admindashboard/ArtInsem.php";
+          window.location.href = "../Admindashboard/Animal_Rescue.php";
           </script>';
     }
   }

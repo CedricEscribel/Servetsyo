@@ -55,14 +55,20 @@ $all_insemination = $con->query($sql);
 								<td><?php echo $row["Name"] ?></td>
 								<td><?php echo $row["ContNum"] ?></td>                    
 								<td><?php echo $row["Animal"] ?></td>  
-                                <td><?php echo $row["Coordinates"] ?></td>                           
-                                <td><label for="Status"></label>
-								<select id="Status">
-								<option value="Pending">Pending</option>
-								<option value="Approve">Approve</option>
-                                <option value="Decline">Decline</option>
-								</select>              
+                <td><?php echo $row["Coordinates"] ?></td>                           
+                <td><label for="approval"></label>
+                <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Insemination_ID"] ?>" id="btnStatus">
+                <?php echo $row["status"] ?>
+						    </button>             
 						</tr>				
+
+						<form action="../phpconfig/ArtInsem.php" method="post" hidden>
+
+							<input type="hidden" name="id" id="id" value="<?php echo $row['Insemination_ID'] ?>">
+							<input type="hidden" name="hiddenStatus" id="<?php echo $row["Insemination_ID"] ?>hiddenStatus" value="">
+							<button type="submit" id="<?php echo $row["Insemination_ID"] ?>" name="btnHideSubmit" hidden></button>
+						</form>
+
 
 						<?php
 						}

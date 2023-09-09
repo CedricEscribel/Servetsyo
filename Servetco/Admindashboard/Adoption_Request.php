@@ -79,11 +79,6 @@ $all_adoptionrequest = $con->query($sql);
         </table>
       </div>
     </section>
-
-
-
-
-
                 </div>
             </nav>
 

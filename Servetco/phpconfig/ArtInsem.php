@@ -10,9 +10,10 @@
      $Coordinates = $_POST['Coordinates'];
      $Details = $_POST['Details'];
      $user_id = $_POST['user_id'];
+     $status = $_POST['status'];
 
-     $sql = "INSERT INTO insemination (Name,ContNum,Animal,Coordinates,Details,user_id) 
-     VALUES ('$Name','$ContNum','$Animal','$Coordinates','$Details','$user_id')";
+     $sql = "INSERT INTO insemination (Name,ContNum,Animal,Coordinates,Details,user_id,status) 
+     VALUES ('$Name','$ContNum','$Animal','$Coordinates','$Details','$user_id','Pending')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);
@@ -32,5 +33,27 @@
     return $result;
   }
 
+
+  if (isset($_POST['btnHideSubmit'])) {
+    $id = $_POST['id'];
+    $status = $_POST['hiddenStatus'];
+  
+    $sql = "UPDATE insemination SET status =  '$status' WHERE Insemination_ID = $id ";
+  
+    $Save = mysqli_query($con, $sql);
+    if ($status === 'Approve') {
+      echo '<script type="text/javascript">
+          alert("Successfully Approved");
+          window.location.href = "../Admindashboard/ArtInsemination.php";
+          </script>';
+      die;
+    }else{
+      echo '<script type="text/javascript">
+          alert("Request Decline");
+          window.location.href = "../Admindashboard/ArtInsemination.php";
+          </script>';
+    }
+  }
 ?>
+ 
  

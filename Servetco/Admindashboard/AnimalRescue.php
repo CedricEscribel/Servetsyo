@@ -57,13 +57,19 @@ require '../phpconfig/rescue.php';
           <td><?php echo $row["Details"] ?></td>
           <td>Location</td>
           <td><label for="approval"></label>
-            <select id="approval">
-              <option value="Pending">Pending</option>
-              <option value="Approve">Approve</option>
-              <option value="Decline">Decline</option>
-            </select>
-            </td>
+                <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Rescue_id"] ?>" id="btnStatus">
+                <?php echo $row["status"] ?>
+						    </button>   
           </tr>
+
+          <form action="../phpconfig/rescue.php" method="post" hidden>
+
+          <input type="hidden" name="id" id="id" value="<?php echo $row['Rescue_id'] ?>">
+          <input type="hidden" name="hiddenStatus" id="<?php echo $row["Rescue_id"] ?>hiddenStatus" value="">
+          <button type="submit" id="<?php echo $row["Rescue_id"] ?>" name="btnHideSubmit" hidden></button>
+          </form>
+
+
       <?php endforeach; ?>
         </tbody>
         </table>

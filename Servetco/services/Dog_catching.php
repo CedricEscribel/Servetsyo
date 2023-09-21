@@ -36,9 +36,33 @@ $user = getUserById($_SESSION['user_id'], $conn);
             <label for="Barangay"></label>
             <select class="dropbtn" name="BarangayID" required>
                 <option class="dropbtn"  value="">Choose Barangay</option>
+                <option value="Bagong Nayon">Bagong Nayon</option>
                 <option value="Barangca">Barangca</option>
+                <option value="Calantipay">Calantipay</option>
+                <option value="Catulinan">Catulinan</option>
+                <option value="Concepcion">Concepcion</option>
+                <option value="Hinukay">Hinukay</option>
+                <option value="Makinabang">Makinabang</option>
+                <option value="Matangtubig">Matangtubig</option>
+                <option value="Pagala">Pagala</option>
                 <option value="Paitan">Paitan</option>
                 <option value="Piel">Piel</option>
+                <option value="Pinagbarilan">Pinagbarilan</option>
+                <option value="Poblacion">Poblacion</option>
+                <option value="Sabang">Sabang</option>
+                <option value="San Jose">San Jose</option>
+                <option value="San Roque">San Roque</option>
+                <option value="Santa Barbara">Santa Barbara</option>
+                <option value="Santo Cristo">Santo Cristo</option>
+                <option value="Santo Niño">Santo Niño</option>
+                <option value="Subic">Subic</option>
+                <option value="Sulivan">Sulivan</option>
+                <option value="Tangos">Tangos</option>
+                <option value="Tarcan">Tarcan</option>
+                <option value="Tiaong">Tiaong</option>
+                <option value="Tibag">Tibag</option>
+                <option value="Tilapayong">Tilapayong</option>
+                <option value="Virgen delas Flores">Virgen delas Flores</option>
             </select>    
   
           <select class="Hide" name="ContNum" style="display: none;">

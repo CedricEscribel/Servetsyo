@@ -18,7 +18,7 @@
       {
         echo '<script type="text/javascript">
         alert("Successfully Submitted");
-        window.location.href = "../services/Dog_catching.php";
+        window.location.href = "../index.php";
         </script>';
         die;
       }

@@ -40,23 +40,23 @@
      </nav>
 </div>
 
-<div class="position-absolute  top-0 end-0" id="RightSide" >
-    <div class="card text-center mb-3" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">My Profile</h5>
-            <img src="images/Adoption.webp" width="50%" alt="">
-            <h5 class="card-title">Admin</h5>
-            <a href="#" class="btn HoverButton">View full profile</a>
+    <!-- <div class="position-absolute  top-0 end-0" id="RightSide" >
+        <div class="card text-center mb-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">My Profile</h5>
+                <img src="images/Adoption.webp" width="50%" alt="">
+                <h5 class="card-title">Admin</h5>
+                <a href="#" class="btn HoverButton">View full profile</a>
+            </div>
         </div>
-    </div>
-    <div class="card text-center mb-3" style="width: 18rem;">
-        <div class="card-body">
-            <h3 class="card-title">Recent Request</h3>
-            <p class="Request">-"full Name" request fo animal rescue</p>
-            <p class="Request">-"full Name" request fo animal rescue</p>
-            <p class="Request">-"full Name" request fo animal rescue</p>
-            <p class="Request">-"full Name" request fo animal rescue</p>
+        <div class="card text-center mb-3" style="width: 18rem;">
+            <div class="card-body">
+                <h3 class="card-title">Recent Request</h3>
+                <p class="Request">-"full Name" request fo animal rescue</p>
+                <p class="Request">-"full Name" request fo animal rescue</p>
+                <p class="Request">-"full Name" request fo animal rescue</p>
+                <p class="Request">-"full Name" request fo animal rescue</p>
+            </div>
         </div>
-    </div>
-</div>
+    </div> -->
 

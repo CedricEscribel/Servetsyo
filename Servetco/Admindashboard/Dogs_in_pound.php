@@ -40,8 +40,8 @@ $all_dogs_pound = $con->query($sql);
               <div class="DogInput">
                  <div class="Inp">
               <div class="DInput">
-                <label for="Name">Name:</label>
-                <input type="text" name="DogName" placeholder="Name"  required>
+                <label for="Name">Name/Description:</label>
+                <input type="text" name="DogName" placeholder="Name/Description"  required>
               </div>
               <div class="DInput">
                 <label style="margin-left:-50px;" for="date">Date In:</label> <br>
@@ -57,9 +57,18 @@ $all_dogs_pound = $con->query($sql);
                </div> 
              </div>
              <div class="Inp">
-              <div class="DInput">
+
+              <div class="DInput" style="margin-top: 10px;" >
                 <label for="Name">Gender:</label>
-                <input type="text" name="Gender" placeholder="Gender"  required>
+                <br>
+              <select class="dropbtn" name="Gender" required>
+                <option value="">Please Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>  
+
+                <!-- <input type="text" name="Gender" placeholder="Gender"  required> -->
+          
               </div>   
               <div class="DInput">
                 <label for="RescuedAt">Rescued at:</label>

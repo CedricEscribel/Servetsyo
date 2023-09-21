@@ -22,7 +22,7 @@
       {
         echo '<script type="text/javascript">
         alert("Successfully Submitted");
-        window.location.href = "../services/Rescue.php";
+        window.location.href = "../index.php";
         </script>';
         die;
       }

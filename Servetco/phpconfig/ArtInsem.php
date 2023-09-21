@@ -21,7 +21,7 @@
       {
         echo '<script type="text/javascript">
         alert("Successfully Submitted");
-        window.location.href = "../services/Insemination.php";
+        window.location.href = "../index.php";
         </script>';
         die;
       }

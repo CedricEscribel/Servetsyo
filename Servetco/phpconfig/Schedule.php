@@ -24,7 +24,7 @@ if (isset($_POST['save'])) {
   if ($Save) {
     echo '<script type="text/javascript">
         alert("Successfully Submitted");
-        window.location.href = "../services/schedule.php";
+        window.location.href = "../index.php";
         </script>';
     die;
   }

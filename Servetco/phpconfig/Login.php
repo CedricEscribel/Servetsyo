@@ -22,7 +22,6 @@
       $Save = mysqli_query($con, $sql);
       if($Save)
       {
-        echo "Schedules Sent";
         die(header("Location: ../Login.php"));
       }
 

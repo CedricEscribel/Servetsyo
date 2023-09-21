@@ -61,7 +61,7 @@ $all_events = $con->query($sql);
 
                 <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
                   <div style="margin-left: 10%;" class="image-preview">
-                    <img src="../img/adoption.jpg" width="50px" alt="Upload Dog Picture" id="image-preview">
+                    <img src="../image/upload.png" width="50px" alt="Upload Dog Picture" id="image-preview">
                     <a href="#" id="choose-file-btn">Choose Images</a>
                   </div>
               </div>

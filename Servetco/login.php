@@ -85,10 +85,10 @@
             </form>
           </div>
 
-<!-- Login end -->
+      <!-- Login end -->
 
 
-<!-- Sign up -->
+      <!-- Sign up -->
 
           <div class="signup-form">
           <form method="post" action="log/account.php"  autocomplete="off">

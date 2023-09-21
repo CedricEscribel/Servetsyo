@@ -13,24 +13,24 @@
 </head>
 
 <body>
-<!-- Navbar Start -->
-<nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-<a href="../index.php" class="navbar-brand ms-lg-5">
-    <img src="../img/logo.jpg"  class="img-fluid" style="width: 90px; height: ms-auto;" alt="..." >
-    </a>    
-    <h2 style="margin-top: 18px; color: #378ACA; font-weight: bold;">SERVETSYO</h2>
+    <!-- Navbar Start -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <a href="../index.php" class="navbar-brand ms-lg-5">
+            <img src="../img/logo.jpg" class="img-fluid" style="width: 90px; height: ms-auto;" alt="...">
+        </a>
+        <h2 style="margin-top: 18px; color: #378ACA; font-weight: bold;">SERVETSYO</h2>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto py-0">
-            <a href="../index.php" class="nav-item nav-link">Home</a>
-            <a href="../about.php" class="nav-item nav-link">About</a>
-            <a href="../service.php" class="nav-item nav-link">Service</a>
-            <a href="../Petforadoption.php" class="nav-item nav-link">adoption</a>
-            <a href="../Events.php" class="nav-item nav-link">Events</a>
-            <a href="../Login.php" class="nav-item nav-link">Login</a>
-      </div>
-    </div>
-</nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="../index.php" class="nav-item nav-link">Home</a>
+                <a href="../about.php" class="nav-item nav-link">About</a>
+                <a href="../service.php" class="nav-item nav-link">Service</a>
+                <a href="../Petforadoption.php" class="nav-item nav-link">adoption</a>
+                <a href="../Events.php" class="nav-item nav-link">Events</a>
+                <a href="../Login.php" class="nav-item nav-link">Login</a>
+            </div>
+        </div>
+    </nav>

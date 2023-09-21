@@ -40,7 +40,7 @@
      </nav>
 </div>
 
-    <!-- <div class="position-absolute  top-0 end-0" id="RightSide" >
+    <div class="position-absolute  top-0 end-0" id="RightSide" >
         <div class="card text-center mb-3" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">My Profile</h5>
@@ -58,5 +58,5 @@
                 <p class="Request">-"full Name" request fo animal rescue</p>
             </div>
         </div>
-    </div> -->
+    </div>
 

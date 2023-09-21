@@ -92,7 +92,7 @@ a, a:hover, a:focus {
 #sidebar ul li a {
     padding: 10px;
     font-size: 1em;
-    background: #7AB730;
+    background: #fff;
     border-radius: 10px;
     margin: 10px;
     display: flex;

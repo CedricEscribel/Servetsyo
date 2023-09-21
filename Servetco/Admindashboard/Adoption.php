@@ -64,7 +64,7 @@ require '../phpconfig/dogs.php';
 
                 <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
                   <div style="margin-left: 5%;" class="image-preview">
-                    <img src="../img/adoption.jpg" style="border: black 1px dotted;" alt="Upload Dog Picture" id="image-preview">
+                    <img src="../image/upload.png" style="border: black 1px dotted;" alt="Upload Dog Picture" id="image-preview">
                     <a href="#" id="choose-file-btn">Choose Images</a>
                   </div>
               </div>

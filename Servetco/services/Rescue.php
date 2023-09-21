@@ -54,7 +54,7 @@ define("API_KEY","")
                 <option value="Cat">Cat</option>
             </select>  
 
-            <input type="text" name="Coordinates" required id="latitude" hidden>
+            <input type="text" name="Coordinates" required id="latitude" >
 
             <label for="Location">Get Location:</label>
               <div id="button-layer"><button id="btnAction" onClick="locate()">Pin current location</button></div>

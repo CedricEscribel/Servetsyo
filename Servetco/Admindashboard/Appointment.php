@@ -36,7 +36,6 @@ $all_schedule = $con->query($sql);
 
 
 		<section class="container tables">
-			<div class="Appointment">
 				<h1>User list of Appointments</h1>
 				<table class="table">
 					<thead>
@@ -88,7 +87,6 @@ $all_schedule = $con->query($sql);
 
 					</tbody>
 				</table>
-			</div>
 		</section>
 
 	</div>

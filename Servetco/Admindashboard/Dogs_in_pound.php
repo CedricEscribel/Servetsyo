@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once '../phpconfig/DogsPound.php';
 
@@ -12,86 +12,85 @@ $all_dogs_pound = $con->query($sql);
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Dogs in pound</title>
+  <title>Dogs in pound</title>
 
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link href="Admin.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="Admin.css" rel="stylesheet">
 
 
 </head>
 
 <body>
 
-<?php include 'design/header.php'; ?>
-    <div class="wrapper">
-        <!-- Sidebar Holder -->
-	<?php include 'design/sidebar.php'; ?>
-  <div class="container">
+  <?php include 'design/header.php'; ?>
+  <div class="wrapper">
+    <!-- Sidebar Holder -->
+    <?php include 'design/sidebar.php'; ?>
+    <div class="container">
       <span>
-          <div class="Upload" >
-            <form class="img_prv" method="POST"   action="../phpconfig/DogsPound.php" autocomplete="off">     
-              <div class="DogsPoundInput">
-            
+        <div class="Upload">
+          <form class="img_prv" method="POST" action="../phpconfig/DogsPound.php" autocomplete="off">
+            <div class="DogsPoundInput">
+
               <div class="DogInput">
-                 <div class="Inp">
-              <div class="DInput">
-                <label for="Name">Name/Description:</label>
-                <input type="text" name="DogName" placeholder="Name/Description"  required>
-              </div>
-              <div class="DInput">
-                <label style="margin-left:-50px;" for="date">Date In:</label> <br>
-                <input class="DateIn"   type="date" name="DateIn" required>
-              </div>
-              
-              <div class="DInput">
-                <label for="Name">Age:</label>
-                <input type="text" width="10px" name="Age" placeholder="Age"  required>
-              </div>
-              <div class="button" >
-                <input style="color: white;" type="submit" name="submit" value="Post">
-               </div> 
-             </div>
-             <div class="Inp">
+                <div class="Inp">
+                  <div class="DInput">
+                    <label for="Name">Name/Description:</label>
+                    <input type="text" name="DogName" placeholder="Name/Description" required>
+                  </div>
+                  <div class="DInput">
+                    <label style="margin-left:-50px;" for="date">Date In:</label> <br>
+                    <input class="DateIn" type="date" name="DateIn" required>
+                  </div>
 
-              <div class="DInput" style="margin-top: 10px;" >
-                <label for="Name">Gender:</label>
-                <br>
-              <select class="dropbtn" name="Gender" required>
-                <option value="">Please Select</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>  
+                  <div class="DInput">
+                    <label for="Name">Age:</label>
+                    <input type="text" width="10px" name="Age" placeholder="Age" required>
+                  </div>
+                  <div class="button">
+                    <input style="color: white;" type="submit" name="submit" value="Post">
+                  </div>
+                </div>
+                <div class="Inp">
 
-                <!-- <input type="text" name="Gender" placeholder="Gender"  required> -->
-          
-              </div>   
-              <div class="DInput">
-                <label for="RescuedAt">Rescued at:</label>
-                <input type="text" name="RescuedAt" placeholder="Location"  required>
-              </div>    
-              
-              </div>
-              
+                  <div class="DInput" style="margin-top: 10px;">
+                    <label for="Name">Gender:</label>
+                    <br>
+                    <select class="dropbtn" name="Gender" required>
+                      <option value="">Please Select</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+
+                    <!-- <input type="text" name="Gender" placeholder="Gender"  required> -->
+
+                  </div>
+                  <div class="DInput">
+                    <label for="RescuedAt">Rescued at:</label>
+                    <input type="text" name="RescuedAt" placeholder="Location" required>
+                  </div>
+
+                </div>
+
               </div>
 
-          
-              </div>
-            </form>
+
             </div>
+          </form>
+        </div>
       </span>
+      <section class="container tables">
 
-   <section class="tables container"  style="max-width: 80%;">
-      <div style="margin-top: 10px; " class="User-list">
-        <h1  >Dogs in pound</h1>
+        <h1>Dogs in pound</h1>
         <table class="table">
           <thead>
-            <tr class="head" >
-              <th>ID</th> 
+            <tr class="head">
+              <th>ID</th>
               <th>Name</th>
               <th>Date in</th>
               <th>Age</th>
@@ -102,38 +101,38 @@ $all_dogs_pound = $con->query($sql);
           </thead>
           <tbody>
 
-          <?php
-						while ($row = $all_dogs_pound->fetch_assoc()) {
-						?>
-							<tr>
-								<td><?php echo $row["DPoundID"] ?></td>
-								<td><?php echo $row["DogName"] ?></td>
-								<td><?php echo $row["DateIn"] ?></td>                    
-								<td><?php echo $row["Age"] ?></td>  
-                <td><?php echo $row["Gender"] ?></td>                 
-								<td><?php echo $row["RescuedAt"] ?></td>       
+            <?php
+            while ($row = $all_dogs_pound->fetch_assoc()) {
+            ?>
+              <tr>
+                <td><?php echo $row["DPoundID"] ?></td>
+                <td><?php echo $row["DogName"] ?></td>
+                <td><?php echo $row["DateIn"] ?></td>
+                <td><?php echo $row["Age"] ?></td>
+                <td><?php echo $row["Gender"] ?></td>
+                <td><?php echo $row["RescuedAt"] ?></td>
                 <td><label for="approval"></label>
-                <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["DPoundID"] ?>" id="btnStatus">
-                <?php echo $row["status"] ?>
-						    </button>   
-          </tr>
+                  <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["DPoundID"] ?>" id="btnStatus">
+                    <?php echo $row["status"] ?>
+                  </button>
+              </tr>
 
-          <form action="../phpconfig/DogsPound.php" method="post" hidden>
+              <form action="../phpconfig/DogsPound.php" method="post" hidden>
 
-          <input type="hidden" name="id" id="id" value="<?php echo $row['DPoundID'] ?>">
-          <input type="hidden" name="hiddenStatus" id="<?php echo $row["DPoundID"] ?>hiddenStatus" value="">
-          <button type="submit" id="<?php echo $row["DPoundID"] ?>" name="btnHideSubmit" hidden></button>
-          </form>
+                <input type="hidden" name="id" id="id" value="<?php echo $row['DPoundID'] ?>">
+                <input type="hidden" name="hiddenStatus" id="<?php echo $row["DPoundID"] ?>hiddenStatus" value="">
+                <button type="submit" id="<?php echo $row["DPoundID"] ?>" name="btnHideSubmit" hidden></button>
+              </form>
 
-						<?php
-						}
-						?>
+            <?php
+            }
+            ?>
 
           </tbody>
         </table>
-      </div>
-    </section>
-</div>
-<?php include 'design/footer.php'; ?>
+      </section>
+    </div>
+    <?php include 'design/footer.php'; ?>
 </body>
+
 </html>

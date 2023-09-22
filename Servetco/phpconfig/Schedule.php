@@ -49,4 +49,5 @@ if (isset($_POST['btnHideSubmit'])) {
         window.location.href = "../Admindashboard/Appointment.php";
         </script>';
   }
+  
 }

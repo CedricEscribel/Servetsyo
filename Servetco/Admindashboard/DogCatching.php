@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once '../phpconfig/Catching.php';
 
@@ -12,61 +12,60 @@ $all_catch = $con->query($sql);
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Dog Catching</title>
+	<title>Dog Catching</title>
 
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link href="Admin.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link href="Admin.css" rel="stylesheet">
 
 
 </head>
 
 <body>
 
-<?php include 'design/header.php'; ?>
+	<?php include 'design/header.php'; ?>
 
-<div class="wrapper">
-        <!-- Sidebar Holder -->
+	<div class="wrapper">
+		<!-- Sidebar Holder -->
 
-	<?php include 'design/sidebar.php'; ?>
+		<?php include 'design/sidebar.php'; ?>
 
-    <section class="tables container">
-			<div class="Appointment">
-			  <h1>Dog Catching Request</h1>
-			  <table class="table">
+		<section class="tables container">
+			<h1>Dog Catching Request</h1>
+			<table class="table">
 				<thead>
-				  <tr>
-					<th>ID</th>
-					<th>Barangay</th>
-                    <th>Contact Number</th>
-					<th>Number of Dogs</th>
-					<th>Notes</th>
-					<th>Date</th>
-					<th>Status</th>
-				  </tr>
+					<tr>
+						<th>ID</th>
+						<th>Barangay</th>
+						<th>Contact Number</th>
+						<th>Number of Dogs</th>
+						<th>Notes</th>
+						<th>Date</th>
+						<th>Status</th>
+					</tr>
 				</thead>
 				<tbody>
 
 
 					<?php
-						while ($row = $all_catch->fetch_assoc()) {
-						?>
-							<tr>
-								<td><?php echo $row["DogCatch_id"] ?></td>
-								<td><?php echo $row["BarangayID"] ?></td>
-                                <td><?php echo $row["ContNum"] ?></td> 
-                                <td><?php echo $row["DogCount"] ?></td>        
-								<td><?php echo $row["Notes"] ?></td>                      
-								<td>Date</td>     
-								<td><label for="approval"></label>
-									<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["DogCatch_id"] ?>" id="btnStatus">
-										<?php echo $row["status"] ?>
-									</button>    
-						</tr>				
+					while ($row = $all_catch->fetch_assoc()) {
+					?>
+						<tr>
+							<td><?php echo $row["DogCatch_id"] ?></td>
+							<td><?php echo $row["BarangayID"] ?></td>
+							<td><?php echo $row["ContNum"] ?></td>
+							<td><?php echo $row["DogCount"] ?></td>
+							<td><?php echo $row["Notes"] ?></td>
+							<td>Date</td>
+							<td><label for="approval"></label>
+								<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["DogCatch_id"] ?>" id="btnStatus">
+									<?php echo $row["status"] ?>
+								</button>
+						</tr>
 
 						<form action="../phpconfig/Catching.php" method="post" hidden>
 
@@ -75,17 +74,17 @@ $all_catch = $con->query($sql);
 							<button type="submit" id="<?php echo $row["DogCatch_id"] ?>" name="btnHideSubmit" hidden></button>
 						</form>
 
-						<?php
-						}
-						?>
-				
+					<?php
+					}
+					?>
+
 				</tbody>
-			  </table>
-			</div>
-		  </section>
-</div>
+			</table>
+		</section>
+	</div>
 
 
-<?php include 'design/footer.php'; ?>
+	<?php include 'design/footer.php'; ?>
 </body>
+
 </html>

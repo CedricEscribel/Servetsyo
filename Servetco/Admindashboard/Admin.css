@@ -70,18 +70,13 @@ a, a:hover, a:focus {
 
 
 #sidebar .sidebar-header {
-    background: #7AB730;
+    background: #4CAF50;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
     padding: 5px;
 }
-
-/* #RightSide{
-  position: absolute;
-  right: 0;
-} */
 
 
 #sidebar ul p {
@@ -128,8 +123,15 @@ a[data-toggle="collapse"] {
 ----------------------------------------------------- */
 
 /* Table */
-.tables{
+/* .tables{
   margin-right: 20%;
+} */
+
+.drop{
+  border: hidden;
+  background: #4CAF50;
+  color: white;
+  font-size: 12px;
 }
 
 .tables ul {
@@ -170,8 +172,6 @@ a[data-toggle="collapse"] {
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: space-evenly;
-    max-width: 70%;
-    margin-top: 15px;
   }
   
   .card {
@@ -267,10 +267,6 @@ display: flex;
   /* upload */
   
   /* Dogs Upload */
-  .Dogs{
-    max-width: 73%;
-    
-  }
 
     .DogDetails{
       display: grid;
@@ -389,8 +385,4 @@ display: flex;
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
-    .dashboard{
-        grid-template-columns: repeat(2, auto);
-      }
-    
 

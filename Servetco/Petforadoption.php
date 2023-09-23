@@ -81,7 +81,12 @@ require_once 'phpconfig/config.php';
                     <h5 class="card-title"><?php echo $row["Age"] ?></h5>
                     <h5 class="card-title"><?php echo $row["DogInfo"] ?></h5>
 
-                    <a href="services/Adoption.php" style="color: white; width: 200px; " class="btn btn-primary">Adopt</a>
+                    <form action="./services/Adoption.php" method="post" >
+                    <input type="hidden" value="<?php echo $row["Dog_id"] ?>" name="Dog_id" >
+                    <button type="submit" class="btn btn-primary" style="color: white; width: 200px;" name="Adopt_dog">Adopt</button>
+                    </form>
+                    <!-- <a href="services/Adoption.php" style="color: white; width: 200px; " valu id="Adopt" class="btn btn-primary">Adopt</a> -->
+
                   </div>
                 </div>
                 <?php endforeach; ?>

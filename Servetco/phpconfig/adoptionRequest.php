@@ -10,11 +10,11 @@
      $PhoneNum = $_POST['PhoneNum'];
      $Email = $_POST['Email'];
      $Interview = $_POST['Interview'];
-     
      $Date = $_POST['Date'];
-     
-     $sql = "INSERT INTO adoptionrequest (Fullname,PhoneNum,Address,Email,Interview,Date,status) 
-     VALUES ('$Fullname','$PhoneNum','$Address','$Email','$Interview','$Date','Pending')";
+     $Dog_id = $_POST['Dog_id'];
+
+     $sql = "INSERT INTO adoptionrequest (Fullname,PhoneNum,Address,Email,Interview,Date,Dog_id,status) 
+     VALUES ('$Fullname','$PhoneNum','$Address','$Email','$Interview','$Date','$Dog_id','Pending')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);

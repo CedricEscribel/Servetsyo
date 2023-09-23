@@ -2,7 +2,7 @@
 
 require_once '../phpconfig/DogsPound.php';
 
-$sql = "SELECT * FROM dogs_pound";
+$sql = "SELECT * FROM dogs_pound where status='pending'";
 $all_dogs_pound = $con->query($sql);
 
 
@@ -32,6 +32,8 @@ $all_dogs_pound = $con->query($sql);
     <!-- Sidebar Holder -->
     <?php include 'design/sidebar.php'; ?>
     <div class="container">
+      
+    <h1>Dogs in pound</h1>
       <span>
         <div class="Upload">
           <form class="img_prv" method="POST" action="../phpconfig/DogsPound.php" autocomplete="off">
@@ -86,7 +88,6 @@ $all_dogs_pound = $con->query($sql);
       </span>
       <section class="container tables">
 
-        <h1>Dogs in pound</h1>
         <table class="table">
           <thead>
             <tr class="head">

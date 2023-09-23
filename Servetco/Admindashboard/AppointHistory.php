@@ -2,7 +2,7 @@
 
 require_once '../phpconfig/Schedule.php';
 
-$sql = "SELECT * FROM schedule WHERE status='pending' ";
+$sql = "SELECT * FROM schedule WHERE 1 ";
 $all_schedule = $con->query($sql);
 
 
@@ -18,6 +18,8 @@ $all_schedule = $con->query($sql);
 
 	<title>Appointment</title>
 
+	<?php include 'design/datatablelink.php'; ?>
+
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
@@ -29,8 +31,7 @@ $all_schedule = $con->query($sql);
 
 	<?php include 'design/header.php'; ?>
 	<div class="wrapper">
-			<?php include 'design/sidebar.php'; ?>
-
+		<?php include 'design/sidebar.php'; ?>
 		<!-- Sidebar Holder -->
 
 
@@ -38,7 +39,7 @@ $all_schedule = $con->query($sql);
 
 
 		<section class="container tables">
-			<h1>User list of Appointments</h1>
+			<h1>User list of Appointments History</h1>
 			<table class="table" id="table">
 				<thead>
 					<tr>
@@ -70,19 +71,8 @@ $all_schedule = $con->query($sql);
 							<td><?php echo $row["Age"] ?></td>
 							<td><?php echo $row["Gender"] ?></td>
 							<td><?php echo $row["Message"] ?></td>
-							<td><label for="approval"></label>
-								<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Schedule_id"] ?>" id="btnStatus">
-									<?php echo $row["status"] ?>
-								</button>
+							<td><?php echo $row["status"] ?></td>
 						</tr>
-
-
-						<form action="../phpconfig/Schedule.php" method="post" hidden>
-
-							<input type="hidden" name="id" id="id" value="<?php echo $row['Schedule_id'] ?>">
-							<input type="hidden" name="hiddenStatus" id="<?php echo $row["Schedule_id"] ?>hiddenStatus" value="">
-							<button type="submit" id="<?php echo $row["Schedule_id"] ?>" name="btnHideSubmit" hidden></button>
-						</form>
 					<?php
 					}
 					?>
@@ -95,6 +85,11 @@ $all_schedule = $con->query($sql);
 
 
 	<?php include 'design/footer.php'; ?>
+	<script>
+		$(document).ready(function() {
+			new DataTable('#table');
+		});
+	</script>
 </body>
 
 </html>

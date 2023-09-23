@@ -7,49 +7,42 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
 <!-- axios script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js" integrity="sha512-nnNHpffPSgINrsR8ZAIgFUIMexORL5tPwsfktOTxVYSv+AUAILuFYWES8IHl+hhIhpFGlKvWFiz9ZEusrPcSBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script type="text/javascript">
-		$(document).ready(function() {
-
-			// const swalWithBootstrapButtons = Swal.mixin({
-			// 	customClass: {
-			// 		confirmButton: "btn btn-success mx-1",
-			// 		cancelButton: "btn btn-danger",
-			// 	},
-			// 	buttonsStyling: false,
-			// });
-
-			$(document).on('click', '#btnStatus', function(e) {
-				e.preventDefault();
-				var id = event.target.value;
-
-
-				Swal.fire({
-					title: 'Do you want to approve the request?',
-					showDenyButton: true,
-					showCancelButton: true,
-					confirmButtonText: 'Approve',
-					denyButtonText: `Decline`,
-				}).then((result) => {
-					/* Read more about isConfirmed, isDenied below */
-					if (result.isConfirmed) {
-						$('#'+id +'hiddenStatus').val('Approve');
-						setTimeout(() => {
-							$('#' + id).trigger('click');
-						}, 500)
-
-
-					} else if (result.isDenied) {
-						$('#'+id +'hiddenStatus').val('Decline');
-						setTimeout(() => {
-							$('#' + id).trigger('click');
-						}, 500)
-					}
-				})
-			});
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js" integrity="sha512-nnNHpffPSgINrsR8ZAIgFUIMexORL5tPwsfktOTxVYSv+AUAILuFYWES8IHl+hhIhpFGlKvWFiz9ZEusrPcSBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+<!-- Datatable script -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
 
 
-		});
-	</script>
+<script >
+	$(document).on('click', '#btnStatus', function(e) {
+		e.preventDefault();
+		var id = event.target.value;
+
+
+		Swal.fire({
+			title: 'Do you want to approve the request?',
+			showDenyButton: true,
+			showCancelButton: true,
+			confirmButtonText: 'Approve',
+			denyButtonText: `Decline`,
+		}).then((result) => {
+			/* Read more about isConfirmed, isDenied below */
+			if (result.isConfirmed) {
+
+				$('#' + id + 'hiddenStatus').val('Approve');
+				setTimeout(() => {
+					$('#' + id).trigger('click');
+				}, 500)
+
+
+			} else if (result.isDenied) {
+				$('#' + id + 'hiddenStatus').val('Decline');
+				setTimeout(() => {
+					$('#' + id).trigger('click');
+				}, 500)
+			}
+		})
+	});
+</script>

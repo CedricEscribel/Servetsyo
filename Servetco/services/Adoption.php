@@ -64,7 +64,6 @@ $user = getUserById($_SESSION['user_id'], $conn);
                                 <input type="radio" class="btn-check" name="Interview" id="IntNo" value="No">
                                 <label class="btn btn-outline-danger" for="IntNo">No</label>
                             </div>
-
                             </div>
                         </div>  
 

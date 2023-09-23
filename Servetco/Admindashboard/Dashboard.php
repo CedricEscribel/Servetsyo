@@ -19,11 +19,16 @@ require '../phpconfig/count.php';
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
+	<style>
+		#sidebar {
+			height: 45em;
+		}
+	</style>
 </head>
 
 <body>
 	<?php include 'design/header.php'; ?>
-	
+
 	<div class="wrapper">
 		<!-- Sidebar Holder -->
 		<?php include 'design/sidebar.php'; ?>

@@ -20,7 +20,7 @@ p {
 .stick{
   box-sizing: border-box;
   position: sticky;
-  top: 14%;
+  top: 12%;
 }
 
 
@@ -62,11 +62,12 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    height: 50em;
     color: white;
     transform-origin: bottom left;
-    padding-top: 5px;
+    height: 45em;
+    
   }
+  
 
 
 #sidebar .sidebar-header {
@@ -86,11 +87,31 @@ a, a:hover, a:focus {
 
 #sidebar ul li a {
     padding: 10px;
-    font-size: 1em;
+    font-size: 4mm;
     border-radius: 10px;
-    margin: 10px;
     display: flex;
     justify-content: center;
+}
+
+/* Accordion */
+#sidebar ul li .accordion {
+  font-size: 4mm;
+  border-radius: 3px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  border: hidden;
+}
+
+.accordion-item{
+  background-color: #4CAF50;
+  color: white;
+}
+
+.accordion{
+  background-color: #4CAF50;
+  color: white;
+  font-size: 4mm;
 }
 
 #sidebar ul li a:hover {
@@ -98,7 +119,21 @@ a, a:hover, a:focus {
     background: #499c38;
 }
 
+#sidebar ul li .accordion:hover {
+  color: black;
+  background: #499c38;
+}
 
+#sidebar ul li .accordion-item:hover {
+  color: black;
+  background: #499c38;
+}
+#sidebar ul li .dropdown-item:hover {
+  color: black;
+  background: #4CAF50;
+}
+
+/* End */
 
 li img{
   width: 50px;
@@ -205,9 +240,19 @@ a[data-toggle="collapse"] {
 /* Appointment */
 
 /* Adoption */
+.Upload{
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
+.Informations{
+  margin-bottom: 12px;
+}
 
 /* Upload photo for adoption */
+
+
 .DogInput{
 display: flex;
 }

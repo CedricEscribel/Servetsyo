@@ -15,6 +15,9 @@ require '../phpconfig/rescue.php';
 
   <title>Animal Rescue</title>
 
+
+  <?php include 'design/datatablelink.php'; ?>
+
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link href="Admin.css" rel="stylesheet">
@@ -32,7 +35,7 @@ require '../phpconfig/rescue.php';
 
     <section class="tables container">
       <h1>Animal Rescue History</h1>
-      <table class="table">
+      <table class="table"  id="table">
         <thead>
           <tr>
             <th>Name</th>
@@ -46,7 +49,7 @@ require '../phpconfig/rescue.php';
         <tbody>
           <?php
           $i = 1;
-          $rows = mysqli_query($con, "SELECT * FROM rescue where status='pending' ")
+          $rows = mysqli_query($con, "SELECT * FROM rescue ORDER BY Rescue_id DESC")
           ?>
           <?php foreach ($rows as $row) : ?>
             <tr>
@@ -55,18 +58,9 @@ require '../phpconfig/rescue.php';
               <td><?php echo $row["animal"] ?></td>
               <td><?php echo $row["Details"] ?></td>
               <td><?php echo $row["Coordinates"] ?></td>
-              <td><label for="approval"></label>
-                <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Rescue_id"] ?>" id="btnStatus">
-                  <?php echo $row["status"] ?>
-                </button>
+              <td><?php echo $row["status"] ?></td>
+
             </tr>
-
-            <form action="../phpconfig/rescue.php" method="post" hidden>
-
-              <input type="hidden" name="id" id="id" value="<?php echo $row['Rescue_id'] ?>">
-              <input type="hidden" name="hiddenStatus" id="<?php echo $row["Rescue_id"] ?>hiddenStatus" value="">
-              <button type="submit" id="<?php echo $row["Rescue_id"] ?>" name="btnHideSubmit" hidden></button>
-            </form>
 
 
           <?php endforeach; ?>
@@ -79,7 +73,11 @@ require '../phpconfig/rescue.php';
   </div>
 
   <?php include 'design/footer.php'; ?>
-
+  <script>
+		$(document).ready(function() {
+			new DataTable('#table');
+		});
+	</script>
 </body>
 
 </html>

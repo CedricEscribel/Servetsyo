@@ -1,5 +1,9 @@
 <?php
-require '../phpconfig/login.php';
+require '../phpconfig/adoptionRequest.php';
+
+$sql = "SELECT * FROM adoptionrequest";
+$all_adoptionrequest = $con->query($sql);
+
 
 ?>
 
@@ -11,8 +15,7 @@ require '../phpconfig/login.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>User List</title>
-
+  <title>Adoption Request</title>
 
   <?php include 'design/datatablelink.php'; ?>
 
@@ -30,44 +33,46 @@ require '../phpconfig/login.php';
     <!-- Sidebar Holder -->
     <?php include 'design/sidebar.php'; ?>
 
-
-
-    <!-- Main body design -->
     <section class="tables container">
-      <h1>User List</h1>
+      <h1>Adoption Request History</h1>
       <table class="table" id="table">
         <thead>
-          <tr>
-            <th>ID</th>
+          <tr class="head">
             <th>Full Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
+            <th>Contact Number</th>
             <th>Address</th>
-            <th>Create Date</th>
+            <th>Dog Name</th>
+            <th>Interview</th>
+            <th>Date</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
+
           <?php
-          $i = 1;
-          $rows = mysqli_query($con, "SELECT * FROM user")
+          while ($row = $all_adoptionrequest->fetch_assoc()) {
           ?>
-          <?php foreach ($rows as $row) : ?>
             <tr>
-              <td><?php echo $row["user_id"] ?></td>
               <td><?php echo $row["Fullname"] ?></td>
-              <td><?php echo $row["Email"] ?></td>
               <td><?php echo $row["PhoneNum"] ?></td>
               <td><?php echo $row["Address"] ?></td>
-              <td><?php echo $row["CreateDate"] ?></td>
-            </tr>
-          <?php endforeach; ?>
+              <td>dogName </td>
+              <td><?php echo $row["Interview"] ?></td>
+              <td><?php echo $row["Date"] ?></td>
+              <td><?php echo $row["status"] ?></td>
+
+          <?php
+          }
+          ?>
+
         </tbody>
       </table>
     </section>
-    </section>
-
   </div>
   </nav>
+
+
+  </div>
   </div>
 
   <?php include 'design/footer.php'; ?>

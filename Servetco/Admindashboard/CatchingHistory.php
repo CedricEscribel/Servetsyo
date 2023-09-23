@@ -2,7 +2,7 @@
 
 require_once '../phpconfig/Catching.php';
 
-$sql = "SELECT * FROM catch where status='pending' ";
+$sql = "SELECT * FROM catch";
 $all_catch = $con->query($sql);
 
 
@@ -17,6 +17,9 @@ $all_catch = $con->query($sql);
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Dog Catching</title>
+
+    
+	<?php include 'design/datatablelink.php'; ?>
 
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -35,8 +38,8 @@ $all_catch = $con->query($sql);
 		<?php include 'design/sidebar.php'; ?>
 
 		<section class="tables container">
-			<h1>Dog Catching Request</h1>
-			<table class="table">
+			<h1>Dog Catching Request History</h1>
+			<table class="table" id="table">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -61,18 +64,7 @@ $all_catch = $con->query($sql);
 							<td><?php echo $row["DogCount"] ?></td>
 							<td><?php echo $row["Notes"] ?></td>
 							<td>Date</td>
-							<td><label for="approval"></label>
-								<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["DogCatch_id"] ?>" id="btnStatus">
-									<?php echo $row["status"] ?>
-								</button>
-						</tr>
-
-						<form action="../phpconfig/Catching.php" method="post" hidden>
-
-							<input type="hidden" name="id" id="id" value="<?php echo $row['DogCatch_id'] ?>">
-							<input type="hidden" name="hiddenStatus" id="<?php echo $row["DogCatch_id"] ?>hiddenStatus" value="">
-							<button type="submit" id="<?php echo $row["DogCatch_id"] ?>" name="btnHideSubmit" hidden></button>
-						</form>
+                            <td><?php echo $row["status"] ?></td>
 
 					<?php
 					}
@@ -85,6 +77,11 @@ $all_catch = $con->query($sql);
 
 
 	<?php include 'design/footer.php'; ?>
+    <script>
+		$(document).ready(function() {
+			new DataTable('#table');
+		});
+	</script>
 </body>
 
 </html>

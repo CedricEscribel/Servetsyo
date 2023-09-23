@@ -2,7 +2,7 @@
 
 require_once '../phpconfig/ArtInsem.php';
 
-$sql = "SELECT * FROM insemination";
+$sql = "SELECT * FROM insemination where status='pending' ";
 $all_insemination = $con->query($sql);
 
 

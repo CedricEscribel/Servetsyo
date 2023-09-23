@@ -1,7 +1,7 @@
 <?php
 require '../phpconfig/adoptionRequest.php';
 
-$sql = "SELECT * FROM adoptionrequest";
+$sql = "SELECT * FROM adoptionrequest where status='pending'";
 $all_adoptionrequest = $con->query($sql);
 
 

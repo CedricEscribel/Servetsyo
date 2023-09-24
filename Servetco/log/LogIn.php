@@ -44,19 +44,19 @@ if(isset($_POST['Emaillog']) &&
                  header("Location: ../index.php ");
                  exit;
              }else {
-               $em = "Incorrect Username or Password";
+               $em = "Incorrect Email or Password";
                header("Location: ../login.php?error=$em&$data");
                exit;
             }
 
           }else {
-            $em = "Incorrect User name or Password";
+            $em = "Incorrect Email or Password";
             header("Location: ../login.php?error=$em&$data");
             exit;
          }
 
       }else {
-         $em = "Incorect User name or Password";
+         $em = "Incorect Email  or Password";
          header("Location: ../login.php?error=$em&$data");
          exit;
       }

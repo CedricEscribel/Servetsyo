@@ -1,17 +1,13 @@
 
 <head>
         <meta charset="utf-8">
-        <title>About </title>
+        <title>Login </title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <link rel="stylesheet" href="css/Login.css">
          <?php include 'header.php';?>
 
 
 <style>
-
-input[type="number"] {
-  width: 100px;
-}
 
 input + span {
   padding-right: 30px;
@@ -148,7 +144,7 @@ input:valid + span::after {
                 <label class="label">Full Name:</label>
                 <div class="input-box">
                   <i class="fas fa-user"></i>
-                  <input type="text" name="Fullname" placeholder="Full Name" required  		       
+                  <input type="text" autocapitalize="sentences" name="Fullname" placeholder="Full Name" required  		       
                   value="<?php echo (isset($_GET['Fullname']))?$_GET['Fullname']:"" ?>">
                 </div>
                 <label class="label">Address:</label>

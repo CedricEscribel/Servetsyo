@@ -45,7 +45,7 @@ define("API_KEY","")
           <input type="text" id="name" name="Name" placeholder="Your name">
   
           <label for="Number">Contact Number</label>
-          <input type="tel" name="ContactNum"  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  placeholder="Contact Number">
+          <input type="tel" name="ContactNum"  placeholder="09123456789" pattern="[0-9]{11}" maxlength="11">
             
           <label for="Animal">Select what kind of animals</label>
           <select class="dropbtn" name="animal" required>

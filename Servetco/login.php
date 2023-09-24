@@ -133,7 +133,7 @@
                 <!-- TODO:  delete add button -->
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input type="tel" name="PhoneNum" placeholder="Enter your Contact Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required
+                  <input type="tel" name="PhoneNum" placeholder="123-4567-8901" pattern="09 [0-9]{4}-[0-9]{3}-[0-9]{4}" maxlength="13" required
                   value="<?php echo (isset($_GET['PhoneNum']))?$_GET['PhoneNum']:"" ?>">
                 </div>
                 <div class="button input-box">

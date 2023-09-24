@@ -32,8 +32,8 @@ $all_dogs_pound = $con->query($sql);
     <!-- Sidebar Holder -->
     <?php include 'design/sidebar.php'; ?>
     <div class="container">
-      
-    <h1>Dogs in pound</h1>
+
+      <h1>Dogs in pound</h1>
       <span>
         <div class="Upload">
           <form class="img_prv" method="POST" action="../phpconfig/DogsPound.php" autocomplete="off">
@@ -55,7 +55,7 @@ $all_dogs_pound = $con->query($sql);
                     <input type="text" width="10px" name="Age" placeholder="Age" required>
                   </div>
                   <div class="button">
-                    <input style="color: white;" type="submit" name="submit" value="Post">
+                    <input style="color: white;" type="submit" name="submit" value="Add">
                   </div>
                 </div>
                 <div class="Inp">
@@ -69,8 +69,7 @@ $all_dogs_pound = $con->query($sql);
                       <option value="Female">Female</option>
                     </select>
 
-                    <!-- <input type="text" name="Gender" placeholder="Gender"  required> -->
-
+ 
                   </div>
                   <div class="DInput">
                     <label for="RescuedAt">Rescued at:</label>

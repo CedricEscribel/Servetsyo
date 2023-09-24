@@ -51,7 +51,7 @@ $all_schedule = $con->query($sql);
 						<th>Age</th>
 						<th>Gender</th>
 						<th>Note</th>
-						<th>Request date</th>
+						<th>Date Requested</th>
 						<th>Status</th>					
 					</tr>
 				</thead>

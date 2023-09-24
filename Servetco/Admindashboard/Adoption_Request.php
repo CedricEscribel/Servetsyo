@@ -42,7 +42,7 @@ $all_adoptionrequest = $con->query($sql);
             <th>Dog Id</th>
             <th>Interview</th>
             <th>Preferred Date</th>
-            <th>Request Date</th>
+            <th>Date Requested</th>
             <th>Status</th>
           </tr>
         </thead>

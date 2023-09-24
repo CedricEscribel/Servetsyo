@@ -53,7 +53,7 @@
                 </div>
             </li>
             <li>
-                <a href="Adoption.php"><i class="Animals"></i>Adoption</a>
+                <a href="Adoption.php"><i class="Animals"></i>Dogs for Adoption</a>
             </li>
             <li>
                 <div class="accordion accordion-flush " id="accordionFlushExample">

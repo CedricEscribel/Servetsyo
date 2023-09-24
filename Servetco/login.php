@@ -137,6 +137,7 @@ input:valid + span::after {
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
                   <input type="password" name="Password" id="Pass" placeholder="Enter your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                  <span class="validity"></span>
                 </div>
                 <div class="show_pass" >
                   <input type="checkbox" onclick="Showpass()">&#32;Show Password

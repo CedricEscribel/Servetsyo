@@ -56,7 +56,7 @@ if(isset($_POST['Emaillog']) &&
          }
 
       }else {
-         $em = "Incorect Email  or Password";
+         $em = "Incorrect Email  or Password";
          header("Location: ../login.php?error=$em&$data");
          exit;
       }

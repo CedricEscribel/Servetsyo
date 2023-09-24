@@ -32,7 +32,7 @@ if(isset($_POST['Fullname']) &&
          exit;
          
       }else if(empty($PhoneNum)){
-         $em = "PhoneNum Number is required";
+         $em = "Phone Number Number is required";
          header("Location: ../login.php?error=$em&$data");
          exit;       
            

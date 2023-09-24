@@ -54,7 +54,7 @@ define("API_KEY","")
                 <option value="Cat">Cat</option>
             </select>  
 
-            <input type="text" name="Coordinates" required id="latitude" >
+            <input type="text" name="Coordinates" required id="latitude" hidden >
 
             <label for="Location">Get Location:</label>
               <div id="button-layer"><button id="btnAction" onClick="locate()">Pin current location</button></div>
@@ -93,7 +93,7 @@ define("API_KEY","")
             var currentLatitude = position.coords.latitude;
             var currentLongitude = position.coords.longitude;
 
-            var infoWindowHTML = "Latitude: " + currentLatitude + "<br>Longitude: " + currentLongitude;
+            var infoWindowHTML = "<h3>Current Location</h3>"+"Latitude: " + currentLatitude + "<br>Longitude: " + currentLongitude;
             var infoWindow = new google.maps.InfoWindow({map: map, content: infoWindowHTML});
             var currentLocation = { lat: currentLatitude, lng: currentLongitude };
             infoWindow.setPosition(currentLocation);

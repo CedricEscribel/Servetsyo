@@ -28,7 +28,7 @@ $user = getUserById($_SESSION['user_id'], $conn);
     <div class="Schedule_form">
           <h1>Schedule Request</h1>
 
-        <form method="post" action="../phpconfig/Schedule.php">
+        <form method="post" action="../phpconfig/Schedule.php" autocomplete="off">
           <div class="form">
           
 

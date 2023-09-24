@@ -2,7 +2,7 @@
 
 require_once '../phpconfig/Schedule.php';
 
-$sql = "SELECT * FROM schedule WHERE status='pending' ";
+$sql = "SELECT * FROM schedule WHERE status='pending' ORDER BY Date DESC ";
 $all_schedule = $con->query($sql);
 
 
@@ -51,6 +51,7 @@ $all_schedule = $con->query($sql);
 						<th>Age</th>
 						<th>Gender</th>
 						<th>Note</th>
+						<th>Request date</th>
 						<th>Status</th>					
 					</tr>
 				</thead>
@@ -70,6 +71,7 @@ $all_schedule = $con->query($sql);
 							<td><?php echo $row["Age"] ?></td>
 							<td><?php echo $row["Gender"] ?></td>
 							<td><?php echo $row["Message"] ?></td>
+							<td><?php echo $row["Date"] ?></td>
 							<td><label for="approval"></label>
 								<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Schedule_id"] ?>" id="btnStatus">
 									<?php echo $row["status"] ?>

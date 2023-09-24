@@ -44,7 +44,7 @@ $all_catch = $con->query($sql);
 						<th>Contact Number</th>
 						<th>Number of Dogs</th>
 						<th>Notes</th>
-						<th>Date</th>
+						<th>Date Requested</th>
 						<th>Status</th>
 					</tr>
 				</thead>
@@ -60,7 +60,7 @@ $all_catch = $con->query($sql);
 							<td><?php echo $row["ContNum"] ?></td>
 							<td><?php echo $row["DogCount"] ?></td>
 							<td><?php echo $row["Notes"] ?></td>
-							<td>Date</td>
+							<td><?php echo $row["ReqDate"] ?></td>
 							<td><label for="approval"></label>
 								<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["DogCatch_id"] ?>" id="btnStatus">
 									<?php echo $row["status"] ?>

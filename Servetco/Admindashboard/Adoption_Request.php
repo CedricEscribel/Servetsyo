@@ -41,7 +41,8 @@ $all_adoptionrequest = $con->query($sql);
             <th>Address</th>
             <th>Dog Id</th>
             <th>Interview</th>
-            <th>Date</th>
+            <th>Preferred Date</th>
+            <th>Request Date</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -57,6 +58,7 @@ $all_adoptionrequest = $con->query($sql);
               <td><?php echo $row["Dog_id"] ?></td>
               <td><?php echo $row["Interview"] ?></td>
               <td><?php echo $row["Date"] ?></td>
+              <td><?php echo $row["DateReq"] ?></td>
               <td><label for="approval"></label>
                 <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["AdoptReq_id"] ?>" id="btnStatus">
                   <?php echo $row["status"] ?>

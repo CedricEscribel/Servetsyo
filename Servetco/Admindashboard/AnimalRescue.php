@@ -40,6 +40,7 @@ require '../phpconfig/rescue.php';
             <th>Kind of Animal</th>
             <th>Situation</th>
             <th>Location</th>
+            <th>Date Requested</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -55,6 +56,7 @@ require '../phpconfig/rescue.php';
               <td><?php echo $row["animal"] ?></td>
               <td><?php echo $row["Details"] ?></td>
               <td><?php echo $row["Coordinates"] ?></td>
+              <td><?php echo $row["ReqDate"] ?></td>
               <td><label for="approval"></label>
                 <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Rescue_id"] ?>" id="btnStatus">
                   <?php echo $row["status"] ?>

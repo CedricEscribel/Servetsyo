@@ -43,6 +43,7 @@ $all_insemination = $con->query($sql);
             <th>Contact Number</th>
             <th>Kind of Animal</th>
             <th>Location</th>
+            <th>Date Requested</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -56,6 +57,7 @@ $all_insemination = $con->query($sql);
               <td><?php echo $row["ContNum"] ?></td>
               <td><?php echo $row["Animal"] ?></td>
               <td><?php echo $row["Coordinates"] ?></td>
+              <td><?php echo $row["ReqDate"] ?></td>
               <td><label for="approval"></label>
                 <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Insemination_ID"] ?>" id="btnStatus">
                   <?php echo $row["status"] ?>

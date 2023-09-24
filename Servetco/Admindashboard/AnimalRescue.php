@@ -31,7 +31,7 @@ require '../phpconfig/rescue.php';
 
 
     <section class="tables container">
-      <h1>Animal Rescue History</h1>
+      <h1>Animal Rescue</h1>
       <table class="table">
         <thead>
           <tr>

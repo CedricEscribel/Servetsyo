@@ -6,6 +6,33 @@
         <link rel="stylesheet" href="css/Login.css">
          <?php include 'header.php';?>
 
+
+<style>
+
+input[type="number"] {
+  width: 100px;
+}
+
+input + span {
+  padding-right: 30px;
+}
+
+input:invalid + span::after {
+  position: absolute;
+  content: "✖";
+  padding-left: 5px;
+  color: red;
+}
+
+input:valid + span::after {
+  position: absolute;
+  content: "✓";
+  padding-left: 5px;
+  color: greenyellow;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -108,6 +135,7 @@
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
                   <input type="email" name="Email" placeholder="Enter your Email" required>
+                  <span class="validity"></span>
                 </div>
                 <label class="label">Password:</label>
                 <div class="input-box">
@@ -130,11 +158,11 @@
                   value="<?php echo (isset($_GET['Address']))?$_GET['Address']:"" ?>">
                 </div>
                 <label class="label">Contact Number:</label>
-                <!-- TODO:  delete add button -->
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input type="tel" name="PhoneNum" placeholder="123-4567-8901" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" maxlength="13" required
+                  <input type="tel" name="PhoneNum" placeholder="09123456789" pattern="[0-9]{11}" maxlength="11" required
                   value="<?php echo (isset($_GET['PhoneNum']))?$_GET['PhoneNum']:"" ?>">
+                  <span class="validity"></span>
                 </div>
                 <div class="button input-box">
                   <input type="submit" value="Sign Up"  name="Sign_up">

@@ -39,14 +39,6 @@ $catch = mysqli_num_rows( $result );
      
 }
 
-$sql = "SELECT * from adoption";
-  
-if ($result = mysqli_query($con, $sql)) {
-
-// Return the number of rows in result set
-$adoption = mysqli_num_rows( $result );
-     
-}
 
 $sql = "SELECT * from events";
   

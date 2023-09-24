@@ -73,8 +73,8 @@ require '../phpconfig/count.php';
 					<div class="card dash">
 						<img src="./design/images/Adoption.webp" class="card-img-top" alt="...">
 						<div class="card-body Count">
-							<h4>Adoption</h4>
-							<h3 class="card-text"><?php echo $adoption ?></h3>
+							<h4>Dogs for Adoption</h4>
+							<h3 class="card-text"><?php echo $dogs ?></h3>
 						</div>
 					</div>
 				</span>

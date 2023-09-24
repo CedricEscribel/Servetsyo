@@ -30,7 +30,7 @@ require '../phpconfig/dogs.php';
 
     <div class="container">
       <div class="header">
-        <h1 style="text-transform:uppercase">Adoption</h1>
+        <h1 style="text-transform:uppercase">Dogs for Adoption </h1>
       </div>
       <!-- Body design -->
 

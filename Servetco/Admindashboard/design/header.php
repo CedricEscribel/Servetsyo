@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse" style="margin-right: 5%;" >
         <div class="navbar-nav ms-auto py-0">
             <div class="nav-item dropdown" >
-                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Profile</a>
+                <a href="#" class="nav-link  active" data-bs-toggle="dropdown">Profile</a>
                 <div class="dropdown-menu m-0">
                     <a href="profile.php" class="dropdown-item active">Profile</a>
                     <a href="login.php" class="dropdown-item">Login</a>

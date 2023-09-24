@@ -64,7 +64,7 @@ require '../phpconfig/count.php';
 						<img src="./design/images/DogsInPound.webp" class="card-img-top" alt="...">
 						<div class="card-body Count">
 							<h4>Dogs in Pound</h4>
-							<h3 class="card-text"><?php echo $dogs ?></h3>
+							<h3 class="card-text"><?php echo $dogs_pound ?></h3>
 						</div>
 					</div>
 				</span>
@@ -83,7 +83,7 @@ require '../phpconfig/count.php';
 						<img src="./design/images/AdoptRequest.webp" class="card-img-top" alt="...">
 						<div class="card-body Count">
 							<h4>Adoption Request</h4>
-							<h3 class="card-text"><?php echo $catch ?></h3>
+							<h3 class="card-text"><?php echo $adoptionrequest ?></h3>
 						</div>
 					</div>
 
@@ -94,7 +94,7 @@ require '../phpconfig/count.php';
 						<img src="./design/images/ArtInsem.webp" class="card-img-top" alt="...">
 						<div class="card-body Count">
 							<h4>Artificial Insemination</h4>
-							<h3 class="card-text"><?php echo $dogs ?></h3>
+							<h3 class="card-text"><?php echo $insemination ?></h3>
 						</div>
 					</div>
 				</span>

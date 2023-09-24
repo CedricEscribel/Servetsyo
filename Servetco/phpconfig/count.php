@@ -56,4 +56,32 @@ if ($result = mysqli_query($con, $sql)) {
 $Events = mysqli_num_rows( $result );
      
 }
+
+$sql = "SELECT * from adoptionrequest";
+  
+if ($result = mysqli_query($con, $sql)) {
+
+// Return the number of rows in result set
+$adoptionrequest = mysqli_num_rows( $result );
+     
+}
+
+$sql = "SELECT * from insemination";
+  
+if ($result = mysqli_query($con, $sql)) {
+
+// Return the number of rows in result set
+$insemination = mysqli_num_rows( $result );
+     
+}
+
+$sql = "SELECT * from dogs_pound";
+  
+if ($result = mysqli_query($con, $sql)) {
+
+// Return the number of rows in result set
+$dogs_pound = mysqli_num_rows( $result );
+     
+}
 ?>
+

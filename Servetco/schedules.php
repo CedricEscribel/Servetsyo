@@ -7,11 +7,20 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 include "log/session.php";
 $user = getUserById($_SESSION['user_id'], $conn);
 
+
+$sql = "SELECT user.user_id, user.Fullname, user.Email, insemination.Animal 
+FROM user 
+INNER JOIN insemination
+ON user.user_id=insemination.user_id
+WHERE EXISTS (SELECT user_id FROM user WHERE user.user_id = insemination.user_id AND user_id = ";
+
+
+
 ?>
 
 <head>
         <meta charset="utf-8">
-        <title>About </title>
+        <title> Schedules </title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
   	    <link href="css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/Login.css">

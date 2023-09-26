@@ -37,7 +37,7 @@ $all_events = $con->query($sql);
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
                     <div class="dropdown-menu m-0">
                         <a href="profile.php" class="dropdown-item">Profile</a>
-                        <a href="#" class="dropdown-item ">Schedules</a>
+                        <a href="schedules.php" class="dropdown-item ">Schedules</a>
                         <a href="login.php" class="dropdown-item">Login</a>
                     </div>
                 </div>

@@ -38,7 +38,7 @@ $user = getUserById($_SESSION['user_id'], $conn);
                     <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Account</a>
                     <div class="dropdown-menu m-0">
                         <a href="profile.php" class="dropdown-item active">Profile</a>
-                        <a href="#" class="dropdown-item ">Schedules</a>
+                        <a href="schedules.php" class="dropdown-item ">Schedules</a>
                         <a href="login.php" class="dropdown-item">Login</a>
                     </div>
                 </div>

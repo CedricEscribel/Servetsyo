@@ -1,136 +1,98 @@
 <?php
-include "phpconfig/config.php";
+
+require_once '../phpconfig/Catching.php';
+
+$sql = "SELECT * FROM catch";
+$all_schedule = $con->query($sql);
+
+
 session_start();
 
 if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
-include "log/session.php";
-$user = getUserById($_SESSION['user_id'], $conn);
+  include "../log/session.php";
+  $user = getUserById($_SESSION['user_id'], $conn);
 
 ?>
 
-<head>
-        <meta charset="utf-8">
-        <title>About </title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  	    <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/Login.css">
-    <?php include 'header.php';?>
+  <head>
+    <meta charset="utf-8">
+    <title>Dog Catching </title>
 
-</head>
-
-<body>
-    <!-- Navbar Start -->
-    <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-    <?php include 'navlogo.php';?>
-    
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a href="index.php" class="nav-item nav-link ">Home</a>
-                <a href="about.php" class="nav-item nav-link ">About</a>
-                <a href="service.php" class="nav-item nav-link">Service</a>
-                <a href="Petforadoption.php" class="nav-item nav-link">adoption</a>
-                <a href="Events.php" class="nav-item nav-link">Events</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Account</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="profile.php" class="dropdown-item active">Profile</a>
-                        <a href="#" class="dropdown-item ">Schedules</a>
-                        <a href="login.php" class="dropdown-item">Login</a>
-                    </div>
-                </div>
-        </div>
-        </div>
-    </nav>
+    <?php include "header.php"; ?>
+    <link rel="stylesheet" href="../css/Schedule.css">
     <!-- Navbar End -->
-    <!-- body -->
-    <div class="container">
 
-    <?php if ($user) { ?>
-        <div class="main-body">    
-              <div class="row gutters-sm">
-                <div class="col-md-4 mb-3">
-                  <div class="card">
-                    <div class="card-body-user">
-                      <div class="d-flex flex-column align-items-center text-center">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
-                        <div class="mt-3">
-                          <!-- name -->
-                          <p>Hey, <?=$user['Fullname']?>!</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-8">
-                  <div class="card mb-3">
-                    <div class="card-body-user">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Full Name</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        <?=$user['Fullname']?>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Email</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                             <?=$user['Email']?>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Contact Number</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        <?=$user['PhoneNum']?>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Address</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        <?=$user['Address']?>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <a class="btn btn-primary px-4" target="blank" href="EditProfile.php">Edit</a>
-                          <a class="btn btn-primary px-4" target="blank" href="log/logout.php">Log out</a>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>    
-                </div>
-              </div>
-        </div>
-        <?php }else { 
-        header("Location: login.php");
-        exit;
-       } ?>
-    </div>
-    <!-- body end -->
-
+    <!-- Schedule form start -->
     
-    <!-- footer -->
-    <?php include 'footer.php';?>
 
-</body>
+    </style>
+    <!-- Schedule form start -->
+    <div class="Schedule_form">
+      <h1>Dog Catching Request</h1>
 
-<?php }else {
-	header("Location: login.php");
-	exit;
+      <form method="post" action="../phpconfig/Catching.php">
+        <div class="form">
+          <label for="Barangay">Barangay: </label>
+          <label for="Barangay"></label>
+          <select class="dropbtn" name="BarangayID" id="barangay" required>
+            <option class="dropbtn" value="">Choose Barangay</option>
+            <option value="Bagong Nayon">Bagong Nayon</option>
+            <option value="Barangca">Barangca</option>
+            <option value="Calantipay">Calantipay</option>
+            <option value="Catulinan">Catulinan</option>
+            <option value="Concepcion">Concepcion</option>
+            <option value="Hinukay">Hinukay</option>
+            <option value="Makinabang">Makinabang</option>
+            <option value="Matangtubig">Matangtubig</option>
+            <option value="Pagala">Pagala</option>
+            <option value="Paitan">Paitan</option>
+            <option value="Piel">Piel</option>
+            <option value="Pinagbarilan">Pinagbarilan</option>
+            <option value="Poblacion">Poblacion</option>
+            <option value="Sabang">Sabang</option>
+            <option value="San Jose">San Jose</option>
+            <option value="San Roque">San Roque</option>
+            <option value="Santa Barbara">Santa Barbara</option>
+            <option value="Santo Cristo">Santo Cristo</option>
+            <option value="Santo Niño">Santo Niño</option>
+            <option value="Subic">Subic</option>
+            <option value="Sulivan">Sulivan</option>
+            <option value="Tangos">Tangos</option>
+            <option value="Tarcan">Tarcan</option>
+            <option value="Tiaong">Tiaong</option>
+            <option value="Tibag">Tibag</option>
+            <option value="Tilapayong">Tilapayong</option>
+            <option value="Virgen delas Flores">Virgen delas Flores</option>
+          </select>
+
+          <select class="Hide" name="ContNum" style="display: none;">
+            <option value="<?= $user['PhoneNum'] ?>"></option>
+          </select>
+          <label style="margin-top: 10px;" for="Number">Contact Number:</label>
+          <input type="text" id="number" name="ContNum" disabled placeholder=" <?= $user['PhoneNum'] ?>">
+
+          <label for="Number">Number of Dogs:</label>
+          <input type="text" id="number" name="DogCount" placeholder="Number of Dogs" required>
+
+          <label for="Notes">Notes:</label>
+          <textarea id="Notes" name="Notes" placeholder="" required></textarea>
+
+          <input type="submit" name="save" value="Submit" >
+
+        </div>
+      </form>
+    </div>
+
+    <!-- Schedule form end -->
+
+    <!-- Footer Start -->
+    <?php include "footer.php"; ?>
+    <!-- Footer End -->
+    </script>
+    </body>
+
+  <?php } else {
+  echo '<script>alert("Log in first")</script>';
+  echo '<script>window.location.href = "../login.php";</script>';
 } ?>

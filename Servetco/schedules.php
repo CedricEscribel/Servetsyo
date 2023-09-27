@@ -2,17 +2,25 @@
 include "phpconfig/config.php";
 session_start();
 
+$userid48 = '47';
+
+$userid = $userid48;
+
+$sql = "SELECT user.user_id, user.Fullname, user.Email, insemination.Animal \n"
+
+  . "FROM user \n"
+
+  . "INNER JOIN insemination\n"
+
+  . "ON user.user_id=insemination.user_id\n"
+  . "WHERE user.user_id = $userid;";
+
+$all_schedule = $con->query($sql);
+
 if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
   include "log/session.php";
   $user = getUserById($_SESSION['user_id'], $conn);
-
-
-  $sql = "SELECT user.user_id, user.Fullname, user.Email, insemination.Animal 
-FROM user 
-INNER JOIN insemination
-ON user.user_id=insemination.user_id
-WHERE EXISTS (SELECT user_id FROM user WHERE user.user_id = insemination.user_id AND user_id = $user";
 
 
 
@@ -57,60 +65,46 @@ WHERE EXISTS (SELECT user_id FROM user WHERE user.user_id = insemination.user_id
     <!-- Navbar End -->
     <!-- body -->
 
-    
+    <?php if ($user) { ?>
+
+
+                  <p>Hey, <?= $user['Fullname'] ?>!</p>
+
+
+    <?php }  ?>
+
+
     <div class="container">
-    <section class="container tables">
-			<h1>User list of Appointments</h1>
-			<table class="table" id="table">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Contact Number</th>
-						<th>Appointment</th>
-						<th>Pet's Name</th>
-						<th>Breed</th>
-						<th>Color</th>
-						<th>Age</th>
-						<th>Gender</th>
-						<th>Note</th>
-						<th>Date Requested</th>
-						<th>Status</th>					
-					</tr>
-				</thead>
-				<tbody>
+      <section class="container tables">
+        <h1>User list of Appointments</h1>
+        <table class="table" id="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Contact Number</th>
+              <th>Appointment</th>
+              <th>Pet's Name</th>
+
+            </tr>
+          </thead>
+          <tbody>
 
 
-					<?php
-					while ($row = $all_schedule->fetch_assoc()) {
-					?>
-						<tr>
-							<td><?php echo $row["FullN"] ?></td>
-							<td><?php echo $row["PhoneNum"] ?></td>
-							<td><?php echo $row["Sched"] ?></td>
-							<td><?php echo $row["PetName"] ?></td>
-							<td><?php echo $row["Breed"] ?></td>
-							<td><?php echo $row["Color"] ?></td>
-							<td><?php echo $row["Age"] ?></td>
-							<td><?php echo $row["Gender"] ?></td>
-							<td><?php echo $row["Message"] ?></td>
-							<td><?php echo $row["Date"] ?></td>
-							<td><label for="approval"></label>
-								<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Schedule_id"] ?>" id="btnStatus">
-									<?php echo $row["status"] ?>
-								</button>
-						</tr>
+            <?php
+            while ($row = $all_schedule->fetch_assoc()) {
+            ?>
+              <tr>
+                <td><?php echo $row["user_id"] ?></td>
+                <td><?php echo $row["Fullname"] ?></td>
+                <td><?php echo $row["Email"] ?></td>
+                <td><?php echo $row["Animal"] ?></td>
 
+              </tr>
 
-						<form action="../phpconfig/Schedule.php" method="post" hidden>
+            <?php
+            }
+            ?>
 
-							<input type="hidden" name="id" id="id" value="<?php echo $row['Schedule_id'] ?>">
-							<input type="hidden" name="hiddenStatus" id="<?php echo $row["Schedule_id"] ?>hiddenStatus" value="">
-							<button type="submit" id="<?php echo $row["Schedule_id"] ?>" name="btnHideSubmit" hidden></button>
-						</form>
-					<?php
-					}
-					?>
-      
     </div>
     <!-- body end -->
 
@@ -124,4 +118,3 @@ WHERE EXISTS (SELECT user_id FROM user WHERE user.user_id = insemination.user_id
   header("Location: login.php");
   exit;
 } ?>
-

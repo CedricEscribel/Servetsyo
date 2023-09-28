@@ -42,6 +42,7 @@ $all_insemination = $con->query($sql);
             <th>Full Name</th>
             <th>Contact Number</th>
             <th>Kind of Animal</th>
+            <th>Descruption</th>
             <th>Location</th>
             <th>Date Requested</th>
             <th>Status</th>
@@ -56,6 +57,7 @@ $all_insemination = $con->query($sql);
               <td><?php echo $row["Name"] ?></td>
               <td><?php echo $row["ContNum"] ?></td>
               <td><?php echo $row["Animal"] ?></td>
+              <td><?php echo $row["Details"] ?></td>
               <td><?php echo $row["Coordinates"] ?></td>
               <td><?php echo $row["ReqDate"] ?></td>
               <td><label for="approval"></label>

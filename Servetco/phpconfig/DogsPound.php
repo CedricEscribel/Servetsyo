@@ -39,6 +39,7 @@ if (isset($_POST['btnHideSubmit'])) {
 
   $Save = mysqli_query($con, $sql);
   if ($status === 'Approve') {
+    
     echo '<script type="text/javascript">
   alert("Successfully Approved");
   window.location.href = "../Admindashboard/Dogs_in_pound.php";
@@ -46,7 +47,7 @@ if (isset($_POST['btnHideSubmit'])) {
     die;
   } else {
     echo '<script type="text/javascript">
-  alert("Request Decline");
+  alert("Request Declined");
   window.location.href = "../Admindashboard/Dogs_in_pound.php";
   </script>';
   }

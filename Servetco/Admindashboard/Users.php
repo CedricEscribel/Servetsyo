@@ -1,5 +1,5 @@
 <?php
-require '../phpconfig/login.php';
+require '../phpconfig/config.php';
 
 ?>
 

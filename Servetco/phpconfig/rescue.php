@@ -51,7 +51,7 @@
       die;
     }else{
       echo '<script type="text/javascript">
-          alert("Request Decline");
+          alert("Request Declined");
           window.location.href = "../Admindashboard/AnimalRescue.php";
           </script>';
     }

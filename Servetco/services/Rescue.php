@@ -42,10 +42,10 @@ define("API_KEY","")
         <form method="post" action="../phpconfig/rescue.php">
           <div class="form">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="Name" placeholder="Your name">
+          <input type="text" id="name" name="Name" placeholder="Your name" required>
   
           <label for="Number">Contact Number</label>
-          <input type="tel" name="ContactNum"  placeholder="09123456789" pattern="[0-9]{11}" maxlength="11">
+          <input type="tel" name="ContactNum"  placeholder="09123456789" required pattern="[0-9]{11}" maxlength="11">
             
           <label for="Animal">Select what kind of animals</label>
           <select class="dropbtn" name="animal" required>

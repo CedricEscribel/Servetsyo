@@ -77,7 +77,7 @@ define("API_KEY","")
             <input type="text" name="Coordinates" id="latitude" hidden required>
 
             <label for="Location">Get Location:</label>
-          <div id="button-layer"><button id="btnAction" onClick="locate()">Pin current location</button></div>
+          <div id="button-layer"><button id="btnAction" onClick="locate()" require>Pin current location</button></div>
           <div id="map-layer"></div>
           <label for="Details">Details:</label>
           <textarea id="Details" name="Details" placeholder="Additional details" required></textarea>

@@ -53,10 +53,10 @@ $all_events = $con->query($sql);
                 <input type="date" name="Dates" placeholder="Date"  required>
               </div>   
               </div>
-              <label for="Name" style="margin: 10px;">Additional details:</label>
+              <label for="Name" style="margin: 10px;">event details:</label>
               <div class="Doginput2">
               <div class="DInput">
-                  <textarea rows="4" cols="40" name="Details" placeholder="Additional details"></textarea>
+                  <textarea rows="4" cols="40" name="Details" placeholder="event details"></textarea>
               </div>
 
                 <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">

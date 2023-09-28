@@ -59,7 +59,7 @@ require '../phpconfig/dogs.php';
               <label for="Name" style="margin: 10px;">Additional details:</label>
               <div class="Doginput2">
                 <div class="DInput">
-                  <textarea rows="4" cols="40" name="DogInfo" placeholder="Additional details"></textarea>
+                  <textarea rows="4" cols="40" name="DogInfo" placeholder="Additional details" required></textarea>
                 </div>
 
                 <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
@@ -104,10 +104,10 @@ require '../phpconfig/dogs.php';
     </div>
 
 
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+
+    <!-- footer -->
+    <?php include 'design/footer.php'; ?>
+
 
     <script src="Image.js"></script>
 

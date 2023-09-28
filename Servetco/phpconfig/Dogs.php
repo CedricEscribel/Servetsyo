@@ -14,7 +14,7 @@
       
     if($_FILES["image"]["error"] == 4){
       echo
-      "<script> alert('Image Does Not Exist'); </script>"
+      "<script> alert('Image does not exist'); </script>"
       ;
     }
     else{
@@ -29,7 +29,7 @@
         echo
         "
         <script>
-          alert('Invalid Image Extension');
+          alert('Invalid image extension');
         </script>
         ";
       }

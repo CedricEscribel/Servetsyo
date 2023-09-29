@@ -42,7 +42,7 @@ $all_insemination = $con->query($sql);
             <th>Full Name</th>
             <th>Contact Number</th>
             <th>Kind of Animal</th>
-            <th>Descruption</th>
+            <th>Description</th>
             <th>Location</th>
             <th>Date Requested</th>
             <th>Status</th>

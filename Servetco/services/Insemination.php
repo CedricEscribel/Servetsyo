@@ -78,11 +78,12 @@ define("API_KEY","")
 
             <label for="Location">Get Location:</label>
           <div id="button-layer"><button id="btnAction" onClick="locate()" require>Pin current location</button></div>
+          <p id="CoordValid" class="alert alert-danger" role="alert" hidden></p>
           <div id="map-layer"></div>
           <label for="Details">Details:</label>
           <textarea id="Details" name="Details" placeholder="Additional details" required></textarea>
 
-			  	<input type="submit" name="save" value="Submit">
+			  	<input type="submit" name="save" onclick="Valid()"  value="Submit">
           </div>
         </form>
       </div>
@@ -110,6 +111,7 @@ define("API_KEY","")
       function locate(){
         document.getElementById("btnAction").disabled = true;
         document.getElementById("btnAction").innerHTML = "Processing...";
+        document.getElementById("CoordValid").hidden = true;
         if ("geolocation" in navigator){
           navigator.geolocation.getCurrentPosition(function(position){ 
             var currentLatitude = position.coords.latitude;
@@ -128,6 +130,17 @@ define("API_KEY","")
       </script>
     <!-- Script Maps End -->
 
+    <script>
+    function Valid() {
+      const inpObj = document.getElementById("latitude");
+      if (!inpObj.checkValidity()) {
+        document.getElementById("CoordValid").innerHTML = "Please pin your location";
+        document.getElementById("CoordValid").hidden = false;
+      } else {
+        document.getElementById("CoordValid").hidden = true;
+      }
+    }
+  </script>
 
 
 </body>

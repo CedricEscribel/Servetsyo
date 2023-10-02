@@ -76,11 +76,11 @@ $all_events = $con->query($sql);
                             <img src="Admindashboard/EventsImg/<?php echo $row["image"]; ?>" width = 200 title="<?php echo $row['image']; ?>">
                             </div>
                             <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
-                                <div class="p-4">
-                                    <div class="d-flex mb-3">
+                                <div class="p-3">
+                                    <div class="d-flex mb-2">
                                         <small><i class="bi bi-calendar-date me-2"></i><?php echo $row["Dates"] ?></small>
                                     </div>                 
-                                    <h5 class="text-uppercase mb-3"><?php echo $row["EventName"] ?></h5>
+                                    <h5 class="text-uppercase mb-1"><?php echo $row["EventName"] ?></h5>
                                     <p class="fw-lighter lh-lg"><?php echo $row["Details"] ?></p>
                                 </div>
                             </div>

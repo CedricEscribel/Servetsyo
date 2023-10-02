@@ -78,7 +78,7 @@ require_once 'phpconfig/config.php';
                   <div class="card-body" style="width: max-content;">
                     <h3 class="card-title"><?php echo $row["Name"] ?></h3>
                     <h5 class="card-title"><?php echo $row["Gender"] ?></h5>
-                    <h5 class="card-title"><?php echo $row["Age"] ?></h5>
+                    <h5 class="card-title"><?php echo $row["Age"] ?> Months old</h5>
                     <h5 class="card-title"><?php echo $row["DogInfo"] ?></h5>
 
                     <form action="./services/Adoption.php" method="post" >

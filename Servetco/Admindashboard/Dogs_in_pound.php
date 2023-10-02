@@ -18,15 +18,6 @@ $all_dogs_pound = $con->query($sql);
 
   <title>Dogs in pound</title>
 
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link href="Admin.css" rel="stylesheet">
-
-
-</head>
-
-<body>
-
   <?php include 'design/header.php'; ?>
   <div class="wrapper">
     <!-- Sidebar Holder -->
@@ -38,6 +29,26 @@ $all_dogs_pound = $con->query($sql);
         <div class="Upload">
           <form class="img_prv" method="POST" action="../phpconfig/DogsPound.php" autocomplete="off">
             <div class="DogsPoundInput">
+              
+
+            <div class="DogInput">
+
+              </div>
+              <label for="Name" style="margin: 10px;">Additional details:</label>
+              <div class="Doginput2">
+                <div class="DInput">
+                  <textarea rows="4" cols="40" name="DogInfo" placeholder="Additional details" required></textarea>
+                </div>
+
+                <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
+                <div style="margin-left: 5%;" class="image-preview">
+                  <img src="../image/upload.png" style="border: black 1px dotted;" alt="Upload Dog Picture" id="image-preview">
+                  <a href="#" id="choose-file-btn">Choose Images</a>
+                </div>
+              </div>
+              <div class="button" style="max-width: 34%;">
+                <input style="color: white;" type="submit" name="submit" value="Post">
+              </div>
 
               <div class="DogInput">
                 <div class="Inp">

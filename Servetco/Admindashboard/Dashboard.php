@@ -25,73 +25,112 @@ require '../phpconfig/count.php';
 			<div class="dashboard container">
 
 				<span class="borders">
-					<div class="card dash">
-						<img src="./design/images/Appointment.webp" class="card-img-top" alt="...">
-						<div class="card-body Count">
-							<h4>Appointment</h4>
-							<h3 class="card-text"><?php echo $schedule ?></h3>
-						</div>
-					</div>
-
-				</span>
-
-				<span class="borders">
-					<div class="card dash">
-						<img src="./design/images/DogCatching.webp" class="card-img-top" alt="...">
-						<div class="card-body Count">
-							<h4>Dog catching</h4>
-							<h3 class="card-text"><?php echo $catch ?></h3>
-						</div>
-					</div>
-
-				</span>
-
-				<span class="borders">
-					<div class="card dash">
-						<img src="./design/images/DogsInPound.webp" class="card-img-top" alt="...">
-						<div class="card-body Count">
-							<h4>Dogs in Pound</h4>
-							<h3 class="card-text"><?php echo $dogs_pound ?></h3>
+					<div class="card mb-4" style="max-width: 500px;">
+						<div class="row g-6">
+							<div class="col-md-4">
+								<img src="./design/images/Appointment.webp" class="card-img-top" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body count">
+									<h3>Appointment</h3>
+									<h2 class="card-text"><?php echo $schedule ?></h2>
+								</div>
+							</div>
 						</div>
 					</div>
 				</span>
 
 				<span class="borders">
-					<div class="card dash">
-						<img src="./design/images/Adoption.webp" class="card-img-top" alt="...">
-						<div class="card-body Count">
-							<h4>Dogs for Adoption</h4>
-							<h3 class="card-text"><?php echo $dogs ?></h3>
-						</div>
-					</div>
-				</span>
-				<span class="borders">
-					<div class="card dash">
-						<img src="./design/images/AdoptRequest.webp" class="card-img-top" alt="...">
-						<div class="card-body Count">
-							<h4>Adoption Request</h4>
-							<h3 class="card-text"><?php echo $adoptionrequest ?></h3>
-						</div>
-					</div>
-
-				</span>
-
-				<span class="borders">
-					<div class="card dash">
-						<img src="./design/images/ArtInsem.webp" class="card-img-top" alt="...">
-						<div class="card-body Count">
-							<h4>Artificial Insemination</h4>
-							<h3 class="card-text"><?php echo $insemination ?></h3>
+					<div class="card mb-4" style="max-width: 500px;">
+						<div class="row g-6">
+							<div class="col-md-4">
+								<img src="./design/images/DogCatching.webp" class="card-img-top" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body count">
+									<h3>Dog catching</h3>
+									<h2 class="card-text"><?php echo $catch ?></h2>
+								</div>
+							</div>
 						</div>
 					</div>
 				</span>
 
 				<span class="borders">
-					<div class="card dash">
-						<img src="./design/images/AnimalRescue.webp" class="card-img-top" alt="...">
-						<div class="card-body Count">
-							<h4>Animal Rescue</h4>
-							<h3 class="card-text"><?php echo $Rescue ?></h3>
+					<div class="card mb-4" style="max-width: 500px;">
+						<div class="row g-6">
+							<div class="col-md-4">
+								<img src="./design/images/DogsInPound.webp" class="card-img-top" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body count">
+									<h3>Dogs in Pound</h3>
+									<h2 class="card-text"><?php echo $dogs_pound ?></h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</span>
+
+				<span class="borders">
+					<div class="card mb-4" style="max-width: 500px;">
+						<div class="row g-6">
+							<div class="col-md-4">
+								<img src="./design/images/Adoption.webp" class="card-img-top" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body count">
+									<h3>Dogs for Adoption</h3>
+									<h2 class="card-text"><?php echo $dogs ?></h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</span>
+				<span class="borders">
+					<div class="card mb-4" style="max-width: 500px;">
+						<div class="row g-6">
+							<div class="col-md-4">
+								<img src="./design/images/AdoptRequest.webp" class="card-img-top" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body count">
+									<h3>Adoption Request</h3>
+									<h2 class="card-text"><?php echo $adoptionrequest ?></h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</span>
+
+				<span class="borders">
+					<div class="card mb-4" style="max-width: 500px;">
+						<div class="row g-6">
+							<div class="col-md-4">
+								<img src="./design/images/ArtInsem.webp" class="card-img-top" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body count">
+									<h3>Artificial Insemination</h3>
+									<h2 class="card-text"><?php echo $insemination ?></h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</span>
+
+				<span class="borders">
+					<div class="card mb-4" style="max-width: 500px;">
+						<div class="row g-6">
+							<div class="col-md-4">
+								<img src="./design/images/AnimalRescue.webp" class="card-img-top" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body count">
+									<h3>Animal Rescue</h3>
+									<h2 class="card-text"><?php echo $Rescue ?></h2>
+								</div>
+							</div>
 						</div>
 					</div>
 				</span>
@@ -99,23 +138,27 @@ require '../phpconfig/count.php';
 
 
 				<span class="borders">
-					<div class="card dash">
-						<img src="./design/images/Announcement.jpg" class="card-img-top" alt="...">
-						<div class="card-body Count">
-							<h4>Announcement</h4>
-							<h3 class="card-text"><?php echo $Events ?></h3>
+					<div class="card mb-4" style="max-width: 500px;">
+						<div class="row g-6">
+							<div class="col-md-4">
+								<img src="./design/images/Announcement.jpg" class="card-img-top" alt="...">
+							</div>
+							<div class="col-md-8">
+								<div class="card-body count">
+									<h3>Announcement</h3>
+									<h2 class="card-text"><?php echo $Events ?></h2>
+								</div>
+							</div>
 						</div>
 					</div>
 				</span>
+
 			</div>
 		</div>
 	</div>
 	<!-- jQuery CDN - Slim version (=without AJAX) -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
-	<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
-</body>
+
+	</body>
 
 </html>

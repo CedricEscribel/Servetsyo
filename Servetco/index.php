@@ -50,7 +50,7 @@ $all_events = $con->query($sql);
     <section class="bg-img ">
 
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
+  <div class="carousel-inner" style="max-width: 970px;">
     <div class="carousel-item active">
       <img src="image/april.png" class="d-block w-100" alt="...">
     </div>

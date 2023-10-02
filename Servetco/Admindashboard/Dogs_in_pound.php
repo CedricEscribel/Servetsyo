@@ -32,18 +32,7 @@ $all_dogs_pound = $con->query($sql);
               
 
             <div class="DogInput">
-                <div class="DInput">
-                  <label for="Name">Name:</label>
-                  <input type="text" name="Name" placeholder="Name" required>
-                </div>
-                <div class="DInput">
-                  <label for="Name">Age:</label>
-                  <input type="text" name="Age" placeholder="Age" required>
-                </div>
-                <div class="DInput">
-                  <label for="Name">Gender:</label>
-                  <input type="text" name="Gender" placeholder="Gender" required>
-                </div>
+
               </div>
               <label for="Name" style="margin: 10px;">Additional details:</label>
               <div class="Doginput2">

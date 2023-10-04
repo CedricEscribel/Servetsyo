@@ -175,6 +175,12 @@ p {
   padding: 10px;
 }
 
+.count .card-text{
+
+		color: #4caf50;
+	
+}
+
 @media(max-width: 800px) {
   .dashboard {
     grid-template-columns: repeat(1, auto);
@@ -188,28 +194,9 @@ p {
 /* Appointment */
 
 /* Adoption */
-.Upload {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 
-.Informations {
-  margin-bottom: 12px;
-}
 
 /* Upload photo for adoption */
-
-.DogInput {
-  display: flex;
-}
-.DInput {
-  margin-left: 10px;
-}
-.Doginput2 {
-  display: flex;
-}
-
 input[type="text"] {
   display: block;
   margin: 0 auto;

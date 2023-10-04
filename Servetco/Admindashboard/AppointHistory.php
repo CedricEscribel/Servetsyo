@@ -2,7 +2,7 @@
 
 require_once '../phpconfig/Schedule.php';
 
-$sql = "SELECT * FROM schedule WHERE 1 ";
+$sql = "SELECT * FROM schedule ";
 $all_schedule = $con->query($sql);
 
 

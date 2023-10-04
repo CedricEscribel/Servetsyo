@@ -26,76 +26,73 @@ $all_dogs_pound = $con->query($sql);
 
       <h1>Dogs in pound</h1>
       <span>
-        <div class="Upload">
-          <form class="img_prv" method="POST" action="../phpconfig/DogsPound.php" autocomplete="off">
-            <div class="DogsPoundInput">
-              
 
-            <div class="DogInput">
-
-              </div>
-              <label for="Name" style="margin: 10px;">Additional details:</label>
-              <div class="Doginput2">
-                <div class="DInput">
-                  <textarea rows="4" cols="40" name="DogInfo" placeholder="Additional details" required></textarea>
-                </div>
-
-                <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
-                <div style="margin-left: 5%;" class="image-preview">
-                  <img src="../image/upload.png" style="border: black 1px dotted;" alt="Upload Dog Picture" id="image-preview">
-                  <a href="#" id="choose-file-btn">Choose Images</a>
-                </div>
-              </div>
-              <div class="button" style="max-width: 34%;">
-                <input style="color: white;" type="submit" name="submit" value="Post">
-              </div>
-
-              <div class="DogInput">
-                <div class="Inp">
-                  <div class="DInput">
-                    <label for="Name">Name/Description:</label>
-                    <input type="text" name="DogName" placeholder="Name/Description" required>
-                  </div>
-                  <div class="DInput">
-                    <label style="margin-left:-50px;" for="date">Date In:</label> <br>
-                    <input class="DateIn" type="date" name="DateIn" required>
-                  </div>
-
-                  <div class="DInput">
-                    <label for="Name">Age:</label>
-                    <input type="text" width="10px" name="Age" placeholder="Age" required>
-                  </div>
-                  <div class="button">
-                    <input style="color: white;" type="submit" name="submit" value="Add">
+        <div class="d-flex align-items-center flex-column mb-4 border border-success p-2 mb-2 border-opacity-50">
+          <form class="Upload-dogs" method="POST" action="../phpconfig/DogsPound.php" autocomplete="off">
+              <div class="row mb-4 flex-column">
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label" for="DogName">Name/Description:</label>
+                    <input type="text" name="DogName" id="DogName" class="form-control" required />
                   </div>
                 </div>
-                <div class="Inp">
-
-                  <div class="DInput" style="margin-top: 10px;">
-                    <label for="Name">Gender:</label>
-                    <br>
-                    <select class="dropbtn" name="Gender" required>
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label" for="Age">Age:</label>
+                    <input type="text" id="Age" name="Age" class="form-control" required placeholder="Month" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label" for="Gender">Gender:</label>
+                    <select class="form-select form-select-sm" aria-label="Small select example" name="Gender" required>
                       <option value="">Please Select</option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
                     </select>
-
- 
                   </div>
-                  <div class="DInput">
-                    <label for="RescuedAt">Rescued at:</label>
-                    <input type="text" name="RescuedAt" placeholder="Location" required>
-                  </div>
-
                 </div>
-
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label" for="RescuedAt">Rescued at:</label>
+                    <input type="text" name="RescuedAt" placeholder="Location" class="form-control" required>
+                  </div>
+                </div>
               </div>
 
-
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label" for="date">Date In:</label> <br>
+                    <input class="DateIn" type="date" name="DateIn" required>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <label class="form-label" name="DogInfo" for="DogInfo">Additional information:</label>
+                    <textarea class="form-control" id="DogInfo" rows="3" required></textarea>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <div class="image-preview">
+                      <img src="../image/upload.png" style="border: black 1px dotted;" alt="Upload Dog Picture" id="image-preview">
+                      <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
+                      <a href="#" id="choose-file-btn">Choose Images</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="button">
+              <input style="color: white;" type="submit" name="submit" value="Add">
             </div>
+
           </form>
+
         </div>
       </span>
+
+
       <section class="container tables">
 
         <table class="table">
@@ -144,6 +141,8 @@ $all_dogs_pound = $con->query($sql);
       </section>
     </div>
     <?php include 'design/footer.php'; ?>
-</body>
+    <script src="Image.js"></script>
+
+    </body>
 
 </html>

@@ -38,13 +38,11 @@
     $Save = mysqli_query($con, $sql);
     if ($status === 'Approve') {
       echo '<script type="text/javascript">
-          alert("Successfully Approved");
           window.location.href = "../Admindashboard/Adoption_Request.php";
           </script>';
       die;
     }else{
       echo '<script type="text/javascript">
-          alert("Request Declined");
           window.location.href = "../Admindashboard/Adoption_Request.php";
           </script>';
     }

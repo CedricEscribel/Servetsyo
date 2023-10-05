@@ -34,7 +34,7 @@ require '../phpconfig/dogs.php';
         ?>
         <?php foreach ($rows as $row) : ?>
           <div class="card adoption_card" style="width: 20rem;">
-          <img src="img/<?php echo $row["image"]; ?>" title="<?php echo $row['image']; ?>">
+          <img  src="img/<?php echo $row["image"]; ?>" title="<?php echo $row['image']; ?>">
             <div class="card-body adoption-details">
             <h2><?php echo $row["Name"] ?></h2>
               <p><?php echo $row["DogInfo"] ?></p>
@@ -58,9 +58,6 @@ require '../phpconfig/dogs.php';
 
     <!-- footer -->
     <?php include 'design/footer.php'; ?>
-
-
-    <script src="Image.js"></script>
 
 </body>
 

@@ -39,13 +39,11 @@ if (isset($_POST['btnHideSubmit'])) {
   $Save = mysqli_query($con, $sql);
   if ($status === 'Approve') {
     echo '<script type="text/javascript">
-        alert("Successfully Approved");
         window.location.href = "../Admindashboard/Appointment.php";
         </script>';
     die;
   }else{
     echo '<script type="text/javascript">
-        alert("Request Decline");
         window.location.href = "../Admindashboard/Appointment.php";
         </script>';
   }

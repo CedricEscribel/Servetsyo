@@ -92,6 +92,8 @@ $user = getUserById($_SESSION['user_id'], $conn);
 
 </body>
 
+
+
 <?php }else {
     echo '<script>alert("Log in first")</script>';
     echo '<script>window.location.href = "../login.php";</script>';

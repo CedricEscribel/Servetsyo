@@ -1,9 +1,9 @@
 <?php
 
-require_once '../phpconfig/DogsPound.php';
+require_once '../phpconfig/Dogs.php';
 
-$sql = "SELECT * FROM dogs_pound where status='pending'";
-$all_dogs_pound = $con->query($sql);
+$sql = "SELECT * FROM dogs_info";
+$all_dogs_info = $con->query($sql);
 
 
 ?>
@@ -28,25 +28,25 @@ $all_dogs_pound = $con->query($sql);
       <span>
 
         <div class="d-flex align-items-center flex-column mb-4 border border-success p-2 mb-2 border-opacity-50">
-          <form class="Upload-dogs" method="POST" action="../phpconfig/DogsPound.php" autocomplete="off">
+          <form class="Upload-dogs" method="POST"  enctype="multipart/form-data"  action="../phpconfig/Dogs.php" autocomplete="off">
             <div class="row mb-4 flex-column">
               <div class="col">
                 <div class="form-outline">
                   <label class="form-label" for="DogName">Name/Description:</label>
-                  <input type="text" name="DogName" id="DogName" class="form-control" required />
+                  <input type="text" name="description" id="DogName" class="form-control" required />
                 </div>
               </div>
               <div class="col">
                 <div class="form-outline">
                   <label class="form-label" for="Age">Age:</label>
-                  <input type="text" id="Age" name="Age" class="form-control" required placeholder="Month" />
+                  <input type="text" id="Age" name="age" class="form-control" required placeholder="Month" />
                 </div>
               </div>
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
                     <label class="form-label" for="Gender">Gender:</label>
-                    <select class="form-select form-select-sm" aria-label="Small select example" name="Gender" required>
+                    <select class="form-select form-select-sm" aria-label="Small select example" name="gender" required>
                       <option value="">Please Select</option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
@@ -56,7 +56,7 @@ $all_dogs_pound = $con->query($sql);
                 <div class="col">
                   <div class="form-outline">
                     <label class="form-label" for="date">Date In:</label> <br>
-                    <input class="DateIn" type="date" name="DateIn" required>
+                    <input class="date" type="date" name="date" required>
                   </div>
                 </div>
               </div>
@@ -64,7 +64,7 @@ $all_dogs_pound = $con->query($sql);
               <div class="col">
                 <div class="form-outline">
                   <label class="form-label" for="RescuedAt">Rescued at:</label>
-                  <input type="text" name="RescuedAt" placeholder="Location" class="form-control" required>
+                  <input type="text" name="rescue_loc" placeholder="Location" class="form-control" required>
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@ $all_dogs_pound = $con->query($sql);
               <div class="col" >
                 <div class="form-outline">
                   <label class="form-label" name="DogInfo" for="DogInfo">Additional information:</label>
-                  <textarea class="form-control" id="DogInfo" rows="3" required></textarea>
+                  <textarea class="form-control" name="dog_info" rows="3" required></textarea>
                 </div>
               </div>
               <div class="col" >
@@ -113,27 +113,26 @@ $all_dogs_pound = $con->query($sql);
           <tbody>
 
             <?php
-            while ($row = $all_dogs_pound->fetch_assoc()) {
+            while ($row = $all_dogs_info->fetch_assoc()) {
             ?>
               <tr>
-                <td><?php echo $row["DPoundID"] ?></td>
-                <td><?php echo $row["DogName"] ?></td>
-                <td><?php echo $row["DateIn"] ?></td>
-                <td><?php echo $row["Age"] ?></td>
-                <td><?php echo $row["Gender"] ?></td>
-                <td><?php echo $row["RescuedAt"] ?></td>
-                <td><label for="approval"></label>
-                  <button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["DPoundID"] ?>" id="btnStatus">
+                <td><?php echo $row["dog_id"] ?></td>
+                <td><?php echo $row["description"] ?></td>
+                <td><?php echo $row["date"] ?></td>
+                <td><?php echo $row["age"] ?></td>
+                <td><?php echo $row["gender"] ?></td>
+                <td><?php echo $row["rescue_loc"] ?></td>
+                <td><label for="status"></label>
+                  <button class="btn btn-sm <?php echo $row['status'] == 'adoption' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["dog_id"] ?>" id="btnStatus">
                     <?php echo $row["status"] ?>
                   </button>
               </tr>
 
-              <form action="../phpconfig/DogsPound.php" method="post" hidden>
-                <input type="hidden" name="id" id="id" value="<?php echo $row['DPoundID'] ?>">
-                <input type="hidden" name="hiddenStatus" id="<?php echo $row["DPoundID"] ?>hiddenStatus" value="">
-                <button type="submit" id="<?php echo $row["DPoundID"] ?>" name="btnHideSubmit" hidden></button>
-              </form>
-
+                <form action="../phpconfig/Dogs.php" method="post" hidden>
+                  <input type="hidden" name="id" id="id" value="<?php echo $row['dog_id'] ?>">
+                  <input type="hidden" name="hiddenStatus" id="<?php echo $row["dog_id"] ?>hiddenStatus" value="">
+                  <button type="submit" id="<?php echo $row["dog_id"] ?>" name="btnHideSubmit" hidden></button>
+                </form>
 
             <?php
             }

@@ -46,7 +46,7 @@
                             </button>
                         </h2>
                         <div id="Pound" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
-                            <a href="Dogs_in_pound.php" class="dropdown-item">Add dogs</a>
+                            <a href="Dog_info.php" class="dropdown-item">Add dogs</a>
                             <a href="PoundHistory.php" class="dropdown-item">History</a>
                         </div>
                     </div>

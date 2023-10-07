@@ -12,36 +12,419 @@
     />
   </head>
   <body>
+    <link rel="stylesheet">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <a class="navbar-brand ms-lg-5" style="display: flex;">
+            <img src="../img/logo.jpg" class="img-fluid" style="width: 80px; height: ms-auto;" alt="...">
+            <div style="display: flex; ">
+                <h2 style="margin-top: 18px; color: #378ACA; font-weight: bold;">SER</h2>
+                <h2 style="margin-top: 18px; color: #4caf50; font-weight: bold;">VET</h2>
+                <h2 style="margin-top: 18px; color: #378ACA; font-weight: bold;">SYO</h2>
+            </div>
+        </a>
+
+
+        <div class="collapse navbar-collapse" id="navbarCollapse" style="margin-right: 5%;">
+            <div class="navbar-nav ms-auto py-0">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link  active" data-bs-toggle="dropdown">Profile</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="profile.php" class="dropdown-item active">Profile</a>
+                        <a href="login.php" class="dropdown-item">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="container">
-      <form action="/action_page.php">
-        <div class="mb-3 mt-3">
-          <label for="email" class="form-label">Email:</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="Enter email"
-            name="email"
-          />
+      <div class="row">
+        
+        <!-- Sidebar Holder -->
+        <div class="col-3 p-3 mb-2 bg-success text-white">
+          <div class="sidebar-header">
+            <a class="head-dash" href="Dashboard.php">
+              <h2>Dashboard</h2>
+            </a>
+          </div>
+
+          <ul class="list-unstyled"  style="margin-bottom: 10px;">
+            <li>
+              <div
+                class="accordion accordion-flush"
+                id="accordionFlushExample1"
+              >
+                <div class="accordion-item p-2 g-col-6">
+                  <h2 class="accordion-header sidebar-accordion">
+                    <button
+                      class="accordion collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#Appointment, #Appointment"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      Appointment
+                    </button>
+                  </h2>
+                  <div
+                    id="Appointment"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample6"
+                  >
+                    <a href="Appointment.php" class="dropdown-item">Pending</a>
+                    <a href="AppointHistory.php" class="dropdown-item"
+                      >History</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="accordion accordion-flush"
+                id="accordionFlushExample2"
+              >
+                <div class="accordion-item">
+                  <h2 class="accordion-header sidebar-accordion">
+                    <button
+                      class="accordion collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#DogCatching, #DogCatching"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      Dog Catching
+                    </button>
+                  </h2>
+                  <div
+                    id="DogCatching"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample1"
+                  >
+                    <a href="DogCatching.php" class="dropdown-item">Pending</a>
+                    <a href="CatchingHistory.php" class="dropdown-item"
+                      >History</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="accordion accordion-flush"
+                id="accordionFlushExample3"
+              >
+                <div class="accordion-item">
+                  <h2 class="accordion-header sidebar-accordion">
+                    <button
+                      class="accordion collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#Pound"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      Dogs in Pound
+                    </button>
+                  </h2>
+                  <div
+                    id="Pound"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample2"
+                  >
+                    <a href="Dogs_in_pound.php" class="dropdown-item"
+                      >Add dogs</a
+                    >
+                    <a href="PoundHistory.php" class="dropdown-item">History</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="Adoption.php"
+                ><i class="Animals"></i>Dogs for Adoption</a
+              >
+            </li>
+            <li>
+              <div
+                class="accordion accordion-flush"
+                id="accordionFlushExample4"
+              >
+                <div class="accordion-item">
+                  <h2 class="accordion-header sidebar-accordion">
+                    <button
+                      class="accordion collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#Adoption"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      Adoption Request
+                    </button>
+                  </h2>
+                  <div
+                    id="Adoption"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample3"
+                  >
+                    <a href="Adoption_Request.php" class="dropdown-item"
+                      >Pending</a
+                    >
+                    <a href="AdoptRequestHistory.php" class="dropdown-item"
+                      >History</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="accordion accordion-flush"
+                id="accordionFlushExample5"
+              >
+                <div class="accordion-item">
+                  <h2 class="accordion-header sidebar-accordion">
+                    <button
+                      class="accordion collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#Insemination"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      Artificial Insemination
+                    </button>
+                  </h2>
+                  <div
+                    id="Insemination"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample4"
+                  >
+                    <a href="ArtInsemination.php" class="dropdown-item"
+                      >Pending</a
+                    >
+                    <a href="InseminationHistory.php" class="dropdown-item"
+                      >History</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="accordion accordion-flush"
+                id="accordionFlushExample6"
+              >
+                <div class="accordion-item">
+                  <h2 class="accordion-header sidebar-accordion">
+                    <button
+                      class="accordion collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#Rescue"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      Animal Rescue
+                    </button>
+                  </h2>
+                  <div
+                    id="Rescue"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample5"
+                  >
+                    <a href="AnimalRescue.php" class="dropdown-item">Pending</a>
+                    <a href="RescueHistory.php" class="dropdown-item"
+                      >History</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="Users.php"><i class="users"></i>Users</a>
+            </li>
+            <li>
+              <a href="Announcement.php"
+                ><i class="Announcement"></i>Announcement</a
+              >
+            </li>
+          </ul>
         </div>
-        <div class="mb-3">
-          <label for="pwd" class="form-label">Password:</label>
-          <input
-            type="password"
-            class="form-control"
-            id="pwd"
-            placeholder="Enter password"
-            name="pswd"
-          />
+
+        <div class="col">
+          <div class="row row-cols-2">
+            <div class="card mb-2 col" style="max-width: 430px">
+              <div class="row g-6">
+                <div class="col-md-4">
+                  <img
+                    src="../design/images/Appointment.webp"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body count">
+                    <h3>Appointment</h3>
+                    <h2 class="card-text"><?php echo $schedule ?></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col borders">
+              <div class="card mb-2 col" style="max-width: 430px">
+                <div class="row g-6">
+                  <div class="col-md-4">
+                    <img
+                      src="../design/images/DogCatching.webp"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body count">
+                      <h3>Dog catching</h3>
+                      <h2 class="card-text"><?php echo $catch ?></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <span class="col borders">
+              <div class="card mb-2" style="max-width: 430px">
+                <div class="row g-6">
+                  <div class="col-md-4">
+                    <img
+                      src="../design/images/DogsInPound.webp"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body count">
+                      <h3>Dogs in Pound</h3>
+                      <h2 class="card-text"><?php echo $dogs_pound ?></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+
+            <span class="col borders">
+              <div class="card mb-2" style="max-width: 430px">
+                <div class="row g-6">
+                  <div class="col-md-4">
+                    <img
+                      src="../design/images/Adoption.webp"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body count">
+                      <h3>Dogs for Adoption</h3>
+                      <h2 class="card-text"><?php echo $dogs ?></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span class="col borders">
+              <div class="card mb-2" style="max-width: 430px">
+                <div class="row g-6">
+                  <div class="col-md-4">
+                    <img
+                      src="../design/images/AdoptRequest.webp"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body count">
+                      <h4>Adoption Request</h4>
+                      <h2 class="card-text"><?php echo $adoptionrequest ?></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+
+            <span class="col borders">
+              <div class="card mb-2" style="max-width: 430px">
+                <div class="row g-6">
+                  <div class="col-md-4">
+                    <img
+                      src="../design/images/ArtInsem.webp"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body count">
+                      <h4>Artificial Insemination</h4>
+                      <h2 class="card-text"><?php echo $insemination ?></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+
+            <span class="col borders">
+              <div class="card mb-2" style="max-width: 430px">
+                <div class="row g-6">
+                  <div class="col-md-4">
+                    <img
+                      src="../design/images/AnimalRescue.webp"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body count">
+                      <h3>Animal Rescue</h3>
+                      <h2 class="card-text"><?php echo $Rescue ?></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+
+            <span class="col borders">
+              <div class="card mb-2" style="max-width: 430px">
+                <div class="row g-6">
+                  <div class="col-md-4">
+                    <img
+                      src="../design/images/Announcement.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body count">
+                      <h3>Announcement</h3>
+                      <h2 class="card-text"><?php echo $Events ?></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
         </div>
-        <div class="form-check mb-3">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="remember" />
-            Remember me
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      </div>
     </div>
 
     <script

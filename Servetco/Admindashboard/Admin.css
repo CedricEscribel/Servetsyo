@@ -104,10 +104,6 @@ p {
   background-color: #4caf50;
 }
 
-.accordion-item button:hover{
-  color: black;
-  background: #499c38;
-}
 
 .accordion-flush .accordion-item .dropdown-item:hover{
   color: black;

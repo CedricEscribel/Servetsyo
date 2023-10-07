@@ -1,9 +1,9 @@
 <?php
 
-require_once '../phpconfig/DogsPound.php';
+require_once '../phpconfig/Dogs.php';
 
-$sql = "SELECT * FROM dogs_pound";
-$all_dogs_pound = $con->query($sql);
+$sql = "SELECT * FROM dogs_info";
+$all_dogs_info = $con->query($sql);
 
 
 ?>
@@ -43,15 +43,15 @@ $all_dogs_pound = $con->query($sql);
           <tbody>
 
             <?php
-            while ($row = $all_dogs_pound->fetch_assoc()) {
+            while ($row = $all_dogs_info->fetch_assoc()) {
             ?>
               <tr>
-                <td><?php echo $row["DPoundID"] ?></td>
-                <td><?php echo $row["DogName"] ?></td>
-                <td><?php echo $row["DateIn"] ?></td>
-                <td><?php echo $row["Age"] ?></td>
-                <td><?php echo $row["Gender"] ?></td>
-                <td><?php echo $row["RescuedAt"] ?></td>
+                <td><?php echo $row["dog_id"] ?></td>
+                <td><?php echo $row["description"] ?></td>
+                <td><?php echo $row["date"] ?></td>
+                <td><?php echo $row["age"] ?></td>
+                <td><?php echo $row["gender"] ?></td>
+                <td><?php echo $row["rescue_loc"] ?></td>
                 <td><?php echo $row["status"] ?></td>
 
             <?php

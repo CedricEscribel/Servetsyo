@@ -20,7 +20,7 @@ require '../phpconfig/count.php';
 	<div class="wrapper">
 		<!-- Sidebar Holder -->
 		<?php include 'design/sidebar.php'; ?>
-		<div class="container-fluid" style="    overflow: hidden;">
+		<div class="container-fluid" style="overflow: hidden;">
 			<!-- Content -->
 
 			<div class="dashboard container">
@@ -157,7 +157,6 @@ require '../phpconfig/count.php';
 		</div>
 	</div>
 	<!-- jQuery CDN - Slim version (=without AJAX) -->
-
 
 	</body>
 

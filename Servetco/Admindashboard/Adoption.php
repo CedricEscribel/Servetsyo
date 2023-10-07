@@ -1,6 +1,5 @@
 <?php
-require '../phpconfig/dogs.php';
-
+require '../phpconfig/config.php';
 
 ?>
 
@@ -30,18 +29,18 @@ require '../phpconfig/dogs.php';
       <div class="Dogs">
         <?php
         $i = 1;
-        $rows = mysqli_query($con, "SELECT * FROM dogs ORDER BY Dog_id DESC")
+        $rows = mysqli_query($con, "SELECT * FROM dogs_info where status='adoption' ")
         ?>
         <?php foreach ($rows as $row) : ?>
           <div class="card adoption_card" style="width: 20rem;">
-          <img  src="img/<?php echo $row["image"]; ?>" title="<?php echo $row['image']; ?>">
+          <img  src="DogImage/<?php echo $row["image"]; ?>" title="<?php echo $row['image']; ?>">
             <div class="card-body adoption-details">
-            <h2><?php echo $row["Name"] ?></h2>
-              <p><?php echo $row["DogInfo"] ?></p>
+            <h2><?php echo $row["description"] ?></h2>
+              <p><?php echo $row["dog_info"] ?></p>
             </div>
             <ul class="adoption-details" style="  margin-left: -15%;">
-            <p><?php echo $row["Gender"] ?></p>
-            <p><?php echo $row["Age"] ?> Months old</p>
+            <p><?php echo $row["gender"] ?></p>
+            <p><?php echo $row["age"] ?> Months old</p>
             </ul>
             <div class="card-body card-button">
               <button type="button" id="Adopted" class="btn btn-success">Adopted</button>

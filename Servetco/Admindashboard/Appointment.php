@@ -28,9 +28,9 @@ $all_schedule = $con->query($sql);
 		<!-- History report malilipat sa taas na button (Medical reports) -->
 
 
-		<section class="container tables">
+		<section class="container table-responsive tables">
 			<h1>User list of Appointments</h1>
-			<table class="table" id="table">
+			<table class="table  table-hover" id="table">
 				<thead>
 					<tr>
 						<th>Name</th>

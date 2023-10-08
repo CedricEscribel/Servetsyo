@@ -2,9 +2,8 @@
 include "phpconfig/config.php";
 session_start();
 
-$userid48 = '47';
 
-$userid = $userid48;
+$userid = $_SESSION['user_id'];
 
 $sql = "SELECT user.user_id, user.Fullname, user.Email, insemination.Animal \n"
 
@@ -13,7 +12,7 @@ $sql = "SELECT user.user_id, user.Fullname, user.Email, insemination.Animal \n"
   . "INNER JOIN insemination\n"
 
   . "ON user.user_id=insemination.user_id\n"
-  . "WHERE user.user_id = $userid;";
+  . "WHERE user.user_id = '$userid';";
 
 $all_schedule = $con->query($sql);
 
@@ -54,9 +53,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Account</a>
             <div class="dropdown-menu m-0">
-              <a href="profile.php" class="dropdown-item active">Profile</a>
-              <a href="schedules.php" class="dropdown-item ">Schedules</a>
-              <a href="login.php" class="dropdown-item">Login</a>
+              <a href="profile.php" class="dropdown-item ">Profile</a>
+              <a href="schedules.php" class="dropdown-item active">Schedules</a>
+              <a href="./log/logout.php" class="dropdown-item">Logout</a>
             </div>
           </div>
         </div>
@@ -66,51 +65,44 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
     <!-- body -->
 
     <?php if ($user) { ?>
-
-
-                  <p>Hey, <?= $user['Fullname'] ?>!</p>
-
-
+      <input type="hidden" name="50" id="id" value="<?php echo $user['user_id'] ?>">
     <?php }  ?>
 
-
     <div class="container">
-      <section class="container tables">
-        <h1>User list of Appointments</h1>
-        <table class="table" id="table">
-          <thead>
+      <h1>User list of Appointments</h1>
+      <table class="table" id="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contact Number</th>
+            <th>Appointment</th>
+            <th>Pet's Name</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+          <?php
+          while ($row = $all_schedule->fetch_assoc()) {
+          ?>
             <tr>
-              <th>Name</th>
-              <th>Contact Number</th>
-              <th>Appointment</th>
-              <th>Pet's Name</th>
-
+              <td><?php echo $row["user_id"] ?></td>
+              <td><?php echo $row["Fullname"] ?></td>
+              <td><?php echo $row["Email"] ?></td>
+              <td><?php echo $row["Animal"] ?></td>
             </tr>
-          </thead>
-          <tbody>
-
-
-            <?php
-            while ($row = $all_schedule->fetch_assoc()) {
-            ?>
-              <tr>
-                <td><?php echo $row["user_id"] ?></td>
-                <td><?php echo $row["Fullname"] ?></td>
-                <td><?php echo $row["Email"] ?></td>
-                <td><?php echo $row["Animal"] ?></td>
-
-              </tr>
-
-            <?php
-            }
-            ?>
-
+          <?php
+          }
+          ?>
+        </tbody>
+      </table>
     </div>
     <!-- body end -->
 
 
     <!-- footer -->
     <?php include 'footer.php'; ?>
+
 
   </body>
 

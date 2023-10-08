@@ -8,36 +8,118 @@
 
 <!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
 
 <script>
-	$(document).on('click', '#btnStatus', function(e) {
-		e.preventDefault();
-		var id = event.target.value;
+    $(document).on('click', '#btnStatus', function(e) {
+        e.preventDefault();
+        var id = event.target.value;
 
-		Swal.fire({
-			title: 'Do you want to approve the request?',
-			showDenyButton: true,
-			showCancelButton: true,
-			allowOutsideClick: false,
-			confirmButtonText: 'adoption',
-			denyButtonText: `pound`,
-		}).then((result) => {
-			/* Read more about isConfirmed, isDenied below */
-			if (result.isConfirmed) {
+        Swal.fire({
+            title: 'Do you want to approve the request?',
+            showDenyButton: true,
+            showCancelButton: true,
+            allowOutsideClick: false,
+            confirmButtonText: 'adoption',
+            denyButtonText: `pound`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
 
-				$('#' + id + 'hiddenStatus').val('adoption');
-				setTimeout(() => {
-					$('#' + id).trigger('click');
-				}, 1200)
-					Swal.fire('Approved!', '', 'success')
-			} else if (result.isDenied) {
-				$('#' + id + 'hiddenStatus').val('pound');
-				setTimeout(() => {
-					$('#' + id).trigger('click');
-				}, 1200)
-				Swal.fire('pound', '', 'success')
-			}
-		})
-	});
+                $('#' + id + 'hiddenStatus').val('adoption');
+                setTimeout(() => {
+                    $('#' + id).trigger('click');
+                }, 1200)
+                Swal.fire('Approved!', '', 'success')
+            } else if (result.isDenied) {
+                $('#' + id + 'hiddenStatus').val('pound');
+                setTimeout(() => {
+                    $('#' + id).trigger('click');
+                }, 1200)
+                Swal.fire('pound', '', 'success')
+            }
+        })
+    });
+</script>
+
+<script>
+    $(document).on('click', '#Adopted', function(e) {
+        e.preventDefault();
+        var id = event.target.value;
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Update Status!'
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                $('#' + id + 'UpdateStatus').val('adopted');
+                setTimeout(() => {
+                    $('#' + id).trigger('click');
+                }, 1200)
+                Swal.fire('Approved!', '', 'success')
+            } else if (result.isDenied) {
+
+            }
+        })
+    });
+</script>
+
+<script>
+    $(document).on('click', '#Adopted', function(e) {
+        e.preventDefault();
+        var id = event.target.value;
+
+        Swal.fire({
+            title: 'Update status to adopted',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Update Status!'
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                $('#' + id + 'UpdateStatus').val('adopted');
+                setTimeout(() => {
+                    $('#' + id).trigger('click');
+                }, 1200)
+                Swal.fire('Successfully!', '', 'success')
+            } else if (result.isDenied) {
+
+            }
+        })
+    });
+
+    $(document).on('click', '#Euthanized', function(e) {
+        e.preventDefault();
+        var id = event.target.value;
+
+        Swal.fire({
+            title: 'Update status to euthanized',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Update Status!'
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                $('#' + id + 'UpdateStatus').val('Euthanized');
+                setTimeout(() => {
+                    $('#' + id).trigger('click');
+                }, 1200)
+                Swal.fire('Successfully!', '', 'success')
+            } else if (result.isDenied) {
+
+            }
+        })
+    });
 </script>

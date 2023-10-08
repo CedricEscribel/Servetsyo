@@ -14,6 +14,8 @@ $all_events = $con->query($sql);
 <title>Agriculture </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="REOJaKma"></script> 
 
     <?php include 'header.php';?>
 </head>

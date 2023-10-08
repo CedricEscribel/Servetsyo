@@ -9,7 +9,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
     if (isset($_POST['Adopt_dog'])) {
 
-        $Dog_id = $_POST['Dog_id'];
+        $dog_id = $_POST['dog_id'];
     }
 ?>
 
@@ -81,10 +81,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
                         <div class="input-box">
                             <span class="details">Dog id</span>
-                            <input type="text" placeholder="<?= $Dog_id; ?>" disabled>
+                            <input type="text" placeholder="<?= $dog_id; ?>" disabled>
                         </div>
-                        <select class="Hide" name="Dog_id" style="display: none;">
-                            <option value="<?= $Dog_id; ?>"></option>
+                        <select class="Hide" name="dog_id" style="display: none;">
+                            <option value="<?= $dog_id; ?>"></option>
                         </select>
                     </div>
 

@@ -2,7 +2,7 @@
 
 require_once '../phpconfig/Dogs.php';
 
-$sql = "SELECT * FROM dogs_info";
+$sql = "SELECT * FROM dogs_info  where status='pending' ";
 $all_dogs_info = $con->query($sql);
 
 
@@ -98,7 +98,7 @@ $all_dogs_info = $con->query($sql);
 
       <section class="container tables">
 
-        <table class="table">
+        <table class="table"  id="table">
           <thead>
             <tr class="head">
               <th>ID</th>
@@ -144,7 +144,6 @@ $all_dogs_info = $con->query($sql);
     </div>
     <?php include 'design/footer.php'; ?>
     <script src="Image.js"></script>
-
     </body>
 
 </html>

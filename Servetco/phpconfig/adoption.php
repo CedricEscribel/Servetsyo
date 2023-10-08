@@ -18,7 +18,6 @@
       $Save = mysqli_query($con, $sql);
       if($Save)
       {
-
         echo '<script type="text/javascript">
         alert("Successfully Submitted");
         window.location.href = "../index.php";

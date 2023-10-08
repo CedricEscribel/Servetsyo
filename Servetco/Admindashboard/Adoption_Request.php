@@ -58,7 +58,6 @@ $all_adoptionrequest = $con->query($sql);
             </tr>
 
             <form action="../phpconfig/adoptionRequest.php" method="post" hidden>
-
               <input type="hidden" name="id" id="id" value="<?php echo $row['AdoptReq_id'] ?>">
               <input type="hidden" name="hiddenStatus" id="<?php echo $row["AdoptReq_id"] ?>hiddenStatus" value="">
               <button type="submit" id="<?php echo $row["AdoptReq_id"] ?>" name="btnHideSubmit" hidden></button>

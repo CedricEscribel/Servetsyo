@@ -21,7 +21,7 @@ $Rescue = mysqli_num_rows( $result );
      
 }
 
-$sql = "SELECT * from dogs";
+$sql = "SELECT * from dogs_info  where status='adoption' ";
   
 if ($result = mysqli_query($con, $sql)) {
 
@@ -67,7 +67,7 @@ $insemination = mysqli_num_rows( $result );
      
 }
 
-$sql = "SELECT * from dogs_pound";
+$sql = "SELECT * from dogs_info  where status='pound' ";
   
 if ($result = mysqli_query($con, $sql)) {
 

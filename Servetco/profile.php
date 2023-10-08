@@ -39,7 +39,7 @@ $user = getUserById($_SESSION['user_id'], $conn);
                     <div class="dropdown-menu m-0">
                         <a href="profile.php" class="dropdown-item active">Profile</a>
                         <a href="schedules.php" class="dropdown-item ">Schedules</a>
-                        <a href="login.php" class="dropdown-item">Login</a>
+                        <a href="log/logout.php" class="dropdown-item">Logout</a>
                     </div>
                 </div>
         </div>
@@ -48,7 +48,6 @@ $user = getUserById($_SESSION['user_id'], $conn);
     <!-- Navbar End -->
     <!-- body -->
     <div class="container">
-
     <?php if ($user) { ?>
         <div class="main-body">    
               <div class="row gutters-sm">
@@ -108,7 +107,6 @@ $user = getUserById($_SESSION['user_id'], $conn);
                       <div class="row">
                         <div class="col-sm-12">
                           <a class="btn btn-primary px-4" target="blank" href="EditProfile.php">Edit</a>
-                          <a class="btn btn-primary px-4" target="blank" href="log/logout.php">Log out</a>
                         </div>
 
                       </div>

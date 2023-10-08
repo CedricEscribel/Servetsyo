@@ -52,37 +52,37 @@ require_once 'phpconfig/config.php';
               <div class="Dog-details">
             <?php
                 $i = 1;
-                $rows = mysqli_query($con, "SELECT * FROM dogs ORDER BY Dog_id DESC")
+                $rows = mysqli_query($con, "SELECT * FROM dogs_info where status='adoption'")
                 ?>            
             <?php foreach ($rows as $row) : ?>
                 <div class="card Dogpic" style="width: 18rem;">
-                  <div id="<?php echo $row["Dog_id"] ?>" class="carousel slide">
+                  <div id="<?php echo $row["dog_id"] ?>" class="carousel slide">
                     <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#<?php echo $row["Dog_id"] ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#<?php echo $row["dog_id"] ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                       <img src="Admindashboard/img/<?php echo $row["image"]; ?>" width = 200 title="<?php echo $row['image']; ?>">
+                       <img src="Admindashboard/DogImage/<?php echo $row["image"]; ?>" width = 200 title="<?php echo $row['image']; ?>">
                       </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#<?php echo $row["Dog_id"] ?>" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#<?php echo $row["dog_id"] ?>" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#<?php echo $row["Dog_id"] ?>" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#<?php echo $row["dog_id"] ?>" data-bs-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
                     </button>
                   </div>
 
                   <div class="card-body" style="width: max-content;">
-                    <h3 class="card-title"><?php echo $row["Name"] ?></h3>
-                    <h5 class="card-title"><?php echo $row["Gender"] ?></h5>
-                    <h5 class="card-title"><?php echo $row["Age"] ?> Months old</h5>
-                    <h5 class="card-title"><?php echo $row["DogInfo"] ?></h5>
+                    <h3 class="card-title"><?php echo $row["description"] ?></h3>
+                    <h5 class="card-title"><?php echo $row["gender"] ?></h5>
+                    <h5 class="card-title"><?php echo $row["age"] ?> Months old</h5>
+                    <h5 class="card-title"><?php echo $row["dog_info"] ?></h5>
 
                     <form action="./services/Adoption.php" method="post" >
-                    <input type="hidden" value="<?php echo $row["Dog_id"] ?>" name="Dog_id" >
+                    <input type="hidden" value="<?php echo $row["dog_id"] ?>" name="dog_id" >
                     <button type="submit" class="btn btn-primary" style="color: white; width: 200px;" name="Adopt_dog">Adopt</button>
                     </form>
                     <!-- <a href="services/Adoption.php" style="color: white; width: 200px; " valu id="Adopt" class="btn btn-primary">Adopt</a> -->

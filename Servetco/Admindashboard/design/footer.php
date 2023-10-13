@@ -20,6 +20,39 @@
             showDenyButton: true,
             showCancelButton: true,
             allowOutsideClick: false,
+            confirmButtonText: 'Approve',
+            denyButtonText: `Decline`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+
+                $('#' + id + 'hiddenStatus').val('Approve');
+                setTimeout(() => {
+                    $('#' + id).trigger('click');
+                }, 1200)
+                Swal.fire('Approved!', '', 'success')
+            } else if (result.isDenied) {
+                $('#' + id + 'hiddenStatus').val('Decline');
+                setTimeout(() => {
+                    $('#' + id).trigger('click');
+                }, 1200)
+                Swal.fire('Decline', '', 'success')
+            }
+        })
+    });
+</script>
+
+
+<script>
+    $(document).on('click', '#dog_status', function(e) {
+        e.preventDefault();
+        var id = event.target.value;
+
+        Swal.fire({
+            title: 'Do you want to approve the request?',
+            showDenyButton: true,
+            showCancelButton: true,
+            allowOutsideClick: false,
             confirmButtonText: 'adoption',
             denyButtonText: `pound`,
         }).then((result) => {

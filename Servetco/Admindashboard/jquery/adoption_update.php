@@ -14,7 +14,9 @@ if (isset($_POST['Update'])) {
     window.location.href = "../Adoption.php";
     </script>';
     } else {
-
+      echo '<script type="text/javascript">
+    window.location.href = "../Adoption.php";
+    </script>';
     }
   }
 ?>

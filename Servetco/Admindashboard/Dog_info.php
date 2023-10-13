@@ -123,7 +123,7 @@ $all_dogs_info = $con->query($sql);
                 <td><?php echo $row["gender"] ?></td>
                 <td><?php echo $row["rescue_loc"] ?></td>
                 <td><label for="status"></label>
-                  <button class="btn btn-sm <?php echo $row['status'] == 'adoption' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["dog_id"] ?>" id="btnStatus">
+                  <button class="btn btn-sm <?php echo $row['status'] == 'adoption' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["dog_id"] ?>" id="dog_status">
                     <?php echo $row["status"] ?>
                   </button>
               </tr>

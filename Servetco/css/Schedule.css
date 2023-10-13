@@ -29,7 +29,7 @@
     font-size: 16px;
   }
 
-  input[type="text"], textarea {
+  input[type="number"], textarea {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -93,3 +93,12 @@ textarea#Details {
   height: 60px;
   z-index: 1;
 }
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+

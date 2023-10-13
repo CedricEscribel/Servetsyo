@@ -36,7 +36,7 @@ if (isset($_POST["submit"])) {
       $newImageName = uniqid();
       $newImageName .= '.' . $imageExtension;
       move_uploaded_file($tmpName, '../Admindashboard/DogImage/' . $newImageName);
-      $query = "INSERT INTO dogs_info VALUES('', '$description', '$age',  '$gender', '$date', '$rescue_loc', '$dog_info', '$newImageName', 'pending')";
+      $query = "INSERT INTO dogs_info VALUES('', '$description', '$age',  '$gender', '$date', '$rescue_loc', '$dog_info', '$newImageName', 'Pound')";
       mysqli_query($con, $query);
       echo
       "

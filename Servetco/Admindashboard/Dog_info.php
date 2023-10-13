@@ -2,7 +2,7 @@
 
 require_once '../phpconfig/Dogs.php';
 
-$sql = "SELECT * FROM dogs_info  where status='pending' ";
+$sql = "SELECT * FROM dogs_info  where status='Pound' ";
 $all_dogs_info = $con->query($sql);
 
 
@@ -39,7 +39,7 @@ $all_dogs_info = $con->query($sql);
               <div class="col">
                 <div class="form-outline">
                   <label class="form-label" for="Age">Age:</label>
-                  <input type="text" id="Age" name="age" class="form-control" required placeholder="Month" />
+                  <input type="number" id="Age" name="age" class="form-control" required placeholder="Month" />
                 </div>
               </div>
               <div class="row mb-4">
@@ -123,7 +123,7 @@ $all_dogs_info = $con->query($sql);
                 <td><?php echo $row["gender"] ?></td>
                 <td><?php echo $row["rescue_loc"] ?></td>
                 <td><label for="status"></label>
-                  <button class="btn btn-sm <?php echo $row['status'] == 'adoption' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["dog_id"] ?>" id="dog_status">
+                  <button class="btn btn-sm <?php echo $row['status'] == 'adoption' ? 'btn-success' : 'btn-warning' ?>" value="<?php echo $row["dog_id"] ?>" id="dog_status">
                     <?php echo $row["status"] ?>
                   </button>
               </tr>

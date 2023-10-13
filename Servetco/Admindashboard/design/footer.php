@@ -54,7 +54,7 @@
             showCancelButton: true,
             allowOutsideClick: false,
             confirmButtonText: 'adoption',
-            denyButtonText: `pound`,
+            denyButtonText: `claimed`,
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
@@ -65,11 +65,11 @@
                 }, 1200)
                 Swal.fire('Approved!', '', 'success')
             } else if (result.isDenied) {
-                $('#' + id + 'hiddenStatus').val('pound');
+                $('#' + id + 'hiddenStatus').val('claimed');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
                 }, 1200)
-                Swal.fire('pound', '', 'success')
+                Swal.fire('Claimed', '', 'success')
             }
         })
     });

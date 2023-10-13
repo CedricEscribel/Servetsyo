@@ -2,9 +2,6 @@
 
 require_once '../phpconfig/Schedule.php';
 
-$sql = "SELECT * FROM schedule";
-$all_schedule = $con->query($sql);
-
 session_start();
 
 if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
@@ -56,7 +53,7 @@ $user = getUserById($_SESSION['user_id'], $conn);
                 <option value="Castration">Castration</option>
             </select>  
   
-          <label for="PName">Pet's name:</label>
+          <label for="PName" style="margin-top: 15px;" >Pet's name:</label>
           <input type="text" name="PetName" placeholder="Pet's name" required>
 
           <label for="Breed">Breed:</label>
@@ -65,8 +62,8 @@ $user = getUserById($_SESSION['user_id'], $conn);
           <label for="Color">Color:</label>
           <input type="text" id="Color" name="Color" placeholder="Color" required>
   
-          <label for="Age">Age:</label>
-          <input type="text" id="Age" name="Age" placeholder="Age" required>
+          <label for="Age">Age <sub>(months old)</sub>:</label>
+          <input type="number" inputmode="numeric" id="Age" name="Age" placeholder="Age" required>
   
           <label for="Gender">Gender:</label>
           <select class="dropbtn" name="Gender" required>

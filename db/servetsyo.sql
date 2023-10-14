@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2023 at 02:19 PM
+-- Generation Time: Oct 14, 2023 at 05:04 PM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `servetsyo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `adminuser`
+--
+
+CREATE TABLE `adminuser` (
+  `admin_id` int(11) NOT NULL,
+  `Email` varchar(256) NOT NULL,
+  `Password` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `adminuser`
+--
+
+INSERT INTO `adminuser` (`admin_id`, `Email`, `Password`) VALUES
+(3, 'Admin@gmail', '$2y$10$O1Phz/CQ4U.LKi3aacFyYeNgKb5LndWbcX.ny5pEc8bNcyUXPQkVu'),
+(4, 'Email@gmail', '$2y$10$WJLm8NKKqbGRZz9K86BjpOfDmKgDlORgsOD9rIGEFs1sGK1UwMEr2');
 
 -- --------------------------------------------------------
 
@@ -46,11 +66,11 @@ CREATE TABLE `adoptionrequest` (
 
 INSERT INTO `adoptionrequest` (`AdoptReq_id`, `Fullname`, `Address`, `Email`, `PhoneNum`, `Interview`, `Date`, `status`, `Dog_id`, `DateReq`) VALUES
 (22, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-09-25', 'Approve', '64', '2023-09-24'),
-(24, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-09-25', 'Pending', '69', '2023-09-24'),
-(25, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-09-27', 'Pending', '72', '2023-09-24'),
-(26, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'No', '2023-09-30', 'Pending', '71', '2023-09-24'),
-(27, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-09-29', 'Pending', '75', '2023-09-24'),
-(28, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-09-28', 'Pending', '70', '2023-09-24'),
+(24, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-09-25', 'Approve', '69', '2023-09-24'),
+(25, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-09-27', 'Approve', '72', '2023-09-24'),
+(26, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'No', '2023-09-30', 'Approve', '71', '2023-09-24'),
+(27, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-09-29', 'adoption', '75', '2023-09-24'),
+(28, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-09-28', 'adoption', '70', '2023-09-24'),
 (29, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-09-28', 'Pending', '74', '2023-09-24'),
 (33, 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', 'apriljoy@gmail.com', '09147852349', 'Yes', '2023-09-30', 'Pending', '83', '2023-09-28'),
 (34, 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', 'apriljoy@gmail.com', '09147852349', 'No', '2023-10-04', 'Pending', '79', '2023-09-28'),
@@ -97,7 +117,9 @@ INSERT INTO `adoptionrequest` (`AdoptReq_id`, `Fullname`, `Address`, `Email`, `P
 (75, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-10-04', 'Pending', '79', '2023-09-28'),
 (76, 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', 'apriljoy@gmail.com', '09147852349', 'Yes', '2023-10-05', 'Pending', '79', '2023-09-28'),
 (77, 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', 'apriljoy@gmail.com', '09147852349', 'Yes', '2023-09-30', 'Pending', '72', '2023-09-28'),
-(78, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-10-07', 'Pending', '82', '2023-09-28');
+(78, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-10-07', 'Pending', '82', '2023-09-28'),
+(79, 'Cedric Escribel', 'Aldama Stabarbara Baliuag Bulacan', 'CedricEscribel@gmail.com', '09512339636', 'Yes', '2023-10-01', 'Approve', '86', '2023-09-30'),
+(80, 'Cedric', 'Aldama sta barbara', 'Cedric@gmail', '09511234567', 'Yes', '2023-10-13', 'Pending', '', '2023-10-08');
 
 -- --------------------------------------------------------
 
@@ -120,8 +142,8 @@ CREATE TABLE `catch` (
 --
 
 INSERT INTO `catch` (`DogCatch_id`, `BarangayID`, `ContNum`, `DogCount`, `Notes`, `ReqDate`, `status`) VALUES
-(40, 'Bagong Nayon', '09352218378', 12, 'Sample notes', '2023-09-28', 'Pending'),
-(41, 'San Jose', '09147852349', 15, 'Sample notes', '2023-09-28', 'Pending'),
+(40, 'Bagong Nayon', '09352218378', 12, 'Sample notes', '2023-09-28', 'Approve'),
+(41, 'San Jose', '09147852349', 15, 'Sample notes', '2023-09-28', 'adoption'),
 (42, 'Barangca', '09352218378', 14, 'Notes', '2023-09-28', 'Pending'),
 (43, 'San Jose', '09157139465', 14, 'Notes', '2023-09-28', 'Pending'),
 (44, 'Hinukay', '09147852349', 14, 'Sample notes', '2023-09-28', 'Pending'),
@@ -169,115 +191,43 @@ INSERT INTO `catch` (`DogCatch_id`, `BarangayID`, `ContNum`, `DogCount`, `Notes`
 (86, 'Catulinan', '09352218378', 13, 'Test', '2023-09-28', 'Pending'),
 (87, 'Hinukay', '09352218378', 10, 'Notes sample', '2023-09-28', 'Pending'),
 (88, 'Catulinan', '09352218378', 12, 'Notes test', '2023-09-28', 'Pending'),
-(89, 'Makinabang', '09352218378', 13, 'Testing note', '2023-09-28', 'Pending');
+(89, 'Makinabang', '09352218378', 13, 'Testing note', '2023-09-28', 'Pending'),
+(90, 'Santo Cristo', '', 12, 'try changing select to value', '2023-10-05', 'Pending');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dogs`
+-- Table structure for table `dogs_info`
 --
 
-CREATE TABLE `dogs` (
-  `Dog_id` int(11) NOT NULL,
-  `DogInfo` varchar(255) NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  `Age` int(21) NOT NULL,
-  `Gender` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL
+CREATE TABLE `dogs_info` (
+  `dog_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `age` varchar(128) NOT NULL,
+  `gender` varchar(25) NOT NULL,
+  `date` date NOT NULL,
+  `rescue_loc` varchar(122) NOT NULL,
+  `dog_info` varchar(255) NOT NULL,
+  `image` varchar(258) NOT NULL,
+  `status` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `dogs`
+-- Dumping data for table `dogs_info`
 --
 
-INSERT INTO `dogs` (`Dog_id`, `DogInfo`, `Name`, `Age`, `Gender`, `image`) VALUES
-(70, 'Loves to eat and play', 'Browny', 2, 'Male', '6510545a9e98a.jpg'),
-(71, 'Cute dog', 'Mico', 1, 'Male', '65105477085c2.jpg'),
-(72, 'Shy dog', 'Bob', 1, 'Male', '65105497e1d14.jpg'),
-(74, 'Lovely dog', 'Milo', 5, 'Female', '651054d135f9a.jpg'),
-(75, 'Behave ', 'Steve', 4, 'Male', '651054f174d0e.jpg'),
-(78, 'Playful dog', 'Maya', 5, 'Male', '651586aeeaba6.jpg'),
-(79, 'Jolly dog', 'Lexi', 3, 'Male', '651586c623346.jpg'),
-(80, 'Loves to play', 'Athena', 4, 'Male', '651586e09f6a4.jpg'),
-(81, 'Playful dog', 'Charlie', 4, 'Male', '65158707cfc66.jpg'),
-(82, 'Loves to play ball', 'Ella', 4, 'Female', '651587cedf9ae.jpg'),
-(83, 'Small dog', 'Popoy', 4, 'Male', '651587eac4c55.jpg'),
-(84, 'Always sleeping', 'Sky', 5, 'Female', '6515883f145cd.jpg'),
-(85, 'Playful and jolly', 'Marsha', 4, 'Female', '65158864f1d9b.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `dogs_pound`
---
-
-CREATE TABLE `dogs_pound` (
-  `DPoundID` int(11) NOT NULL,
-  `DogName` varchar(123) NOT NULL,
-  `DateIn` date NOT NULL,
-  `Age` varchar(123) NOT NULL,
-  `Gender` varchar(312) NOT NULL,
-  `RescuedAt` varchar(312) NOT NULL,
-  `status` varchar(312) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `dogs_pound`
---
-
-INSERT INTO `dogs_pound` (`DPoundID`, `DogName`, `DateIn`, `Age`, `Gender`, `RescuedAt`, `status`) VALUES
-(15, 'Bruno', '2023-09-24', '1', 'Male', 'Pagala', 'Pending'),
-(16, 'Small', '2023-09-22', '2', 'Male', 'Santa Barbara', 'Pending'),
-(17, 'Mico', '2023-09-22', '2', 'Male', 'Pagala', 'Pending'),
-(18, 'Gelo', '2023-09-22', '2', 'Female', 'Tiaong', 'Pending'),
-(19, 'Brown', '2023-09-22', '2', 'Female', 'Sulivan', 'Pending'),
-(20, 'Whitey', '2023-09-23', '2', 'Male', 'Pagala', 'Pending'),
-(21, ' Cassey', '2023-09-28', '2', 'Female', 'Pagala', 'Pending'),
-(22, 'Small', '2023-09-27', '2', 'Male', 'San Jose', 'Pending'),
-(23, 'Black dog', '2023-09-26', '5', 'Female', 'Makinabang', 'Pending'),
-(24, 'Fluffy dog', '2023-09-26', '5', 'Male', 'Pinagbarilan', 'Pending'),
-(25, 'Mico', '2023-09-19', '6', 'Male', 'Poblacion', 'Pending'),
-(26, 'Big dog', '2023-09-28', '6', 'Male', 'Sabang', 'Pending'),
-(27, 'Playful dog', '2023-09-28', '2', 'Female', 'Piel', 'Pending'),
-(28, 'Aly', '2023-09-28', '5', 'Male', 'Catulinan', 'Pending'),
-(29, 'Jolly dog', '2023-09-27', '5', 'Female', 'Hinukay', 'Pending'),
-(30, 'Macky', '2023-09-27', '4', 'Male', 'Santa Barbara', 'Pending'),
-(31, 'Carla', '2023-09-27', '2', 'Female', 'Poblacion', 'Pending'),
-(32, 'Marky', '2023-09-27', '3', 'Male', 'Matangtubig', 'Pending'),
-(33, 'Cooper', '2023-09-27', '3', 'Male', 'San Roque', 'Pending'),
-(34, 'Duke', '2023-09-28', '2', 'Male', 'Paitan', 'Pending'),
-(35, 'Rocky', '2023-09-28', '3', 'Male', 'Piel', 'Pending'),
-(36, 'Luna', '2023-09-28', '3', 'Female', 'Pinagbarilan', 'Pending'),
-(37, 'Brown dog', '2023-09-27', '2', 'Male', 'Poblacion', 'Pending'),
-(38, 'Playful dog', '2023-09-28', '3', 'Female', 'Sabang', 'Pending'),
-(39, 'Daisy', '2023-09-28', '3', 'Female', 'Poblacion', 'Pending'),
-(40, 'Zoe', '2023-09-27', '2', 'Female', 'Sabang', 'Pending'),
-(41, 'Bela', '2023-09-24', '2', 'Female', 'Hinukay', 'Pending'),
-(42, 'Steph', '2023-09-28', '2', 'Female', 'Hinukay', 'Pending'),
-(43, 'Max', '2023-09-28', '2', 'Male', 'Piel', 'Pending'),
-(44, 'Buddy', '2023-09-28', '2', 'Male', 'Concepcion', 'Pending'),
-(45, 'Leo', '2023-09-27', '3', 'Male', 'Piel', 'Pending'),
-(46, 'Duke', '2023-09-27', '2', 'Male', 'Poblacion', 'Pending'),
-(47, 'Jack', '2023-09-27', '2', 'Female', 'Poblacion', 'Pending'),
-(48, 'Mics', '2023-09-27', '2', 'Female', 'Piel', 'Pending'),
-(49, 'Wild dog', '2023-09-28', '2', 'Male', 'Paitan', 'Pending'),
-(50, 'Wild dog', '2023-09-27', '4', 'Male', 'San Roque', 'Pending'),
-(51, 'Jack', '2023-09-21', '3', 'Male', 'Pinagbarilan', 'Pending'),
-(52, 'Oli', '2023-09-27', '3', 'Male', 'Santa Barbara', 'Pending'),
-(53, 'Mack', '2023-09-27', '5', 'Male', 'Piel', 'Pending'),
-(54, 'Rockie', '2023-09-27', '3', 'Female', 'San Roque', 'Pending'),
-(55, 'Murphy', '2023-09-28', '2', 'Male', 'Makinabang', 'Pending'),
-(56, 'Jax', '2023-09-27', '5', 'Male', 'Calantipay', 'Pending'),
-(57, 'Loui', '2023-09-27', '3', 'Male', 'Hinukay', 'Pending'),
-(58, 'Finn', '2023-09-27', '6', 'Male', 'Barangca', 'Pending'),
-(59, 'Zeus', '2023-09-27', '4', 'Male', 'Pagala', 'Pending'),
-(60, 'Brick', '2023-09-27', '3', 'Male', 'Concepcion', 'Pending'),
-(61, 'Summer', '2023-09-27', '2', 'Male', 'Sabang', 'Pending'),
-(62, 'Sam', '2023-09-27', '2', 'Male', 'Tarcan', 'Pending'),
-(63, 'Rusty', '2023-09-27', '5', 'Male', 'Sabang', 'Pending'),
-(64, 'Ozzy', '2023-09-27', '4', 'Male', 'Catulinan', 'Pending'),
-(65, 'Mac', '2023-09-27', '3', 'Male', 'Piel', 'Pending'),
-(66, 'Kaikai', '2023-09-27', '5', 'Male', 'Piel', 'Pending');
+INSERT INTO `dogs_info` (`dog_id`, `description`, `age`, `gender`, `date`, `rescue_loc`, `dog_info`, `image`, `status`) VALUES
+(1, 'a', 'a', 'a', '2023-10-14', 'a', 'a', 'a', 'adoption'),
+(2, 'a', 'a', 'Male', '2023-10-20', '', 'a', '', 'Euthanized'),
+(3, 'name', '12345', 'Female', '2023-10-27', '', 'details', '', 'adoption'),
+(4, 'try', 'month', 'Female', '2023-10-18', 'asd', 'das', '', 'pending'),
+(5, 'a', 'a', 'Female', '2023-10-17', 'a', 'a', '6520f79364894.gif', 'pending'),
+(6, 'try pic', 'try pic', 'Female', '2023-10-09', 'try pic', 'try pic', '6520f8b99e237.jpg', 'pending'),
+(7, 'sample', 'month', 'Male', '2023-10-09', 'location', 'details', '65221982d0351.png', 'pending'),
+(8, '2', '2', 'Female', '2023-10-10', '2', '2', '652219966249e.png', 'Euthanized'),
+(15, 'unique', 'sa', 'Male', '2023-10-10', 'dsa', 'dsa', '652219bfd2d19.png', 'adoption'),
+(16, 'c', 'c', 'Male', '2023-10-09', 'c', 'c', '65221a3d0e08c.png', 'adopted'),
+(17, 'c', 'c', 'Male', '2023-10-14', 'ac', 'ac', '65297732596c1.png', 'claimed');
 
 -- --------------------------------------------------------
 
@@ -301,7 +251,10 @@ INSERT INTO `events` (`EventId`, `EventName`, `Details`, `image`, `Dates`) VALUE
 (13, 'Mass Vaccination', 'Sample additional details', '6510580a30da8.png', '2023-09-25'),
 (14, 'Free castration', 'Test details', '6510585e59e3f.png', '2023-09-29'),
 (15, 'ANTI-RABIES VACCINATION', 'Free anti-rabies vaccination to all animal owners', '6514fd0529774.jpg', '2023-09-30'),
-(16, 'Anti-rabies vaccination', '', '6514fd9792d1e.jpg', '2023-09-29');
+(16, 'Anti-rabies vaccination', '', '6514fd9792d1e.jpg', '2023-09-29'),
+(17, 'Vaccination', 'details', '65178c5bd9f7a.png', '2023-10-02'),
+(18, 'dsa', 'dsa', '651ecf7c67b86.png', '2023-10-13'),
+(19, 'dsa', 'dsa', '651ecf9a01bd4.png', '2023-10-13');
 
 -- --------------------------------------------------------
 
@@ -375,7 +328,10 @@ INSERT INTO `insemination` (`Insemination_ID`, `Name`, `ContNum`, `Animal`, `Coo
 (103, 'Dean Jerick C. Igaya', '09352218378', 'Carabao', '17.4292992,120.50432', 'Test', '2023-09-29', 'Pending', '47'),
 (104, 'Dean Jerick C. Igaya', '09352218378', 'Goat', '17.4292992,120.50432', 'Testing details', '2023-09-29', 'Pending', '47'),
 (105, 'April Joy R. Sablayan', '09147852349', 'Goat', '17.4292992,120.50432', 'Testing of details', '2023-09-29', 'Pending', '49'),
-(106, 'April Joy R. Sablayan', '09147852349', 'Cow', '17.4292992,120.50432', 'Artificial insemination', '2023-09-29', 'Pending', '49');
+(106, 'April Joy R. Sablayan', '09147852349', 'Cow', '17.4292992,120.50432', 'Artificial insemination', '2023-09-29', 'Pending', '49'),
+(107, 'Cedric Escribel', '09512339636', 'Carabao', '14.9464387,120.8843322', 'Carabao to be inseminated', '2023-09-30', 'Pending', '51'),
+(108, 'Cedric', '09511234567', 'Cow', '14.9443694,120.8843322', 'sample schedule', '2023-10-09', 'Pending', '50'),
+(109, 'Cedric', '09511234567', 'Cow', '14.9464387,120.8843322', 'dsada', '2023-10-14', 'Pending', '50');
 
 -- --------------------------------------------------------
 
@@ -401,17 +357,17 @@ CREATE TABLE `rescue` (
 INSERT INTO `rescue` (`Rescue_id`, `Name`, `ContactNum`, `animal`, `Details`, `Coordinates`, `ReqDate`, `status`) VALUES
 (39, 'Dean Jerick C. Igaya', '09352208378', 'Dog', 'Situation', '14.3917056,121.0515456', '2023-09-24', 'Approve'),
 (40, 'Randel T. Valimento', '09617548478', 'Dog', 'Sample situation', '14.3917056,121.0515456', '2023-09-24', 'Decline'),
-(41, 'April Joy R. Sablayan', '09124578961', 'Dog', 'Sample', '14.3917056,121.0515456', '2023-09-24', 'Pending'),
-(42, 'Cedric D. Escribel', '09174852169', 'Dog', 'Example', '14.3917056,121.0515456', '2023-09-24', 'Pending'),
-(43, 'Randel T. Valimento', '09352208378', 'Cat', 'Situation sample', '14.3917056,121.0515456', '2023-09-24', 'Pending'),
-(44, 'April Joy R. Sablayan', '09124578961', 'Dog', 'Situation sample', '14.3917056,121.0515456', '2023-09-24', 'Pending'),
-(45, 'April Joy R. Sablayan', '09617548478', 'Dog', 'Example details', '14.3917056,121.0515456', '2023-09-24', 'Pending'),
-(48, 'Randel T. Valimento', '09617548478', 'Cat', 'Testing', '17.4292992,120.50432', '2023-09-28', 'Pending'),
-(49, 'Randel T. Valimento', '09617548478', 'Dog', 'Test details', '17.4292992,120.50432', '2023-09-28', 'Pending'),
-(50, 'Randel T. Valimento', '09617548478', 'Dog', 'Sample situation', '17.4292992,120.50432', '2023-09-28', 'Pending'),
-(51, 'April Joy R. Sablayan', '09617548478', 'Cat', 'Situation sample', '17.4292992,120.50432', '2023-09-28', 'Pending'),
-(52, 'Cedric D. Escribel', '09617548478', 'Dog', 'Sample details', '17.4292992,120.50432', '2023-09-28', 'Pending'),
-(53, 'April Joy R. Sablayan', '09617548478', 'Dog', 'Details sample', '17.4292992,120.50432', '2023-09-28', 'Pending'),
+(41, 'April Joy R. Sablayan', '09124578961', 'Dog', 'Sample', '14.3917056,121.0515456', '2023-09-24', 'Approve'),
+(42, 'Cedric D. Escribel', '09174852169', 'Dog', 'Example', '14.3917056,121.0515456', '2023-09-24', 'Approve'),
+(43, 'Randel T. Valimento', '09352208378', 'Cat', 'Situation sample', '14.3917056,121.0515456', '2023-09-24', 'Approve'),
+(44, 'April Joy R. Sablayan', '09124578961', 'Dog', 'Situation sample', '14.3917056,121.0515456', '2023-09-24', 'Approve'),
+(45, 'April Joy R. Sablayan', '09617548478', 'Dog', 'Example details', '14.3917056,121.0515456', '2023-09-24', 'Approve'),
+(48, 'Randel T. Valimento', '09617548478', 'Cat', 'Testing', '17.4292992,120.50432', '2023-09-28', 'Approve'),
+(49, 'Randel T. Valimento', '09617548478', 'Dog', 'Test details', '17.4292992,120.50432', '2023-09-28', 'Approve'),
+(50, 'Randel T. Valimento', '09617548478', 'Dog', 'Sample situation', '17.4292992,120.50432', '2023-09-28', 'Approve'),
+(51, 'April Joy R. Sablayan', '09617548478', 'Cat', 'Situation sample', '17.4292992,120.50432', '2023-09-28', 'Decline'),
+(52, 'Cedric D. Escribel', '09617548478', 'Dog', 'Sample details', '17.4292992,120.50432', '2023-09-28', 'Approve'),
+(53, 'April Joy R. Sablayan', '09617548478', 'Dog', 'Details sample', '17.4292992,120.50432', '2023-09-28', 'Approve'),
 (54, 'Dean Jerick C. Igaya', '09124578961', 'Cat', 'Example situation', '17.4292992,120.50432', '2023-09-28', 'Pending'),
 (55, 'Randel T. Valimento', '09617548478', 'Cat', 'Sample situation', '17.4292992,120.50432', '2023-09-28', 'Pending'),
 (56, 'Cedric D. Escribel', '09124578961', 'Dog', 'Testing ', '17.4292992,120.50432', '2023-09-28', 'Pending'),
@@ -450,7 +406,10 @@ INSERT INTO `rescue` (`Rescue_id`, `Name`, `ContactNum`, `animal`, `Details`, `C
 (89, 'Randel T. Valimento', '09352208378', 'Dog', 'Sample test', '17.4292992,120.50432', '2023-09-28', 'Pending'),
 (90, 'April Joy R. Sablayan', '09352208378', 'Dog', 'Testing sample', '17.4292992,120.50432', '2023-09-28', 'Pending'),
 (91, 'Randel T. Valimento', '09617548478', 'Dog', 'Sample situation', '17.4292992,120.50432', '2023-09-28', 'Pending'),
-(92, 'April Joy R. Sablayan', '09352208378', 'Cat', 'Example situation', '17.4292992,120.50432', '2023-09-28', 'Pending');
+(92, 'April Joy R. Sablayan', '09352208378', 'Cat', 'Example situation', '17.4292992,120.50432', '2023-09-28', 'Pending'),
+(93, 'cedric', '09244444444', 'Dog', 'dog', '14.9464387,120.8843322', '2023-09-29', 'Pending'),
+(94, 'cedric', '09512339636', 'Dog', 'Dog to be rescue', '14.9464387,120.8843322', '2023-09-30', 'Pending'),
+(95, 'name', '09512339636', 'Dog', 'danger', '14.9464387,120.8843322', '2023-10-05', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -479,14 +438,14 @@ CREATE TABLE `schedule` (
 --
 
 INSERT INTO `schedule` (`Schedule_id`, `FullN`, `PhoneNum`, `Sched`, `Date`, `PetName`, `Breed`, `Color`, `Age`, `Gender`, `Message`, `user_id`, `status`) VALUES
-(53, 'April Joy R. Sablayan', '09147852349', 'Anti-rabies Vaccination', '2023-09-28', 'Peanut', 'Aspin', 'Black and White', 3, 'Male', 'Testing note', '49', 'Pending'),
-(54, 'Dean Jerick C. Igaya', '09352218378', 'Anti-rabies Vaccination', '2023-09-28', 'Magie', 'Shih tzu', 'White', 4, 'Female', 'Testing', '47', 'Pending'),
-(55, 'Dean Jerick C. Igaya', '09352218378', 'Anti-rabies Vaccination', '2023-09-28', 'Bobby', 'Poodle', 'Black', 3, 'Male', 'Test note', '47', 'Pending'),
-(56, 'Randel T. Valimento', '09157139465', 'Anti-rabies Vaccination', '2023-09-28', 'Mick', 'Aspin', 'Black', 5, 'Female', 'Additional details', '48', 'Pending'),
-(57, 'Randel T. Valimento', '09157139465', 'Anti-rabies Vaccination', '2023-09-28', 'Aly', 'Golden Retriever', 'Brown', 5, 'Male', 'Note details', '48', 'Pending'),
+(53, 'April Joy R. Sablayan', '09147852349', 'Anti-rabies Vaccination', '2023-09-28', 'Peanut', 'Aspin', 'Black and White', 3, 'Male', 'Testing note', '49', 'Approve'),
+(54, 'Dean Jerick C. Igaya', '09352218378', 'Anti-rabies Vaccination', '2023-09-28', 'Magie', 'Shih tzu', 'White', 4, 'Female', 'Testing', '47', 'Approve'),
+(55, 'Dean Jerick C. Igaya', '09352218378', 'Anti-rabies Vaccination', '2023-09-28', 'Bobby', 'Poodle', 'Black', 3, 'Male', 'Test note', '47', 'adoption'),
+(56, 'Randel T. Valimento', '09157139465', 'Anti-rabies Vaccination', '2023-09-28', 'Mick', 'Aspin', 'Black', 5, 'Female', 'Additional details', '48', 'Decline'),
+(57, 'Randel T. Valimento', '09157139465', 'Anti-rabies Vaccination', '2023-09-28', 'Aly', 'Golden Retriever', 'Brown', 5, 'Male', 'Note details', '48', 'Approve'),
 (58, 'April Joy R. Sablayan', '09147852349', 'Anti-rabies Vaccination', '2023-09-28', 'Max', 'Bulldog', 'Brown', 4, 'Male', 'Additional details note', '49', 'Pending'),
 (59, 'Dean Jerick C. Igaya', '09352218378', 'Anti-rabies Vaccination', '2023-09-28', 'Becka', 'Aspin', 'White', 3, 'Female', 'Note sample', '47', 'Pending'),
-(60, 'April Joy R. Sablayan', '09147852349', 'Castration', '2023-09-28', 'Milo', 'Poodle', 'White', 5, 'Male', 'Additional details', '49', 'Pending'),
+(60, 'April Joy R. Sablayan', '09147852349', 'Castration', '2023-09-28', 'Milo', 'Poodle', 'White', 5, 'Male', 'Additional details', '49', 'Approve'),
 (61, 'April Joy R. Sablayan', '09147852349', 'Anti-rabies Vaccination', '2023-09-28', 'Demie', 'Aspin', 'White', 4, 'Male', 'Note sample', '49', 'Pending'),
 (62, 'April Joy R. Sablayan', '09147852349', 'Anti-rabies Vaccination', '2023-09-28', 'Mico', 'Aspin', 'White', 6, 'Female', 'Details sample', '49', 'Pending'),
 (63, 'Randel T. Valimento', '09157139465', 'Anti-rabies Vaccination', '2023-09-28', 'Ned', 'Chihuahua', 'Brown', 3, 'Female', 'Note sample', '48', 'Pending'),
@@ -554,11 +513,19 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `Email`, `Password`, `Fullname`, `Address`, `PhoneNum`, `CreateDate`) VALUES
 (47, 'deanigaya@gmail.com', '$2y$10$xPn29ToHFTjeekKGOxSYC.Zi3q/AzPiCY9/wppNFn.YJvqk7hjGOi', 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', '09352218378', '2023-09-24'),
 (48, 'valimento2002@gmail.com', '$2y$10$RdE4sdfFLdSEQ4FiI.V.ReASEDwnhtrie7bLtM20Tcalmb7EGc3fG', 'Randel T. Valimento', 'Santa Barbara, Baliwag, Bulacan', '09157139465', '2023-09-24'),
-(49, 'apriljoy@gmail.com', '$2y$10$dI2I5KO.plM6AD6YBpfcEOGHi.7XS.hPc/HF0EsJVK.zO2lFPS/Ca', 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', '09147852349', '2023-09-24');
+(49, 'apriljoy@gmail.com', '$2y$10$dI2I5KO.plM6AD6YBpfcEOGHi.7XS.hPc/HF0EsJVK.zO2lFPS/Ca', 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', '09147852349', '2023-09-24'),
+(50, 'Cedric@gmail', '$2y$10$TVrtwR6Cwwf0cjuJqZtCDe9G74Cb24oV21wj7vbvhz7fCfmo5mhMG', 'Cedric', 'Aldama sta barbara baliuag bulacana', '09511234567', '2023-09-29'),
+(51, 'CedricEscribel@gmail.com', '$2y$10$kyqUdMZ6RQFRCck130Zm2eILFbfPuKtLHEn.eCRCaqT5ubnUtG3Bm', 'Cedric Escribel', 'Aldama Stabarbara Baliuag Bulacan', '09512339636', '2023-09-30');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `adminuser`
+--
+ALTER TABLE `adminuser`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `adoptionrequest`
@@ -573,16 +540,10 @@ ALTER TABLE `catch`
   ADD PRIMARY KEY (`DogCatch_id`);
 
 --
--- Indexes for table `dogs`
+-- Indexes for table `dogs_info`
 --
-ALTER TABLE `dogs`
-  ADD PRIMARY KEY (`Dog_id`);
-
---
--- Indexes for table `dogs_pound`
---
-ALTER TABLE `dogs_pound`
-  ADD PRIMARY KEY (`DPoundID`);
+ALTER TABLE `dogs_info`
+  ADD PRIMARY KEY (`dog_id`);
 
 --
 -- Indexes for table `events`
@@ -619,46 +580,46 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `adminuser`
+--
+ALTER TABLE `adminuser`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `adoptionrequest`
 --
 ALTER TABLE `adoptionrequest`
-  MODIFY `AdoptReq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `AdoptReq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `catch`
 --
 ALTER TABLE `catch`
-  MODIFY `DogCatch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `DogCatch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
--- AUTO_INCREMENT for table `dogs`
+-- AUTO_INCREMENT for table `dogs_info`
 --
-ALTER TABLE `dogs`
-  MODIFY `Dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
-
---
--- AUTO_INCREMENT for table `dogs_pound`
---
-ALTER TABLE `dogs_pound`
-  MODIFY `DPoundID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+ALTER TABLE `dogs_info`
+  MODIFY `dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `EventId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `EventId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `insemination`
 --
 ALTER TABLE `insemination`
-  MODIFY `Insemination_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `Insemination_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `rescue`
 --
 ALTER TABLE `rescue`
-  MODIFY `Rescue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `Rescue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `schedule`
@@ -670,7 +631,7 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

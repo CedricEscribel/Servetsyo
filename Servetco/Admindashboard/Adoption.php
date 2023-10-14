@@ -1,6 +1,14 @@
 <?php
 require_once '../phpconfig/config.php';
 
+session_start();
+
+if (isset($_SESSION['admin_id'])) {
+
+	include "../Adminlog/adminsession.php";
+	$user = getUserById($_SESSION['admin_id'], $conn);
+
+
 $sql = "SELECT * FROM dogs_info where status='adoption'";
 $all_adoption = $con->query($sql);
 
@@ -69,4 +77,7 @@ $all_adoption = $con->query($sql);
     <?php include 'design/footer.php'; ?>
     </body>
 
-</html>
+    <?php } else {
+	echo '<script>alert("Log in first")</script>';
+	echo '<script>window.location.href = "login.php";</script>';
+} ?>

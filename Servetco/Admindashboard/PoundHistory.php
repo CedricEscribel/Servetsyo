@@ -2,28 +2,36 @@
 
 require_once '../phpconfig/Dogs.php';
 
-$sql = "SELECT * FROM dogs_info";
-$all_dogs_info = $con->query($sql);
+session_start();
+
+if (isset($_SESSION['admin_id'])) {
+
+  include "../Adminlog/adminsession.php";
+  $user = getUserById($_SESSION['admin_id'], $conn);
+
+
+  $sql = "SELECT * FROM dogs_info";
+  $all_dogs_info = $con->query($sql);
 
 
 ?>
 
-<!DOCTYPE html>
-<html>
+  <!DOCTYPE html>
+  <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Dogs in pound</title>
+    <title>Dogs in pound</title>
 
-  <?php include 'design/datatablelink.php'; ?>
+    <?php include 'design/datatablelink.php'; ?>
 
-  <?php include 'design/header.php'; ?>
-  <div class="wrapper">
-    <!-- Sidebar Holder -->
-    <?php include 'design/sidebar.php'; ?>
+    <?php include 'design/header.php'; ?>
+    <div class="wrapper">
+      <!-- Sidebar Holder -->
+      <?php include 'design/sidebar.php'; ?>
 
       <section class="container tables">
 
@@ -54,9 +62,9 @@ $all_dogs_info = $con->query($sql);
                 <td><?php echo $row["rescue_loc"] ?></td>
                 <td><?php echo $row["status"] ?></td>
 
-            <?php
+              <?php
             }
-            ?>
+              ?>
 
           </tbody>
         </table>
@@ -65,10 +73,13 @@ $all_dogs_info = $con->query($sql);
     <?php include 'design/footer.php'; ?>
 
     <script>
-		$(document).ready(function() {
-			new DataTable('#table');
-		});
-	</script>
-</body>
+      $(document).ready(function() {
+        new DataTable('#table');
+      });
+    </script>
+    </body>
 
-</html>
+  <?php } else {
+  echo '<script>alert("Log in first")</script>';
+  echo '<script>window.location.href = "login.php";</script>';
+} ?>

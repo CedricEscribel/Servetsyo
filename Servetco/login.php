@@ -73,6 +73,7 @@
       <div class="form-content">
         <div class="login-form">
           <div class="title">Log in</div>
+          
           <form action="log/LogIn.php" method="POST" autocomplete="off">
 
             <?php if (isset($_GET['error'])) { ?>

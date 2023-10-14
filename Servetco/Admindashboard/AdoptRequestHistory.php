@@ -1,6 +1,14 @@
 <?php
 require '../phpconfig/adoptionRequest.php';
 
+session_start();
+
+if (isset($_SESSION['admin_id'])) {
+
+	include "../Adminlog/adminsession.php";
+	$user = getUserById($_SESSION['admin_id'], $conn);
+
+
 $sql = "SELECT * FROM adoptionrequest";
 $all_adoptionrequest = $con->query($sql);
 
@@ -75,4 +83,7 @@ $all_adoptionrequest = $con->query($sql);
 	</script>
 </body>
 
-</html>
+<?php } else {
+	echo '<script>alert("Log in first")</script>';
+	echo '<script>window.location.href = "login.php";</script>';
+} ?>

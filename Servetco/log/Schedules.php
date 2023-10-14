@@ -7,10 +7,4 @@ WHERE EXISTS (SELECT user_id FROM user WHERE user.user_id = insemination.user_id
 
 
 
-
-
-
-
-
-
 ?>

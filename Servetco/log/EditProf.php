@@ -1,25 +1,17 @@
 <?php
 include "../phpconfig/config.php";
-session_start();
 
 
-if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
-    if (
-        isset($_POST['Emaillog']) &&
-        isset($_POST['Passwordlog'])
-    ) {
-    } else {
-
-
-        $Address =  $_POST['Address'];
-        $PhoneNum =  $_POST['PhoneNum'];
-
-        // update the Database
-        $sql = "UPDATE user SET  `Address`='[$Address]',`PhoneNum`='[$PhoneNum]' WHERE user_id=";
-        $_SESSION['Fullname'] = $Fullname;
-
-        header("Location: ../EditProfile.php");
-        exit;
+if (isset($_POST["edit"])) {
+    $Address = mysqli_real_escape_string($con, $_POST["Address"]);
+    $PhoneNum = mysqli_real_escape_string($con, $_POST["PhoneNum"]);
+    $user_id = mysqli_real_escape_string($con, $_POST["user_id"]);
+    $sqlUpdate = "UPDATE user SET Address = '$Address', PhoneNum = '$PhoneNum' WHERE user_id='$user_id'";
+    if(mysqli_query($con,$sqlUpdate)){
+        echo ("<h2>PHP is Fun!</h2>");
+        header("Location:../EditProfile.php");
+    }else{
+        die("Something went wrong");
     }
 }

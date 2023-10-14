@@ -1,68 +1,37 @@
-<?php 
-define("API_KEY","") ?>
-<html>
-<head>
-<title>How to Get Current Location using Google Map Javascript API</title>
-</head>
-<style>
-body {
-	font-family :Arial;
-}
-#map-layer {
-	margin: 20px 0px;
-	max-width: 600px;
-	min-height: 400;
-}
-#btnAction {
-	background: #3878c7;
-    padding: 10px 40px;
-    border: #3672bb 1px solid;
-    border-radius: 2px;
-    color: #FFF;
-    font-size: 0.9em;
-    cursor:pointer;
-    display:block;
-}
-#btnAction:disabled {
-    background: #6c99d2;
-}
-</style>
-<body>
-<h1>How to Get Current Location using Google Map Javascript API</h1>
-	<div id="button-layer"><button id="btnAction" onClick="locate()">My Current Location</button></div>
-	<div id="map-layer"></div>
+if (
+    isset($_POST['Email']) &&
+    isset($_POST['Password'])
+) {
 
-	
+    $Email = $_POST['Email'];
+    $Password = $_POST['Password'];
+    $emailValid = "select * from adminuser where (Email='$Email');";
 
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=<?php echo API_KEY; ?>&callback=initMap"
-		async defer></script>
-	<script type="text/javascript">
-	var map;
-	function initMap() {
-		var mapLayer = document.getElementById("map-layer");
-		var centerCoordinates = new google.maps.LatLng(37.6, -95.665);
-		var defaultOptions = { center: centerCoordinates, zoom: 15 }
+    $res = mysqli_query($con, $emailValid);
+    $data =  "&Email=" . $Email ;
 
-		map = new google.maps.Map(mapLayer, defaultOptions);
-	}
 
-	function locate(){
-		document.getElementById("btnAction").disabled = true;
-		document.getElementById("btnAction").innerHTML = "Processing...";
-		if ("geolocation" in navigator){
-			navigator.geolocation.getCurrentPosition(function(position){ 
-				var currentLatitude = position.coords.latitude;
-				var currentLongitude = position.coords.longitude;
+    }  if (empty($Password)) {
+        $em = "Password is required";
+        header("Location: ../login.php?error=$em&$data");
+        exit;
 
-				var infoWindowHTML = "Latitude: " + currentLatitude + "<br>Longitude: " + currentLongitude;
-				var infoWindow = new google.maps.InfoWindow({map: map, content: infoWindowHTML});
-				var currentLocation = { lat: currentLatitude, lng: currentLongitude };
-				infoWindow.setPosition(currentLocation);
-				document.getElementById("btnAction").style.display = 'none';
-			});
-		}
-	}
-	</script>
-</body>
-</html>
+    } else if (mysqli_num_rows($res) > 0) {
+        $row = mysqli_fetch_assoc($res);
+        if ($Email == isset($row['Email'])) {
+            $em = "email already exists";
+            header("Location: ../login.php?error=$em&$data");  
+            exit;
+        }
+
+    } else {
+        $Password = password_hash($Password, PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO adminuser (Email, Password) 
+                    VALUES(?,?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$Email, $Password]);
+
+        header("Location: ../login.php?success=Your account has been created successfully");
+        exit;
+    }

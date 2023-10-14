@@ -51,7 +51,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
         <!-- body -->
 
-        <form class="shadow w-450 p-3" action="log/EditProf.php" method="post" enctype="multipart/form-data">
+        <form class="shadow w-450 p-3" action="log/EditProf.php" method="post">
             <div class="container">
                 <?php if ($user) { ?>
                     <div class="main-body">
@@ -75,6 +75,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
                                         <div class="card">
                                             <div class="card-body-user">
                                                 <div class="row mb-3">
+                                                    <input type="hidden" value="<?= $user['user_id'] ?>" name="user_id">
                                                     <div class="col-sm-3">
                                                         <h6 class="mb-0">Full Name</h6>
                                                     </div>
@@ -107,9 +108,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-sm-3"></div>
                                                     <div class="col-sm-9 text-secondary">
-                                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                        <button type="submit" name="edit" class="btn btn-primary">Save Changes</button>
                                                         <a class="btn btn-primary px-4" target="blank" href="Profile.php">Back to profile</a>
                                                     </div>
                                                 </div>

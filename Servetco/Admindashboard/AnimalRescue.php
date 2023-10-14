@@ -1,6 +1,12 @@
 <?php
 require '../phpconfig/rescue.php';
 
+session_start();
+
+if (isset($_SESSION['admin_id'])) {
+
+	include "../Adminlog/adminsession.php";
+	$user = getUserById($_SESSION['admin_id'], $conn);
 
 ?>
 
@@ -75,4 +81,7 @@ require '../phpconfig/rescue.php';
 
 </body>
 
-</html>
+<?php } else {
+	echo '<script>alert("Log in first")</script>';
+	echo '<script>window.location.href = "login.php";</script>';
+} ?>

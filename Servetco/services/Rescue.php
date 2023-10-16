@@ -48,16 +48,16 @@ define("API_KEY", "")
         <label for="Number">Contact Number</label>
         <input type="tel" name="ContactNum" class="form-control" placeholder="09123456789" required pattern="[0-9]{11}" maxlength="11">
 
-        <label for="Animal">Select what kind of animals</label>
+        <label for="Animal" style="margin-top: 15px;">Select what kind of animals</label>
         <select class="dropbtn" class="form-select" name="animal" required>
           <option value="">Please Select</option>
           <option value="Dog">Dog</option>
           <option value="Cat">Cat</option>
         </select>
 
-        <input type="text" name="Coordinates" required id="latitude" hidden>
+        <input type="text" name="Coordinates" required  id="latitude" hidden>
 
-        <label for="Location">Get Location:</label>
+        <label for="Location" style="margin-top: 15px;">Get Location:</label>
         <div id="button-layer"><button id="btnAction" onClick="locate()">Pin current location</button></div>
         <p id="CoordValid" class="alert alert-danger" role="alert" hidden></p>
         <div id="map-layer"></div>

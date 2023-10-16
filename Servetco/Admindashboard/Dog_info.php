@@ -41,7 +41,7 @@ if (isset($_SESSION['admin_id'])) {
                 <div class="col">
                   <div class="form-outline">
                     <label class="form-label" for="DogName">Name/Description:</label>
-                    <input type="text" name="description" id="DogName" class="form-control" required />
+                    <input type="text" name="description" id="DogName" class="form-control" placeholder="Name/Description" required />
                   </div>
                 </div>
                 <div class="col">
@@ -64,7 +64,7 @@ if (isset($_SESSION['admin_id'])) {
                   <div class="col">
                     <div class="form-outline">
                       <label class="form-label" for="date">Date In:</label> <br>
-                      <input class="date" type="date" name="date" required>
+                      <input class="date" type="date" id="dt" name="date" required>
                     </div>
                   </div>
                 </div>
@@ -158,3 +158,7 @@ if (isset($_SESSION['admin_id'])) {
     echo '<script>alert("Log in first")</script>';
     echo '<script>window.location.href = "login.php";</script>';
   } ?>
+
+    <script>
+      document.getElementById('dt').max = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+    </script>

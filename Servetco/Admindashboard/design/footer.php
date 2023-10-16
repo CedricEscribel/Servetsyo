@@ -54,19 +54,19 @@
             showDenyButton: true,
             showCancelButton: true,
             allowOutsideClick: false,
-            confirmButtonText: 'adoption',
-            denyButtonText: `claimed`,
+            confirmButtonText: 'Adoption',
+            denyButtonText: `Claimed`,
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
 
-                $('#' + id + 'hiddenStatus').val('adoption');
+                $('#' + id + 'hiddenStatus').val('Adoption');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
                 }, 1200)
-                Swal.fire('Approved!', '', 'success')
+                Swal.fire('Adoption!', '', 'success')
             } else if (result.isDenied) {
-                $('#' + id + 'hiddenStatus').val('claimed');
+                $('#' + id + 'hiddenStatus').val('Claimed');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
                 }, 1200)
@@ -92,7 +92,7 @@
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                $('#' + id + 'UpdateStatus').val('adopted');
+                $('#' + id + 'UpdateStatus').val('Adopted');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
                 }, 1200)
@@ -110,7 +110,7 @@
         var id = event.target.value;
 
         Swal.fire({
-            title: 'Update status to adopted',
+            title: 'Update status to Adopted',
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
@@ -120,7 +120,7 @@
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                $('#' + id + 'UpdateStatus').val('adopted');
+                $('#' + id + 'UpdateStatus').val('Adopted');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
                 }, 1200)

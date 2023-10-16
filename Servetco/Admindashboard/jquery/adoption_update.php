@@ -8,7 +8,7 @@ if (isset($_POST['Update'])) {
   
     $sql = "UPDATE dogs_info SET status = '$status' WHERE dog_id  = $id ";
     $Save = mysqli_query($con, $sql);
-    if ($status === 'adopted') {
+    if ($status === 'Adopted') {
   
       echo '<script type="text/javascript">
     window.location.href = "../Adoption.php";

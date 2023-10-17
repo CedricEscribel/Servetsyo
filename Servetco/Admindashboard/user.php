@@ -49,7 +49,10 @@ if (isset($_SESSION['admin_id'])) {
                                 <div class="col">
                                     <div class="form-outline">
                                         <label class="form-label" for="Password">Password:</label>
-                                        <input type="password" name="Password" class="form-control" placeholder="Password" required />
+                                        <input type="password" name="Password" id="Pass" class="form-control" placeholder="Password" required />
+                                        <div class="show_pass">
+                                            <input type="checkbox" onclick="Showpass()">&#32;Show Password
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -89,3 +92,23 @@ if (isset($_SESSION['admin_id'])) {
     echo '<script>alert("Log in first")</script>';
     echo '<script>window.location.href = "login.php";</script>';
 } ?>
+
+    <script>
+        function Showpass() {
+            var x = document.getElementById("Pass");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function Showpasslog() {
+            var x = document.getElementById("Passlog");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>

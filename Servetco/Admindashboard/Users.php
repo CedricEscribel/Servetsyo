@@ -25,7 +25,12 @@ require '../phpconfig/config.php';
 
     <!-- Main body design -->
     <section class="tables container">
-      <h1>User List</h1>
+      <div class="">
+        <h1>User List</h1>
+
+
+        <button>Add account</button>
+      </div>
       <table class="table" id="table">
         <thead>
           <tr>
@@ -63,10 +68,10 @@ require '../phpconfig/config.php';
 
   <?php include 'design/footer.php'; ?>
   <script>
-		$(document).ready(function() {
-			new DataTable('#table');
-		});
-	</script>
-</body>
+    $(document).ready(function() {
+      new DataTable('#table');
+    });
+  </script>
+  </body>
 
 </html>

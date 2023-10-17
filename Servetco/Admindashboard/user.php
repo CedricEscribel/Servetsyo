@@ -32,7 +32,7 @@ if (isset($_SESSION['admin_id'])) {
                 <span>
 
                     <div class="d-flex align-items-center flex-column mb-4 border border-success p-2 mb-2 border-opacity-50">
-                        <form class="Upload-dogs" method="POST" action="../log/SuperAdmin.php" autocomplete="off">
+                        <form class="Upload-dogs" method="POST" action="../Adminlog/SuperAdmin.php" autocomplete="off">
                             <div class="row mb-4 flex-column">
                                 <div class="col">
                                     <div class="form-outline">
@@ -49,7 +49,7 @@ if (isset($_SESSION['admin_id'])) {
                                 <div class="col">
                                     <div class="form-outline">
                                         <label class="form-label" for="Password">Password:</label>
-                                        <input type="pass" name="Password" class="form-control" placeholder="Password" required />
+                                        <input type="password" name="Password" class="form-control" placeholder="Password" required />
                                     </div>
                                 </div>
                                 <div class="col">
@@ -70,12 +70,12 @@ if (isset($_SESSION['admin_id'])) {
                                 </div>
 
                                 <div class=" button">
-                                    <input style="color: white;" type="submit" name="submit" value="Create account">
+                                    <input style="color: white;" type="submit" name="Sign_up" value="Create account">
                                 </div>
                             </div>
+                        </form>
                     </div>
 
-                    </form>
 
             </div>
             </span>

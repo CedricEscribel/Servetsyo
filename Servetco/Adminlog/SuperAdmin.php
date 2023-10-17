@@ -36,7 +36,8 @@ if (
         $stmt = $conn->prepare($sql);
         $stmt->execute([$Fullname, $Username, $Password, $Position, $User_type]);
 
-        echo '<script>window.location.href = "Dashboard.php";</script>';
+
+        echo '<script>window.location.href = "../Admindashboard/Dashboard.php";</script>';
         exit;
     }
 } else {

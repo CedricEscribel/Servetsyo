@@ -56,7 +56,7 @@
                             <label class="label">Username:</label>
                             <div class="input-box">
                                 <i class="fas fa-envelope"></i>
-                                <input type="text" name="Usernamelog" placeholder="Enter your Email" value="<?php echo (isset($_GET['Emaillog'])) ? $_GET['Emaillog'] : "" ?>" required>
+                                <input type="text" name="Usernamelog" placeholder="Enter your Email" value="<?php echo (isset($_GET['Usernamelog'])) ? $_GET['Usernamelog'] : "" ?>" required>
                             </div>
 
                             <label class="label">Password:</label>

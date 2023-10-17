@@ -24,7 +24,7 @@ if (
         $row = mysqli_fetch_assoc($res);
         if ($Username == isset($row['Username'])) {
             $em = "Username already exists";
-            header("Location: ../login.php?error=$em&$data");  
+            header("Location: ../Admindashboard/user.php?error=$em&$data");  
             exit;
         }
 

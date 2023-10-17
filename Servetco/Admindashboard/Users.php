@@ -27,7 +27,7 @@ require '../phpconfig/config.php';
     <section class="tables container">
       <div class="position-relative">
         <h1>User List</h1>
-        <button class="position-absolute top-0 end-0 button" style="width: fit-content; border: none; padding: 4px; " onclick="window.location.href='user.php';" >Add account</button>
+        <button class="position-absolute top-0 end-0 button" style="width: max-content; border: none; padding: 4px; " onclick="window.location.href='user.php';" >Add account</button>
       </div>
       <table class="table" id="table">
         <thead>

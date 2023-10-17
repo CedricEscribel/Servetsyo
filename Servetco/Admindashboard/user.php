@@ -31,121 +31,99 @@ if (isset($_SESSION['admin_id'])) {
                     <h1>Create Account</h1>
                     <button class="position-absolute top-0 end-0 button" style="width: fit-content; border: none; padding: 4px; " onclick="window.location.href='Users.php';">User list</button>
                 </div>
-                <span>
-                    <div class="d-flex align-items-center flex-column mb-4 border border-success p-2 mb-2 border-opacity-50">
-                        <form class="Upload-dogs" method="POST" action="../Adminlog/SuperAdmin.php" autocomplete="off">
-                            <div class="row mb-4 flex-column">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <label class="form-label" for="Fullname">Full name:</label>
-                                        <input type="text" name="Fullname" class="form-control" placeholder="Fullname" required />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <label class="form-label" for="Username">Username:</label>
-                                        <input type="text" name="Username" class="form-control" placeholder="Username" required />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <label class="form-label" for="Password">Password:</label>
-                                        <input type="password" name="Password" id="Pass" class="form-control" placeholder="Password" required />
-                                        <div class="show_pass">
-                                            <input type="checkbox" onclick="Showpass()">&#32;Show Password
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <label class="form-label" for="Position">Position:</label>
-                                        <input type="text" name="Position" class="form-control" placeholder="Position   " required />
-                                    </div>
-                                </div>
-                                <div class="col mb-2 ">
-                                    <div class="form-outline">
-                                        <label class="form-label" for="User-type">User type:</label>
-                                        <select class="form-select form-select-sm" aria-label="Small select example" name="User_type" required>
-                                            <option value="">Please Select</option>
-                                            <option value="Barangay">Barangay</option>
-                                            <option value="Admin">Admin</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class=" button">
-                                    <input style="color: white;" type="submit" name="Sign_up" value="Create account">
+                <div class="d-flex align-items-center flex-column mb-4 border border-success p-2 mb-2 border-opacity-50">
+                    <form class="Upload-dogs" method="POST" action="../Adminlog/SuperAdmin.php" autocomplete="off">
+                        <div class="row mb-4 flex-column">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <label class="form-label" for="Fullname">Full name:</label>
+                                    <input type="text" name="Fullname" class="form-control" placeholder="Fullname" required />
                                 </div>
                             </div>
-                        </form>
-                    </div>
-
-                    <section class="tables container">
-                        <h1>Admin List</h1>
-                        <table class="table" id="table">
-                            <thead>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <label class="form-label" for="Username">Username:</label>
+                                    <input type="text" name="Username" class="form-control" placeholder="Username" required />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <?php if (isset($_GET['error'])) { ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            <?php echo $_GET['error']; ?>
+                                        </div>
+                                    <?php } ?>
+                                    <label class="form-label" for="Password">Password:</label>
+                                    <input type="password" name="Password" id="Pass" class="form-control" placeholder="Password" required />
+                                    <div class="show_pass">
+                                        <input type="checkbox" onclick="Showpass()">&#32;Show Password
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <label class="form-label" for="Position">Position:</label>
+                                    <input type="text" name="Position" class="form-control" placeholder="Position   " required />
+                                </div>
+                            </div>
+                            <div class="col mb-2 ">
+                                <div class="form-outline">
+                                    <label class="form-label" for="User-type">User type:</label>
+                                    <select class="form-select form-select-sm" aria-label="Small select example" name="User_type" required>
+                                        <option value="">Please Select</option>
+                                        <option value="Barangay">Barangay</option>
+                                        <option value="Admin">Admin</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=" button">
+                                <input style="color: white;" type="submit" name="Sign_up" value="Create account">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <section class="tables">
+                    <h1>Admin List</h1>
+                    <table class="table" id="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Username</th>
+                                <th>Position</th>
+                                <th>User type</th>
+                                <th>Date Created</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $i = 1;
+                            $rows = mysqli_query($con, "SELECT * FROM adminuser")
+                            ?>
+                            <?php foreach ($rows as $row) : ?>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Full Name</th>
-                                    <th>Username</th>
-                                    <th>Position</th>
-                                    <th>User type</th>
-                                    <th>Date Created</th>
+                                    <td><?php echo $row["admin_id"] ?></td>
+                                    <td><?php echo $row["Fullname"] ?></td>
+                                    <td><?php echo $row["Username"] ?></td>
+                                    <td><?php echo $row["Position"] ?></td>
+                                    <td><?php echo $row["User_type"] ?></td>
+                                    <td><?php echo $row["createdate"] ?></td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $i = 1;
-                                $rows = mysqli_query($con, "SELECT * FROM adminuser")
-                                ?>
-                                <?php foreach ($rows as $row) : ?>
-                                    <tr>
-                                        <td><?php echo $row["admin_id"] ?></td>
-                                        <td><?php echo $row["Fullname"] ?></td>
-                                        <td><?php echo $row["Username"] ?></td>
-                                        <td><?php echo $row["Position"] ?></td>
-                                        <td><?php echo $row["User_type"] ?></td>
-                                        <td><?php echo $row["createdate"] ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </section>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </section>
             </div>
-            </span>
-
-
         </div>
         <?php include 'design/footer.php'; ?>
         </body>
-
+        <script>
+            $(document).ready(function() {
+                new DataTable('#table');
+            });
+        </script>
 
     <?php } else {
     echo '<script>alert("Log in first")</script>';
     echo '<script>window.location.href = "login.php";</script>';
 } ?>
-
-    <script>
-        function Showpass() {
-            var x = document.getElementById("Pass");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
-            }
-        }
-
-        function Showpasslog() {
-            var x = document.getElementById("Passlog");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
-            }
-        }
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            new DataTable('#table');
-        });
-    </script>

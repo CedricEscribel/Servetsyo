@@ -25,11 +25,11 @@ require '../phpconfig/config.php';
 
     <!-- Main body design -->
     <section class="tables container">
-      <div class="">
+      <div class="position-relative">
         <h1>User List</h1>
 
 
-        <button>Add account</button>
+        <button class="position-absolute top-0 end-0 button" style="width: fit-content; " onclick="window.location.href='user.php';" >Add account</button>
       </div>
       <table class="table" id="table">
         <thead>

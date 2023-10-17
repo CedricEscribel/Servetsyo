@@ -34,7 +34,7 @@ require '../phpconfig/config.php';
             <th>Email</th>
             <th>Phone Number</th>
             <th>Address</th>
-            <th>Create Date</th>
+            <th> Date Created</th>
           </tr>
         </thead>
         <tbody>

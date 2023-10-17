@@ -12,7 +12,6 @@ if (isset($_SESSION['admin_id'])) {
 ?>
 
 	<!DOCTYPE html>
-	<html style="overflow: hidden;">
 
 
 	<head>

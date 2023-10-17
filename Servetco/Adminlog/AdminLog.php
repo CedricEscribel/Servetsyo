@@ -2,15 +2,15 @@
     include "../phpconfig/config.php";
 
     session_start();
-if(isset($_POST['Emaillog']) && 
+if(isset($_POST['Usernamelog']) && 
    isset($_POST['Passwordlog'])){
 
-    $Emaillog = $_POST['Emaillog'];
+    $Usernamelog = $_POST['Usernamelog'];
     $Passwordlog = $_POST['Passwordlog'];
 
-    $data = "Emaillog=".$Emaillog;
-    if(empty($Emaillog)){
-    	$em = "Email is required";
+    $data = "Usernamelog=".$Usernamelog;
+    if(empty($Usernamelog)){
+    	$em = "Username is required";
     	header("Location: ../Admindashboard/login.php?error=$em&$data");
 	    exit;
     }else if(empty($Passwordlog)){
@@ -19,18 +19,18 @@ if(isset($_POST['Emaillog']) &&
 	    exit;
     }else {
 
-    	$sql = "SELECT * FROM adminuser WHERE Email = ?";
+    	$sql = "SELECT * FROM adminuser WHERE Username = ?";
     	$stmt = $conn->prepare($sql);
-    	$stmt->execute([$Emaillog]);
+    	$stmt->execute([$Usernamelog]);
 
       if($stmt->rowCount() == 1){
           $user = $stmt->fetch();
 
-          $Email =  $user['Email'];
+          $Username =  $user['Username'];
           $Password =  $user['Password'];
           $admin_id =  $user['admin_id'];
 
-          if($Email === $Emaillog){
+          if($Username === $Usernamelog){
              if(password_verify($Passwordlog, $Password)){
                  $_SESSION['admin_id'] = $admin_id;
                  header("Location: ../Admindashboard/Dashboard.php ");
@@ -42,13 +42,13 @@ if(isset($_POST['Emaillog']) &&
             }
 
           }else {
-            $em = "Incorrect Email or Password 2";
+            $em = "Incorrect Username or Password 2";
             header("Location: ../Admindashboard/login.php?error=$em&$data");
             exit;
          }
 
       }else {
-         $em = "Incorrect Email";
+         $em = "Incorrect Username";
          header("Location: ../Admindashboard/login.php?error=$em&$data");
          exit;
       }

@@ -49,7 +49,13 @@ if (isset($_SESSION['admin_id'])) {
                     <label for="Date">Date:</label>
                     <input type="date" name="Dates" placeholder="Date" required>
                   </div>
+                  <div class="DInput" style="margin-top: 22px; margin-left:25px ;">
+                    <label for="Expired_date">Expired_date:</label>
+                    <input type="date" name="Expired_date" placeholder="Expired_date" required>
+                  </div>
                 </div>
+
+
                 <label for="Name" style="margin: 10px;">Event details:</label>
                 <div class="Doginput2">
                   <div class="DInput">

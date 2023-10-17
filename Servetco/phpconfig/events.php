@@ -1,4 +1,5 @@
 <?php 
+	date_default_timezone_set("Etc/GMT+8");
 
   include_once 'config.php';
 
@@ -7,6 +8,7 @@
     $EventName = $_POST["EventName"];
     $Details = $_POST["Details"];
     $Dates = $_POST["Dates"];  
+    $Expired_date = $_POST['Expired_date'];
 
     if($_FILES["image"]["error"] == 4){
       echo
@@ -48,6 +50,10 @@
   }
 
 
-
-
-?>
+  $query = mysqli_query($con, "SELECT * FROM `events`");
+	$date = date("Y-m-d");
+	while($fetch = mysqli_fetch_array($query)){
+		if($fetch['due_date'] === $date){
+			mysqli_query($con, "DELETE FROM `events` WHERE `product_id` = '$fetch[product_id]'") or die( mysqli_connect_error());
+		}
+	}

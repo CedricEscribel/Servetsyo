@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2023 at 05:04 PM
+-- Generation Time: Oct 17, 2023 at 08:08 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,17 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `adminuser` (
   `admin_id` int(11) NOT NULL,
-  `Email` varchar(256) NOT NULL,
-  `Password` varchar(256) NOT NULL
+  `Username` varchar(256) NOT NULL,
+  `Password` varchar(256) NOT NULL,
+  `User_type` varchar(12) NOT NULL,
+  `Fullname` varchar(123) NOT NULL,
+  `Position` varchar(123) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `adminuser`
 --
 
-INSERT INTO `adminuser` (`admin_id`, `Email`, `Password`) VALUES
-(3, 'Admin@gmail', '$2y$10$O1Phz/CQ4U.LKi3aacFyYeNgKb5LndWbcX.ny5pEc8bNcyUXPQkVu'),
-(4, 'Email@gmail', '$2y$10$WJLm8NKKqbGRZz9K86BjpOfDmKgDlORgsOD9rIGEFs1sGK1UwMEr2');
+INSERT INTO `adminuser` (`admin_id`, `Username`, `Password`, `User_type`, `Fullname`, `Position`) VALUES
+(3, 'Admin', '$2y$10$O1Phz/CQ4U.LKi3aacFyYeNgKb5LndWbcX.ny5pEc8bNcyUXPQkVu', '', '', ''),
+(4, 'Email@gmail', '$2y$10$WJLm8NKKqbGRZz9K86BjpOfDmKgDlORgsOD9rIGEFs1sGK1UwMEr2', '', '', '');
 
 -- --------------------------------------------------------
 

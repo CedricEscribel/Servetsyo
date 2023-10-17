@@ -35,6 +35,7 @@ if (
          $user_id =  $user['user_id'];
          $Address =  $user['Address'];
          $PhoneNum =  $user['PhoneNum'];
+         $RoleType =  $user['RoleType'];
 
          if ($Email === $Emaillog) {
             if (password_verify($Passwordlog, $Password)) {
@@ -42,6 +43,7 @@ if (
                $_SESSION['Fullname'] = $Fullname;
                $_SESSION['Address'] = $Address;
                $_SESSION['PhoneNum'] = $PhoneNum;
+               $_SESSION['RoleType'] = $RoleType;
 
                header("Location: ../index.php ");
                exit;

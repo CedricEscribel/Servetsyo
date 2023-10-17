@@ -164,7 +164,7 @@ if (isset($_SESSION['admin_id'])) {
 				</div>
 			</div>
 		</div>
-		<!-- jQuery CDN - Slim version (=without AJAX) -->
+
 
 		</body>
 

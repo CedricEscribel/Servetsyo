@@ -59,7 +59,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
                         <div class="input-box">
                             <span class="details">Interview and Visitation (Minors must be accompanied by parents) </span>
-                            <input type="date" name="Date" placeholder="Preferred date and time for onsite interview" required>
+                            <input type="date" name="Date" id="dt" placeholder="Preferred date and time for onsite interview" required>
                         </div>
 
                         <div class="Visit input-box" required>
@@ -83,7 +83,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
                             <span class="details">Dog id</span>
                             <input type="text" placeholder="<?= $dog_id; ?>" disabled>
                         </div>
-                        <select class="Hide" name="dog_id" style="display: none;">
+                        <select class="Hide" name="Dog_id" style="display: none;">
                             <option value="<?= $dog_id; ?>"></option>
                         </select>
                     </div>
@@ -120,3 +120,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
     echo '<script>window.location.href = "../login.php";</script>';
 } ?>
 
+    <script>
+        document.getElementById('dt').min = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+    </script>

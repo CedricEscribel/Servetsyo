@@ -1,3 +1,5 @@
+
+
 <head>
   <meta charset="utf-8">
   <title>Login </title>
@@ -149,6 +151,11 @@
                 <i class="fas fa-user"></i>
                 <input type="text" autocapitalize="words" name="Fullname" placeholder="Full Name" required value="<?php echo (isset($_GET['Fullname'])) ? $_GET['Fullname'] : "" ?>">
               </div>
+
+
+                <input type="text"  name="RoleType" hidden value="user">
+
+
               <label class="label">Address:</label>
               <div class="input-box">
                 <i class="fas fa-user"></i>
@@ -197,5 +204,3 @@
       }
     }
   </script>
-
-</body>

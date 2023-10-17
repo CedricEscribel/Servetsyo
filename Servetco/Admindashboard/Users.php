@@ -27,9 +27,7 @@ require '../phpconfig/config.php';
     <section class="tables container">
       <div class="position-relative">
         <h1>User List</h1>
-
-
-        <button class="position-absolute top-0 end-0 button" style="width: fit-content; " onclick="window.location.href='user.php';" >Add account</button>
+        <button class="position-absolute top-0 end-0 button" style="width: fit-content; border: none; padding: 4px; " onclick="window.location.href='user.php';" >Add account</button>
       </div>
       <table class="table" id="table">
         <thead>
@@ -39,7 +37,8 @@ require '../phpconfig/config.php';
             <th>Email</th>
             <th>Phone Number</th>
             <th>Address</th>
-            <th> Date Created</th>
+            <th>User type</th>
+            <th>Date Created</th>
           </tr>
         </thead>
         <tbody>
@@ -54,14 +53,14 @@ require '../phpconfig/config.php';
               <td><?php echo $row["Email"] ?></td>
               <td><?php echo $row["PhoneNum"] ?></td>
               <td><?php echo $row["Address"] ?></td>
+              <td><?php echo $row["RoleType"] ?></td>
               <td><?php echo $row["CreateDate"] ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
     </section>
-    </section>
-
+    
   </div>
   </nav>
   </div>

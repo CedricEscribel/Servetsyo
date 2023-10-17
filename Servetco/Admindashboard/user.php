@@ -27,10 +27,11 @@ if (isset($_SESSION['admin_id'])) {
             <!-- Sidebar Holder -->
             <?php include 'design/sidebar.php'; ?>
             <div class="container">
-
-                <h1>Admin Account</h1>
+                <div class="position-relative">
+                    <h1>Create Account</h1>
+                    <button class="position-absolute top-0 end-0 button" style="width: fit-content; border: none; padding: 4px; " onclick="window.location.href='Users.php';">User list</button>
+                </div>
                 <span>
-
                     <div class="d-flex align-items-center flex-column mb-4 border border-success p-2 mb-2 border-opacity-50">
                         <form class="Upload-dogs" method="POST" action="../Adminlog/SuperAdmin.php" autocomplete="off">
                             <div class="row mb-4 flex-column">
@@ -71,7 +72,6 @@ if (isset($_SESSION['admin_id'])) {
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class=" button">
                                     <input style="color: white;" type="submit" name="Sign_up" value="Create account">
                                 </div>
@@ -79,7 +79,37 @@ if (isset($_SESSION['admin_id'])) {
                         </form>
                     </div>
 
-
+                    <section class="tables container">
+                        <h1>Admin List</h1>
+                        <table class="table" id="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Full Name</th>
+                                    <th>Username</th>
+                                    <th>Position</th>
+                                    <th>User type</th>
+                                    <th>Date Created</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $i = 1;
+                                $rows = mysqli_query($con, "SELECT * FROM adminuser")
+                                ?>
+                                <?php foreach ($rows as $row) : ?>
+                                    <tr>
+                                        <td><?php echo $row["admin_id"] ?></td>
+                                        <td><?php echo $row["Fullname"] ?></td>
+                                        <td><?php echo $row["Username"] ?></td>
+                                        <td><?php echo $row["Position"] ?></td>
+                                        <td><?php echo $row["User_type"] ?></td>
+                                        <td><?php echo $row["createdate"] ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </section>
             </div>
             </span>
 
@@ -87,6 +117,7 @@ if (isset($_SESSION['admin_id'])) {
         </div>
         <?php include 'design/footer.php'; ?>
         </body>
+
 
     <?php } else {
     echo '<script>alert("Log in first")</script>';
@@ -111,4 +142,10 @@ if (isset($_SESSION['admin_id'])) {
                 x.type = "password";
             }
         }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            new DataTable('#table');
+        });
     </script>

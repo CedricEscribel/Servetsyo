@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2023 at 08:08 AM
+-- Generation Time: Oct 17, 2023 at 09:20 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,16 +33,19 @@ CREATE TABLE `adminuser` (
   `Password` varchar(256) NOT NULL,
   `User_type` varchar(12) NOT NULL,
   `Fullname` varchar(123) NOT NULL,
-  `Position` varchar(123) NOT NULL
+  `Position` varchar(123) NOT NULL,
+  `createdate` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `adminuser`
 --
 
-INSERT INTO `adminuser` (`admin_id`, `Username`, `Password`, `User_type`, `Fullname`, `Position`) VALUES
-(3, 'Admin', '$2y$10$O1Phz/CQ4U.LKi3aacFyYeNgKb5LndWbcX.ny5pEc8bNcyUXPQkVu', '', '', ''),
-(4, 'Email@gmail', '$2y$10$WJLm8NKKqbGRZz9K86BjpOfDmKgDlORgsOD9rIGEFs1sGK1UwMEr2', '', '', '');
+INSERT INTO `adminuser` (`admin_id`, `Username`, `Password`, `User_type`, `Fullname`, `Position`, `createdate`) VALUES
+(3, 'Admin', '$2y$10$O1Phz/CQ4U.LKi3aacFyYeNgKb5LndWbcX.ny5pEc8bNcyUXPQkVu', '', '', '', '2023-10-17'),
+(4, 'Email@gmail', '$2y$10$WJLm8NKKqbGRZz9K86BjpOfDmKgDlORgsOD9rIGEFs1sGK1UwMEr2', '', '', '', '2023-10-17'),
+(5, 'Cedric', '$2y$10$uc96IXVZytWwUFAB2kNYBesIrxqPKXaw8mbbWNka9SgfQyTZ3w8Ly', 'Admin', 'Cedric', 'admin', '2023-10-17'),
+(8, 'dean', '$2y$10$PJ6Q4Mz8F3yfaNsYCyKZIOIhZzep2HxW22i4N/H/vYuElAHTOqgPO', 'Admin', 'dean', 'dean', '2023-10-17');
 
 -- --------------------------------------------------------
 
@@ -122,7 +125,9 @@ INSERT INTO `adoptionrequest` (`AdoptReq_id`, `Fullname`, `Address`, `Email`, `P
 (77, 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', 'apriljoy@gmail.com', '09147852349', 'Yes', '2023-09-30', 'Pending', '72', '2023-09-28'),
 (78, 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', 'deanigaya@gmail.com', '09352218378', 'Yes', '2023-10-07', 'Pending', '82', '2023-09-28'),
 (79, 'Cedric Escribel', 'Aldama Stabarbara Baliuag Bulacan', 'CedricEscribel@gmail.com', '09512339636', 'Yes', '2023-10-01', 'Approve', '86', '2023-09-30'),
-(80, 'Cedric', 'Aldama sta barbara', 'Cedric@gmail', '09511234567', 'Yes', '2023-10-13', 'Pending', '', '2023-10-08');
+(80, 'Cedric', 'Aldama sta barbara', 'Cedric@gmail', '09511234567', 'Yes', '2023-10-13', 'Pending', '', '2023-10-08'),
+(81, 'Cedric', 'Aldama sta barbara baliuag bulacana', 'Cedric@gmail', '09511234567', 'Yes', '2023-10-25', 'Pending', '', '2023-10-16'),
+(82, 'Cedric', 'Aldama sta barbara baliuag bulacana', 'Cedric@gmail', '09511234567', 'Yes', '2023-10-27', 'Pending', '3', '2023-10-16');
 
 -- --------------------------------------------------------
 
@@ -506,19 +511,20 @@ CREATE TABLE `user` (
   `Fullname` varchar(128) NOT NULL,
   `Address` varchar(255) NOT NULL,
   `PhoneNum` varchar(24) NOT NULL,
-  `CreateDate` date NOT NULL DEFAULT current_timestamp()
+  `CreateDate` date NOT NULL DEFAULT current_timestamp(),
+  `RoleType` varchar(125) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `Email`, `Password`, `Fullname`, `Address`, `PhoneNum`, `CreateDate`) VALUES
-(47, 'deanigaya@gmail.com', '$2y$10$xPn29ToHFTjeekKGOxSYC.Zi3q/AzPiCY9/wppNFn.YJvqk7hjGOi', 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', '09352218378', '2023-09-24'),
-(48, 'valimento2002@gmail.com', '$2y$10$RdE4sdfFLdSEQ4FiI.V.ReASEDwnhtrie7bLtM20Tcalmb7EGc3fG', 'Randel T. Valimento', 'Santa Barbara, Baliwag, Bulacan', '09157139465', '2023-09-24'),
-(49, 'apriljoy@gmail.com', '$2y$10$dI2I5KO.plM6AD6YBpfcEOGHi.7XS.hPc/HF0EsJVK.zO2lFPS/Ca', 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', '09147852349', '2023-09-24'),
-(50, 'Cedric@gmail', '$2y$10$TVrtwR6Cwwf0cjuJqZtCDe9G74Cb24oV21wj7vbvhz7fCfmo5mhMG', 'Cedric', 'Aldama sta barbara baliuag bulacana', '09511234567', '2023-09-29'),
-(51, 'CedricEscribel@gmail.com', '$2y$10$kyqUdMZ6RQFRCck130Zm2eILFbfPuKtLHEn.eCRCaqT5ubnUtG3Bm', 'Cedric Escribel', 'Aldama Stabarbara Baliuag Bulacan', '09512339636', '2023-09-30');
+INSERT INTO `user` (`user_id`, `Email`, `Password`, `Fullname`, `Address`, `PhoneNum`, `CreateDate`, `RoleType`) VALUES
+(47, 'deanigaya@gmail.com', '$2y$10$xPn29ToHFTjeekKGOxSYC.Zi3q/AzPiCY9/wppNFn.YJvqk7hjGOi', 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', '09352218378', '2023-09-24', ''),
+(48, 'valimento2002@gmail.com', '$2y$10$RdE4sdfFLdSEQ4FiI.V.ReASEDwnhtrie7bLtM20Tcalmb7EGc3fG', 'Randel T. Valimento', 'Santa Barbara, Baliwag, Bulacan', '09157139465', '2023-09-24', ''),
+(49, 'apriljoy@gmail.com', '$2y$10$dI2I5KO.plM6AD6YBpfcEOGHi.7XS.hPc/HF0EsJVK.zO2lFPS/Ca', 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', '09147852349', '2023-09-24', ''),
+(50, 'Cedric@gmail', '$2y$10$TVrtwR6Cwwf0cjuJqZtCDe9G74Cb24oV21wj7vbvhz7fCfmo5mhMG', 'Cedric', 'Aldama sta barbara baliuag bulacana', '09511234567', '2023-09-29', 'user'),
+(56, 'Barangay1@gmail', '$2y$10$Lt2irxnDWP47MXjTROuD3.OdEJBSdXROKRv.J6sXQ4cfbyJXw6jlq', 'name', 'Sta barbara', '09123456789', '2023-10-16', 'barangay');
 
 --
 -- Indexes for dumped tables
@@ -586,13 +592,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `adminuser`
 --
 ALTER TABLE `adminuser`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `adoptionrequest`
 --
 ALTER TABLE `adoptionrequest`
-  MODIFY `AdoptReq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `AdoptReq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `catch`
@@ -634,7 +640,7 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

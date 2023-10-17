@@ -37,7 +37,7 @@ if (
         $stmt->execute([$Fullname, $Username, $Password, $Position, $User_type]);
 
 
-        echo '<script>window.location.href = "../Admindashboard/Dashboard.php";</script>';
+        echo '<script>window.location.href = "../Admindashboard/user.php";</script>';
         exit;
     }
 } else {

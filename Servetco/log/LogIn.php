@@ -53,7 +53,7 @@ if (
                exit;
             }
          } else {
-            $em = "Incorrect Email or Password 2";
+            $em = "Incorrect Email or Password";
             header("Location: ../login.php?error=$em&$data");
             exit;
          }

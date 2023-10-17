@@ -100,13 +100,15 @@
                     </div>
                 </div>
             </li>
-            <li>
-                <a href="Users.php"><i class="users"></i>Users</a>
-            </li>
+            <?php if ($_SESSION['User_type'] == 'SuperAdmin') { ?>
+                <li>
+                    <a href="Users.php"><i class="users"></i>Users</a>
+                </li>
+            <?php } ?>
+
             <li>
                 <a href="Announcement.php"><i class="Announcement"></i>Announcement</a>
             </li>
         </ul>
     </nav>
 </div>
-

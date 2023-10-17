@@ -33,13 +33,10 @@ if (isset($_SESSION['admin_id'])) {
           <h1>Announcement</h1>
         </div>
         <!-- Body design -->
-
-
         <span>
           <div class="Upload">
             <form class="img_prv" enctype="multipart/form-data" method="POST" autocomplete="off">
               <div class="Informations">
-
                 <div class="DogInput">
                   <div class="DInput">
                     <label for="Name">Title:</label>
@@ -51,11 +48,9 @@ if (isset($_SESSION['admin_id'])) {
                   </div>
                   <div class="DInput" style="margin-top: 22px; margin-left:25px ;">
                     <label for="Expired_date">Expired_date:</label>
-                    <input type="date" name="Expired_date" placeholder="Expired_date" required>
+                    <input type="date" name="Expired_date" required>
                   </div>
                 </div>
-
-
                 <label for="Name" style="margin: 10px;">Event details:</label>
                 <div class="Doginput2">
                   <div class="DInput">
@@ -91,7 +86,7 @@ if (isset($_SESSION['admin_id'])) {
                   <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                     <div class="p-4">
                       <div class="d-flex mb-3">
-                        <small><i class="bi bi-calendar-date me-2"></i><?php echo $row["Dates"] ?></small>
+                        <small><i class="bi bi-calendar-date me-2"></i><?php echo $row["Dates"] ?> / <small style="color: red;"><?php echo $row["Expired_date"] ?></small></small>
                       </div>
                       <h5 class="text-uppercase mb-3"><?php echo $row["EventName"] ?></h5>
                       <p class="fw-lighter lh-lg"><?php echo $row["Details"] ?></p>
@@ -105,6 +100,7 @@ if (isset($_SESSION['admin_id'])) {
           }
           ?>
         </div>
+
       </div>
       </nav>
     </div>

@@ -22,7 +22,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
   $user = getUserById($_SESSION['user_id'], $conn);
 
 
-
 ?>
 
   <head>
@@ -52,11 +51,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
           <a href="Events.php" class="nav-item nav-link">Events</a>
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Account</a>
-            <div class="dropdown-menu m-0">
-              <a href="profile.php" class="dropdown-item ">Profile</a>
-              <a href="schedules.php" class="dropdown-item active">Schedules</a>
-              <a href="./log/logout.php" class="dropdown-item">Logout</a>
-            </div>
+            <?php include 'AccountDrop.php'; ?>
           </div>
         </div>
       </div>

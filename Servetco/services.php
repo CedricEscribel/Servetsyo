@@ -1,4 +1,4 @@
- <div class="container-fluid py-5">
+<div class="container-fluid py-5">
 <div class="container">
     <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
         <h1 class="display-5 text-uppercase mb-0">Our Services</h1>

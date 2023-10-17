@@ -1,18 +1,17 @@
-
 <head>
 
-        <meta charset="utf-8">
-        <title>About </title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <title>About </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <?php include 'header.php';?>
+    <?php include 'header.php'; ?>
 </head>
 
 <body>
     <!-- Navbar Start -->
     <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-    <?php include 'navlogo.php';?>
-    
+        <?php include 'navlogo.php'; ?>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,20 +24,16 @@
                 <a href="Events.php" class="nav-item nav-link">Events</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="profile.php" class="dropdown-item">Profile</a>
-                        <a href="schedules.php" class="dropdown-item ">Schedules</a>
-                        <a href="login.php" class="dropdown-item">Login</a>
-                    </div>
+                    <?php include 'AccountDrop.php'; ?>
                 </div>
-        </div>
+            </div>
         </div>
     </nav>
     <!-- Navbar End -->
-   
 
- <!-- About Start -->
- <div class="container-fluid py-5">
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
         <div class="container">
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
@@ -46,7 +41,7 @@
                         <img class="position-absolute w-100 h-100 rounded" src="img/baliuag.jpg" style="object-fit: cover;">
                     </div>
                 </div>
-                
+
                 <div class="col-lg-7">
                     <div class="border-start border-5 border-primary ps-5 mb-5">
                         <h6 class="text-primary text-uppercase">About Us</h6>
@@ -56,15 +51,11 @@
                     <div class="bg-light p-4">
                         <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item w-50" role="presentation">
-                                <button class="nav-link text-uppercase w-100 active" id="pills-1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1"
-                                    aria-selected="true">Our Mission</button>
+                                <button class="nav-link text-uppercase w-100 active" id="pills-1-tab" data-bs-toggle="pill" data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1" aria-selected="true">Our Mission</button>
                             </li>
 
                             <li class="nav-item w-50" role="presentation">
-                                <button class="nav-link text-uppercase w-100" id="pills-2-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2"
-                                    aria-selected="false">Our Vision</button>
+                                <button class="nav-link text-uppercase w-100" id="pills-2-tab" data-bs-toggle="pill" data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2" aria-selected="false">Our Vision</button>
                             </li>
 
                         </ul>
@@ -86,7 +77,7 @@
 
 
     <!-- Footer Start -->
-    <?php include 'footer.php';?>
+    <?php include 'footer.php'; ?>
     <!-- Footer End -->
 
 

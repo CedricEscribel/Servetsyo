@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2023 at 09:20 AM
+-- Generation Time: Oct 17, 2023 at 06:39 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,10 +42,11 @@ CREATE TABLE `adminuser` (
 --
 
 INSERT INTO `adminuser` (`admin_id`, `Username`, `Password`, `User_type`, `Fullname`, `Position`, `createdate`) VALUES
-(3, 'Admin', '$2y$10$O1Phz/CQ4U.LKi3aacFyYeNgKb5LndWbcX.ny5pEc8bNcyUXPQkVu', '', '', '', '2023-10-17'),
-(4, 'Email@gmail', '$2y$10$WJLm8NKKqbGRZz9K86BjpOfDmKgDlORgsOD9rIGEFs1sGK1UwMEr2', '', '', '', '2023-10-17'),
+(3, 'Admin', '$2y$10$O1Phz/CQ4U.LKi3aacFyYeNgKb5LndWbcX.ny5pEc8bNcyUXPQkVu', 'SuperAdmin', '', '', '2023-10-17'),
 (5, 'Cedric', '$2y$10$uc96IXVZytWwUFAB2kNYBesIrxqPKXaw8mbbWNka9SgfQyTZ3w8Ly', 'Admin', 'Cedric', 'admin', '2023-10-17'),
-(8, 'dean', '$2y$10$PJ6Q4Mz8F3yfaNsYCyKZIOIhZzep2HxW22i4N/H/vYuElAHTOqgPO', 'Admin', 'dean', 'dean', '2023-10-17');
+(8, 'dean', '$2y$10$PJ6Q4Mz8F3yfaNsYCyKZIOIhZzep2HxW22i4N/H/vYuElAHTOqgPO', 'Admin', 'dean', 'dean', '2023-10-17'),
+(9, 'randel', '$2y$10$FE9bM6BIEszmNo/Kt6.1qOEq1w3Rv005plh1b.vwwmOorwLR12THm', 'Barangay', 'randel', 'barangay', '2023-10-17'),
+(10, 'April', '$2y$10$ivvvWIbjIw.3.jIfCu9vlOfH.jBkr8rbsipgERKz4FLD6C/ior7oW', 'Barangay', 'April', 'april', '2023-10-17');
 
 -- --------------------------------------------------------
 
@@ -248,21 +249,18 @@ CREATE TABLE `events` (
   `EventName` varchar(256) NOT NULL,
   `Details` varchar(512) NOT NULL,
   `image` varchar(258) NOT NULL,
-  `Dates` varchar(258) NOT NULL
+  `Dates` varchar(258) NOT NULL,
+  `Expired_date` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`EventId`, `EventName`, `Details`, `image`, `Dates`) VALUES
-(13, 'Mass Vaccination', 'Sample additional details', '6510580a30da8.png', '2023-09-25'),
-(14, 'Free castration', 'Test details', '6510585e59e3f.png', '2023-09-29'),
-(15, 'ANTI-RABIES VACCINATION', 'Free anti-rabies vaccination to all animal owners', '6514fd0529774.jpg', '2023-09-30'),
-(16, 'Anti-rabies vaccination', '', '6514fd9792d1e.jpg', '2023-09-29'),
-(17, 'Vaccination', 'details', '65178c5bd9f7a.png', '2023-10-02'),
-(18, 'dsa', 'dsa', '651ecf7c67b86.png', '2023-10-13'),
-(19, 'dsa', 'dsa', '651ecf9a01bd4.png', '2023-10-13');
+INSERT INTO `events` (`EventId`, `EventName`, `Details`, `image`, `Dates`, `Expired_date`) VALUES
+(16, 'Anti-rabies vaccination', '', '6514fd9792d1e.jpg', '2023-09-29', ''),
+(17, 'Vaccination', 'details', '65178c5bd9f7a.png', '2023-10-02', ''),
+(18, 'dsa', 'dsa', '651ecf7c67b86.png', '2023-10-13', '');
 
 -- --------------------------------------------------------
 
@@ -592,7 +590,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `adminuser`
 --
 ALTER TABLE `adminuser`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `adoptionrequest`
@@ -616,7 +614,7 @@ ALTER TABLE `dogs_info`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `EventId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `EventId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `insemination`

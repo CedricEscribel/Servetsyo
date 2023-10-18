@@ -10,7 +10,7 @@
                 <div>
                     <h5 class="text-uppercase mb-3">Artificial Insemination</h5>
                     <p>Application form for Artificial Insemination for Large Ruminants</p>
-                    <a class="text-primary text-uppercase" href="services/insemination.php">Artificial Insemination form<i class="bi bi-chevron-right"></i></a>
+                    <a class="text-primary text-uppercase" href="services/Insemination.php">Artificial Insemination form<i class="bi bi-chevron-right"></i></a>
                 </div>
             </div>
         </div>

@@ -105,6 +105,7 @@
                 <input value="Log in" type="submit" name="Login">
               </div>
               <div class="text sign-up-text">Don't have an account? <label class="labels" for="flip">Sign up now</label></div>
+              <div class="text sign-up-text">Don't have an account? <label class="labels" onclick="" >Sign up now</label></div>
             </div>
           </form>
         </div>

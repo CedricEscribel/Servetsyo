@@ -102,7 +102,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-primary px-4" target="blank" href="EditProfile.php">Edit</a>
+                      <a class="btn btn-primary px-4" href="EditProfile.php">Edit</a>
                     </div>
 
                   </div>

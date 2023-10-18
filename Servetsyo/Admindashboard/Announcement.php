@@ -47,11 +47,11 @@ if (isset($_SESSION['admin_id'])) {
                 <div class="row">
                   <div class="col-5 my-2">
                     <label for="Date">Date:</label>
-                    <input type="date" name="Dates" placeholder="Date" required>
+                    <input type="date" id="dt" name="Dates" placeholder="Date" required>
                   </div>
                   <div class="col-5 my-2">
                     <label for="Expired date">Expired date:</label>
-                    <input type="date" name="Expired_date" required>
+                    <input type="date" id="dt2" name="Expired_date" required>
                   </div>
                 </div>
               </div>
@@ -114,8 +114,6 @@ if (isset($_SESSION['admin_id'])) {
 
       </div>
 
-
-
       <?php include 'design/footer.php'; ?>
       <script src="Image.js"></script>
       </body>
@@ -124,3 +122,8 @@ if (isset($_SESSION['admin_id'])) {
     echo '<script>alert("Log in first")</script>';
     echo '<script>window.location.href = "login.php";</script>';
   } ?>
+
+    <script>
+      document.getElementById('dt').min = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+      document.getElementById('dt2').min = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+    </script>

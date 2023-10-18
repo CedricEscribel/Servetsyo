@@ -106,7 +106,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
                                                 <div class="row">
                                                     <div class="col-sm-9 text-secondary">
                                                         <button type="submit" name="edit" class="btn btn-primary">Save Changes</button>
-                                                        <a class="btn btn-primary px-4" target="blank" href="Profile.php">Back to profile</a>
+                                                        <a class="btn btn-primary px-2" href="profile.php">Back to profile</a>
                                                     </div>
                                                 </div>
                                             </div>

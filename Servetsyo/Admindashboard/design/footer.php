@@ -1,4 +1,3 @@
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -30,14 +29,26 @@
                 $('#' + id + 'hiddenStatus').val('Approve');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
-                }, 5000)
-                Swal.fire('The request is approved!', '', 'success')
+                }, 1500)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'The request is approved!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             } else if (result.isDenied) {
                 $('#' + id + 'hiddenStatus').val('Decline');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
-                }, 5000)
-                Swal.fire('The request is declined!', '', 'error')
+                }, 1500)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'The request is declined!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             }
         })
     });
@@ -63,42 +74,26 @@
                 $('#' + id + 'hiddenStatus').val('Adoption');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
-                }, 5000)
-                Swal.fire('The animal is already posted for adoption.', '', 'success')
+                }, 1500)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'The animal is already posted for adoption.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             } else if (result.isDenied) {
                 $('#' + id + 'hiddenStatus').val('Claimed');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
-                }, 5000)
-                Swal.fire('The animal is already claimed.', '', 'success')
-            }
-        })
-    });
-</script>
-
-<script>
-    $(document).on('click', '#Adopted', function(e) {
-        e.preventDefault();
-        var id = event.target.value;
-
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Update Status!'
-        }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-                $('#' + id + 'UpdateStatus').val('Adopted');
-                setTimeout(() => {
-                    $('#' + id).trigger('click');
-                }, 5000)
-                Swal.fire('Approved!', '', 'success')
-            } else if (result.isDenied) {
-
+                }, 1500)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'The animal is already claimed',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             }
         })
     });
@@ -123,8 +118,14 @@
                 $('#' + id + 'UpdateStatus').val('Adopted');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
-                }, 5000)
-                Swal.fire('Successfully updated!', '', 'success')
+                }, 1500)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Successfully updated!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             } else if (result.isDenied) {
 
             }
@@ -149,8 +150,14 @@
                 $('#' + id + 'UpdateStatus').val('Euthanized');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
-                }, 5000)
-                Swal.fire('Successfully updated!', '', 'success')
+                }, 1500)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Successfully updated!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             } else if (result.isDenied) {
 
             }

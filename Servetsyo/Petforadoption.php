@@ -81,6 +81,7 @@ require_once 'phpconfig/config.php';
                   <input type="hidden" value="<?php echo $row["dog_id"] ?>" name="dog_id">
                   <button type="submit" class="btn btn-primary" style="color: white; width: 200px;" name="Adopt_dog">Adopt</button>
                 </form>
+                
                 <!-- <a href="services/Adoption.php" style="color: white; width: 200px; " valu id="Adopt" class="btn btn-primary">Adopt</a> -->
 
               </div>

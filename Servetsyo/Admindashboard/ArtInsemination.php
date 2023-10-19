@@ -66,12 +66,10 @@ if (isset($_SESSION['admin_id'])) {
               </tr>
 
               <form action="../phpconfig/ArtInsem.php" method="post" hidden>
-
                 <input type="hidden" name="id" id="id" value="<?php echo $row['Insemination_ID'] ?>">
                 <input type="hidden" name="hiddenStatus" id="<?php echo $row["Insemination_ID"] ?>hiddenStatus" value="">
                 <button type="submit" id="<?php echo $row["Insemination_ID"] ?>" name="btnHideSubmit" hidden></button>
               </form>
-
 
             <?php
             }

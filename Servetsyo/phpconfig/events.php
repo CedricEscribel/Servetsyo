@@ -56,7 +56,32 @@ if (isset($_POST["submit"])) {
 //   header('location: index.php');
 // }
 
+if (isset($_POST['delete'])) {
+  $id = mysqli_real_escape_string($con, $_POST['delete']);
 
+  $query = "DELETE FROM events WHERE EventId = '$id' ";
+  $query_run = mysqli_query($con, $query);
+
+  if ($query_run) {
+    echo
+    "
+      <script>
+        alert('success');
+        document.location.href = '../Admindashboard/Announcement.php';
+      </script>
+      ";
+    exit(0);
+  } else {
+    echo
+    "
+      <script>
+        alert('error');
+        document.location.href = '../Admindashboard/Announcement.php';
+      </script>
+      ";
+    exit(0);
+  }
+}
 
 
 

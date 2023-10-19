@@ -100,8 +100,10 @@ if (isset($_SESSION['admin_id'])) {
                   </div>
                   <div class="align-items-center align-content-center  col-md-3 border-left mt-1">
                     <div class="d-flex flex-column mt-4">
-                      <button class="btn btn-danger btn-sm" name="del" id="del" type="button">Delete</button>
-                      <button class="btn btn-outline-success btn-sm mt-2"  type="button" >Edit</button>
+                      <form action="../phpconfig/events.php" method="POST" class="btn btn-danger btn-sm">
+                        <button class="border-0 " value="<?= $row['EventId']; ?>" name="delete" type="submit">Delete</button>
+                      </form>
+                      <button class="btn btn-outline-success btn-sm mt-2" type="button">Edit</button>
                     </div>
                   </div>
                 </div>

@@ -1,5 +1,3 @@
-
-
 <head>
   <meta charset="utf-8">
   <title>Login </title>
@@ -71,7 +69,7 @@
       <div class="form-content">
         <div class="login-form">
           <div class="title">Log in</div>
-          
+
           <form action="log/LogIn.php" method="POST" autocomplete="off">
 
             <?php if (isset($_GET['error'])) { ?>
@@ -105,7 +103,7 @@
                 <input value="Log in" type="submit" name="Login">
               </div>
               <div class="text sign-up-text">Don't have an account? <label class="labels" for="flip">Sign up now</label></div>
-              <div class="text sign-up-text">Don't have an account? <label class="labels" onclick="" >Sign up now</label></div>
+              <div style="margin-top: 4px; display: flex; justify-content: center;" class="text sign-up-text">Admin Login: 	&#8194; <a href="Admindashboard/login.php" style="color: #95ee29;" class="nav-item nav-link">Login</a></div>
             </div>
           </form>
         </div>
@@ -148,7 +146,7 @@
                 <i class="fas fa-user"></i>
                 <input type="text" autocapitalize="words" name="Fullname" placeholder="Full Name" required value="<?php echo (isset($_GET['Fullname'])) ? $_GET['Fullname'] : "" ?>">
               </div>
-                <input type="text"  name="RoleType" hidden value="user">
+              <input type="text" name="RoleType" hidden value="user">
               <label class="label">Address:</label>
               <div class="input-box">
                 <i class="fas fa-user"></i>

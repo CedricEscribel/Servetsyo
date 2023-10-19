@@ -44,53 +44,44 @@ require_once 'phpconfig/config.php';
         <h1 class="display-5 text-uppercase mb-0">Dogs Ready for Adoption</h1>
       </div>
 
-      <div class="grid">
-        <div class="Dog-details">
-          <?php
-          $i = 1;
-          $rows = mysqli_query($con, "SELECT * FROM dogs_info where status='adoption'")
-          ?>
-          <?php foreach ($rows as $row) : ?>
-            <div class="card Dogpic" style="width: 18rem;">
-              <div id="<?php echo $row["dog_id"] ?>" class="carousel slide">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#<?php echo $row["dog_id"] ?>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
+      <section style="background-color: #eee;">
+        <div class="text-center container py-5">
+          <div class="row">
+            <?php
+            $i = 1;
+            $rows = mysqli_query($con, "SELECT * FROM dogs_info where status='adoption'")
+            ?>
+            <?php foreach ($rows as $row) : ?>
+
+              <div class="col-lg-4 col-md-12 mb-4">
+                <div class="card">
+                  <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
                     <img src="Admindashboard/DogImage/<?php echo $row["image"]; ?>" width=200 title="<?php echo $row['image']; ?>">
                   </div>
+                  <div class="card-body">
+                    <a href="" class="text-reset">
+                      <h5 class="card-title mb-3"><?php echo $row["description"] ?></h5>
+                    </a>
+                    <a href="" class="text-reset">
+                      <p><?php echo $row["gender"] ?></p>
+                      <p><?php echo $row["age"] ?> Months old</p>
+                    </a>
+                    <h6 class="mb-3"><?php echo $row["dog_info"] ?></h6>
+                  </div>
+
+                  <form action="./services/Adoption.php" method="post">
+                    <input type="hidden" value="<?php echo $row["dog_id"] ?>" name="dog_id">
+                    <button type="submit" class="btn btn-primary" style="color: white; width: 200px;" name="Adopt_dog">Adopt</button>
+                  </form>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#<?php echo $row["dog_id"] ?>" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#<?php echo $row["dog_id"] ?>" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
               </div>
+            <?php endforeach; ?>
+          </div>
+      </section>
 
-              <div class="card-body" style="width: max-content;">
-                <h3 class="card-title"><?php echo $row["description"] ?></h3>
-                <h5 class="card-title"><?php echo $row["gender"] ?></h5>
-                <h5 class="card-title"><?php echo $row["age"] ?> Months old</h5>
-                <h5 class="card-title"><?php echo $row["dog_info"] ?></h5>
-
-                <form action="./services/Adoption.php" method="post">
-                  <input type="hidden" value="<?php echo $row["dog_id"] ?>" name="dog_id">
-                  <button type="submit" class="btn btn-primary" style="color: white; width: 200px;" name="Adopt_dog">Adopt</button>
-                </form>
-                
-                <!-- <a href="services/Adoption.php" style="color: white; width: 200px; " valu id="Adopt" class="btn btn-primary">Adopt</a> -->
-
-              </div>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
     </div>
   </div>
+
   <!-- Dog for adoption End -->
 
   <!-- Footer Start -->

@@ -22,14 +22,12 @@ if (isset($_SESSION['admin_id'])) {
 
     <title>Animal Rescue</title>
 
-
     <?php include 'design/datatablelink.php'; ?>
 
     <?php include 'design/header.php'; ?>
     <div class="wrapper">
       <!-- Sidebar Holder -->
       <?php include 'design/sidebar.php'; ?>
-
 
       <section class="tables container">
         <h1>Animal Rescue History</h1>

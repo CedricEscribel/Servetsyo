@@ -27,6 +27,7 @@ if (isset($_SESSION['admin_id'])) {
     <title>Dogs in pound</title>
 
     <?php include 'design/datatablelink.php'; ?>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <?php include 'design/header.php'; ?>
     <div class="wrapper">

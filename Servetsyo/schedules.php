@@ -15,6 +15,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
   <head>
     <meta charset="utf-8">
+    <?php include 'Admindashboard/design/datatablelink.php'; ?>
+
     <title> Schedules </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -56,7 +58,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
       <h1>User list of Appointments</h1>
       <table class="table" id="table">
         <thead>
-          <tr>
+          <tr class="head">
             <th>Service</th>
             <th>Date Requested</th>
             <th>Status</th>
@@ -108,14 +110,19 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
       </table>
     </div>
     <!-- body end -->
-
-
     <!-- footer -->
     <?php include 'footer.php'; ?>
+
+    <script>
+      $(document).ready(function() {
+        new DataTable('#table');
+      });
+    </script>
 
 
   </body>
 
+  
 <?php } else {
   header("Location: login.php");
   exit;

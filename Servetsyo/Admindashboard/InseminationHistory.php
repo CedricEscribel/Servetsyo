@@ -29,6 +29,8 @@ if (isset($_SESSION['admin_id'])) {
 
     <title>Artificial Insemination</title>
 
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
     <?php include 'design/header.php'; ?>
     <div class="wrapper">
       <!-- Sidebar Holder -->

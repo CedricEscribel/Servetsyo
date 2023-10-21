@@ -26,83 +26,17 @@ if (isset($_SESSION['admin_id'])) {
 
     <title>Dogs in pound</title>
 
+
     <?php include 'design/header.php'; ?>
     <div class="wrapper">
       <!-- Sidebar Holder -->
       <?php include 'design/sidebar.php'; ?>
       <div class="container">
 
-        <h1>Dogs in pound</h1>
-        <span>
-
-          <div class="d-flex align-items-center flex-column mb-4 border border-success p-2 mb-2 border-opacity-50">
-            <form class="Upload-dogs" method="POST" enctype="multipart/form-data" action="../phpconfig/Dogs.php" autocomplete="off">
-              <div class="row mb-4 flex-column">
-                <div class="col">
-                  <div class="form-outline">
-                    <label class="form-label" for="DogName">Name/Description:</label>
-                    <input type="text" name="description" id="DogName" class="form-control" placeholder="Name/Description" required />
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-outline">
-                    <label class="form-label" for="Age">Age:</label>
-                    <input type="number" id="Age" name="age" class="form-control" required placeholder="Month" />
-                  </div>
-                </div>
-                <div class="row mb-4">
-                  <div class="col">
-                    <div class="form-outline">
-                      <label class="form-label" for="Gender">Gender:</label>
-                      <select class="form-select form-select-sm" aria-label="Small select example" name="gender" required>
-                        <option value="">Please Select</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-outline">
-                      <label class="form-label" for="date">Date In:</label> <br>
-                      <input class="date" type="date" id="dt" name="date" required>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="form-outline">
-                    <label class="form-label" for="RescuedAt">Rescued at:</label>
-                    <input type="text" name="rescue_loc" placeholder="Location" class="form-control" required>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4 ">
-                <div class="col">
-                  <div class="form-outline">
-                    <label class="form-label" name="DogInfo" for="DogInfo">Additional information:</label>
-                    <textarea class="form-control" name="dog_info" rows="3" required></textarea>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-outline">
-                    <div class="image-preview">
-                      <img src="../image/upload.png" alt="Upload Dog Picture" id="image-preview">
-                      <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
-                      <a href="#" id="choose-file-btn">Choose Images</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="button">
-                <input style="color: white;" type="submit" name="submit" value="Add">
-              </div>
-
-            </form>
-
-          </div>
-        </span>
-
+        <div class="position-relative">
+          <h1>Dogs in pound</h1>
+          <button class="position-absolute top-0 end-0 button" style="width: max-content; border: none; padding: 4px; " onclick="window.location.href='add_dogs.php';">Add dogs</button>
+        </div>
 
         <section class="container tables">
 
@@ -151,14 +85,9 @@ if (isset($_SESSION['admin_id'])) {
         </section>
       </div>
       <?php include 'design/footer.php'; ?>
-      <script src="Image.js"></script>
       </body>
 
     <?php } else {
     echo '<script>alert("Log in first")</script>';
     echo '<script>window.location.href = "login.php";</script>';
   } ?>
-
-    <script>
-      document.getElementById('dt').max = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
-    </script>

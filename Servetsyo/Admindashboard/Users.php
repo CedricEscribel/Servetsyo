@@ -31,9 +31,6 @@ if (isset($_SESSION['admin_id'])) {
       <div class="wrapper">
         <!-- Sidebar Holder -->
         <?php include 'design/sidebar.php'; ?>
-
-
-
         <!-- Main body design -->
         <section class="tables container">
           <div class="position-relative">

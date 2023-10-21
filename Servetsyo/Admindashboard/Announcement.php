@@ -48,10 +48,10 @@ if (isset($_SESSION['admin_id'])) {
                 <div class="row">
                   <div class="col-5 my-2">
                     <label for="Date">Date:</label>
-                    <input type="date" id="dt" name="Dates" placeholder="Date" required>
+                    <input type="date" id="dt" name="Dates" placeholder="Date" >
                   </div>
                   <div class="col-5 my-2">
-                    <label for="Expired date">Expired date:</label>
+                    <label for="Expired date">Expired at:</label>
                     <input type="date" id="dt2" name="Expired_date" required>
                   </div>
                 </div>
@@ -68,10 +68,10 @@ if (isset($_SESSION['admin_id'])) {
             </div>
 
             <div class="col">
-              <label for="Name">Event details:</label>
+              <label for="Name">Announcement details:</label>
               <div>
                 <div>
-                  <textarea rows="4" cols="50" name="Details" placeholder="Event details"></textarea>
+                  <textarea rows="4" cols="50" name="Details" placeholder="Announcement details"></textarea>
                 </div>
               </div>
             </div>

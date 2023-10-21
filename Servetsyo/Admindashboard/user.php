@@ -23,7 +23,9 @@ if (isset($_SESSION['admin_id'])) {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-            <title>Dogs in pound</title>
+            <title>Admin list</title>
+
+            <?php include 'design/datatablelink.php'; ?>
 
             <?php include 'design/header.php'; ?>
             <div class="wrapper">
@@ -85,6 +87,7 @@ if (isset($_SESSION['admin_id'])) {
                             </div>
                         </form>
                     </div>
+
                     <section class="tables">
                         <h1>Admin List</h1>
                         <table class="table" id="table">

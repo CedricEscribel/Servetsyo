@@ -22,7 +22,6 @@ p {
   top: 12%;
 }
 
-
 .line {
   width: 100%;
   height: 1px;
@@ -36,7 +35,6 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
@@ -59,7 +57,7 @@ input::-webkit-inner-spin-button {
   height: 45em;
 }
 
-#sidebar .sidebar-header h2{
+#sidebar .sidebar-header h2 {
   background: #4caf50;
   display: flex;
   flex-direction: column;
@@ -67,11 +65,11 @@ input::-webkit-inner-spin-button {
   border-radius: 15px;
   padding: 5px;
   color: white;
-  text-decoration:none;
+  text-decoration: none;
 }
 
-.head-dash{
- text-decoration: none;
+.head-dash {
+  text-decoration: none;
 }
 
 #sidebar ul li a {
@@ -84,14 +82,11 @@ input::-webkit-inner-spin-button {
   color: white;
 }
 
-
-
 /* Accordion */
 
-.sidebar-accordion{
+.sidebar-accordion {
   background-color: #4caf50;
 }
-
 
 #sidebar ul li .accordion {
   font-size: 4mm;
@@ -102,25 +97,22 @@ input::-webkit-inner-spin-button {
   border: hidden;
 }
 
-.accordion-flush .accordion-item{
+.accordion-flush .accordion-item {
   background-color: #4caf50;
   color: white;
 }
 
-.accordion{
+.accordion {
   color: white;
   background-color: #4caf50;
 }
 
-
-.accordion-flush .accordion-item .dropdown-item:hover{
+.accordion-flush .accordion-item .dropdown-item:hover {
   color: black;
   background: #499c38;
 }
 
 /* End */
-
-
 
 /* ---------------------------------------------------
     CONTENT STYLE
@@ -168,28 +160,26 @@ input::-webkit-inner-spin-button {
   justify-content: space-evenly;
 }
 
-.count{
+.count {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 5%;
 }
 
-.borders .card img{
+.borders .card img {
   padding: 10px;
 }
 
-.count .card-text{
-
-		color: #4caf50;
-	
+.count .card-text {
+  color: #4caf50;
 }
 
-@media(max-width: 800px) {
+@media (max-width: 800px) {
   .dashboard {
     grid-template-columns: repeat(1, auto);
   }
-  .borders .card img{
+  .borders .card img {
     width: 50%;
     margin-left: 25%;
   }
@@ -198,7 +188,6 @@ input::-webkit-inner-spin-button {
 /* Appointment */
 
 /* Adoption */
-
 
 /* Upload photo for adoption */
 input[type="text"] {
@@ -246,7 +235,6 @@ input[type="submit"] {
 
 /* Dogs for adoption */
 
-
 h1 {
   text-transform: uppercase;
 }
@@ -259,26 +247,22 @@ h1 {
 .adoption_card {
   padding: 10px;
   margin-bottom: 10px;
-  
 }
 
-.card-button{
+.card-button {
   display: flex;
   align-items: flex-end;
 }
 
-.card-button button{
-margin-right: 10px;
+.card-button button {
+  margin-right: 10px;
 }
 
-.adoption-details{
+.adoption-details {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
-
-
 
 /* Dogs Upload */
 
@@ -334,6 +318,7 @@ input[type="submit"] {
 .Imgprev textarea {
   margin-bottom: 10px;
 }
+
 
 /* ---------------------------------------------------
     MEDIAQUERIES

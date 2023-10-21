@@ -46,7 +46,6 @@ $all_events = $con->query($sql);
 
     <!-- Header -->
     <section class="bg-img ">
-
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner" style="max-width: 970px;">
     <div class="carousel-item active">

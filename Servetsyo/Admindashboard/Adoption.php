@@ -42,7 +42,7 @@ $all_adoption = $con->query($sql);
         while ($row = $all_adoption->fetch_assoc()) {
         ?>
           <div class="card adoption_card" style="width: 20rem;">
-            <img src="DogImage/<?php echo $row["image"]; ?>" title="<?php echo $row['image']; ?>">
+            <img src="./DogImage/?php echo $row["image"]; ?>" title="<?php echo $row['image']; ?>">
             <div class="card-body adoption-details">
               <h2><?php echo $row["description"] ?></h2>
               <p><?php echo $row["dog_info"] ?></p>

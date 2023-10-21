@@ -319,7 +319,9 @@ input[type="submit"] {
   margin-bottom: 10px;
 }
 
-
+.but:hover {
+  background-color: #BC2D3B;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */

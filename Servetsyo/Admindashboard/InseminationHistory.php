@@ -45,6 +45,7 @@ if (isset($_SESSION['admin_id'])) {
               <th>Contact Number</th>
               <th>Kind of Animal</th>
               <th>Location</th>
+              <th>Date Requested</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -58,6 +59,7 @@ if (isset($_SESSION['admin_id'])) {
                 <td><?php echo $row["ContNum"] ?></td>
                 <td><?php echo $row["Animal"] ?></td>
                 <td><?php echo $row["Coordinates"] ?></td>
+                <td><?php echo $row["ReqDate"] ?></td>
                 <td><?php echo $row["status"] ?></td>
               <?php
             }

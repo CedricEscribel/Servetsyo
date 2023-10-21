@@ -68,10 +68,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
       <table class="table" id="table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Contact Number</th>
-            <th>Appointment</th>
-            <th>Pet's Name</th>
+            <th>Service</th>
+            <th>Date Requested</th>
+            <th>Status</th>
+            <th>Scheduled Date</th>
           </tr>
         </thead>
         <tbody>

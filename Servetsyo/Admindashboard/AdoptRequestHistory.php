@@ -43,7 +43,7 @@ $all_adoptionrequest = $con->query($sql);
             <th>Address</th>
             <th>Dog Id</th>
             <th>Interview</th>
-            <th>Date</th>
+            <th>Date Requested</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -58,7 +58,7 @@ $all_adoptionrequest = $con->query($sql);
               <td><?php echo $row["Address"] ?></td>
               <td><?php echo $row["Dog_id"] ?></td>
               <td><?php echo $row["Interview"] ?></td>
-              <td><?php echo $row["Date"] ?></td>
+              <td><?php echo $row["DateReq"] ?></td>
               <td><?php echo $row["status"] ?></td>
 
           <?php

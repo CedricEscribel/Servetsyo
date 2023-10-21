@@ -30,58 +30,11 @@ if (isset($_SESSION['admin_id'])) {
       <?php include 'design/sidebar.php'; ?>
 
       <div class="container">
-        <div class="header">
+        <div class="position-relative">
           <h1>Announcement</h1>
+          <button class="position-absolute top-0 end-0 button" style="width: max-content; border: none; padding: 4px; " onclick="window.location.href='Announcements.php';">Add Announcement</button>
         </div>
         <!-- Body design -->
-
-        <div class="d-flex align-items-center flex-column mb-4 border border-success p-2 mb-2 border-opacity-50">
-          <form enctype="multipart/form-data" method="POST" autocomplete="off">
-
-            <div class="container">
-
-              <div class="col">
-                <div class="row my-2" style="max-width: 85%;">
-                  <label for="Name">Title:</label>
-                  <input type="text" name="EventName" placeholder="Enter title:" required>
-                </div>
-                <div class="row">
-                  <div class="col-5 my-2">
-                    <label for="Date">Date:</label>
-                    <input type="date" id="dt" name="Dates" placeholder="Date" >
-                  </div>
-                  <div class="col-5 my-2">
-                    <label for="Expired date">Expired at:</label>
-                    <input type="date" id="dt2" name="Expired_date" required>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col" style="margin-left: 25%;">
-                <input type="file" id="image-file" name="image" accept="image/*" value="" style="display: none">
-                <div class="image-preview">
-                  <img src="../image/upload.png" alt="Upload Dog Picture" id="image-preview">
-                  <a href="#" id="choose-file-btn">Choose Images</a>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col">
-              <label for="Name">Announcement details:</label>
-              <div>
-                <div>
-                  <textarea rows="4" cols="50" name="Details" placeholder="Announcement details"></textarea>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="button">
-              <input style="color: white;" type="submit" name="submit" value="Post">
-            </div>
-          </form>
-        </div>
         <div class="container mt-5 mb-5">
           <div class="d-flex justify-content-center row">
             <div class="col-md-10">
@@ -101,7 +54,7 @@ if (isset($_SESSION['admin_id'])) {
                   <div class="align-items-center align-content-center  col-md-3 border-left mt-1">
                     <div class="d-flex flex-column mt-4">
                       <form action="../phpconfig/events.php" method="POST" class="btn btn-danger btn-sm">
-                        <button class="border-0 " value="<?= $row['EventId']; ?>" name="delete" type="submit">Delete</button>
+                        <button class="border-0 but " style="background-color: #dc3545;  " value="<?= $row['EventId']; ?>" name="delete" type="submit">Delete</button>
                       </form>
                       <button class="btn btn-outline-success btn-sm mt-2" type="button">Edit</button>
                     </div>

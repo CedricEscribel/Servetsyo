@@ -50,7 +50,7 @@ if (isset($_SESSION['admin_id'])) {
 							<th>Color</th>
 							<th>Age</th>
 							<th>Gender</th>
-							<th>Note</th>
+							<th>Date Requested</th>
 							<th>Status</th>
 						</tr>
 					</thead>
@@ -69,7 +69,7 @@ if (isset($_SESSION['admin_id'])) {
 								<td><?php echo $row["Color"] ?></td>
 								<td><?php echo $row["Age"] ?></td>
 								<td><?php echo $row["Gender"] ?></td>
-								<td><?php echo $row["Message"] ?></td>
+								<td><?php echo $row["Date"] ?></td>
 								<td><?php echo $row["status"] ?></td>
 							</tr>
 						<?php

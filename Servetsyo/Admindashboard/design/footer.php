@@ -26,19 +26,22 @@
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
 
-                $('#' + id + 'hiddenStatus').val('Approve');
+                $('#' + id + 'hiddenStatus').val('Approved');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
                 }, 1500)
+                
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
                     title: 'The request is approved!',
                     showConfirmButton: false,
-                    timer: 1500
                 })
+
+                
+                
             } else if (result.isDenied) {
-                $('#' + id + 'hiddenStatus').val('Decline');
+                $('#' + id + 'hiddenStatus').val('Declined');
                 setTimeout(() => {
                     $('#' + id).trigger('click');
                 }, 1500)
@@ -47,7 +50,6 @@
                     icon: 'error',
                     title: 'The request is declined!',
                     showConfirmButton: false,
-                    timer: 1500
                 })
             }
         })
@@ -80,7 +82,7 @@
                     icon: 'success',
                     title: 'The animal is already posted for adoption.',
                     showConfirmButton: false,
-                    timer: 1500
+ 
                 })
             } else if (result.isDenied) {
                 $('#' + id + 'hiddenStatus').val('Claimed');
@@ -92,7 +94,6 @@
                     icon: 'success',
                     title: 'The animal is already claimed',
                     showConfirmButton: false,
-                    timer: 1500
                 })
             }
         })
@@ -124,7 +125,7 @@
                     icon: 'success',
                     title: 'Successfully updated!',
                     showConfirmButton: false,
-                    timer: 1500
+ 
                 })
             } else if (result.isDenied) {
 
@@ -156,7 +157,7 @@
                     icon: 'success',
                     title: 'Successfully updated!',
                     showConfirmButton: false,
-                    timer: 1500
+ 
                 })
             } else if (result.isDenied) {
 

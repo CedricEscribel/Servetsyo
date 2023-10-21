@@ -12,9 +12,11 @@
      $Interview = $_POST['Interview'];
      $Date = $_POST['Date'];
      $Dog_id = $_POST['Dog_id'];
+     $user_id = $_POST['user_id'];
 
-     $sql = "INSERT INTO adoptionrequest (Fullname,PhoneNum,Address,Email,Interview,Date,Dog_id,status) 
-     VALUES ('$Fullname','$PhoneNum','$Address','$Email','$Interview','$Date','$Dog_id','Pending')";
+
+     $sql = "INSERT INTO adoptionrequest (Fullname,PhoneNum,Address,Email,Interview,Date,Dog_id,status,user_id) 
+     VALUES ('$Fullname','$PhoneNum','$Address','$Email','$Interview','$Date','$Dog_id','Pending','$user_id')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);

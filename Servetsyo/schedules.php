@@ -5,17 +5,6 @@ session_start();
 
 $userid = $_SESSION['user_id'];
 
-$sql = "SELECT user.user_id, user.Fullname, user.Email, insemination.Animal \n"
-
-  . "FROM user \n"
-
-  . "INNER JOIN insemination\n"
-
-  . "ON user.user_id=insemination.user_id\n"
-  . "WHERE user.user_id = '$userid';";
-
-$all_schedule = $con->query($sql);
-
 if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
   include "log/session.php";
@@ -76,19 +65,45 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
         </thead>
         <tbody>
 
+          <?php
+          $i = 1;
+          $rows = mysqli_query($con, "SELECT * FROM insemination where user_id = '$userid'")
+          ?>
+          <?php foreach ($rows as $row) : ?>
+            <tr>
+              <td>Insemination</td>
+              <td><?php echo $row["ReqDate"] ?></td>
+              <td><?php echo $row["status"] ?></td>
+              <td>Scheduled date</td>
+            </tr>
+          <?php endforeach; ?>
 
           <?php
-          while ($row = $all_schedule->fetch_assoc()) {
+          $i = 1;
+          $rows = mysqli_query($con, "SELECT * FROM adoptionrequest where user_id = '$userid'")
           ?>
+          <?php foreach ($rows as $row) : ?>
             <tr>
-              <td><?php echo $row["user_id"] ?></td>
-              <td><?php echo $row["Fullname"] ?></td>
-              <td><?php echo $row["Email"] ?></td>
-              <td><?php echo $row["Animal"] ?></td>
+              <td>Dog adoption</td>
+              <td><?php echo $row["Date"] ?></td>
+              <td><?php echo $row["status"] ?></td>
+              <td>Scheduled date</td>
             </tr>
+          <?php endforeach; ?>
+
           <?php
-          }
+          $i = 1;
+          $rows = mysqli_query($con, "SELECT * FROM schedule where user_id = '$userid'")
           ?>
+          <?php foreach ($rows as $row) : ?>
+            <tr>
+              <td><?php echo $row["Sched"] ?></td>
+              <td><?php echo $row["Date"] ?></td>
+              <td><?php echo $row["status"] ?></td>
+              <td>Scheduled date</td>
+            </tr>
+          <?php endforeach; ?>
+
         </tbody>
       </table>
     </div>

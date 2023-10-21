@@ -28,10 +28,6 @@ if (
         $em = "Full name is required";
         header("Location: ../login.php?error=$em&$data");
         exit;
-    } else if (empty($Password)) {
-        $em = "Password is required";
-        header("Location: ../login.php?error=$em&$data");
-        exit;
     } else if (empty($Address)) {
         $em = "Address is required";
         header("Location: ../login.php?error=$em&$data");

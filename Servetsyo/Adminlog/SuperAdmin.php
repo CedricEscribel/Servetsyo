@@ -6,7 +6,7 @@ if (
     isset($_POST['Username']) &&
     isset($_POST['Password']) &&
     isset($_POST['Position']) &&
-    isset($_POST['User_type']) 
+    isset($_POST['User_type'])
 ) {
 
     $Fullname = $_POST['Fullname'];
@@ -18,27 +18,35 @@ if (
     $UsernameValid = "select * from adminuser where (Username='$Username');";
 
     $res = mysqli_query($con, $UsernameValid);
-    $data = "Fullname=" . $Fullname . "&Username=" . $Username . "&Position=" . $Position . "&User_type=" . $User_type ;
+    $data = "Fullname=" . $Fullname . "&Username=" . $Username . "&Position=" . $Position . "&User_type=" . $User_type;
 
     if (mysqli_num_rows($res) > 0) {
         $row = mysqli_fetch_assoc($res);
         if ($Username == isset($row['Username'])) {
             $em = "Username already exists";
-            header("Location: ../Admindashboard/user.php?error=$em&$data");  
+            header("Location: ../Admindashboard/user.php?error=$em&$data");
             exit;
         }
-
     } else {
-        $Password = password_hash($Password, PASSWORD_DEFAULT);
+        if ($User_type == 'Barangay') {
+            $Password = password_hash($Password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO adminuser (Fullname, Username, Password, Position, User_type) 
+            $sql = "INSERT INTO user (Fullname, Email, Password, RoleType) 
+                            VALUES(?,?,?,?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$Fullname, $Username, $Password, $User_type]);
+            echo '<script>window.location.href = "../Admindashboard/user.php";</script>';
+            exit;
+        } else {
+            $Password = password_hash($Password, PASSWORD_DEFAULT);
+
+            $sql = "INSERT INTO adminuser (Fullname, Username, Password, Position, User_type) 
                     VALUES(?,?,?,?,?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$Fullname, $Username, $Password, $Position, $User_type]);
-
-
-        echo '<script>window.location.href = "../Admindashboard/user.php";</script>';
-        exit;
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$Fullname, $Username, $Password, $Position, $User_type]);
+            echo '<script>window.location.href = "../Admindashboard/user.php";</script>';
+            exit;
+        }
     }
 } else {
     exit;

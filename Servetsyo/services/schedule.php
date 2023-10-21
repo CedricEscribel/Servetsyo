@@ -5,11 +5,13 @@ require_once '../phpconfig/Schedule.php';
 session_start();
 
 if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
-
+  
 include "../log/session.php";
 $user = getUserById($_SESSION['user_id'], $conn);
 
 ?>
+
+<?php if ($_SESSION['RoleType'] == 'user') { ?>
 
 <head>
     <meta charset="utf-8">
@@ -91,7 +93,13 @@ $user = getUserById($_SESSION['user_id'], $conn);
 
 
 
-<?php }else {
+<?php 
+}else {
+  echo '<script>alert("Log in first")</script>';
+  echo '<script>window.location.href = "../login.php";</script>';
+}
+
+}else {
     echo '<script>alert("Log in first")</script>';
     echo '<script>window.location.href = "../login.php";</script>';
 } ?>

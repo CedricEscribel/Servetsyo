@@ -103,7 +103,6 @@
                 <input value="Log in" type="submit" name="Login">
               </div>
               <div class="text sign-up-text">Don't have an account? <label class="labels" for="flip">Sign up now</label></div>
-              <div style="margin-top: 4px; display: flex; justify-content: center;" class="text sign-up-text">Admin Login: 	&#8194; <a href="Admindashboard/login.php" style="color: #95ee29;" class="nav-item nav-link">Login</a></div>
             </div>
           </form>
         </div>
@@ -136,7 +135,7 @@
               <label class="label">Password:</label>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="Password" id="Pass" placeholder="Enter your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                <input type="password" name="Password" id="Pass" placeholder="Enter your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
               </div>
               <div class="show_pass">
                 <input type="checkbox" onclick="Showpass()">&#32;Show Password

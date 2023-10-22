@@ -4,6 +4,7 @@ include "../phpconfig/config.php";
 if (
     isset($_POST['Fullname']) &&
     isset($_POST['Username']) &&
+    isset($_POST['PhoneNum']) &&
     isset($_POST['Password']) &&
     isset($_POST['Position']) &&
     isset($_POST['User_type'])
@@ -11,6 +12,7 @@ if (
 
     $Fullname = $_POST['Fullname'];
     $Username = $_POST['Username'];
+    $PhoneNum = $_POST['PhoneNum'];
     $Password = $_POST['Password'];
     $Position = $_POST['Position'];
     $User_type = $_POST['User_type'];
@@ -18,7 +20,7 @@ if (
     $UsernameValid = "select * from adminuser where (Username='$Username');";
 
     $res = mysqli_query($con, $UsernameValid);
-    $data = "Fullname=" . $Fullname . "&Username=" . $Username . "&Position=" . $Position . "&User_type=" . $User_type;
+    $data = "Fullname=" . $Fullname . "&Username=" . $Username . "&PhoneNum=" . $PhoneNum. "&Position=" . $Position . "&User_type=" . $User_type;
 
     if (mysqli_num_rows($res) > 0) {
         $row = mysqli_fetch_assoc($res);
@@ -34,16 +36,16 @@ if (
             $sql = "INSERT INTO user (Fullname, Email, PhoneNum, Password, RoleType) 
                             VALUES(?,?,?,?,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->execute([$Fullname, $Username, $PhoneNum , $Password, $User_type]);
+            $stmt->execute([$Fullname, $Username, $PhoneNum, $Password, $User_type]);
             echo '<script>window.location.href = "../Admindashboard/user.php";</script>';
             exit;
         } else {
             $Password = password_hash($Password, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO adminuser (Fullname, Username, Password, Position, User_type) 
-                    VALUES(?,?,?,?,?)";
+            $sql = "INSERT INTO adminuser (Fullname, Username, Password, Position, User_type, PhoneNum) 
+                    VALUES(?,?,?,?,?,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->execute([$Fullname, $Username, $Password, $Position, $User_type]);
+            $stmt->execute([$Fullname, $Username, $Password, $Position, $User_type, $PhoneNum]);
             echo '<script>window.location.href = "../Admindashboard/user.php";</script>';
             exit;
         }

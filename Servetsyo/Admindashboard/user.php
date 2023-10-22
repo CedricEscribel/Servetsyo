@@ -1,6 +1,6 @@
 <?php
 
-require_once '../phpconfig/Dogs.php';
+require '../phpconfig/config.php';
 
 session_start();
 
@@ -50,7 +50,13 @@ if (isset($_SESSION['admin_id'])) {
                                 <div class="col">
                                     <div class="form-outline">
                                         <label class="form-label" for="Username">Username/Email:</label>
-                                        <input type="text" name="Username" class="form-control" placeholder="Username/Email" required />
+                                        <input type="email" name="Username" class="form-control" placeholder="Username/Email" required />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="PhoneNum">Contact Number:</label>
+                                        <input type="tel"  placeholder="09123456789" pattern="[0-9]{11}" required maxlength="11" name="PhoneNum" class="form-control" placeholder="Contact Number" />
                                     </div>
                                 </div>
                                 <div class="col">
@@ -66,8 +72,6 @@ if (isset($_SESSION['admin_id'])) {
                                             <input type="checkbox" onclick="Showpass()">&#32;Show Password
                                         </div>
                                     </div>
-
-                                    <!-- TODO: PhoneNum  -->
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">

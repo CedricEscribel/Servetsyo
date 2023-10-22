@@ -129,7 +129,18 @@ if (isset($_SESSION['admin_id'])) {
                 $(document).ready(function() {
                     new DataTable('#table');
                 });
+
+                function Showpass() {
+                    var x = document.getElementById("Pass");
+                    if (x.type === "password") {
+                        x.type = "text";
+                    } else {
+                        x.type = "password";
+                    }
+                }
             </script>
+
+
 
         <?php } else {
         echo '<script>alert("Only for Superadmin")</script>';

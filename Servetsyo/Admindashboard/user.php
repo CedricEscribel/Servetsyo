@@ -34,7 +34,9 @@ if (isset($_SESSION['admin_id'])) {
                 <div class="container">
                     <div class="position-relative">
                         <h1>Create Account</h1>
-                        <button class="position-absolute top-0 end-0 button" style="width: fit-content; border: none; padding: 4px; " onclick="window.location.href='Users.php';">User list</button>
+                        <button class="position-absolute top-0 end-0 button" style="width: fit-content; border: none; padding: 4px; " onclick="window.location.href='Users.php';">
+                            <input style="color: white;" type="submit" value="User list">
+                        </button>
                     </div>
                     <div class="d-flex align-items-center flex-column mb-4 border border-success p-2 mb-2 border-opacity-50">
                         <form class="Upload-dogs" method="POST" action="../Adminlog/SuperAdmin.php" autocomplete="off">
@@ -81,7 +83,7 @@ if (isset($_SESSION['admin_id'])) {
                                         </select>
                                     </div>
                                 </div>
-                                <div class=" button">
+                                <div class="button">
                                     <input style="color: white;" type="submit" name="Sign_up" value="Create account">
                                 </div>
                             </div>
@@ -128,7 +130,7 @@ if (isset($_SESSION['admin_id'])) {
                     new DataTable('#table');
                 });
             </script>
-            
+
         <?php } else {
         echo '<script>alert("Only for Superadmin")</script>';
         echo '<script>window.location.href = "Dashboard.php";</script>';

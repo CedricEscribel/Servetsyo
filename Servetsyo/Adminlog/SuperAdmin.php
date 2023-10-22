@@ -31,10 +31,10 @@ if (
         if ($User_type == 'Barangay') {
             $Password = password_hash($Password, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO user (Fullname, Email, Password, RoleType) 
-                            VALUES(?,?,?,?)";
+            $sql = "INSERT INTO user (Fullname, Email, PhoneNum, Password, RoleType) 
+                            VALUES(?,?,?,?,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->execute([$Fullname, $Username, $Password, $User_type]);
+            $stmt->execute([$Fullname, $Username, $PhoneNum , $Password, $User_type]);
             echo '<script>window.location.href = "../Admindashboard/user.php";</script>';
             exit;
         } else {

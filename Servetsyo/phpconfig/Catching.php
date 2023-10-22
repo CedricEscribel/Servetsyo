@@ -4,13 +4,14 @@
   if(isset($_POST['save']))
   {	 
      $BarangayID = $_POST['BarangayID'];
+     $Fullname = $_POST['Fullname'];
      $ContNum = $_POST['ContNum'];
      $DogCount = $_POST['DogCount'];
      $Notes = $_POST['Notes'];
      
      
-     $sql = "INSERT INTO catch (BarangayID,ContNum,DogCount,Notes,status) 
-     VALUES ('$BarangayID','$ContNum','$DogCount','$Notes','Pending')";
+     $sql = "INSERT INTO catch (BarangayID,Fullname,ContNum,DogCount,Notes,status) 
+     VALUES ('$BarangayID','$Fullname','$ContNum','$DogCount','$Notes','Pending')";
 
     // insert in database 
       $Save = mysqli_query($con, $sql);

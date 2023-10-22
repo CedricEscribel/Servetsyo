@@ -64,6 +64,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
               <option value="Virgen delas Flores">Virgen delas Flores</option>
             </select>
 
+            <select class="Hide" name="Fullname" style="display: none;">
+              <option value="<?= $user['Fullname'] ?>"></option>
+            </select>
+            <label style="margin-top: 10px;" for="Fullname">Full Name:</label>
+            <input type="text"  name="Fullname" disabled placeholder=" <?= $user['Fullname'] ?>">
+
             <select class="Hide" name="ContNum" style="display: none;">
               <option value="<?= $user['PhoneNum'] ?>"></option>
             </select>

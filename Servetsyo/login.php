@@ -87,7 +87,7 @@
               <label class="label">Email address:</label>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="email" name="Emaillog" placeholder="Enter your Email" value="<?php echo (isset($_GET['Emaillog'])) ? $_GET['Emaillog'] : "" ?>" required>
+                <input type="text" name="Emaillog" placeholder="Enter your Email/Username" value="<?php echo (isset($_GET['Emaillog'])) ? $_GET['Emaillog'] : "" ?>" required>
               </div>
 
               <label class="label">Password:</label>

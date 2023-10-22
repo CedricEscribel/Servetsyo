@@ -24,7 +24,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
     </style>
     <!-- Schedule form start -->
-    <?php if ($_SESSION['RoleType'] == 'barangay') { ?>
+    <?php if ($_SESSION['RoleType'] == 'Barangay') { ?>
 
       <div class="Schedule_form">
         <h1>Dog Catching Request</h1>

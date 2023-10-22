@@ -32,7 +32,9 @@ if (isset($_SESSION['admin_id'])) {
       <div class="container">
         <div class="position-relative">
           <h1>Announcement</h1>
-          <button class="position-absolute top-0 end-0 button" style="width: max-content; border: none; padding: 4px; " onclick="window.location.href='Announcements.php';">Add Announcement</button>
+          <button class="position-absolute top-0 end-0 button" style="width: max-content; border: none; padding: 4px; " onclick="window.location.href='Announcements.php';">
+            <input style="color: white;" type="submit" value="Add Announcement">
+          </button>
         </div>
         <!-- Body design -->
         <div class="container mt-5 mb-5">

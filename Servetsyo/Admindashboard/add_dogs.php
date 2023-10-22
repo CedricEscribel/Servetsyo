@@ -29,7 +29,9 @@ if (isset($_SESSION['admin_id'])) {
 
                 <div class="position-relative">
                     <h1>Add Dogs</h1>
-                    <button class="position-absolute top-0 end-0 button" style="width: max-content; border: none; padding: 4px; " onclick="window.location.href='Dog_info.php';">Dogs in pound</button>
+                    <button class="position-absolute top-0 end-0 button" style="width: max-content; border: none; padding: 4px; " onclick="window.location.href='Dog_info.php';">
+                        <input style="color: white;" type="submit" value="Dogs in pound">
+                    </button>
                 </div>
                 <span>
                     <div class="d-flex align-items-center flex-column mb-4 border border-success p-2 mb-2 border-opacity-50">

@@ -35,7 +35,9 @@ if (isset($_SESSION['admin_id'])) {
 
         <div class="position-relative">
           <h1>Dogs in pound</h1>
-          <button class="position-absolute top-0 end-0 button" style="width: max-content; border: none; padding: 4px; " onclick="window.location.href='add_dogs.php';">Add dogs</button>
+          <button class="position-absolute top-0 end-0 button" style="width: max-content; border: none; padding: 4px; " onclick="window.location.href='add_dogs.php';">
+            <input style="color: white;" type="submit" value="Add dogs">
+          </button>
         </div>
 
         <section class="container tables">

@@ -49,8 +49,8 @@ if (isset($_SESSION['admin_id'])) {
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
-                                        <label class="form-label" for="Username">Username:</label>
-                                        <input type="text" name="Username" class="form-control" placeholder="Username" required />
+                                        <label class="form-label" for="Username">Username/Email:</label>
+                                        <input type="text" name="Username" class="form-control" placeholder="Username/Email" required />
                                     </div>
                                 </div>
                                 <div class="col">

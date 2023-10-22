@@ -83,7 +83,7 @@ if (isset($_SESSION['admin_id'])) {
                                         </select>
                                     </div>
                                 </div>
-                                <div class="button">
+                                <div class="button" style="max-width: 90%;">
                                     <input style="color: white;" type="submit" name="Sign_up" value="Create account">
                                 </div>
                             </div>

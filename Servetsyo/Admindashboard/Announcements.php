@@ -70,13 +70,13 @@ if (isset($_SESSION['admin_id'])) {
                             <label for="Name">Announcement details:</label>
                             <div>
                                 <div>
-                                    <textarea rows="4" cols="50" name="Details" placeholder="Announcement details"></textarea>
+                                    <textarea rows="4" cols="45" name="Details" placeholder="Announcement details"></textarea>
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="button">
+                        <div class="button" style="max-width: 73%;">
                             <input style="color: white;" type="submit" name="submit" value="Post">
                         </div>
                     </form>

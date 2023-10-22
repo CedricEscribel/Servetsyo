@@ -123,7 +123,7 @@ if (isset($_SESSION['admin_id'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="button">
+                            <div class="button" style="max-width: 73%;">
                                 <input style="color: white;" type="submit" name="submit" value="Add">
                             </div>
 

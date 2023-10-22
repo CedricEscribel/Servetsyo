@@ -47,7 +47,7 @@ if (
                exit;
             }
          } else {
-            $em = "Incorrect Username or Password 2";
+            $em = "Incorrect Username or Password";
             header("Location: ../Admindashboard/login.php?error=$em&$data");
             exit;
          }

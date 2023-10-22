@@ -50,7 +50,7 @@ if (isset($_SESSION['admin_id'])) {
                                         <input type="date" id="dt" name="Dates" placeholder="Date">
                                     </div>
                                     <div class="col-5 my-2">
-                                        <label for="Expired date">Expired at:</label>
+                                        <label for="Expired date">Expires at:</label>
                                         <input type="date" id="dt2" name="Expired_date" required>
                                     </div>
                                 </div>

@@ -27,14 +27,12 @@ if (
 
         $em = "Incorrect Captcha";
         header("Location: ../login.php?errorsign=$em");
-        exit;
-
+        
     } else if (mysqli_num_rows($res) > 0) {
         $row = mysqli_fetch_assoc($res);
         if ($Email == isset($row['Email'])) {
             $em = "email already exists";
             header("Location: ../login.php?errorsign=$em");
-            exit;
         }
     } else {
 
@@ -45,7 +43,6 @@ if (
                     VALUES(?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$Fullname, $Email, $Password, $Address, $PhoneNum, $RoleType]);
-
         header("Location: ../login.php?successsign=Your account has been created successfully");
         exit;
     }

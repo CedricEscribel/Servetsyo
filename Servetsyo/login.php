@@ -28,10 +28,10 @@
     input.captcha {
       pointer-events: none;
       letter-spacing: 12px;
-      text-decoration:underline line-through;
+      text-decoration: underline line-through;
       text-decoration-style: double;
       color-scheme: dark;
-      text-decoration-thickness: auto; 
+      text-decoration-thickness: auto;
     }
   </style>
 
@@ -139,8 +139,10 @@
               <label class="label">Password:</label>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="Password" id="Pass" placeholder="Enter your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                <input type="password" name="Password" id="Pass" placeholder="Enter your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must have at least eight characters and at least one number, an uppercase letter, a lowercase letter, and a special character" required>
               </div>
+              <label id="valid" style="color:red; font-size:13px; margin-bottom: 10px;" class="label"> </label>
+
               <div class="show_pass">
                 <input type="checkbox" onclick="Showpass()">&#32;Show Password
               </div>
@@ -173,7 +175,7 @@
 
 
               <div class="button input-box">
-                <input type="submit" value="Sign Up" name="Sign_up">
+                <input type="submit" value="Sign Up" onclick="Passvalid()" name="Sign_up">
               </div>
               <div class="text sign-up-text">Already have an account? <label class="labels" for="flip">Log in now</label></div>
             </div>
@@ -212,4 +214,16 @@
     $('#captcha').bind("cut copy paste", function(e) {
       e.preventDefault();
     });
+
+
+    function Passvalid() {
+
+      var x = document.getElementById("Pass").title;
+      document.getElementById("valid").innerHTML = x;
+
+    }
+
+    setTimeout(function() {
+      $('#valid').fadeOut('slow');
+    }, 7000);
   </script>

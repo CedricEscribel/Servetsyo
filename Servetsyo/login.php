@@ -28,7 +28,10 @@
     input.captcha {
       pointer-events: none;
       letter-spacing: 12px;
-      text-decoration: line-through;
+      text-decoration:underline line-through;
+      text-decoration-style: double;
+      color-scheme: dark;
+      text-decoration-thickness: auto; 
     }
   </style>
 

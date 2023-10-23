@@ -16,36 +16,29 @@ if (
     $Address = $_POST['Address'];
     $PhoneNum = $_POST['PhoneNum'];
     $RoleType = $_POST['RoleType'];
+    $captcha = $_POST["captcha"];
+    $confirmcaptcha = $_POST["confirmcaptcha"];
 
     $emailValid = "select * from user where (Email='$Email');";
 
     $res = mysqli_query($con, $emailValid);
-    $data = "Fullname=" . $Fullname . "&Email=" . $Email . "&Address=" . $Address . "&PhoneNum=" . $PhoneNum . "&RoleType=" . $RoleType;
 
+    if ($captcha != $confirmcaptcha) {
 
-
-    if (empty($Fullname)) {
-        $em = "Full name is required";
-        header("Location: ../login.php?error=$em&$data");
-        exit;
-    } else if (empty($Address)) {
-        $em = "Address is required";
-        header("Location: ../login.php?error=$em&$data");
-        exit;
-    } else if (empty($PhoneNum)) {
-        $em = "Phone Number Number is required";
-        header("Location: ../login.php?error=$em&$data");
+        $em = "Incorrect Captcha";
+        header("Location: ../login.php?errorsign=$em");
         exit;
 
     } else if (mysqli_num_rows($res) > 0) {
         $row = mysqli_fetch_assoc($res);
         if ($Email == isset($row['Email'])) {
             $em = "email already exists";
-            header("Location: ../login.php?error=$em&$data");  
+            header("Location: ../login.php?errorsign=$em");
             exit;
         }
-
     } else {
+
+
         $Password = password_hash($Password, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO user (Fullname, Email, Password, Address, PhoneNum, RoleType) 
@@ -53,7 +46,7 @@ if (
         $stmt = $conn->prepare($sql);
         $stmt->execute([$Fullname, $Email, $Password, $Address, $PhoneNum, $RoleType]);
 
-        header("Location: ../login.php?success=Your account has been created successfully");
+        header("Location: ../login.php?successsign=Your account has been created successfully");
         exit;
     }
 } else {

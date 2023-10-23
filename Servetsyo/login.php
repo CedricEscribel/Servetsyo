@@ -24,6 +24,12 @@
       padding-left: 5px;
       color: greenyellow;
     }
+
+    input.captcha {
+      pointer-events: none;
+      letter-spacing: 12px;
+      text-decoration: line-through;
+    }
   </style>
 
 </head>
@@ -77,9 +83,9 @@
                 <?php echo $_GET['error']; ?>
               </div>
             <?php } ?>
-            <?php if (isset($_GET['success'])) { ?>
+            <?php if (isset($_GET['successsign'])) { ?>
               <div class="alert alert-success" role="alert">
-                <?php echo $_GET['success']; ?>
+                <?php echo $_GET['successsign']; ?>
               </div>
             <?php } ?>
 
@@ -115,14 +121,9 @@
         <div class="signup-form">
           <form method="post" action="log/account.php" autocomplete="off">
             <div class="title">Sign up</div>
-            <?php if (isset($_GET['error'])) { ?>
+            <?php if (isset($_GET['errorsign'])) { ?>
               <div class="alert alert-danger" role="alert">
-                <?php echo $_GET['error']; ?>
-              </div>
-            <?php } ?>
-            <?php if (isset($_GET['success'])) { ?>
-              <div class="alert alert-success" role="alert">
-                <?php echo $_GET['success']; ?>
+                <?php echo $_GET['errorsign']; ?>
               </div>
             <?php } ?>
             <div class="input-boxes">
@@ -151,12 +152,23 @@
                 <i class="fas fa-user"></i>
                 <input type="text" name="Address" autocapitalize="words" placeholder="Enter your Address" required value="<?php echo (isset($_GET['Address'])) ? $_GET['Address'] : "" ?>">
               </div>
+
               <label class="label">Contact Number:</label>
-              <div class="input-box">
+              <div class="input-box mb-4">
                 <i class="fas fa-lock"></i>
                 <input type="tel" name="PhoneNum" placeholder="09123456789" pattern="[0-9]{11}" maxlength="11" required value="<?php echo (isset($_GET['PhoneNum'])) ? $_GET['PhoneNum'] : "" ?>">
                 <span class="validity"></span>
               </div>
+
+              <div class="mb-3" style="margin-left: 28%;">
+                <input type="text" class="captcha" id="captcha" name="captcha" value="<?php echo substr(uniqid(), 5); ?>">
+              </div>
+
+              <div class="input-box">
+                <input type="text" name="confirmcaptcha" placeholder="Enter Captcha" maxlength="8" value="">
+              </div>
+
+
               <div class="button input-box">
                 <input type="submit" value="Sign Up" name="Sign_up">
               </div>
@@ -193,4 +205,8 @@
         x.type = "password";
       }
     }
+
+    $('#captcha').bind("cut copy paste", function(e) {
+      e.preventDefault();
+    });
   </script>

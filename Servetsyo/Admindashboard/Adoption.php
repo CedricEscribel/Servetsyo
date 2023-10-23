@@ -47,6 +47,7 @@ if (isset($_SESSION['admin_id'])) {
                 <h2><?php echo $row["description"] ?></h2>
                 <p><?php echo $row["dog_info"] ?></p>
               </div>
+              
               <ul class="adoption-details" style="  margin-left: -15%;">
                 <p><?php echo $row["gender"] ?></p>
                 <p><?php echo $row["age"] ?> Months old</p>

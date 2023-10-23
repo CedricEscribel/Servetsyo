@@ -1,27 +1,29 @@
-<?php 
+<?php
 
 require_once 'phpconfig/events.php';
 
 $sql = "SELECT * FROM events";
 $all_events = $con->query($sql);
 
-
+$limit = "SELECT * FROM events LIMIT 2;";
+$recent_events = $con->query($limit);
 ?>
-    <head>
+
+<head>
     <meta charset="utf-8">
     <title>Events </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <?php include 'header.php';?>
-    </head>
+    <?php include 'header.php'; ?>
+</head>
 
-    <body>
+<body>
     <!-- Navbar Start -->
     <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-    
-    <?php include 'navlogo.php';?>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+
+        <?php include 'navlogo.php'; ?>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -64,28 +66,28 @@ $all_events = $con->query($sql);
                 </div>
 
                 <?php
-            while ($row = $all_events->fetch_assoc()) {
-            ?>                          
-                    <div class="blog-item">
+                while ($row = $all_events->fetch_assoc()) {
+                ?>
+                    <div class="blog-item mb-5">
                         <div class="row g-0 bg-light overflow-hidden">
                             <div class="col-12 col-sm-5 h-100">
-                            <img src="./Admindashboard/EventsImg/<?php echo $row["image"]; ?>" width = 200 title="<?php echo $row['image']; ?>">
+                                <img src="./Admindashboard/EventsImg/<?php echo $row["image"]; ?>" width=200 title="<?php echo $row['image']; ?>">
                             </div>
                             <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
-                                <div class="p-3">
+                                <div class="p-4">
                                     <div class="d-flex mb-2">
                                         <small><i class="bi bi-calendar-date me-2"></i><?php echo $row["Dates"] ?></small>
-                                    </div>                 
+                                    </div>
                                     <h5 class="text-uppercase mb-1"><?php echo $row["EventName"] ?></h5>
                                     <p class="fw-lighter lh-lg"><?php echo $row["Details"] ?></p>
                                 </div>
                             </div>
                         </div>
-                    </div>  
-                    <br>                        
-                <?php }?>
-   
-           
+                    </div>
+                    <br>
+                <?php } ?>
+
+
             </div>
             <!-- Events list End -->
 
@@ -95,36 +97,36 @@ $all_events = $con->query($sql);
                 <!-- Recent Post Start -->
                 <div class="mb-5">
                     <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Recent Post</h3>
-                    <div class="d-flex overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/Neuter.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                        <a href="" class="h5 d-flex align-items-center bg-light px-3 mb-0">13th Low Cost Kapon in 𝐁𝐚𝐥𝐢𝐮𝐚𝐠, 𝐁𝐮𝐥𝐚𝐜𝐚n</a>
-                    </div>
-                    <div class="d-flex overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/vaccination.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                        <a href=""  Class="h5 d-flex align-items-center bg-light px-3 mb-0">Kasalukuyang nagsasagawa ng Pet Vaccination </a>
-                    </div>
-                   
+                    <?php
+                    while ($row = $recent_events->fetch_assoc()) {
+                    ?>
+                        <div class="d-flex overflow-hidden mb-3">
+                            <img class="img-fluid" src="./Admindashboard/EventsImg/<?php echo $row["image"]; ?>" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 d-flex align-items-center bg-light px-3 mb-0"><?php echo $row["EventName"] ?></a>
+                        </div>
+                    <?php } ?>
+
                 </div>
                 <!-- Recent Post End -->
 
                 <!-- The Modal -->
                 <div class="modal fade" id="myModal" aria-hidden="true" aria-labelledby="myModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="myModal">Modal 1</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="myModal">Modal 1</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>April 20, 2023 - PET VACCINATION 🐶🐱🐾 <br>
+                                    Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag. <br> <br>
+                                    Para sa mga nais mabakunahan ng Anti-Rabies vaccine ang kanilang mga alagang aso at pusa, magsadya lamang po sa PawPark Gl. ng SM Baliwag, 10:00am hanggang 5:00pm.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                    <p>April 20, 2023 - PET VACCINATION 🐶🐱🐾 <br>
-                        Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag. <br> <br>
-                        Para sa mga nais mabakunahan ng Anti-Rabies vaccine ang kanilang mga alagang aso at pusa, magsadya lamang po sa PawPark Gl. ng SM Baliwag, 10:00am hanggang 5:00pm.</p>         
-                    </div>
-                    </div>
-                      </div>
-                 </div>
+                </div>
                 <!-- Modal end -->
-                
+
                 <!-- Image Start -->
                 <div class="mb-5">
                     <img src="img/Neuter.jpg" alt="" class="img-fluid rounded">
@@ -139,7 +141,7 @@ $all_events = $con->query($sql);
 
 
     <!-- Footer Start -->
-    <?php include 'footer.php';?>
+    <?php include 'footer.php'; ?>
     <!-- Footer End -->
 
 </body>

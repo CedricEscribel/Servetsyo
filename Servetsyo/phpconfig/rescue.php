@@ -8,7 +8,6 @@ if (isset($_POST['save'])) {
   $animal = $_POST['animal'];
   $Details = $_POST['Details'];
   $Coordinates = $_POST['Coordinates'];
-  $status = $_POST['status'];
 
 
 

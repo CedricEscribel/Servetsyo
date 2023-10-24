@@ -1,6 +1,6 @@
 <?php
 
-require_once '../phpconfig/Schedule.php';
+require_once '../phpconfig/config.php';
 
 session_start();
 
@@ -113,3 +113,5 @@ if (isset($_SESSION['admin_id'])) {
 	<script>
 		document.getElementById('dt').min = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
 	</script>
+
+

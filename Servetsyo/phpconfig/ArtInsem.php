@@ -9,7 +9,6 @@ if (isset($_POST['save'])) {
   $Coordinates = $_POST['Coordinates'];
   $Details = $_POST['Details'];
   $user_id = $_POST['user_id'];
-  $status = $_POST['status'];
 
   $sql = "INSERT INTO insemination (Name,ContNum,Animal,Coordinates,Details,user_id,status) 
      VALUES ('$Name','$ContNum','$Animal','$Coordinates','$Details','$user_id','Pending')";

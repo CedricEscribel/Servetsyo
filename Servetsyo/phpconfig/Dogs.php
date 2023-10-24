@@ -15,7 +15,6 @@ if (isset($_POST["submit"])) {
     "<script> alert('Image does not exist'); 
     document.location.href = '../Admindashboard/Dog_info.php';
     </script>";
-    
   } else {
     $fileName = $_FILES["image"]["name"];
     $fileSize = $_FILES["image"]["size"];
@@ -65,4 +64,37 @@ if (isset($_POST['btnHideSubmit'])) {
   window.location.href = "../Admindashboard/Dog_info.php";
   </script>';
   }
+}
+
+
+
+if (isset($_POST['edit'])) {
+  echo '<script type="text/javascript">
+  window.location.href = "../Admindashboard/editdog.php";
+  </script>';
+}
+
+if (isset($_POST['cancel'])) {
+  echo '<script type="text/javascript">
+  window.location.href = "../Admindashboard/Adoption.php";
+  </script>';
+}
+
+if (isset($_POST['Save'])) {
+
+  $id = $_POST['id'];
+  $description = $_POST['description'];
+  $dog_info = $_POST['dog_info'];
+
+
+  $sql = "UPDATE dogs_info SET description = '$description', dog_info = '$dog_info' WHERE dog_id  = $id ";
+  $Save = mysqli_query($con, $sql);
+
+  echo
+  "
+    <script>
+      alert('$description saved Successfully');
+      document.location.href = '../Admindashboard/Adoption.php';
+    </script>
+    ";
 }

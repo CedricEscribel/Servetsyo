@@ -58,11 +58,11 @@ require_once 'phpconfig/config.php';
                   <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
                     <img src="Admindashboard/DogImage/<?php echo $row["image"]; ?>" width=200 title="<?php echo $row['image']; ?>">
                   </div>
-                  <div class="card-body">
-                    <a href="" class="text-reset">
+                  <div class="text-body-secondary mt-3">
+                    <a class="text-reset text-decoration-none">
                       <h5 class="card-title mb-3"><?php echo $row["description"] ?></h5>
                     </a>
-                    <a href="" class="text-reset">
+                    <a class="text-reset text-decoration-none">
                       <p><?php echo $row["gender"] ?></p>
                       <p><?php echo $row["age"] ?> Months old</p>
                     </a>

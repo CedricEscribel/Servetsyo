@@ -47,7 +47,7 @@ if (isset($_SESSION['admin_id'])) {
                 <h2><?php echo $row["description"] ?></h2>
                 <p><?php echo $row["dog_info"] ?></p>
               </div>
-              
+
               <ul class="adoption-details" style="  margin-left: -15%;">
                 <p><?php echo $row["gender"] ?></p>
                 <p><?php echo $row["age"] ?> Months old</p>
@@ -56,7 +56,11 @@ if (isset($_SESSION['admin_id'])) {
               <div class="card-body card-button">
                 <button class="btn btn-success " value="<?php echo $row["dog_id"] ?>" id="Adopted">Adopted</button>
                 <button value="<?php echo $row["dog_id"] ?>" id="Euthanized" class="btn btn-primary">Euthanized</button>
-                <button value="<?php echo $row["dog_id"] ?>" id="Edit" class="btn btn-warning">Edit</button>
+                <form action="../phpconfig/Dogs.php" method="POST">
+                  <input type="hidden" name="dogid"  value="<?php echo $row['dog_id'] ?>">
+                  <button name="edit"  id="Edit" class="btn btn-warning">Edit</button>
+                </form>
+
               </div>
 
               <form action="jquery/adoption_update.php" method="post" hidden>

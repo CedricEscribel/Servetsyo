@@ -76,7 +76,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
               <td>Insemination</td>
               <td><?php echo $row["ReqDate"] ?></td>
               <td><?php echo $row["status"] ?></td>
-              <td>Scheduled date</td>
+              <td><?php echo $row["SetDate"] ?></td>
             </tr>
           <?php endforeach; ?>
 
@@ -89,7 +89,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
               <td>Dog adoption</td>
               <td><?php echo $row["Date"] ?></td>
               <td><?php echo $row["status"] ?></td>
-              <td>Scheduled date</td>
+              <td><?php echo $row["SetDate"] ?></td>
             </tr>
           <?php endforeach; ?>
 
@@ -102,7 +102,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
               <td><?php echo $row["Sched"] ?></td>
               <td><?php echo $row["Date"] ?></td>
               <td><?php echo $row["status"] ?></td>
-              <td>Scheduled date</td>
+              <td><?php echo $row["SetDate"] ?></td>
             </tr>
           <?php endforeach; ?>
 

@@ -51,6 +51,7 @@ if (isset($_SESSION['admin_id'])) {
 							<th>Gender</th>
 							<th>Note</th>
 							<th>Date Requested</th>
+							<th>Set Date</th>
 							<th>Status</th>
 						</tr>
 					</thead>
@@ -71,6 +72,13 @@ if (isset($_SESSION['admin_id'])) {
 								<td><?php echo $row["Gender"] ?></td>
 								<td><?php echo $row["Message"] ?></td>
 								<td><?php echo $row["Date"] ?></td>
+								<td>
+									<form action="../phpconfig/Schedule.php" method="POST">
+										<input type="date" id="dt" name="SetDate" value="<?php echo $row['SetDate'] ?>">
+										<input type="hidden" name="id" id="id" value="<?php echo $row['Schedule_id'] ?>">
+										<button name="setdate"> <i class="bi bi-calendar2-check"></i></button>
+									</form>
+								</td>
 								<td><label for="approval"></label>
 									<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["Schedule_id"] ?>" id="btnStatus">
 										<?php echo $row["status"] ?>
@@ -79,7 +87,6 @@ if (isset($_SESSION['admin_id'])) {
 
 
 							<form action="../phpconfig/Schedule.php" method="post" hidden>
-
 								<input type="hidden" name="id" id="id" value="<?php echo $row['Schedule_id'] ?>">
 								<input type="hidden" name="hiddenStatus" id="<?php echo $row["Schedule_id"] ?>hiddenStatus" value="">
 								<button type="submit" id="<?php echo $row["Schedule_id"] ?>" name="btnHideSubmit" hidden></button>
@@ -102,3 +109,7 @@ if (isset($_SESSION['admin_id'])) {
 	echo '<script>alert("Log in first")</script>';
 	echo '<script>window.location.href = "login.php";</script>';
 } ?>
+
+	<script>
+		document.getElementById('dt').min = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+	</script>

@@ -54,7 +54,9 @@
         <a href="Events.php" class="nav-item nav-link">Events</a>
         <div class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
-          <?php include 'AccountDrop.php'; ?>
+          <div class="dropdown-menu m-0">
+            <a href="#" class="dropdown-item">Login</a>
+          </div>
         </div>
       </div>
     </div>

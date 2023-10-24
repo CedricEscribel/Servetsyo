@@ -92,7 +92,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
                                                         <h6 class="mb-0">Phone</h6>
                                                     </div>
                                                     <div class="col-sm-9 text-secondary">
-                                                        <input type="text" name="PhoneNum" class="form-control" value="<?= $user['PhoneNum'] ?>">
+                                                        <input type="tel"  name="PhoneNum" class="form-control" pattern="[0-9]{11}" maxlength="11" value="<?= $user['PhoneNum'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
@@ -100,7 +100,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
                                                         <h6 class="mb-0">Address</h6>
                                                     </div>
                                                     <div class="col-sm-9 text-secondary">
-                                                        <input type="text" name="Address" class="form-control" value="<?= $user['Address'] ?>">
+                                                        <input type="text"  name="Address" class="form-control" value="<?= $user['Address'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="row">

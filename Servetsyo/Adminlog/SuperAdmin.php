@@ -37,15 +37,17 @@ if (
                             VALUES(?,?,?,?,?)";
             $stmt = $conn->prepare($sql);
             $stmt->execute([$Fullname, $Username, $PhoneNum, $Password, $User_type]);
+            echo '<script>alert("Barangay account created")</script>';
             echo '<script>window.location.href = "../Admindashboard/user.php";</script>';
             exit;
         } else {
             $Password = password_hash($Password, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO adminuser (Fullname, Username, Password, Position, User_type, PhoneNum) 
-                    VALUES(?,?,?,?,?,?)";
+            $sql = "INSERT INTO adminuser (Fullname, Username, Password, Position, User_type) 
+                    VALUES(?,?,?,?,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->execute([$Fullname, $Username, $Password, $Position, $User_type, $PhoneNum]);
+            $stmt->execute([$Fullname, $Username, $Password, $Position, $User_type]);
+            echo '<script>alert("Admin user created")</script>';
             echo '<script>window.location.href = "../Admindashboard/user.php";</script>';
             exit;
         }

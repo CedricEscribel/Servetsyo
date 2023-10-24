@@ -26,7 +26,6 @@ if (isset($_POST['save'])) {
         alert("Successfully Submitted");
         window.location.href = "../index.php";
         </script>';
-    die;
   }
 }
 
@@ -42,10 +41,23 @@ if (isset($_POST['btnHideSubmit'])) {
         window.location.href = "../Admindashboard/Appointment.php";
         </script>';
     die;
-  }else{
+  } else {
     echo '<script type="text/javascript">
         window.location.href = "../Admindashboard/Appointment.php";
         </script>';
   }
-  
+}
+
+
+if (isset($_POST['setdate'])) {
+  $id = $_POST['id'];
+  $SetDate = $_POST['SetDate'];
+
+  $sql = "UPDATE schedule SET SetDate =  '$SetDate' WHERE Schedule_id = $id ";
+  $Save = mysqli_query($con, $sql);
+  if ($Save) {
+    echo '<script type="text/javascript">
+        window.location.href = "../Admindashboard/Appointment.php";
+        </script>';
+  }
 }

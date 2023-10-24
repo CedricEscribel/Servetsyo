@@ -58,7 +58,7 @@ if (isset($_SESSION['admin_id'])) {
                 <button value="<?php echo $row["dog_id"] ?>" id="Euthanized" class="btn btn-primary">Euthanized</button>
                 <form action="../phpconfig/Dogs.php" method="POST">
                   <input type="hidden" name="dogid"  value="<?php echo $row['dog_id'] ?>">
-                  <button name="edit"  id="Edit" class="btn btn-warning">Edit</button>
+                  <button name="edit"  id="<?php echo $row["dog_id"] ?>" class="btn btn-warning">Edit</button>
                 </form>
 
               </div>
@@ -68,7 +68,6 @@ if (isset($_SESSION['admin_id'])) {
                 <input type="hidden" name="UpdateStatus" id="<?php echo $row["dog_id"] ?>UpdateStatus" value="">
                 <button type="submit" id="<?php echo $row["dog_id"] ?>" name="Update" hidden></button>
               </form>
-
 
             </div>
           <?php } ?>

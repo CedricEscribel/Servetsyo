@@ -46,16 +46,6 @@ if (isset($_POST["submit"])) {
 }
 
 
-// if (isset($_POST['update'])) {
-//   $id = $_POST['id'];
-//   $name = $_POST['name'];
-//   $address = $_POST['address'];
-
-//   mysqli_query($db, "UPDATE info SET name='$name', address='$address' WHERE id=$id");
-//   $_SESSION['message'] = "Address updated!"; 
-//   header('location: index.php');
-// }
-
 if (isset($_POST['delete'])) {
   $id = mysqli_real_escape_string($con, $_POST['delete']);
 
@@ -84,6 +74,25 @@ if (isset($_POST['delete'])) {
 }
 
 
+if (isset($_POST['Edit'])) {
+
+  $id = $_POST['id'];
+  $EventName = $_POST['EventName'];
+  $date = $_POST['date'];
+  $Expdate = $_POST['Expdate'];
+  $Details = $_POST['Details'];
+
+  $sql = "UPDATE events SET EventName = '$EventName', Dates = '$date', Expired_date = '$Expdate', Details = '$Details' WHERE EventId  = $id ";
+  $Save = mysqli_query($con, $sql);
+
+  echo
+  "
+    <script>
+      alert('$EventName edit saved Successfully');
+      document.location.href = '../Admindashboard/Announcement.php';
+    </script>
+    ";
+}
 
 
 $query = mysqli_query($con, "SELECT * FROM `events`");

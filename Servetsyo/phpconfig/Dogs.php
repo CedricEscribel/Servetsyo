@@ -69,6 +69,7 @@ if (isset($_POST['btnHideSubmit'])) {
 
 
 if (isset($_POST['edit'])) {
+
   echo '<script type="text/javascript">
   window.location.href = "../Admindashboard/editdog.php";
   </script>';

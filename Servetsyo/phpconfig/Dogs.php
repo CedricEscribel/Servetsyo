@@ -67,18 +67,16 @@ if (isset($_POST['btnHideSubmit'])) {
 }
 
 
-
 if (isset($_POST['edit'])) {
-
   echo '<script type="text/javascript">
-  window.location.href = "../Admindashboard/editdog.php";
-  </script>';
+window.location.href = "../Admindashboard/editdog.php";
+</script>';
 }
 
 if (isset($_POST['cancel'])) {
   echo '<script type="text/javascript">
-  window.location.href = "../Admindashboard/Adoption.php";
-  </script>';
+window.location.href = "../Admindashboard/Adoption.php";
+</script>';
 }
 
 if (isset($_POST['Save'])) {
@@ -93,9 +91,9 @@ if (isset($_POST['Save'])) {
 
   echo
   "
-    <script>
-      alert('$description saved Successfully');
-      document.location.href = '../Admindashboard/Adoption.php';
-    </script>
-    ";
+  <script>
+    alert('$description saved Successfully');
+    document.location.href = '../Admindashboard/Adoption.php';
+  </script>
+  ";
 }

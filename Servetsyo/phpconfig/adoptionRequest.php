@@ -56,7 +56,7 @@ if (isset($_POST['setdate'])) {
   $Save = mysqli_query($con, $sql);
   if ($Save) {
     echo '<script type="text/javascript">
-          window.location.href = "../Admindashboard/Appointment.php";
+          window.location.href = "../Admindashboard/Adoption_Request.php";
           </script>';
   }
 }

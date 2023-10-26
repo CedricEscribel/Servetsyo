@@ -89,27 +89,10 @@ $recent_events = $con->query($limit);
                 </div>
                 <!-- Recent Post End -->
 
-                <!-- The Modal -->
-                <div class="modal fade" id="myModal" aria-hidden="true" aria-labelledby="myModal" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="myModal">Modal 1</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>April 20, 2023 - PET VACCINATION 🐶🐱🐾 <br>
-                                    Kasalukuyang nagsasagawa ng Pet Vaccination ang Baliwag Veterinary Services Division ng City Agriculture Office sa pakikipag-ugnayan ng SM Baliwag. <br> <br>
-                                    Para sa mga nais mabakunahan ng Anti-Rabies vaccine ang kanilang mga alagang aso at pusa, magsadya lamang po sa PawPark Gl. ng SM Baliwag, 10:00am hanggang 5:00pm.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Modal end -->
 
                 <!-- Image Start -->
                 <div class="mb-5">
-                    <img src="img/Neuter.jpg" alt="" class="img-fluid rounded">
+                    <img  class="img-fluid rounded">
                 </div>
                 <!-- Image End -->
 

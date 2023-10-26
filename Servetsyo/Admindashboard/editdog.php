@@ -56,7 +56,7 @@ if (isset($_SESSION['admin_id'])) {
                                 <div class="card-body card-button position-absolute bottom-0 start-50 translate-middle-x">
                                     <input type="hidden" name="id" id="id" value="<?php echo $row['dog_id'] ?>">
                                     <button value="<?php echo $row["dog_id"] ?>" name="Save" class="btn btn-success">Save</button>
-                                    <button value="<?php echo $row["dog_id"] ?>" name="Cancel" class="btn btn-danger">cancel</button>
+                                    <button value="<?php echo $row["dog_id"] ?>" name="cancel" class="btn btn-danger">Cancel</button>
                                 </div>
                             </form>
 

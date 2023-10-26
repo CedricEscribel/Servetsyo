@@ -89,7 +89,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
       </div>
 
     <?php } else {
-      echo '<script>alert("Barangay personel only")</script>';
+      echo '<script>alert("Barangay personnel only")</script>';
       echo '<script>window.location.href = "../service.php";</script>';
     } ?>
 

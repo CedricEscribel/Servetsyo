@@ -16,6 +16,8 @@ $user = getUserById($_SESSION['user_id'], $conn);
 <head>
     <meta charset="utf-8">
     <title>Schedule </title>
+    <link rel="icon" href="../img/icon.png" type="image/x-icon">
+
     <?php include "header.php"; ?>
     <link rel="stylesheet" href="../css/Schedule.css">
     <!-- Navbar End -->

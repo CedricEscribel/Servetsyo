@@ -16,6 +16,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
     <head>
       <meta charset="utf-8">
       <title>Artificial Insemination </title>
+      <link rel="icon" href="../img/icon.png" type="image/x-icon">
+
       <?php include "header.php"; ?>
       <link rel="stylesheet" href="../css/Schedule.css">
       <link rel="stylesheet" href="../scss/dropdown.css">

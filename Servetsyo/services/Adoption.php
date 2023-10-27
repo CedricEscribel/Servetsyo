@@ -18,6 +18,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
         <head>
             <meta charset="utf-8">
             <title>Adoption </title>
+            <link rel="icon" href="../img/icon.png" type="image/x-icon">
+
 
             <?php include "header.php"; ?>
             <!-- Navbar End -->

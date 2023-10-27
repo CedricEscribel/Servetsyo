@@ -1,6 +1,8 @@
 <head>
   <meta charset="utf-8">
   <title>Login </title>
+  <link rel="icon" href="img/icon.png" type="image/x-icon">
+
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <link rel="stylesheet" href="css/Login.css">
   <?php include 'header.php'; ?>

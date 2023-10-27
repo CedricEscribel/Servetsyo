@@ -9,6 +9,8 @@ require_once 'phpconfig/config.php';
 <head>
   <meta charset="utf-8">
   <title>Dogs For Adoption </title>
+  <link rel="icon" href="img/icon.png" type="image/x-icon">
+
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <?php include 'header.php'; ?>

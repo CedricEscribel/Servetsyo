@@ -18,6 +18,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
     <?php include 'Admindashboard/design/datatablelink.php'; ?>
 
     <title> Schedules </title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/Login.css">
@@ -73,7 +75,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
           ?>
           <?php foreach ($rows as $row) : ?>
             <tr>
-              <td>Insemination</td>
+              <td>Artificial Insemination</td>
               <td><?php echo $row["ReqDate"] ?></td>
               <td><?php echo $row["status"] ?></td>
               <td><?php echo $row["SetDate"] ?></td>

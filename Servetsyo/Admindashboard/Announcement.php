@@ -48,11 +48,11 @@ if (isset($_SESSION['admin_id'])) {
                   <div class="row p-1 mb-1 bg-white border rounded">
                     <div class="col-md-3 mt-1"> <img src="EventsImg/<?php echo $row["image"]; ?>" width=200 title="<?php echo $row['image']; ?>"></div>
                     <div class="col-md-6 mt-2">
-                      <h5 class="ms-0"><input type="text" name="EventName" value="<?php echo $row['EventName'] ?>"></h5>
+                      <h5 class="ms-0"><?php echo $row['EventName'] ?></h5>
                       <div class="d-flex flex-row mb-3">
-                        <small> <i class="bi bi-calendar-date me-2"></i><input type="date" id="dt" name="date" value="<?php echo $row['Dates'] ?>"> / <input type="date" name="Expdate" id="expd" style="color: red;" value="<?php echo $row['Expired_date'] ?>"></small>
+                        <small> <i class="bi bi-calendar-date me-2"></i><?php echo $row['Dates'] ?> / <small style="color: red;"><?php echo $row['Expired_date'] ?></small></small>
                       </div>
-                      <p class="text-justify "> <textarea class="form-control" name="Details" rows="3"><?php echo $row['Details'] ?></textarea></p>
+                      <p class="text-justify "><?php echo $row['Details'] ?></p>
                     </div>
                     <div class="align-items-center align-content-center  col-md-3 border-left mt-1">
                       <div class="d-flex flex-column mt-4">

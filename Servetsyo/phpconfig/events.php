@@ -74,7 +74,7 @@ if (isset($_POST['delete'])) {
 }
 
 
-if (isset($_POST['Edit'])) {
+if (isset($_POST['Save'])) {
 
   $id = $_POST['id'];
   $EventName = $_POST['EventName'];
@@ -93,6 +93,13 @@ if (isset($_POST['Edit'])) {
     </script>
     ";
 }
+
+if (isset($_POST['Edit'])) {
+  echo '<script type="text/javascript">
+window.location.href = "../Admindashboard/AnnouncementEdit.php";
+</script>';
+}
+
 
 
 $query = mysqli_query($con, "SELECT * FROM `events`");

@@ -42,7 +42,7 @@ if (isset($_SESSION['admin_id'])) {
 				<table class="table" id="table">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Full Name</th>
 							<th>Contact Number</th>
 							<th>Appointment</th>
 							<th>Pet's Name</th>

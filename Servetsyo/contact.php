@@ -4,16 +4,18 @@
 <head>
     <meta charset="utf-8">
     <title>Contact </title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <?php include 'header.php';?>
+    <?php include 'header.php'; ?>
 </head>
 
 <body>
     <!-- Navbar Start -->
     <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-   
-    <?php include 'navlogo.php';?>
+
+        <?php include 'navlogo.php'; ?>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -33,7 +35,7 @@
         </div>
     </nav>
     <!-- Navbar End -->
-   
+
 
 
     <!-- Contact Start -->
@@ -89,8 +91,7 @@
                             </div>
                         </div>
                         <div>
-                            <iframe class="position-relative w-100"
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15419.32664170209!2d120.88434284522607!3d14.946469202331157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAgriCoop%20Building%2C%20Baliwag%20Government%20Complex%2C%20DRT%20Highway%2C%2C%20Baliuag%2C%20Philippines!5e0!3m2!1sen!2sph!4v1682877578223!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe class="position-relative w-100" <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15419.32664170209!2d120.88434284522607!3d14.946469202331157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAgriCoop%20Building%2C%20Baliwag%20Government%20Complex%2C%20DRT%20Highway%2C%2C%20Baliuag%2C%20Philippines!5e0!3m2!1sen!2sph!4v1682877578223!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
@@ -100,8 +101,8 @@
     <!-- Contact End -->
 
 
-     <!-- Footer Start -->
-     <?php include 'footer.php';?>
+    <!-- Footer Start -->
+    <?php include 'footer.php'; ?>
     <!-- Footer End -->
 
 </body>

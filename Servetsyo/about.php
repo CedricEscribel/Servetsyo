@@ -2,6 +2,8 @@
 
     <meta charset="utf-8">
     <title>About </title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <?php include 'header.php'; ?>

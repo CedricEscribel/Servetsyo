@@ -24,6 +24,7 @@ if (isset($_SESSION['admin_id'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Adoption Request</title>
+    <link rel="icon" href="../img/icon.png" type="image/x-icon">
 
 
     <?php include 'design/header.php'; ?>

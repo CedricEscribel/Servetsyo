@@ -41,7 +41,7 @@ if (isset($_SESSION['admin_id'])) {
           <thead>
             <tr class="head">
               <th>ID</th>
-              <th>Name</th>
+              <th>Full Name</th>
               <th>Date in</th>
               <th>Age</th>
               <th>Gender</th>

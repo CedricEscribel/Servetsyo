@@ -12,6 +12,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
   <head>
     <meta charset="utf-8">
     <title>Profile </title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/Login.css">

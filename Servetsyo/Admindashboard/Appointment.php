@@ -41,7 +41,7 @@ if (isset($_SESSION['admin_id'])) {
 				<table class="table  table-hover" id="table">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Full Name</th>
 							<th>Contact Number</th>
 							<th>Appointment</th>
 							<th>Pet's Name</th>
@@ -113,5 +113,3 @@ if (isset($_SESSION['admin_id'])) {
 	<script>
 		document.getElementById('dt').min = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
 	</script>
-
-

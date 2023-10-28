@@ -174,7 +174,7 @@
               </div>
 
               <div class="input-box">
-                <input type="text" name="confirmcaptcha" placeholder="Enter Captcha" maxlength="8" value="">
+                <input type="text" name="confirmcaptcha" placeholder="Enter Captcha" minlength="8" maxlength="8" required value="">
               </div>
 
 

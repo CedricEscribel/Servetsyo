@@ -58,7 +58,7 @@ require_once 'phpconfig/config.php';
               <div class="col-lg-4 col-md-12 mb-4">
                 <div class="card">
                   <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
-                    <img src="Admindashboard/DogImage/<?php echo $row["image"]; ?>" width=200 title="<?php echo $row['image']; ?>">
+                    <img src="Admindashboard/DogImage/<?php echo $row["image"]; ?>" width=300 height="250" title="<?php echo $row['image']; ?>">
                   </div>
                   <div class="text-body-secondary mt-3">
                     <a class="text-reset text-decoration-none">

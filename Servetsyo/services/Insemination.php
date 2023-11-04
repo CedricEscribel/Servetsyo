@@ -72,12 +72,16 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
             <input type="text" name="ContNum" placeholder="<?= $user['PhoneNum'] ?>" disabled>
 
             <label for="AnimalKind">Kind of Animal</label>
-            <select class="dropbtn" name="Animal" required>
+            <select class="dropbtn" id="Animal" name="Animal" required>
               <option value="">Choose Animal</option>
               <option value="Carabao">Carabao</option>
               <option value="Cow">Cow</option>
               <option value="Goat">Goat</option>
+              <option value="other">other</option>
             </select>
+            <input type="text" id="customAnimal" name="Animal" style="display: none;" placeholder="State Animal ">
+
+
             <br>
             <input type="text" name="Coordinates" id="latitude" hidden required>
 
@@ -86,7 +90,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
             <p id="CoordValid" class="alert alert-danger" role="alert" hidden></p>
             <div id="map-layer"></div>
             <label for="Details">Details:</label>
-            <textarea id="Details" name="Details" placeholder="Additional details" ></textarea>
+            <textarea id="Details" name="Details" placeholder="Additional details"></textarea>
 
             <input type="submit" name="save" onclick="Valid()" value="Submit">
           </div>
@@ -98,6 +102,20 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
       <!-- Footer Start -->
       <?php include "footer.php"; ?>
       <!-- Footer End -->
+
+      <script>
+        const selectElement = document.getElementById("Animal");
+        const customOptionInput = document.getElementById("customAnimal");
+
+        selectElement.addEventListener("change", function() {
+          if (selectElement.value === "other") {
+            customOptionInput.style.display = "block";
+          } else {
+            customOptionInput.style.display = "none";
+          }
+        });
+      </script>
+
 
       <!-- Script maps -->
 

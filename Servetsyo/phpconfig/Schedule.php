@@ -5,6 +5,7 @@ include_once 'config.php';
 if (isset($_POST['save'])) {
   $FullN = $_POST['FullN'];
   $PhoneNum = $_POST['PhoneNum'];
+  $Animal = $_POST['Animal'];
   $Sched = $_POST['Sched'];
   $PetName = $_POST['PetName'];
   $Breed = $_POST['Breed'];
@@ -16,8 +17,8 @@ if (isset($_POST['save'])) {
 
 
 
-  $sql = "INSERT INTO schedule (FullN,PhoneNum,Sched,PetName,Breed,Color,Age,Gender,Message,user_id,status) 
-     VALUES ('$FullN','$PhoneNum','$Sched','$PetName','$Breed','$Color','$Age','$Gender','$Message','$user_id','Pending')";
+  $sql = "INSERT INTO schedule (FullN,PhoneNum,Animal,Sched,PetName,Breed,Color,Age,Gender,Message,user_id,status) 
+     VALUES ('$FullN','$PhoneNum','$Sched','$Animal','$PetName','$Breed','$Color','$Age','$Gender','$Message','$user_id','Pending')";
 
   // insert in database 
   $Save = mysqli_query($con, $sql);

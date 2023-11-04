@@ -51,21 +51,23 @@ define("API_KEY", "")
         <input type="tel" name="ContactNum" class="form-control" placeholder="09123456789" required pattern="[0-9]{11}" maxlength="11">
 
         <label for="Animal" style="margin-top: 15px;">Select what kind of animals</label>
-        <select class="dropbtn" class="form-select" name="animal" required>
+        <select class="dropbtn" id="animal" class="form-select" name="animal" required>
           <option value="">Please Select</option>
           <option value="Dog">Dog</option>
           <option value="Cat">Cat</option>
-          <option value="Others">Others</option>
+          <option value="other">Other</option>
         </select>
+        <input type="text" id="customAnimal" name="animal" style="display: none;" placeholder="State Animal ">
 
-        <input type="text" name="Coordinates" required  id="latitude" hidden>
+
+        <input type="text" name="Coordinates" required id="latitude" hidden>
 
         <label for="Location" style="margin-top: 15px;">Get Location:</label>
         <div id="button-layer"><button id="btnAction" onClick="locate()">Pin current location</button></div>
         <p id="CoordValid" class="alert alert-danger" role="alert" hidden></p>
         <div id="map-layer"></div>
         <label for="Situation">Situation:</label>
-        <textarea id="Situation" name="Details" required class="form-control" placeholder="Explain the situation"></textarea>
+        <textarea id="Situation" name="Details" class="form-control" placeholder="Explain the situation"></textarea>
 
         <input type="submit" name="save" onclick="Valid()" value="Submit">
       </div>
@@ -74,7 +76,18 @@ define("API_KEY", "")
   </div>
   </div>
   <!-- Schedule form end -->
+  <script>
+    const selectElement = document.getElementById("animal");
+    const customOptionInput = document.getElementById("customAnimal");
 
+    selectElement.addEventListener("change", function() {
+      if (selectElement.value === "other") {
+        customOptionInput.style.display = "block";
+      } else {
+        customOptionInput.style.display = "none";
+      }
+    });
+  </script>
   <!-- Footer Start -->
   <?php include "footer.php"; ?>
   <!-- Footer End -->

@@ -70,7 +70,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
               <option value="<?= $user['Fullname'] ?>"></option>
             </select>
             <label style="margin-top: 10px;" for="Fullname">Full Name:</label>
-            <input type="text"  name="Fullname" disabled placeholder=" <?= $user['Fullname'] ?>">
+            <input type="text" name="Fullname" disabled placeholder=" <?= $user['Fullname'] ?>">
 
             <select class="Hide" name="ContNum" style="display: none;">
               <option value="<?= $user['PhoneNum'] ?>"></option>
@@ -82,7 +82,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
             <input type="text" id="number" name="DogCount" placeholder="Number of Dogs" required>
 
             <label for="Notes">Notes:</label>
-            <textarea id="Notes" name="Notes" placeholder="" ></textarea>
+            <textarea id="Notes" name="Notes" placeholder=""></textarea>
 
             <input type="submit" name="save" value="Submit">
 
@@ -95,16 +95,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
       echo '<script>window.location.href = "../service.php";</script>';
     } ?>
 
-
-
+   
 
     <!-- Schedule form end -->
 
     <!-- Footer Start -->
     <?php include "footer.php"; ?>
     <!-- Footer End -->
-    </script>
-    </body>
 
   <?php } else {
   echo '<script>alert("Log in first")</script>';

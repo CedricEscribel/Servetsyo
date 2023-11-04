@@ -55,6 +55,7 @@ define("API_KEY", "")
           <option value="">Please Select</option>
           <option value="Dog">Dog</option>
           <option value="Cat">Cat</option>
+          <option value="Others">Others</option>
         </select>
 
         <input type="text" name="Coordinates" required  id="latitude" hidden>

@@ -30,8 +30,7 @@
     input.captcha {
       pointer-events: none;
       letter-spacing: 12px;
-      text-decoration: underline line-through;
-      text-decoration-style: double;
+      text-decoration: line-through;
       color-scheme: dark;
       text-decoration-thickness: auto;
     }
@@ -150,11 +149,32 @@
               <div class="show_pass">
                 <input type="checkbox" onclick="Showpass()">&#32;Show Password
               </div>
-              <label class="label">Full Name:</label>
+
+              <label class="label">First Name:</label>
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" autocapitalize="words" name="Fullname" placeholder="Full Name" required value="<?php echo (isset($_GET['Fullname'])) ? $_GET['Fullname'] : "" ?>">
+                <input type="text" autocapitalize="words" name="First" placeholder="First Name" required value="<?php echo (isset($_GET['First'])) ? $_GET['First'] : "" ?>">
               </div>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <label class="label">Last Name:</label>
+                    <div class="input-box">
+                      <i class="fas fa-user"></i>
+                      <input type="text" autocapitalize="words" name="Last" placeholder="Last Name" required value="<?php echo (isset($_GET['Last'])) ? $_GET['Last'] : "" ?>">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label class="label">Middle Name:</label>
+                    <div class="input-box">
+                      <i class="fas fa-user"></i>
+                      <input type="text" autocapitalize="words" name="Middle" placeholder="Middle Name" required value="<?php echo (isset($_GET['Middle'])) ? $_GET['Middle'] : "" ?>">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <input type="text" name="RoleType" hidden value="user">
               <label class="label">Address:</label>
               <div class="input-box">
@@ -177,6 +197,10 @@
                 <input type="text" name="confirmcaptcha" placeholder="Enter Captcha" minlength="8" maxlength="8" required value="">
               </div>
 
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="consent" required>
+                <label class="form-check-label" for="consent" data-bs-toggle="tooltip" data-bs-placement="right" title="Please read and agree to the Terms and Conditions to proceed.">I agree to the Terms and Conditions</label>
+              </div>
 
               <div class="button input-box">
                 <input type="submit" value="Sign Up" onclick="Passvalid()" name="Sign_up">

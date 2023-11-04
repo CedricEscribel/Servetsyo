@@ -86,7 +86,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
             <p id="CoordValid" class="alert alert-danger" role="alert" hidden></p>
             <div id="map-layer"></div>
             <label for="Details">Details:</label>
-            <textarea id="Details" name="Details" placeholder="Additional details" required></textarea>
+            <textarea id="Details" name="Details" placeholder="Additional details" ></textarea>
 
             <input type="submit" name="save" onclick="Valid()" value="Submit">
           </div>

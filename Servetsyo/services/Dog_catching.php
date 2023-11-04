@@ -82,7 +82,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
             <input type="text" id="number" name="DogCount" placeholder="Number of Dogs" required>
 
             <label for="Notes">Notes:</label>
-            <textarea id="Notes" name="Notes" placeholder="" required></textarea>
+            <textarea id="Notes" name="Notes" placeholder="" ></textarea>
 
             <input type="submit" name="save" value="Submit">
 

@@ -78,7 +78,7 @@ $user = getUserById($_SESSION['user_id'], $conn);
 
 
           <label for="message">Note:</label>
-          <textarea id="message" name="Message" placeholder="Additional details" required></textarea>
+          <textarea id="message" name="Message" placeholder="Additional details" ></textarea>
 
 			  	<input type="submit" name="save" value="Submit">
           </div>

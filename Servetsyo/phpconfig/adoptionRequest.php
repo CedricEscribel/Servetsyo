@@ -22,7 +22,7 @@ if (isset($_POST['save'])) {
   if ($Save) {
     echo '<script type="text/javascript">
         alert("Successfully Submitted");
-        window.location.href = "../index.php";
+        window.location.href = "../Petforadoption.php";
         </script>';
     die;
   }

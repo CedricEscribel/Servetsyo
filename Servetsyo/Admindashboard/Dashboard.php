@@ -26,8 +26,6 @@ if (isset($_SESSION['admin_id'])) {
 				background-color: #f0f0f0;
 				padding: 20px;
 				border: 1px solid #333;
-				/* Add a border around the entire bar chart */
-				margin-bottom: 3%;
 			}
 
 			.bar-chart {

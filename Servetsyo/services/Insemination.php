@@ -77,9 +77,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
               <option value="Carabao">Carabao</option>
               <option value="Cow">Cow</option>
               <option value="Goat">Goat</option>
-              <option value="other">other</option>
+              <option value="other">Others</option>
             </select>
-            <input type="text" id="customAnimal" name="Animal" style="display: none;" placeholder="State Animal ">
+            <input type="text" id="customAnimal" name="Animal" style="display: none;" placeholder="Please Specify">
 
 
             <br>
@@ -110,8 +110,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
         selectElement.addEventListener("change", function() {
           if (selectElement.value === "other") {
             customOptionInput.style.display = "block";
+            document.getElementById("customAnimal").required = true;
           } else {
             customOptionInput.style.display = "none";
+            document.getElementById("customAnimal").required = false;
           }
         });
       </script>

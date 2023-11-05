@@ -75,5 +75,3 @@ if ($result = mysqli_query($con, $sql)) {
 $dogs_pound = mysqli_num_rows( $result );
      
 }
-?>
-

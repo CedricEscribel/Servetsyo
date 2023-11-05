@@ -199,7 +199,7 @@
 
               <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="consent" required>
-                <label class="form-check-label" for="consent" data-bs-toggle="tooltip" data-bs-placement="right" title="Please read and agree to the Terms and Conditions to proceed.">I agree to the Terms and Conditions</label>
+                <label class="form-check-label" for="consent" data-bs-toggle="modal" data-bs-placement="top" title="Please read and agree to the Terms and Conditions to proceed.">I agree to the Terms and Conditions</label>
               </div>
 
               <div class="button input-box">
@@ -221,6 +221,7 @@
   <?php include 'footer.php'; ?>
   <!-- Footer End -->
   <script>
+    
     function Showpass() {
       var x = document.getElementById("Pass");
       if (x.type === "password") {

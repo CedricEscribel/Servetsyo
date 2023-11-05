@@ -55,9 +55,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
               <option value="">Please Select</option>
               <option value="Dog">Dog</option>
               <option value="Cat">Cat</option>
-              <option value="other">other</option>
+              <option value="other">Others</option>
             </select>
-            <input type="text" id="customAnimal" name="Animal" style="display: none;" placeholder="State Animal ">
+            <input type="text" id="customAnimal" name="Animal" style="display: none;" placeholder="Please Specify">
 
 
             <label for="Sched">Schedule For:</label>
@@ -65,9 +65,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
               <option value="">Please Select</option>
               <option value="Anti-rabies Vaccination">Anti-rabies Vaccination</option>
               <option value="Castration">Castration</option>
-              <option value="other">other</option>
+              <option value="other">Others</option>
             </select>
-            <input type="text" id="customschedule" name="Sched" style="display: none;" placeholder="State Schedule ">
+            <input type="text" id="customschedule" name="Sched" style="display: none;" placeholder="Please Specify">
 
             <label for="PName" style="margin-top: 15px;">Pet's name:</label>
             <input type="text" name="PetName" placeholder="Pet's name" required>
@@ -112,8 +112,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
         selectElement.addEventListener("change", function() {
           if (selectElement.value === "other") {
             customOptionInput.style.display = "block";
+            document.getElementById("customAnimal").required = true;
+
           } else {
             customOptionInput.style.display = "none";
+            document.getElementById("customAnimal").required = true;
+
           }
         });
 
@@ -123,8 +127,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
         selectschedule.addEventListener("change", function() {
           if (selectschedule.value === "other") {
             Optionschedule.style.display = "block";
+            document.getElementById("customschedule").required = true;
+
           } else {
             Optionschedule.style.display = "none";
+            document.getElementById("customschedule").required = true;
+
           }
         });
       </script>

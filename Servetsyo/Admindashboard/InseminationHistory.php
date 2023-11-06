@@ -38,8 +38,13 @@ if (isset($_SESSION['admin_id'])) {
 
 
       <section class="tables container">
+        <div class="  d-flex flex-row align-items-center justify-content-between">
+          <h1>Artificial Insemination History</h1>
+          <div class="card-tools" style="float: right;">
+            <a href="Export/InseminationExport.php" target="_blank" class="btn btn-sm btn-primary" style="background-color: #4caf50; border: none;">Generate PDF</a>
+          </div>
+        </div>
 
-        <h1>Artificial Insemination History</h1>
         <table class="table" id="table">
           <thead>
             <tr class="head">
@@ -48,6 +53,7 @@ if (isset($_SESSION['admin_id'])) {
               <th>Kind of Animal</th>
               <th>Location</th>
               <th>Date Requested</th>
+              <th>Set Date</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -62,6 +68,7 @@ if (isset($_SESSION['admin_id'])) {
                 <td><?php echo $row["Animal"] ?></td>
                 <td><?php echo $row["Coordinates"] ?></td>
                 <td><?php echo $row["ReqDate"] ?></td>
+                <td><?php echo $row["SetDate"] ?></td>
                 <td><?php echo $row["status"] ?></td>
               <?php
             }

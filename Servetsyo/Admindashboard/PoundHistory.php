@@ -35,8 +35,13 @@ if (isset($_SESSION['admin_id'])) {
       <?php include 'design/sidebar.php'; ?>
 
       <section class="container tables">
+        <div class="  d-flex flex-row align-items-center justify-content-between">
+          <h1>Dogs in pound History</h1>
+           <div class="card-tools" style="float: right;">
+            <a href="Export/DogsExport.php" target="_blank" class="btn btn-sm btn-primary" style="background-color: #4caf50; border: none;">Generate PDF</a>
+          </div>
+        </div>
 
-        <h1>Dogs in pound History</h1>
         <table class="table" id="table">
           <thead>
             <tr class="head">

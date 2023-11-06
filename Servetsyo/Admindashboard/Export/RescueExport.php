@@ -17,7 +17,7 @@ function HeaderTitle($title)
     $pdf->Cell(0, 0, $title, 0, 1, 'C');
     $pdf->Ln(); // Move to the next line after the table header
 }
-$title = 'DOG CATCHING REQUEST';
+$title = 'Animal Rescue History';
 
 // Define the Header Table function
 function HeaderTable($headerData)
@@ -35,17 +35,17 @@ function HeaderTable($headerData)
 
     // Loop through the header data and create table cells
     foreach ($headerData as $header) {
-        $cellWidth = 30; // Set a fixed cell width (adjust as needed)
+        $cellWidth = 32; // Set a fixed cell width (adjust as needed)
         $pdf->Cell($cellWidth, $cellHeight, $header, 1, 0, 'C');
     }
 }
 
 // Define the header data
-$headerData = array('Barangay', 'Full Name' ,'Phone Number', 'Dog Count', 'Request Date' , 'Status');
+$headerData = array('Full Name', 'Contact Number' ,'Kind of Animal', 'Location', 'Date Requested' , 'Status');
 
 
 //code for print data
-$sql = "SELECT  `BarangayID`, `Fullname`, `ContNum`, `DogCount`, `ReqDate`, `status` from  catch ";
+$sql = "SELECT  `Name`, `ContactNum`, `animal`, `Coordinates`, `ReqDate`, `status` from  rescue ";
 $query =  $conn->prepare($sql);
 $query->execute();
 $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -55,10 +55,10 @@ if ($query->rowCount() > 0) {
     HeaderTitle($title);
     HeaderTable($headerData);
     foreach ($results as $row) {
-        $pdf->SetFont('Arial', '', 8);
+        $pdf->SetFont('Arial', '', 7);
         $pdf->Ln();
         foreach ($row as $column)
-            $pdf->Cell(30, 10, $column, 1);
+            $pdf->Cell(32, 10, $column, 1);
     }
 }
 $pdf->Output();

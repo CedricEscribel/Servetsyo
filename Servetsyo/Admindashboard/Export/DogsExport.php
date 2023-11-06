@@ -17,7 +17,7 @@ function HeaderTitle($title)
     $pdf->Cell(0, 0, $title, 0, 1, 'C');
     $pdf->Ln(); // Move to the next line after the table header
 }
-$title = 'DOG CATCHING REQUEST';
+$title = 'Dogs in pound History';
 
 // Define the Header Table function
 function HeaderTable($headerData)
@@ -41,11 +41,11 @@ function HeaderTable($headerData)
 }
 
 // Define the header data
-$headerData = array('Barangay', 'Full Name' ,'Phone Number', 'Dog Count', 'Request Date' , 'Status');
+$headerData = array('Description', 'Age(month)' ,'Gender', 'Date In', 'Rescued Location' , 'Status');
 
 
 //code for print data
-$sql = "SELECT  `BarangayID`, `Fullname`, `ContNum`, `DogCount`, `ReqDate`, `status` from  catch ";
+$sql = "SELECT  `description`, `age`, `gender`, `date`, `rescue_loc`, `status` from  dogs_info ";
 $query =  $conn->prepare($sql);
 $query->execute();
 $results = $query->fetchAll(PDO::FETCH_OBJ);

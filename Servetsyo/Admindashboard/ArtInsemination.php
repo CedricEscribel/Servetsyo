@@ -44,7 +44,7 @@ if (isset($_SESSION['admin_id'])) {
               <th>Description</th>
               <th>Location</th>
               <th>Date Requested</th>
-              <th>SetDate</th>
+              <th>Set Date</th>
               <th>Status</th>
             </tr>
           </thead>

@@ -67,7 +67,7 @@ define("API_KEY", "")
         <p id="CoordValid" class="alert alert-danger" role="alert" hidden></p>
         <div id="map-layer"></div>
         <label for="Situation">Situation:</label>
-        <textarea id="Situation" name="Details" class="form-control" placeholder="Explain the situation"></textarea>
+        <textarea id="Situation" name="Details" class="form-control" required placeholder="Explain the situation"></textarea>
 
         <input type="submit" name="save" onclick="Valid()" value="Submit">
       </div>

@@ -51,6 +51,7 @@ if (isset($_SESSION['admin_id'])) {
               <th>Dog Id</th>
               <th>Interview</th>
               <th>Date Requested</th>
+              <th>Set Date</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -66,6 +67,7 @@ if (isset($_SESSION['admin_id'])) {
                 <td><?php echo $row["Dog_id"] ?></td>
                 <td><?php echo $row["Interview"] ?></td>
                 <td><?php echo $row["DateReq"] ?></td>
+                <td><?php echo $row["SetDate"] ?></td>
                 <td><?php echo $row["status"] ?></td>
 
               <?php

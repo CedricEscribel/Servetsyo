@@ -45,6 +45,7 @@ if (isset($_SESSION['admin_id'])) {
 							<th>Number of Dogs</th>
 							<th>Notes</th>
 							<th>Date Requested</th>
+							<th>Set Date</th>
 							<th>Status</th>
 						</tr>
 					</thead>
@@ -62,6 +63,13 @@ if (isset($_SESSION['admin_id'])) {
 								<td><?php echo $row["DogCount"] ?></td>
 								<td><?php echo $row["Notes"] ?></td>
 								<td><?php echo $row["ReqDate"] ?></td>
+								<td>
+									<form action="../phpconfig/Catching.php" method="POST">
+										<input type="date" id="dt" name="SetDate" value="<?php echo $row['SetDate'] ?>">
+										<input type="hidden" name="id" id="id" value="<?php echo $row['DogCatch_id'] ?>">
+										<button name="setdate"> <i class="bi bi-calendar2-check"></i></button>
+									</form>
+								</td>
 								<td><label for="approval"></label>
 									<button class="btn btn-sm <?php echo $row['status'] == 'Approve' ? 'btn-success' : 'btn-danger' ?>" value="<?php echo $row["DogCatch_id"] ?>" id="btnStatus">
 										<?php echo $row["status"] ?>
@@ -92,3 +100,8 @@ if (isset($_SESSION['admin_id'])) {
 	echo '<script>alert("Log in first")</script>';
 	echo '<script>window.location.href = "login.php";</script>';
 } ?>
+
+
+	<script>
+		document.getElementById('dt').min = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+	</script>

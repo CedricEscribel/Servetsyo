@@ -58,6 +58,7 @@ if (isset($_SESSION['admin_id'])) {
 							<th>Age</th>
 							<th>Gender</th>
 							<th>Date Requested</th>
+							<th>Set Date </th>
 							<th>Status</th>
 						</tr>
 					</thead>
@@ -78,6 +79,7 @@ if (isset($_SESSION['admin_id'])) {
 								<td><?php echo $row["Age"] ?></td>
 								<td><?php echo $row["Gender"] ?></td>
 								<td><?php echo $row["Date"] ?></td>
+								<td><?php echo $row["SetDate"] ?></td>
 								<td><?php echo $row["status"] ?></td>
 							</tr>
 						<?php

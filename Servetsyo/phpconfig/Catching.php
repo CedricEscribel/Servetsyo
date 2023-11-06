@@ -52,3 +52,16 @@
           </script>';
     }
   }
+
+  if (isset($_POST['setdate'])) {
+    $id = $_POST['id'];
+    $SetDate = $_POST['SetDate'];
+  
+    $sql = "UPDATE catch SET SetDate =  '$SetDate' WHERE DogCatch_id = $id ";
+    $Save = mysqli_query($con, $sql);
+    if ($Save) {
+      echo '<script type="text/javascript">
+          window.location.href = "../Admindashboard/DogCatching.php";
+          </script>';
+    }
+  }

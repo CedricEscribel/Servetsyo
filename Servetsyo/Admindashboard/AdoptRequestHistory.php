@@ -39,7 +39,7 @@ if (isset($_SESSION['admin_id'])) {
         <div class="  d-flex flex-row align-items-center justify-content-between">
           <h1>Adoption Request History</h1>
           <div class="card-tools" style="float: right;">
-            <a href="Export/AdoptExport.php" target="_blank" class="btn btn-sm btn-primary">Generate PDF</a>
+            <a href="Export/AdoptExport.php" target="_blank" class="btn btn-sm btn-primary" style="background-color: #4caf50; border: none;">Generate PDF</a>
           </div>
         </div>
         <table class="table" id="table">

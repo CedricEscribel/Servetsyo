@@ -44,6 +44,7 @@ if (isset($_SESSION['admin_id'])) {
 							<th>Full Name</th>
 							<th>Contact Number</th>
 							<th>Appointment</th>
+							<th>Animal</th>
 							<th>Pet's Name</th>
 							<th>Breed</th>
 							<th>Color</th>
@@ -65,6 +66,7 @@ if (isset($_SESSION['admin_id'])) {
 								<td><?php echo $row["FullN"] ?></td>
 								<td><?php echo $row["PhoneNum"] ?></td>
 								<td><?php echo $row["Sched"] ?></td>
+								<td><?php echo $row["Animal"] ?></td>
 								<td><?php echo $row["PetName"] ?></td>
 								<td><?php echo $row["Breed"] ?></td>
 								<td><?php echo $row["Color"] ?></td>

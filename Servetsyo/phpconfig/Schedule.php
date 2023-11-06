@@ -17,7 +17,7 @@ if (isset($_POST['save'])) {
 
 
 
-  $sql = "INSERT INTO schedule (FullN,PhoneNum,Animal,Sched,PetName,Breed,Color,Age,Gender,Message,user_id,status) 
+  $sql = "INSERT INTO schedule (FullN,PhoneNum,Sched,Animal,PetName,Breed,Color,Age,Gender,Message,user_id,status) 
      VALUES ('$FullN','$PhoneNum','$Sched','$Animal','$PetName','$Breed','$Color','$Age','$Gender','$Message','$user_id','Pending')";
 
   // insert in database 

@@ -38,13 +38,20 @@ if (isset($_SESSION['admin_id'])) {
 
 
 			<section class="container tables">
-				<h1>User list of Appointments History</h1>
+				<div class="  d-flex flex-row align-items-center justify-content-between">
+					<h1>User list of Appointments History</h1>
+					<div class="card-tools" style="float: right;">
+						<a href="Export/ScheduleExport.php" target="_blank" class="btn btn-sm btn-primary" style="background-color: #4caf50; border: none;">Generate PDF</a>
+					</div>
+				</div>
+
 				<table class="table" id="table">
 					<thead>
 						<tr>
 							<th>Full Name</th>
 							<th>Contact Number</th>
 							<th>Appointment</th>
+							<th>Animal</th>
 							<th>Pet's Name</th>
 							<th>Breed</th>
 							<th>Color</th>
@@ -64,6 +71,7 @@ if (isset($_SESSION['admin_id'])) {
 								<td><?php echo $row["FullN"] ?></td>
 								<td><?php echo $row["PhoneNum"] ?></td>
 								<td><?php echo $row["Sched"] ?></td>
+								<td><?php echo $row["Animal"] ?></td>
 								<td><?php echo $row["PetName"] ?></td>
 								<td><?php echo $row["Breed"] ?></td>
 								<td><?php echo $row["Color"] ?></td>

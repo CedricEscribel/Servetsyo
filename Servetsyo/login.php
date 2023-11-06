@@ -159,17 +159,17 @@
               <div class="container">
                 <div class="row">
                   <div class="col">
-                    <label class="label">Last Name:</label>
-                    <div class="input-box">
-                      <i class="fas fa-user"></i>
-                      <input type="text" autocapitalize="words" name="Last" placeholder="Last Name" required value="<?php echo (isset($_GET['Last'])) ? $_GET['Last'] : "" ?>">
-                    </div>
-                  </div>
-                  <div class="col">
                     <label class="label">Middle Name:</label>
                     <div class="input-box">
                       <i class="fas fa-user"></i>
                       <input type="text" autocapitalize="words" name="Middle" placeholder="Middle Name" required value="<?php echo (isset($_GET['Middle'])) ? $_GET['Middle'] : "" ?>">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label class="label">Last Name:</label>
+                    <div class="input-box">
+                      <i class="fas fa-user"></i>
+                      <input type="text" autocapitalize="words" name="Last" placeholder="Last Name" required value="<?php echo (isset($_GET['Last'])) ? $_GET['Last'] : "" ?>">
                     </div>
                   </div>
                 </div>

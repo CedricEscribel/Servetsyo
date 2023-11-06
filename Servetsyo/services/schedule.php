@@ -116,7 +116,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
           } else {
             customOptionInput.style.display = "none";
-            document.getElementById("customAnimal").required = true;
+            document.getElementById("customAnimal").required = false;
 
           }
         });
@@ -131,7 +131,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
 
           } else {
             Optionschedule.style.display = "none";
-            document.getElementById("customschedule").required = true;
+            document.getElementById("customschedule").required = false;
 
           }
         });

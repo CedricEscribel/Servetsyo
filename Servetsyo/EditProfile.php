@@ -105,6 +105,18 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
                                                         <input type="text" name="Address" class="form-control" value="<?= $user['Address'] ?>">
                                                     </div>
                                                 </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-sm-3">
+                                                        <h6 class="mb-0">Change Password</h6>
+                                                    </div>
+                                                    <div class="col-sm-9 text-secondary">
+                                                        <input type="password" id="New" name="newPassword" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must have at least eight characters and at least one number, an uppercase letter, a lowercase letter, and a special character" placeholder="New Password">
+                                                        <input type="password" id="Confirm" name="confirmPassword" class="form-control mt-2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must have at least eight characters and at least one number, an uppercase letter, a lowercase letter, and a special character" placeholder="Confirm New Password">
+                                                        <div class="show_pass">
+                                                            <input type="checkbox" onclick="Showpass()">&#32;Show Password
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="row">
                                                     <div class="col-sm-9 text-secondary">
                                                         <button type="submit" name="edit" class="btn btn-primary">Save Changes</button>
@@ -130,6 +142,21 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
         <!-- footer -->
         <?php include 'footer.php'; ?>
 
+
+        <script>
+            function Showpass() {
+                var newPasswordField = document.getElementById("New");
+                var confirmPasswordField = document.getElementById("Confirm");
+
+                if (newPasswordField.type === "password") {
+                    newPasswordField.type = "text";
+                    confirmPasswordField.type = "text";
+                } else {
+                    newPasswordField.type = "password";
+                    confirmPasswordField.type = "password";
+                }
+            }
+        </script>
 
     </body>
 <?php } else {

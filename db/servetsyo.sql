@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2023 at 03:47 PM
+-- Generation Time: Nov 06, 2023 at 07:39 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,6 +67,15 @@ CREATE TABLE `adoptionrequest` (
   `user_id` varchar(15) NOT NULL,
   `SetDate` varchar(125) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `adoptionrequest`
+--
+
+INSERT INTO `adoptionrequest` (`AdoptReq_id`, `Fullname`, `Address`, `Email`, `PhoneNum`, `Interview`, `Date`, `status`, `Dog_id`, `DateReq`, `user_id`, `SetDate`) VALUES
+(84, 'Cedric Escribel', 'Aldama sta barbara baliuag bulacan', 'Cedric@gmail.com', '09511234567', 'Yes', '2023-11-17', 'Pending', '20', '2023-11-04', '50', '2023-11-07'),
+(85, 'Cedric', 'Aldama sta barbara baliuag bulacan', 'Cedric@gmail', '09511234567', 'Yes', '2023-11-18', 'Pending', '20', '2023-11-04', '50', ''),
+(86, 'Cedric', 'Aldama sta barbara baliuag bulacan', 'Cedric@gmail', '09511234567', 'Yes', '2023-11-17', 'Pending', '20', '2023-11-04', '50', '');
 
 -- --------------------------------------------------------
 
@@ -135,13 +144,6 @@ CREATE TABLE `dogs_info` (
   `status` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `dogs_info`
---
-
-INSERT INTO `dogs_info` (`dog_id`, `description`, `age`, `gender`, `date`, `rescue_loc`, `dog_info`, `image`, `status`) VALUES
-(20, 'dog cute', '21', 'Male', '2023-10-21', 'Calantipay', 'dog cute', '6533579badb54.jpg', 'Adoption');
-
 -- --------------------------------------------------------
 
 --
@@ -156,13 +158,6 @@ CREATE TABLE `events` (
   `Dates` varchar(258) NOT NULL,
   `Expired_date` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `events`
---
-
-INSERT INTO `events` (`EventId`, `EventName`, `Details`, `image`, `Dates`, `Expired_date`) VALUES
-(31, 'sample', 'sa', '653525318ec91.jpg', '2023-10-22', '2023-10-23');
 
 -- --------------------------------------------------------
 
@@ -182,6 +177,13 @@ CREATE TABLE `insemination` (
   `user_id` varchar(11) NOT NULL,
   `SetDate` varchar(125) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `insemination`
+--
+
+INSERT INTO `insemination` (`Insemination_ID`, `Name`, `ContNum`, `Animal`, `Coordinates`, `Details`, `ReqDate`, `status`, `user_id`, `SetDate`) VALUES
+(110, 'Cedric', '09511234567', '', '14.9464387,120.8843322', '', '2023-11-04', 'Pending', '50', '2023-11-08');
 
 -- --------------------------------------------------------
 
@@ -213,6 +215,7 @@ CREATE TABLE `schedule` (
   `Sched` varchar(128) NOT NULL,
   `Date` date NOT NULL DEFAULT current_timestamp(),
   `PetName` varchar(128) NOT NULL,
+  `Animal` varchar(123) NOT NULL,
   `Breed` varchar(128) NOT NULL,
   `Color` varchar(128) NOT NULL,
   `Age` int(25) NOT NULL,
@@ -247,8 +250,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `Email`, `Password`, `Fullname`, `Address`, `PhoneNum`, `CreateDate`, `RoleType`) VALUES
 (47, 'deanigaya@gmail.com', '$2y$10$xPn29ToHFTjeekKGOxSYC.Zi3q/AzPiCY9/wppNFn.YJvqk7hjGOi', 'Dean Jerick C. Igaya', 'Pagala, Baliwag, Bulacan', '09352218378', '2023-09-24', ''),
 (48, 'valimento2002@gmail.com', '$2y$10$RdE4sdfFLdSEQ4FiI.V.ReASEDwnhtrie7bLtM20Tcalmb7EGc3fG', 'Randel T. Valimento', 'Santa Barbara, Baliwag, Bulacan', '09157139465', '2023-09-24', ''),
-(49, 'apriljoy@gmail.com', '$2y$10$dI2I5KO.plM6AD6YBpfcEOGHi.7XS.hPc/HF0EsJVK.zO2lFPS/Ca', 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', '09147852349', '2023-09-24', ''),
-(50, 'Cedric@gmail', '$2y$10$TVrtwR6Cwwf0cjuJqZtCDe9G74Cb24oV21wj7vbvhz7fCfmo5mhMG', 'Cedric', 'Aldama sta barbara baliuag bulacan', '09511234567', '2023-09-29', 'user');
+(49, 'apriljoy@gmail.com', '$2y$10$dI2I5KO.plM6AD6YBpfcEOGHi.7XS.hPc/HF0EsJVK.zO2lFPS/Ca', 'April Joy R. Sablayan', 'Concepcion, Baliwag, Bulacan', '09147852349', '2023-09-24', '');
 
 --
 -- Indexes for dumped tables
@@ -322,7 +324,7 @@ ALTER TABLE `adminuser`
 -- AUTO_INCREMENT for table `adoptionrequest`
 --
 ALTER TABLE `adoptionrequest`
-  MODIFY `AdoptReq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `AdoptReq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `catch`
@@ -334,7 +336,7 @@ ALTER TABLE `catch`
 -- AUTO_INCREMENT for table `dogs_info`
 --
 ALTER TABLE `dogs_info`
-  MODIFY `dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -346,25 +348,25 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `insemination`
 --
 ALTER TABLE `insemination`
-  MODIFY `Insemination_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `Insemination_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `rescue`
 --
 ALTER TABLE `rescue`
-  MODIFY `Rescue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `Rescue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `Schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `Schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

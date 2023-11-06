@@ -25,6 +25,7 @@
 .LoginContainer #flip:checked ~ .cover{
   transform: rotateY(-180deg);
 }
+
  .LoginContainer .cover .front,
  .LoginContainer .cover .back{
   position: absolute;

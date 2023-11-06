@@ -15,7 +15,6 @@ try {
   echo "Connection failed : ". $e->getMessage();
 }
 
-
 $con = mysqli_connect("localhost","root","","servetsyo");
 
 if(!$con){
@@ -25,4 +24,5 @@ if(!$con){
 if (mysqli_connect_errno()){
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
+
 ?>

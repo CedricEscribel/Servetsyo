@@ -124,7 +124,7 @@
 
         <!-- Sign up -->
 
-        <div class="signup-form">
+        <div class="signup-form" id="signup-form">
           <form method="post" action="log/account.php" autocomplete="off">
             <div class="title">Sign up</div>
             <?php if (isset($_GET['errorsign'])) { ?>
@@ -136,7 +136,7 @@
               <label class="label">Email address:</label>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="email" name="Email" placeholder="Enter your Email" required>
+                <input type="email" name="Email" placeholder="Enter your Email" value="<?php echo (isset($_POST['Email'])) ? $_POST['Email'] : ""; ?>" required>
                 <span class="validity"></span>
               </div>
               <label class="label">Password:</label>
@@ -153,7 +153,7 @@
               <label class="label">First Name:</label>
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" autocapitalize="words" name="First" placeholder="First Name" required value="<?php echo (isset($_GET['First'])) ? $_GET['First'] : "" ?>">
+                <input type="text" autocapitalize="words" name="First" placeholder="First Name" required value="<?php echo (isset($_POST['First'])) ? $_POST['First'] : ""; ?>">
               </div>
 
               <div class="container">
@@ -220,8 +220,9 @@
   <!-- Footer Start -->
   <?php include 'footer.php'; ?>
   <!-- Footer End -->
+
+  
   <script>
-    
     function Showpass() {
       var x = document.getElementById("Pass");
       if (x.type === "password") {

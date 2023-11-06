@@ -28,6 +28,8 @@ if ($captcha != $confirmcaptcha) {
     if ($Email == isset($row['Email'])) {
         $em = "email already exists";
         header("Location: ../login.php?errorsign=$em");
+
+        
     }
 } else {
 

@@ -72,7 +72,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
             <input type="text" name="ContNum" placeholder="<?= $user['PhoneNum'] ?>" disabled>
 
             <label for="AnimalKind">Kind of Animal</label>
-            <select class="dropbtn" id="Animal" name="Animal" required>
+            <select class="dropbtn" id="Animal" name="Animal2" required>
               <option value="">Choose Animal</option>
               <option value="Carabao">Carabao</option>
               <option value="Cow">Cow</option>

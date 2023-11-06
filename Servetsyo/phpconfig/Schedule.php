@@ -15,7 +15,17 @@ if (isset($_POST['save'])) {
   $Message = $_POST['Message'];
   $user_id = $_POST['user_id'];
 
+  // Check if the selected value is "other"
+  if ($Animal === 'other') {
+    // Capture the user input from the "Name Animal" input field
+    $Animal = $_POST['Animal2'];
+  }
 
+  // Check if the selected value is "other"
+  if ($Sched === 'other') {
+    // Capture the user input from the "Name Animal" input field
+    $Sched = $_POST['Sched2'];
+  }
 
   $sql = "INSERT INTO schedule (FullN,PhoneNum,Sched,Animal,PetName,Breed,Color,Age,Gender,Message,user_id,status) 
      VALUES ('$FullN','$PhoneNum','$Sched','$Animal','$PetName','$Breed','$Color','$Age','$Gender','$Message','$user_id','Pending')";

@@ -9,7 +9,11 @@ if (isset($_POST['save'])) {
   $Details = $_POST['Details'];
   $Coordinates = $_POST['Coordinates'];
 
-
+  // Check if the selected value is "other"
+  if ($animal === 'other') {
+    // Capture the user input from the "Name Animal" input field
+    $animal = $_POST['animal2'];
+  }
 
   $sql = "INSERT INTO rescue (Name,ContactNum,animal,Details,Coordinates,status) 
      VALUES ('$Name','$ContactNum','$animal','$Details','$Coordinates','Pending')";
@@ -49,5 +53,3 @@ if (isset($_POST['btnHideSubmit'])) {
           </script>';
   }
 }
-
-

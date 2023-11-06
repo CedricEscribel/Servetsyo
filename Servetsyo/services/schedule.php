@@ -57,7 +57,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
               <option value="Cat">Cat</option>
               <option value="other">Others</option>
             </select>
-            <input type="text" id="customAnimal" name="Animal" style="display: none;" placeholder="Please Specify">
+            <input type="text" id="customAnimal" name="Animal2" style="display: none;" placeholder="Please Specify">
 
 
             <label for="Sched">Schedule For:</label>
@@ -67,7 +67,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Fullname'])) {
               <option value="Castration">Castration</option>
               <option value="other">Others</option>
             </select>
-            <input type="text" id="customschedule" name="Sched" style="display: none;" placeholder="Please Specify">
+            <input type="text" id="customschedule" name="Sched2" style="display: none;" placeholder="Please Specify">
 
             <label for="PName" style="margin-top: 15px;">Pet's name:</label>
             <input type="text" name="PetName" placeholder="Pet's name" required>

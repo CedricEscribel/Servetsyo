@@ -5,10 +5,16 @@ include_once 'config.php';
 if (isset($_POST['save'])) {
   $Name = $_POST['Name'];
   $ContNum = $_POST['ContNum'];
-  $Animal = $_POST['Animal'];
+  $Animal = $_POST['Animal2'];
   $Coordinates = $_POST['Coordinates'];
   $Details = $_POST['Details'];
   $user_id = $_POST['user_id'];
+
+  // Check if the selected value is "other"
+  if ($Animal === 'other') {
+    // Capture the user input from the "Name Animal" input field
+    $Animal = $_POST['Animal'];
+  }
 
   $sql = "INSERT INTO insemination (Name,ContNum,Animal,Coordinates,Details,user_id,status) 
      VALUES ('$Name','$ContNum','$Animal','$Coordinates','$Details','$user_id','Pending')";

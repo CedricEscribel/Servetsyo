@@ -1,3 +1,10 @@
+<?php
+include_once "phpconfig/config.php";
+session_start();
+
+
+?>
+
 <head>
 
     <meta charset="utf-8">

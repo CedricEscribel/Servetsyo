@@ -1,5 +1,8 @@
 <?php
 
+include_once "phpconfig/config.php";
+session_start();
+
 require_once 'phpconfig/events.php';
 
 $sql = "SELECT * FROM events";

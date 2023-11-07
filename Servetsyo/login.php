@@ -1,3 +1,10 @@
+<?php
+include_once "phpconfig/config.php";
+session_start();
+
+
+?>
+
 <head>
   <meta charset="utf-8">
   <title>Login </title>
@@ -55,9 +62,22 @@
         <a href="Events.php" class="nav-item nav-link">Events</a>
         <div class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
-          <div class="dropdown-menu m-0">
-            <a href="#" class="dropdown-item">Login</a>
-          </div>
+
+          <?php
+
+          if (!isset($_SESSION['user_id']) && !isset($_SESSION['Fullname'])) {
+
+            include "log/session.php";
+
+          ?>
+            <div class="dropdown-menu m-0">
+              <a href="#" class="dropdown-item">Log In</a>
+            </div>
+          <?php } else {
+            echo '<script>alert("Already Logged In")</script>';
+            echo '<script>window.location.href = "index.php";</script>';
+          } ?>
+
         </div>
       </div>
     </div>

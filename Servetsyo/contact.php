@@ -1,3 +1,10 @@
+<?php
+include_once "phpconfig/config.php";
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

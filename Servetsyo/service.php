@@ -1,3 +1,10 @@
+<?php
+include_once "phpconfig/config.php";
+session_start();
+
+
+?>
+
 <head>
     <meta charset="utf-8">
     <title>Service </title>
@@ -44,7 +51,6 @@
                 <div class="Pet-needs text-center">
                     <h2>DONATIONS FOR RESCUED ANIMAL</h2>
                     <p>We only accept in-kind donations</p>
-
                     <li>Dog food</li>
                     <li>Cat food</li>
                     <li>cages</li>

@@ -199,7 +199,77 @@
 
               <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="consent" required>
-                <label class="form-check-label" for="consent" data-bs-toggle="modal" data-bs-placement="top" title="Please read and agree to the Terms and Conditions to proceed.">I agree to the Terms and Conditions</label>
+                <label class="form-check-label" for="consent" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-placement="top" title="Please read and agree to the Terms and Conditions to proceed.">I agree to the Terms and Conditions</label>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Terms and Conditions</h1>
+                    </div>
+                    <div class="modal-body">
+                      <h6>
+                        <small>
+                          SERVETSYO is committed to protecting the privacy and security of your personal information. This Privacy Policy outlines our practices for collecting, using, and safeguarding your data. Especially as it pertains to our website and services related to animal-related content. By using our services or visiting our website, you consent to the practices described in this Privacy Policy.
+                          <br><br>
+                          1. Information We Collect:
+                          <br>
+                          We collect various types of information, including but not limited to:
+                          <br>
+                          - Personal Information: This includes your name, email address, phone number, and any other information you voluntarily provide to us.
+                          <br>
+                          2. How We Use Your Data:
+                          <br>
+                          We use your information for the following purposes:
+                          <br>
+                          - To provide and improve our services.
+                          <br>
+                          - To send you updates and announcement, with your consent.
+                          <br>
+                          3. Data Security:
+                          <br>
+                          We employ reasonable security measures to protect your data from unauthorized access, disclosure, alteration, and destruction. While we strive to protect your personal information, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.
+                          <br>
+                          4. Data Retention:
+                          <br>
+                          We retain your data for as long as necessary to fulfill the purposes outlined in this Privacy Policy. You may request deletion of your data, subject to legal and regulatory requirements.
+                          <br>
+                          5. Sharing Your Information:
+                          <br>
+                          We do not sell or rent your personal information to third parties. However, we may share your data with partners, or affiliates who assist us in providing and improving our services.
+                          <br>
+                          6. Your Rights:
+                          <br>
+                          You have the right to:
+                          <br>
+                          - Access, correct, or delete your personal information.
+                          <br>
+                          - Object to or restrict the processing of your data.
+                          <br>
+                          - Withdraw consent if processing is based on your consent.
+                          <br>
+                          7. Children's Privacy:
+                          <br>
+                          Our services are not intended for individuals under the age of 18. If we become aware that we have collected data from a child under 18, we will take steps to delete the information.
+                          <br>
+
+                          9. Contact Us:
+                          <br>
+                          If you have any questions, concerns, or requests regarding your data or this Privacy Policy, please contact us at deanigaya@gmail.com.
+                          <br><br>
+                          By using our services, you agree to the practices outlined in this Privacy Policy. If you do not agree to these terms, please do not use our services.
+                          <br>
+                          SERVETSYO is committed to protecting your privacy, and we value your trust in us.
+                        </small>
+                      </h6>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Agree</button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="button input-box">
@@ -221,7 +291,7 @@
   <?php include 'footer.php'; ?>
   <!-- Footer End -->
 
-  
+
   <script>
     function Showpass() {
       var x = document.getElementById("Pass");

@@ -15,7 +15,7 @@ function HeaderTitle($title)
     $pdf->Ln(); // Move to the next line after the table header
 }
 
-$title = 'User list of Appointments';
+$title = 'Dogs in pound History';
 
 // Define the Header Table function with custom cell widths and center-aligned text
 function HeaderTable($headerData, $pdf, $cellWidths)
@@ -39,11 +39,11 @@ function HeaderTable($headerData, $pdf, $cellWidths)
 
 // Define the header data
 
-$headerData = array('Description', 'Age(month)' ,'Gender', 'Date In', 'Rescued Location' , 'Status');
+$headerData = array('Name / Description', 'Age(month)' ,'Gender', 'Date In', 'Rescued Location' , 'Status');
 
 
 // Define custom cell widths for each column
-$cellWidths = array(52, 20, 25, 25, 35, 25);
+$cellWidths = array(60, 20, 25, 25, 35, 25);
 
 // Code for printing data
 $sql = "SELECT  `description`, `age`, `gender`, `date`, `rescue_loc`, `status` from  dogs_info ";

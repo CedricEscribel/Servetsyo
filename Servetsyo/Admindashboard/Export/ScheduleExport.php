@@ -38,13 +38,13 @@ function HeaderTable($headerData, $pdf, $cellWidths)
 }
 
 // Define the header data
-$headerData = array('Full Name', 'Phone Number', 'Appointment', 'Pet Name', 'Animal', 'Age', 'Breed', 'Gender', 'Date Requested', 'Set Date');
+$headerData = array('Full Name', 'Phone Number', 'Appointment',  'Animal', 'Age', 'Breed', 'Gender', 'Date Requested', 'Set Date', 'Status');
 
 // Define custom cell widths for each column
-$cellWidths = array(52, 25, 33, 30, 15, 15, 35, 20, 25, 25);
+$cellWidths = array(52, 25, 33, 30, 25,  15, 15, 35, 20, 25);
 
 // Code for printing data
-$sql = "SELECT  `FullN`, `PhoneNum`, `Sched`, `PetName`, `Animal`, `Age`, `Breed`,  `Gender`, `Date`, `SetDate` from  schedule ";
+$sql = "SELECT  `FullN`, `PhoneNum`, `Sched`,  `Animal`, `Age`, `Breed`,  `Gender`, `Date`, `SetDate`, `status` from  schedule ";
 $query =  $conn->prepare($sql);
 $query->execute();
 $results = $query->fetchAll(PDO::FETCH_OBJ);

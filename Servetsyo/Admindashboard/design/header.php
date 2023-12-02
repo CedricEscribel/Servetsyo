@@ -15,12 +15,8 @@
     <!-- Navbar Start -->
     <nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
         <a class="navbar-brand ms-lg-5" style="display: flex;">
-            <img src="../img/logo.jpg" class="img-fluid" style="width: 80px; height: ms-auto;" alt="...">
-            <div style="display: flex; ">
-                <h2 style="margin-top: 18px; color: #378ACA; font-weight: bold;">SER</h2>
-                <h2 style="margin-top: 18px; color: #4caf50; font-weight: bold;">VET</h2>
-                <h2 style="margin-top: 18px; color: #378ACA; font-weight: bold;">SYO</h2>
-            </div>
+            <img src="../img/baliuag highfve.jpg" class="img-fluid" style="width: 90px; height: ms-auto;" alt="...">
+            <h2 style="margin-top: 25px; color: #378ACA; font-weight: bold;">Baliuag Agriculture Office</h2>
         </a>
 
         <div class="collapse navbar-collapse" id="navbarCollapse" style="margin-right: 5%;">
